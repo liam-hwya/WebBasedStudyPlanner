@@ -1,4 +1,10 @@
 <?php
+    session_start();
+    if(isset($_SESSION['pagename'])){
+        $currentPage=$_SESSION['pagename'];
+    }else{
+        $currentPage="dashboard";
+    }
     $UtimeUserId=5;
 ?>
 
@@ -16,7 +22,7 @@
     <link rel="stylesheet" href="resources/css/recore.css">
 </head>
 
-<body data-id="<?php echo $UtimeUserId ?>">
+<body data-page="<?php echo $currentPage;  ?>" data-id="<?php echo $UtimeUserId ?>">
 
     <div class="dashboard_main_container">
     <!--============= Top Bar Start============ -->
@@ -35,7 +41,7 @@
 
         <!-- =================================Menu Bar Start============================================== -->
             <div class="dashboard_menu_bar">
-                <div id="dashboard" class="menu hideOnSmall active_menu" >
+                <div id="dashboard" class="menu hideOnSmall" >
                     <div class="menu_icon"><img src="assets/icons/dashboard.png"></div>
                     <div class="menu_text">Dashboard</div>
                 </div>
@@ -78,6 +84,7 @@
     <script src="resources/js/jquery.js"></script>
     <script src="assets/js/app.js"></script>
     <script src="assets/js/dashboard.js"></script>
+    <script src="controller/timetable.js"></script>
 </body>
 
 </html>

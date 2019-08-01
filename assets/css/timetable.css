@@ -1,31 +1,60 @@
-.container {
-    font-family: 'Noto Sans', sans-serif;
-    margin-top: 80px;
-}
-
-h3 {
-    margin-bottom: 30px;
-}
-
-th {
-    height: 30px;
-    text-align: center;
-}
-
-td {
-    height: 100px;
-}
+/*extra small*/
 
 .today {
-    background: orange;
+    background: #57d1b3;
 }
 
-th:nth-of-type(1),
-td:nth-of-type(1) {
-    color: red;
-}
+@media only screen and (max-width: 600px) {}
 
-th:nth-of-type(7),
-td:nth-of-type(7) {
-    color: blue;
+
+/*small================================================================================================================*/
+
+@media only screen and (min-width: 600px) and (max-width:767px) {}
+
+
+/*medium*/
+
+@media only screen and (min-width: 768px) and (max-width:991px) {}
+
+
+/*large=============================================================================================================*/
+
+@media only screen and (min-width: 992px) and (max-width:1199px) {}
+
+
+/*extra large======================================================================================================*/
+
+@media only screen and (min-width: 1200px) {
+    .timeTable_main_container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .timetable_calander_container {
+        width: 50%;
+        height: 100%;
+        background: white;
+    }
+    .calendar_header {
+        width: 100%;
+        height: 70px;
+        background: #aaa;
+        display: flex;
+        flex-direction: row;
+    }
+    .timeTableBody {
+        width: 100%;
+        height: 500px;
+    }
+    .timeTableBody td:hover {
+        cursor: pointer;
+    }
+    .timetable_plans_conntainer {
+        width: 50%;
+        height: 100%;
+    }
 }

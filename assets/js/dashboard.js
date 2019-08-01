@@ -1,11 +1,14 @@
 $(document).ready(function() {
     // document.body.requestFullscreen();
+    var currentPage = $('body').attr("data-page"); //getcurrentpage name from session
 
-    $("#dashboard").addClass("active_Top_menu"); //set dashboard as first page (Home Page)
+    $(".menu").removeClass("active_menu");
+    $(".menuAtTop").removeClass("active_Top_menu");
+    // $("#" + currentPage).addClass("active_Top_menu"); 
 
     var UtimeMainBody = $(".Utime_main_body"); //UtimeMainBody is the place to show all return data for all pages
     var userId = $("body").data("id"); //you know what it is :p 
-    UtimeMainBody.load("view/dashboard.php", { //just load data from dashboard.php
+    UtimeMainBody.load("view/" + currentPage + ".php", { //just load data from dashboard.php
         userId: userId //send data
     });
 
