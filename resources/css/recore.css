@@ -1,0 +1,69 @@
+/*extra small*/
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.bg_green {
+    background: #3baa4b;
+    color: white;
+}
+
+.bg_blue {
+    background: #2c55c9;
+    color: white;
+}
+
+.bg_red {
+    background: #c33d3d;
+    color: white;
+}
+
+.tx_white {
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        width: auto;
+    }
+}
+
+
+/*small*/
+
+@media only screen and (min-width: 600px) and (max-width:767px) {
+    .container {
+        width: auto;
+    }
+}
+
+
+/*medium*/
+
+@media only screen and (min-width: 768px) and (max-width:991px) {
+    .container {
+        max-width: 750px;
+    }
+}
+
+
+/*large*/
+
+@media only screen and (min-width: 992px) and (max-width:1199px) {
+    .container {
+        max-width: 970px;
+    }
+}
+
+
+/*extra large*/
+
+@media only screen and (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+    }
+}
