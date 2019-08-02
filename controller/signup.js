@@ -54,21 +54,21 @@ $(document).ready(function() {
             $(".signup_first_next").css("opacity", "0.5");
             $(".signup_first_next").css("cursor","not-allowed");
             return false;
-        }
+        }//you know wtf i wrote,right?
     }
 
     
 
-    $(".signup_first_next").on("click",function(){
+    $(".signup_first_next").on("click",function(){//next btn on first signup page
         var thisStatus=nextBtnStatus();
         if(thisStatus===true){
-            $(".sign_up_form_one").css("display","none");
-            $(".sign_up_form_two").css("display","flex");
-            $(".Step1").removeClass("workingStep");
-            $(".Step1").addClass("completeStep");
-            $(".Step2").removeClass("waitingStep");
-            $(".Step2").addClass("workingStep");
-            $(".textSteps").html("Create a password");
+            $(".sign_up_form_one").css("display","none");//hide name,emilm inputs
+            $(".sign_up_form_two").css("display","flex");//show password input
+            $(".Step1").removeClass("workingStep");//update Signup Prograss
+            $(".Step1").addClass("completeStep");//update Signup Prograss
+            $(".Step2").removeClass("waitingStep");//update Signup Prograss
+            $(".Step2").addClass("workingStep");//update Signup Prograss
+            $(".textSteps").html("Create a password");//update Signup Prograss
         }else{
             alert("not valid yet");
         }
@@ -76,19 +76,19 @@ $(document).ready(function() {
 
 
 
-
-    function passNextStatus(){
+    function passNextStatus(){//check if name ,email and password are valid or not
         var pass=$(".sign_up_password").val();
-        var passCount=pass.length;
-        name_pasStatus=nextBtnStatus();
+        var passCount=pass.length;//get password count
+        name_pasStatus=nextBtnStatus();//get name,email valid checking function
         if(name_pasStatus==true && passCount > 8){
             return true;
         }else{
             return false;
         }
     }
+    
 
-    $(".signup_second_next").on("click",function(){
+    $(".signup_second_next").on("click",function(){//next btn on second page of signup page
         var thisStatus=passNextStatus();
         if(thisStatus ===true){
             $(".sign_up_form_two").css("display","none");
@@ -105,25 +105,47 @@ $(document).ready(function() {
         }
     });
 
-    var myPassions=[];
-    $(document).on("click",".selectable",function(){
+
+    
+
+    var myPassions=[];//set array for passion list
+    $(document).on("click",".selectable",function(){//add value to passion list on click
         var passion=$(this).html();
         myPassions.push(passion);
         $(this).addClass("passionAdd");
         $(this).css("background","#9ed2a1");
         $(this).removeClass("selectable");
     });
-    $(document).on("click",".passionAdd",function(){
+    $(document).on("click",".passionAdd",function(){//remove value from passion list 
         var removePassion=$(this).html();
         var index=myPassions.indexOf(removePassion);
         myPassions.splice(index,1);
         console.log(myPassions);
         $(this).css("background","#aaa");
         $(this).addClass("selectable");
+        $(this).removeClass("passionAdd");
     });
 
-    $(".signup_third_next").on("click",function(){
-        alert("hello");
+    $(".signup_third_next").on("click",function(){//final step
+        $thisStatu=passNextStatus();
+        if($thisStatu===true){
+            var firstName=$(".sign_up_first_name").val();
+            var lastName=$(".sign_up_last_name").val();
+            var Email=$(".sign_up_email").val();
+            var password=$(".sign_up_password").val();
+            var passionsJson=JSON.stringify(myPassions);
+            console.log(passionsJson);
+            $.post("model/createAcc.php",{
+                passions:passionsJson,
+                firstName:firstName,
+                lastName:lastName,
+                Email:Email,
+                password:password
+            },function(data,status){
+                alert(data);
+            });
+        }
+        
     });
 
     // var firstName=$(".sign_up_first_name").val();
