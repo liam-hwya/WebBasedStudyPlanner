@@ -1,7 +1,8 @@
 <?php
 include("../model/auth.php");
-session_start();
 $_SESSION['pagename']="timetable";
+$utuser=$_SESSION['UTuser'];
+
 // Set your timezone
 date_default_timezone_set('Asia/Tokyo');
 

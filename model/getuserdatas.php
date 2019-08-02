@@ -1,7 +1,6 @@
 <?php
     include("db_con.php");
-    $fname="Ma";
-    $getquery="SELECT * FROM utusers WHERE firstName='Ma'";
+    $getquery="SELECT * FROM utusers WHERE Email='maymyatnoezaw@gmail.com'";
     $getuser=mysqli_query($con,$getquery);
     if(mysqli_num_rows($getuser)>0){
         while($user=mysqli_fetch_assoc($getuser)){
@@ -14,4 +13,5 @@
     }else{  
         echo "nothing";
     }
+    
 ?>
