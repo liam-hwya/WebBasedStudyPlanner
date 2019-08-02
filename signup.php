@@ -19,9 +19,9 @@
             <span class="utime_name_text">Sign Up</span>
             <div class="signUpsteps">
                 <div class="GUIsteps">
-                    <span class="Step1 workingStep">1</span>
-                    <span class="Step2 waitingStep">2</span>
-                    <span class="Step3 waitingStep">3</span>
+                    <span class="signUpSteps Step1 workingStep">1</span>
+                    <span class="signUpSteps Step2 waitingStep">2</span>
+                    <span class="signUpSteps Step3 waitingStep">3</span>
                 </div>
                 <div class="textSteps">Who are you?</div>
             </div>
@@ -39,7 +39,10 @@
             </form>
             <form method="post" class="sign_up_form_three">
                 <div class="passionListContainer"></div>
-                <div class="signup_third_next">Complete</div>
+                <div class="signup_third_next">Finish</div>
+            </form>
+            <form method="post" class="sign_up_form_four">
+                <div class="signup_four_next">Get Started</div>
             </form>
             <span class="use_phone"></span><!--user phone or email btn-->
         </div>
