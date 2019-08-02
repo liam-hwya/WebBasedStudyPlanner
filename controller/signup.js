@@ -57,6 +57,26 @@ $(document).ready(function() {
         }
     }
 
+    
+
+    $(".signup_first_next").on("click",function(){
+        var thisStatus=nextBtnStatus();
+        if(thisStatus===true){
+            $(".sign_up_form_one").css("display","none");
+            $(".sign_up_form_two").css("display","flex");
+            $(".Step1").removeClass("workingStep");
+            $(".Step1").addClass("completeStep");
+            $(".Step2").removeClass("waitingStep");
+            $(".Step2").addClass("workingStep");
+            $(".textSteps").html("Create a password");
+        }else{
+            alert("not valid yet");
+        }
+    });
+
+
+
+
     function passNextStatus(){
         var pass=$(".sign_up_password").val();
         var passCount=pass.length;
@@ -67,33 +87,43 @@ $(document).ready(function() {
             return false;
         }
     }
-    
-    
-
-
-    $(".signup_first_next").on("click",function(){
-        var thisStatus=nextBtnStatus();
-        if(thisStatus===true){
-            $(".sign_up_form_one").css("display","none");
-            $(".sign_up_form_two").css("display","flex");
-            $(".Step2").css("background","#34b47b");
-            $(".textSteps").html("Create a password");
-        }else{
-            alert("not valid yet");
-        }
-    });
 
     $(".signup_second_next").on("click",function(){
         var thisStatus=passNextStatus();
         if(thisStatus ===true){
             $(".sign_up_form_two").css("display","none");
-            $(".Step3").css("background","#34b47b");
+            $(".Step2").removeClass("workingStep");
+            $(".Step2").addClass("completeStep");
+            $(".Step3").removeClass("waitingStep");
+            $(".Step3").addClass("workingStep");
             $(".textSteps").html("Choose Your Community");
             $(".sign_up_form_three").css("display","flex");
+            $(".utime_name_text").html("Welcome")
             $(".passionListContainer").load("model/passionList.php");
         }else{
             alert("no no bro");
         }
+    });
+
+    var myPassions=[];
+    $(document).on("click",".selectable",function(){
+        var passion=$(this).html();
+        myPassions.push(passion);
+        $(this).addClass("passionAdd");
+        $(this).css("background","#9ed2a1");
+        $(this).removeClass("selectable");
+    });
+    $(document).on("click",".passionAdd",function(){
+        var removePassion=$(this).html();
+        var index=myPassions.indexOf(removePassion);
+        myPassions.splice(index,1);
+        console.log(myPassions);
+        $(this).css("background","#aaa");
+        $(this).addClass("selectable");
+    });
+
+    $(".signup_third_next").on("click",function(){
+        alert("hello");
     });
 
     // var firstName=$(".sign_up_first_name").val();

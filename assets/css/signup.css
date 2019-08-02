@@ -37,7 +37,7 @@ body {
 }
 
 .plegma_logo {
-    width: 150px;
+    width: 120px;
 }
 
 .utime_name_text {
@@ -51,11 +51,13 @@ body {
 
 .sign_up_form_one {
     display: flex;
+    align-items: center;
     flex-direction: column;
 }
 .sign_up_form_two,.sign_up_form_three{
     display:none;
     flex-direction: column;
+    align-items: center;
 }
 
 .sign_up_email,.sign_up_password {
@@ -113,7 +115,7 @@ body {
     margin: 7.5px -35px;
 }
 
-.signup_first_next,.signup_second_next {
+.signup_first_next,.signup_second_next,.signup_third_next {
     width: 250px;
     height: 40px;
     background: #3ac485;
@@ -124,7 +126,7 @@ body {
     margin: 15px 0;
 }
 
-.signup_first_next:hover,.signup_second_next {
+.signup_first_next:hover,.signup_second_next:hover,.signup_third_next:hover {
     background: #34b47b;
     cursor: pointer;
 }
@@ -163,17 +165,22 @@ body {
     border-radius:50%;
     text-align:center;
     line-height:30px;
-    color:#fff;
     font-size:15px;
 }
-.Step1{
+.workingStep{
+    background: #eee;
+    border:solid 2px #34b47b;
+    color:#333;
+}
+.waitingStep{
+    background: #aaa;
+    border:solid 2px rgba(0, 0, 0, 0);
+    color:#fff;
+}
+.completeStep{
     background: #34b47b;
-}
-.Step2{
-    background: #aaa;
-}
-.Step3{
-    background: #aaa;
+    border:solid 2px rgba(0, 0, 0, 0);
+    color:#fff;
 }
 .textSteps{
     width:100%;
@@ -182,4 +189,28 @@ body {
     font-size:14px;
     color:#444;
     font-family: "maian";
+}
+
+.passionListContainer{
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.selectPassionContainer{
+    background: #aaa;
+    padding: 5px 20px;
+    box-sizing: border-box;
+    margin: 7px;
+    display: inline;
+    border-radius: 20px;
+    font-size: 14px;
+    color: white;
+    font-family: "maian";
+}
+.selectPassionContainer:hover{
+    cursor: pointer;
+    background:#999;
 }
