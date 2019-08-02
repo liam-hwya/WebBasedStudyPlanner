@@ -24,7 +24,7 @@ if ($timestamp === false) {
 $today = date('Y-m-j', time());
 
 // For H3 title
-$html_title = date('Y / m', $timestamp);
+$html_title = date('F, Y', $timestamp);
 
 // Create prev & next month link     mktime(hour,minute,second,month,day,year)
 $prev = date('Y-m', mktime(0, 0, 0, date('m', $timestamp)-1, 1, date('Y', $timestamp)));
@@ -44,7 +44,7 @@ $str = date('w', mktime(0, 0, 0, date('m', $timestamp), 1, date('Y', $timestamp)
 
 
 // Create Calendar!!
-$plannedDates=array("d2019089","d2019085","d2019095");
+$plannedDates=array("d2019082","d2019089","d2019085","d2019095");
 
 $weeks = array();
 $week = '';
@@ -57,10 +57,11 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
     $date = $ym . '-' . $day;
      
     if ($today == $date) {
-        $week .= '<td class="today">' . $day;
+        $plannerClass="d".$dataY.$dataM.$day;
+        $week .= '<td class="today '.$plannerClass.'">' . $day;
     } else {
         $plannerClass="d".$dataY.$dataM.$day;
-        $week .= '<td class="'.$plannerClass.'"  data-m="'.$dataM.'" data-y="'.$dataY.'" data-d="'.$day.'">' . $day;
+        $week .= '<td class="'.$plannerClass.'" >' . $day;
     }
     $week .= '</td>';
      
@@ -84,28 +85,29 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
     $(document).ready(function(){
         var plannedDates = <?php echo json_encode($plannedDates); ?>;
         for(let i = 0; i < plannedDates.length; i++){
-        var plannedDay=$("."+plannedDates[i]);
-        plannedDay.css("background","green");
-        plannedDay.addClass("planTaken");
-        // plannedDay.on("click",function(){
-        //     alert($(this).attr("class"));
-        // });
-        var header=$(".theSpaceBetweenUnME");
-        header.html("<?php echo $html_title ?>");
+            var plannedDay=$("."+plannedDates[i]);
+            // plannedDay.css("background","green");
+            plannedDay.addClass("planTaken");
+            // plannedDay.on("click",function(){
+            //     alert($(this).attr("class"));
+            // });
+            var header=$(".theSpaceBetweenUnME");
+            header.html("<?php echo $html_title ?>");
         }
     });
     
 </script>
 
-
+<div class="planContOnMouse">5 things to Do</div>
 <div class="timeTable_main_container">
     <!-- Timetable Calendar View -->
     <div class="timetable_calander_container">
 
         <div class="calendar_header">
-            <div class="btns" data-id="?ym=<?php echo $prev; ?>"><<</div>
-            <?php echo $html_title; ?>
-            <div class="btns" data-id="?ym=<?php echo $next; ?>">>></div>
+            <div class="todayDateAtCalenda"><?php echo $html_title; ?></div>
+            <div class="theSpaceBetweenDateNControl"></div>
+            <div class="changeCalendarMonth" data-id="?ym=<?php echo $prev; ?>"><img src="assets/icons/left.png" alt=""></div>
+            <div class="changeCalendarMonth" data-id="?ym=<?php echo $next; ?>"><img src="assets/icons/right.png" alt=""></div>
         </div>
 
         

@@ -1,7 +1,23 @@
 /*extra small*/
 
 .today {
-    background: #57d1b3;
+    background: #ee4c4c!important;
+    color: white;
+}
+
+.today:hover {
+    background: #c49b15;
+    color: white;
+}
+
+td:hover {
+    background: #ddd;
+    color: #333;
+}
+
+.planTaken {
+    background: #3ac485;
+    color: white;
 }
 
 @media only screen and (max-width: 600px) {}
@@ -25,9 +41,21 @@
 /*extra large======================================================================================================*/
 
 @media only screen and (min-width: 1200px) {
+    .planContOnMouse {
+        width: 150px;
+        height: 25px;
+        text-align: center;
+        line-height: 25px;
+        border-radius: 10px;
+        font-size: 13px;
+        background: #f83939;
+        color: white;
+        position: fixed;
+        z-index: 100;
+        display: none;
+    }
     .timeTable_main_container {
         width: 100%;
-        height: 100%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -36,19 +64,51 @@
     }
     .timetable_calander_container {
         width: 50%;
-        height: 100%;
         background: white;
+        margin-bottom: 30px;
     }
     .calendar_header {
         width: 100%;
         height: 70px;
-        background: #aaa;
+        background: rgb(80, 69, 231);
         display: flex;
         flex-direction: row;
+        align-items: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    .todayDateAtCalenda {
+        font-size: 20px;
+        color: #444;
+        font-weight: bold;
+        color: white;
+    }
+    .theSpaceBetweenDateNControl {
+        flex-grow: 1;
+    }
+    .changeCalendarMonth {
+        width: 30px;
+        height: 30px;
+        margin: 0 10px;
+    }
+    .changeCalendarMonth:hover {
+        cursor: pointer;
+    }
+    .changeCalendarMonth img {
+        width: 30px;
+        height: 30px;
     }
     .timeTableBody {
         width: 100%;
         height: 500px;
+    }
+    .timeTableBody th {
+        font-size: 18px;
+        color: #444;
+    }
+    .timeTableBody td {
+        width: 14.2857%;
+        text-align: center;
     }
     .timeTableBody td:hover {
         cursor: pointer;
