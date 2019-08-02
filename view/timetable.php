@@ -1,5 +1,5 @@
 <?php
-
+include("../model/auth.php");
 session_start();
 $_SESSION['pagename']="timetable";
 // Set your timezone
@@ -91,8 +91,6 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
             // plannedDay.on("click",function(){
             //     alert($(this).attr("class"));
             // });
-            var header=$(".theSpaceBetweenUnME");
-            header.html("<?php echo $html_title ?>");
         }
     });
     
@@ -117,13 +115,13 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
 
         <table class="timeTableBody">
             <tr>
-                <th>Sun</th>
-                <th>Mon</th>
-                <th>Thu</th>
+                <th>SUN</th>
+                <th>MON</th>
+                <th>THU</th>
                 <th>Wed</th>
-                <th>Thu</th>
-                <th>Fri</th>
-                <th>Sat</th>
+                <th>THU</th>
+                <th>FRI</th>
+                <th>SAT</th>
             </tr>
             <?php
                 foreach ($weeks as $week) {

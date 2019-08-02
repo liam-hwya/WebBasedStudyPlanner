@@ -2,6 +2,7 @@ $(document).ready(function() {
     // document.body.requestFullscreen();
     var currentPage = $('body').attr("data-page"); //getcurrentpage name from session
 
+
     $(".menu").removeClass("active_menu");
     $(".menuAtTop").removeClass("active_Top_menu");
     // $("#" + currentPage).addClass("active_Top_menu"); 

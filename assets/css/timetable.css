@@ -66,6 +66,8 @@ td:hover {
         width: 50%;
         background: white;
         margin-bottom: 30px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
     }
     .calendar_header {
         width: 100%;
@@ -76,6 +78,7 @@ td:hover {
         align-items: center;
         padding: 0 20px;
         box-sizing: border-box;
+        border-radius: 5px 5px 0 0;
     }
     .todayDateAtCalenda {
         font-size: 20px;
@@ -104,7 +107,8 @@ td:hover {
     }
     .timeTableBody th {
         font-size: 18px;
-        color: #444;
+        color: #555;
+        letter-spacing: 0.2ch;
     }
     .timeTableBody td {
         width: 14.2857%;

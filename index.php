@@ -1,5 +1,8 @@
 <?php
     session_start();
+    if(!$_SESSION['UTuser']){
+        header("location:utime.php");
+    }
     if(isset($_SESSION['pagename'])){
         $currentPage=$_SESSION['pagename'];
     }else{
