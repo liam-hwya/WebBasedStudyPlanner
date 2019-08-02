@@ -1,0 +1,23 @@
+/*extra small*/
+
+@media only screen and (max-width: 600px) {}
+
+
+/*small================================================================================================================*/
+
+@media only screen and (min-width: 600px) and (max-width:767px) {}
+
+
+/*medium*/
+
+@media only screen and (min-width: 768px) and (max-width:991px) {}
+
+
+/*large=============================================================================================================*/
+
+@media only screen and (min-width: 992px) and (max-width:1199px) {}
+
+
+/*extra large======================================================================================================*/
+
+@media only screen and (min-width: 1200px) {}

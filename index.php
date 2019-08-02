@@ -2,7 +2,10 @@
     session_start();
     if(!$_SESSION['UTuser']){
         header("location:utime.php");
+    }else{
+        $UTuser=$_SESSION['UTuser'];
     }
+
     if(isset($_SESSION['pagename'])){
         $currentPage=$_SESSION['pagename'];
     }else{
@@ -23,9 +26,15 @@
     <link rel="stylesheet" href="assets/css/theme.css">
     <link rel="stylesheet" href="assets/css/timetable.css">
     <link rel="stylesheet" href="resources/css/recore.css">
+    <link rel="stylesheet" href="assets/css/profile.css">
 </head>
 
 <body data-page="<?php echo $currentPage;  ?>" data-id="<?php echo $UtimeUserId ?>">
+    <div class="profileMainContainer" data-UTuser="<?php echo $UTuser; ?>">
+        <div class="profileContainer">
+            
+        </div>
+    </div>
 
     <div class="dashboard_main_container">
     <!--============= Top Bar Start============ -->
@@ -39,7 +48,7 @@
             <div class="showHideProfile"><img src="assets/icons/Pp.png"></div><!--Show Profile-->
         </div>
     <!-- ====================Top Bar End================== -->
-
+        
         <div class="dashboard_container">
 
         <!-- =================================Menu Bar Start============================================== -->
@@ -88,6 +97,7 @@
     <script src="assets/js/app.js"></script>
     <script src="assets/js/dashboard.js"></script>
     <script src="controller/timetable.js"></script>
+    <script src="controller/profile.js"></script>
 </body>
 
 </html>
