@@ -37,14 +37,14 @@ body {
 }
 
 .plegma_logo {
-    width: 100px;
+    width: 150px;
 }
 
 .utime_name_text {
     width: 100%;
     text-align: center;
     color: #333;
-    font-size: 20px;
+    font-size: 30px;
     font-family: 'bauhs93';
     margin: 10px 0;
 }
@@ -53,8 +53,12 @@ body {
     display: flex;
     flex-direction: column;
 }
+.sign_up_form_two,.sign_up_form_three{
+    display:none;
+    flex-direction: column;
+}
 
-.sign_up_email {
+.sign_up_email,.sign_up_password {
     width: 230px;
     height: 40px;
     border: none;
@@ -109,7 +113,7 @@ body {
     margin: 7.5px -35px;
 }
 
-.signup_first_next {
+.signup_first_next,.signup_second_next {
     width: 250px;
     height: 40px;
     background: #3ac485;
@@ -117,10 +121,10 @@ body {
     text-align: center;
     line-height: 40px;
     font-family: 'maian';
-    margin: 20px 0;
+    margin: 15px 0;
 }
 
-.signup_first_next:hover {
+.signup_first_next:hover,.signup_second_next {
     background: #34b47b;
     cursor: pointer;
 }
@@ -140,4 +144,42 @@ body {
     font-size: 14px;
     font-family: 'maian';
     color: #666;
+}
+
+.signUpsteps{
+    width:200px;
+    margin:5px 0;
+}
+.GUIsteps{
+    width:100%;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+    align-items: center;
+}
+.GUIsteps span{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    text-align:center;
+    line-height:30px;
+    color:#fff;
+    font-size:15px;
+}
+.Step1{
+    background: #34b47b;
+}
+.Step2{
+    background: #aaa;
+}
+.Step3{
+    background: #aaa;
+}
+.textSteps{
+    width:100%;
+    margin-top:15px;
+    text-align:center;
+    font-size:14px;
+    color:#444;
+    font-family: "maian";
 }

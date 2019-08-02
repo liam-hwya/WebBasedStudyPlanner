@@ -17,15 +17,31 @@
         <div class="welcome_main_container">
             <img src="assets/icons/utime.png" alt="" class="plegma_logo">
             <span class="utime_name_text">Sign Up</span>
+            <div class="signUpsteps">
+                <div class="GUIsteps">
+                    <span class="Step1">1</span>
+                    <span class="Step2">2</span>
+                    <span class="Step3">3</span>
+                </div>
+                <div class="textSteps">Who are you?</div>
+            </div>
             <form method="post" class="sign_up_form_one">
                 <div class="name_inputs">
                     <input type="text" name="name" placeholder="First name" id="invalid" class="sign_up_first_name"><!--User first name for signup-->
                     <input type="text" name="name" placeholder="Last name" id="invalid" class="sign_up_last_name"><!--User Last name for signup-->
                 </div>
                 <input type="email" name="email" placeholder="Email" id="invalid" class="sign_up_email"><!--User Email for signup-->
+                <div class="signup_first_next">Next</div><!--Next button-->
             </form>
-            <span class="use_phone">User phone number instant</span><!--user phone or email btn-->
-            <div class="signup_first_next">Next</div><!--Next button-->
+            <form method="post" class="sign_up_form_two">
+                <input type="password" name="password" placeholder="Password" id="invalid" class="sign_up_password"><!--User Email for signup-->
+                <div class="signup_second_next">Next</div><!--Next button-->
+            </form>
+            <form method="post" class="sign_up_form_three">
+                <div class="passionListContainer"></div>
+                <div class="signup_second_next">Next</div>
+            </form>
+            <span class="use_phone"></span><!--user phone or email btn-->
         </div>
         <div class="copy_right_bar">copyright@U-Time</div>
     </div>
