@@ -44,6 +44,7 @@
             <div class="postUploaderTextbox" contenteditable="true" ondragenter="return false;" ondragleave="return false;" ondragover="return false;" ondrop="return false;"></div>
             <div class="postUploadImagePreview"></div>
             <div class="postUploaderControls">
+                
                 <img src="assets/icons/addimg.png" class="showRealUploader" alt="">
                 <div class="uploadPostBtn">Publish</div>
             </div>

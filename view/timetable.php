@@ -1,7 +1,21 @@
 <?php
 include("../model/auth.php");
+include("../model/db_con.php");
 $_SESSION['pagename']="timetable";
 $utuser=$_SESSION['UTuser'];
+
+
+$plannedDates=array();
+$getQuery="SELECT * FROM UTevent";
+$UTevents=mysqli_query($con,$getQuery);
+if(mysqli_num_rows($UTevents)>0){
+    while($UTevent=mysqli_fetch_assoc($UTevents)){
+        $UTeventDate= $UTevent['event'];
+        array_Push($plannedDates,$UTeventDate);
+    }
+}else{
+    echo "fuck";
+}
 
 // Set your timezone
 date_default_timezone_set('Asia/Tokyo');
@@ -45,8 +59,6 @@ $str = date('w', mktime(0, 0, 0, date('m', $timestamp), 1, date('Y', $timestamp)
 
 
 // Create Calendar!!
-$plannedDates=array("d2019082","d2019089","d2019085","d2019095");
-
 $weeks = array();
 $week = '';
 
@@ -129,7 +141,9 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                     echo $week;
                 }
             ?>
+            
         </table>
+        <div class="eachDayTimeTable">sadf</div>
         
         
 
