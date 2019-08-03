@@ -17,7 +17,8 @@
     $passions=json_decode($_POST['passions']);
     $passions=serialize($passions);
     $school="";
-    $query="INSERT INTO utusers (firstname,lastName,Email,pass,passions,school) VALUES('$firstName','$lastName','$Email','$pass','$passions','$school')";
+    $profilePicture="nopp.png";
+    $query="INSERT INTO utusers (firstname,lastName,Email,pass,passions,school,profilePicture) VALUES('$firstName','$lastName','$Email','$pass','$passions','$school','$profilePicture')";
     $signuped=mysqli_query($con,$query);
     if($signuped){
         $_SESSION['UTuser']=$Email;

@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="assets/css/timetable.css">
     <link rel="stylesheet" href="resources/css/recore.css">
     <link rel="stylesheet" href="assets/css/profile.css">
+    <link rel="stylesheet" href="assets/css/community.css">
 </head>
 
 <body data-page="<?php echo $currentPage;  ?>" data-id="<?php echo $UtimeUserId ?>">
@@ -98,6 +99,7 @@
     <script src="assets/js/dashboard.js"></script>
     <script src="controller/timetable.js"></script>
     <script src="controller/profile.js"></script>
+    <script src="controller/community.js"></script>
 </body>
 
 </html>
