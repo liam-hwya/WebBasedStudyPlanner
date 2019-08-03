@@ -30,7 +30,6 @@
     .communityMainContainer {
         width: 100%;
         height: auto;
-        background: ;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -145,12 +144,52 @@
         flex-direction: column;
         align-items: center;
         display: none;
+        overflow-y: scroll;
     }
     .realuploaderbox {
         width: 500px;
-        height: 500px;
+        height: auto;
         background: white;
         position: absolute;
         top: 120px;
+    }
+    .postUploaderTextbox {
+        border: none;
+        outline: none;
+        width: 100%;
+        padding: 20px;
+        min-height: 200px;
+        overflow: auto;
+        box-sizing: border-box;
+        word-wrap: break-word;
+    }
+    .postUploaderControls {
+        width: 100%;
+        height: 55px;
+        background: #ccc;
+        display: flex;
+        justify-content: space-between;
+    }
+    .postUploaderControls img {
+        width: 35px;
+        height: 35px;
+        margin: 10px 20px;
+        opacity: 0.5;
+    }
+    .postUploaderControls img:hover {
+        cursor: pointer;
+    }
+    .uploadPostBtn {
+        width: 80px;
+        height: 32px;
+        background: #3ac485;
+        text-align: center;
+        line-height: 32px;
+        font-size: 16px;
+        color: #fff;
+        margin: 11.5px 20px;
+    }
+    .uploadPostBtn:hover {
+        cursor: pointer;
     }
 }

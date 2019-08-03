@@ -41,11 +41,11 @@
                 <div class="theSpaceBetweenNameNcancel"></div>
                 <div class="cancelPostUpload"><img src="assets/icons/cancel.png" alt=""></div>
             </div>
-            <div class="postUploaderTextbox">
-                Text Box
-            </div>
+            <div class="postUploaderTextbox" contenteditable="true" ondragenter="return false;" ondragleave="return false;" ondragover="return false;" ondrop="return false;"></div>
+            <div class="postUploadImagePreview"></div>
             <div class="postUploaderControls">
-                jfkelsoe
+                <img src="assets/icons/addimg.png" class="showRealUploader" alt="">
+                <div class="uploadPostBtn">Publish</div>
             </div>
         </div>
 
