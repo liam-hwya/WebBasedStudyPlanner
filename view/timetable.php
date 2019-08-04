@@ -12,11 +12,11 @@ if(isset($_POST['monthPgStatus'])){
 }
 
 $plannedDates=array();
-$getQuery="SELECT * FROM UTevent";
+$getQuery="SELECT * FROM uttask";
 $UTevents=mysqli_query($con,$getQuery);
 if(mysqli_num_rows($UTevents)>0){
     while($UTevent=mysqli_fetch_assoc($UTevents)){
-        $UTeventDate= $UTevent['event'];
+        $UTeventDate= $UTevent['dformat'];
         array_Push($plannedDates,$UTeventDate);
     }
 }else{
@@ -77,9 +77,19 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
     $date = $ym . '-' . $day;
      
     if ($today == $date) {
+        if($day<10){
+            $day="0".$day;
+        }else{
+            $day=$day;
+        }
         $plannerClass="d".$dataY.$dataM.$day;
         $week .= '<td class="today '.$plannerClass.'">' . $day;
     } else {
+        if($day<10){
+            $day="0".$day;
+        }else{
+            $day=$day;
+        }
         $plannerClass="d".$dataY.$dataM.$day;
         $week .= '<td class="'.$plannerClass.'" >' . $day;
     }
@@ -125,7 +135,7 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                 <img src="assets/icons/todayTasks.png" class="switchToDayView" style="display:none">
             </div>
             <div class="todayDateAtCalenda clanderYMshower" style="display:<?php echo $monthPgStatus; ?>"><?php echo $html_title; ?></div>
-            <div class="todayDateAtCalenda todayYMshower" style="display:<?php echo $dayPgStatus; ?>"> <?php echo $todayDate;; ?></div>
+            <div id="<?php echo $dfToday; ?>" class="todayDateAtCalenda todayYMshower" style="display:<?php echo $dayPgStatus; ?>"> <?php echo $todayDate; ?></div>
             <div class="theSpaceBetweenDateNControl"></div>
             <div style="display:<?php echo $monthPgStatus; ?>" class="changeCalendarMonth goBackTodayBtn" data-id=""><?php echo $toDayNum; ?></div>
             <div style="display:<?php echo $monthPgStatus; ?>" class="changeCalendarMonth" data-id="?ym=<?php echo $prev; ?>"><img src="assets/icons/left.png" alt=""></div>
@@ -162,7 +172,7 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                 ?>
             </div>
             <div class="eachDayTimeTableToDosContainer">
-
+                <?php include("../model/getTask.php"); ?>
             </div>
         </div>
     <!-- Each Day View end -->

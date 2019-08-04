@@ -4,7 +4,14 @@ $(document).ready(function() {
     // $(".utime_calendar").load("backend.php", {
     //     data: data
     // });
-    var curPage = $("body").attr("data-calPg");
+    function getTasksFor(dformat) {
+        taskHolder = $(".eachDayTimeTableToDosContainer");
+        taskHolder.load("model/getTask.php", {
+            dformat: dformat
+        });
+    }
+
+
 
     $(document).on("mousemove", function(ev) {
         var X = $('body').offset().left;
@@ -17,12 +24,18 @@ $(document).ready(function() {
     });
 
     $(document).on("mouseover", "td", function() {
-        $(".planContOnMouse").css("display", "block");
-        if ($(this).hasClass("planTaken")) {
-            $(".planContOnMouse").css("background", "green");
+        if ($(this).html() != "") {
+            $(".planContOnMouse").css("display", "block");
+            if ($(this).hasClass("planTaken")) {
+                $(".planContOnMouse").css("background", "green");
+            }
+            $(".planContOnMouse").html($(this).attr("class").split(" ")[0]);
+        } else {
+            $(".planContOnMouse").css("display", "none");
+            $(".planContOnMouse").css("background", "red");
         }
-        $(".planContOnMouse").html($(this).attr("class").split(" ")[0]);
     });
+
     $(document).on("mouseout", "td", function() {
         $(".planContOnMouse").css("display", "none");
         $(".planContOnMouse").css("background", "red");
@@ -46,16 +59,23 @@ $(document).ready(function() {
         // var m = $(this).attr("data-m");
         // var y = $(this).attr("data-y");
         // var d = $(this).attr("data-d");
-        var target = $(".EachDaytimeLineContainer");
-        var dateShower = $(".todayDateAtCalenda");
-        if ($(this).hasClass('planTaken')) {
-            var data = $(this).attr("class").split(" ")[0];
+        if ($(this).html() != "") {
+            var target = $(".eachDayTimeTableToDosContainer");
+            var dateShower = $(".todayDayShower");
+            if ($(this).hasClass('today')) {
+                var data = $(this).attr("class").split(" ")[1];
+            } else if ($(this).hasClass('planTaken')) {
+                var data = $(this).attr("class").split(" ")[0];
+            } else {
+                var data = $(this).attr("class");
+            }
+            target.html(data);
+            dateShower.html($(this).html());
+            $(".timeTableTypeSwitch").click();
+            getTasksFor(data);
         } else {
-            var data = $(this).attr("class");
+            alert("it's not a day");
         }
-        target.html(data);
-        dateShower.html(data);
-        $(".timeTableTypeSwitch").click();
     });
 
 

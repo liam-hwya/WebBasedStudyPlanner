@@ -12,7 +12,6 @@
         $currentPage="dashboard";
     }
 
-
 ?>
 
 <!DOCTYPE html>

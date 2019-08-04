@@ -8,5 +8,6 @@
         $TimeStamp = strtotime($dateYM . '-01');
     }
     $todayDate=date('F, Y', $TimeStamp);
+    $dfToday="d".date('Ymd');
 
 ?>
