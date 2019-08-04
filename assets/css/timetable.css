@@ -90,20 +90,34 @@ td:hover {
         width: 35px;
         height: 35px;
     }
+    .clanderYMshower {
+        font-size: 20px;
+        color: #444;
+        font-weight: bold;
+        color: white;
+        display: none;
+    }
+    .todayYMshower {
+        font-size: 20px;
+        color: #444;
+        font-weight: bold;
+        color: white;
+        display: block;
+    }
     .addNewTaskBtn {
         width: 35px;
         height: 35px;
         margin-left: 20px;
     }
-    .todayDateAtCalenda {
-        font-size: 20px;
-        color: #444;
-        font-weight: bold;
-        color: white;
-    }
     .todayDayShower {
-        font-size: 30px;
-        color: #fff;
+        font-size: 20px;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        color: #333;
+        background: #fff;
+        text-align: center;
+        line-height: 40px;
     }
     .theSpaceBetweenDateNControl {
         flex-grow: 1;
@@ -113,6 +127,13 @@ td:hover {
         height: 30px;
         margin: 0 10px;
         display: none;
+    }
+    .goBackTodayBtn {
+        line-height: 30px;
+        background: #fff;
+        color: #333;
+        text-align: center;
+        border-radius: 50%;
     }
     .changeCalendarMonth:hover {
         cursor: pointer;
@@ -183,7 +204,7 @@ td:hover {
     }
     .newTaskCreator {
         width: 350px;
-        height: 1000px;
+        height: 500px;
         background: #fff;
         margin: 100px auto;
     }

@@ -11,7 +11,8 @@
     }else{
         $currentPage="dashboard";
     }
-    $UtimeUserId=5;
+
+
 ?>
 
 <!DOCTYPE html>
@@ -28,9 +29,10 @@
     <link rel="stylesheet" href="resources/css/recore.css">
     <link rel="stylesheet" href="assets/css/profile.css">
     <link rel="stylesheet" href="assets/css/community.css">
+    <link rel="stylesheet" href="assets/css/taskcreator.css">
 </head>
 
-<body data-page="<?php echo $currentPage;  ?>" data-id="<?php echo $UtimeUserId ?>">
+<body data-calPg="day" data-page="<?php echo $currentPage;  ?>" data-id="<?php echo $UtimeUserId ?>">
     <div class="profileMainContainer" data-UTuser="<?php echo $UTuser; ?>">
         <div class="profileContainer">
             

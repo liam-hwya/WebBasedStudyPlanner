@@ -5,10 +5,15 @@
     font-family: 'ubuntu';
 }
 
+@font-face {
+    src: url(../fonts/MAIAN.TTF);
+    font-family: 'maian';
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: "ubuntu";
+    font-family: 'maian';
     color: #333;
 }
 

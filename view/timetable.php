@@ -1,9 +1,15 @@
 <?php
 include("../model/auth.php");
 include("../model/db_con.php");
+include("../model/today.php");
 $_SESSION['pagename']="timetable";
 $utuser=$_SESSION['UTuser'];
-
+if(isset($_POST['dayPgStatus'])){
+    $dayPgStatus=$_POST['dayPgStatus'];
+}
+if(isset($_POST['monthPgStatus'])){
+    $monthPgStatus=$_POST['monthPgStatus'];
+}
 
 $plannedDates=array();
 $getQuery="SELECT * FROM UTevent";
@@ -18,7 +24,7 @@ if(mysqli_num_rows($UTevents)>0){
 }
 
 // Set your timezone
-date_default_timezone_set('Asia/Tokyo');
+date_default_timezone_set('Asia/Yangon');
 
 // Get prev & next month
 if (isset($_GET['ym'])) {
@@ -40,7 +46,7 @@ $today = date('Y-m-j', time());
 
 // For H3 title
 $html_title = date('F, Y', $timestamp);
-$toDayNum=date('d',$timestamp);
+$toDayNum=date('d');
 
 // Create prev & next month link     mktime(hour,minute,second,month,day,year)
 $prev = date('Y-m', mktime(0, 0, 0, date('m', $timestamp)-1, 1, date('Y', $timestamp)));
@@ -118,17 +124,19 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                 <img src="assets/icons/calendarView.png" class="switchToCalView">
                 <img src="assets/icons/todayTasks.png" class="switchToDayView" style="display:none">
             </div>
-            <div class="todayDateAtCalenda"><?php echo $html_title; ?></div>
+            <div class="todayDateAtCalenda clanderYMshower" style="display:<?php echo $monthPgStatus; ?>"><?php echo $html_title; ?></div>
+            <div class="todayDateAtCalenda todayYMshower" style="display:<?php echo $dayPgStatus; ?>"> <?php echo $todayDate;; ?></div>
             <div class="theSpaceBetweenDateNControl"></div>
-            <div class="changeCalendarMonth" data-id="?ym=<?php echo $prev; ?>"><img src="assets/icons/left.png" alt=""></div>
-            <div class="changeCalendarMonth" data-id="?ym=<?php echo $next; ?>"><img src="assets/icons/right.png" alt=""></div>
-            <div class="todayDayShower"><?php echo $toDayNum; ?></div>
+            <div style="display:<?php echo $monthPgStatus; ?>" class="changeCalendarMonth goBackTodayBtn" data-id=""><?php echo $toDayNum; ?></div>
+            <div style="display:<?php echo $monthPgStatus; ?>" class="changeCalendarMonth" data-id="?ym=<?php echo $prev; ?>"><img src="assets/icons/left.png" alt=""></div>
+            <div style="display:<?php echo $monthPgStatus; ?>" class="changeCalendarMonth" data-id="?ym=<?php echo $next; ?>"><img src="assets/icons/right.png" alt=""></div>
+            <div class="todayDayShower" style="display:<?php echo $dayPgStatus; ?>"><?php echo $toDayNum; ?></div>
             <div class="addNewTaskBtn"><img src="assets/icons/calendarView.png"></div>
         </div>
 
 
     <!-- Each Day View Start -->
-        <div class="eachDayTimeTableContainer">
+        <div class="eachDayTimeTableContainer" style="display:<?php echo $dayPgStatus; ?>">
             
             <div class="EachDaytimeLineContainer">
             <?php
@@ -160,7 +168,7 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
     <!-- Each Day View end -->
 
     <!-- Calendar view Start -->
-        <table class="timeTableBody">
+        <table class="timeTableBody" style="display:<?php echo $monthPgStatus; ?>">
             <tr>
                 <th>SUN</th>
                 <th>MON</th>
@@ -194,6 +202,126 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
 
 </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="newTaskCreatorContainer">
-    <div class="newTaskCreator"></div>
+    <div class="newTaskCreator">
+                
+            <form method="post" class="TaskCreatorForm">
+                <div class="TaskCreatorHeader">
+                    <span>Add New Task</span>
+                    <div class="showColorPickerBtn"></div>
+                </div>
+                <!-- color picker -->
+                <div class="colorPickerBox">
+                     
+                     <?php
+                            $colorQuery="SELECT * FROM utcolors";
+                            $colors=mysqli_query($con,$colorQuery);
+                            while($color=mysqli_fetch_assoc($colors)){
+                                $mycolor= $color['utcolor'];
+                                echo "<div data-color='".$mycolor."' class='colorToPick' style='background:".$mycolor."'></div>";
+                            }
+                        ?>
+                </div>
+                <!-- subject input -->
+                <input type="text" class="utColorHolder" style="display:none;">
+                <input type="text" class="newTasksubject" placeholder="Subject">
+
+                <!-- priority input -->
+                <input type="range" class="newTaskPriority" min="1" max="4">
+
+                <!-- date picker -->
+                <input type="date" class="TCDatePicker" value="<?php echo date('Y-m-d');?>">
+
+
+                <!-- start time start -->
+                <div class="CtTimesPicker">
+                    <select class="startHourPicker">
+                        <?php
+                            $h=1;
+                            while($h<13){
+                                echo "<option value='".$h."'>".$h."</option>";
+                                $h++;
+                            }
+                        ?>
+                    </select>
+                    <select class="startMinutePicker">
+                        
+                        <?php
+                            $m=5;
+                            while($m<60){
+                            echo "<option value='".$m."'>".$m."</option>"; 
+                            $m+=5;
+                            }
+                        ?>
+                    </select>
+                    <select class="startAmPmPicker">
+                        <option value="am">AM</option>
+                        <option value="pm">PM</option>
+                    </select>
+                </div>
+                <!-- start time end -->
+
+                <!-- start time start -->
+                <div class="CtTimesPicker">
+                    <select class="endHourPicker">
+                        <?php
+                            $h=1;
+                            while($h<13){
+                                echo "<option value='".$h."'>".$h."</option>";
+                                $h++;
+                            }
+                        ?>
+                    </select>
+                    <select class="endMinutePicker">
+                        <?php
+                            $m=5;
+                            while($m<60){
+                            echo "<option value='".$m."'>".$m."</option>"; 
+                            $m+=5;
+                            }
+                        ?>
+                    </select>
+                    <select class="endAmPmPicker">
+                        <option value="am">AM</option>
+                        <option value="pm">PM</option>
+                    </select>
+                </div>
+                <!-- start time end -->
+
+                <!-- emotion to do this -->
+                <input type="range" class="newTaskEmotion" min="1" max="5">
+                
+                <!-- save task btn -->
+                <div class="newTaskSaveBtn">Save</div> 
+                <div class="newTaskCancelBtn">Cancel</div> 
+                
+            </form>
+            
+    </div>
 </div>
