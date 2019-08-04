@@ -14,7 +14,7 @@ if(mysqli_num_rows($UTevents)>0){
         array_Push($plannedDates,$UTeventDate);
     }
 }else{
-    echo "fuck";
+    return NULL;
 }
 
 // Set your timezone
@@ -40,6 +40,7 @@ $today = date('Y-m-j', time());
 
 // For H3 title
 $html_title = date('F, Y', $timestamp);
+$toDayNum=date('d',$timestamp);
 
 // Create prev & next month link     mktime(hour,minute,second,month,day,year)
 $prev = date('Y-m', mktime(0, 0, 0, date('m', $timestamp)-1, 1, date('Y', $timestamp)));
@@ -109,23 +110,56 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
     
 </script>
 
-<div class="planContOnMouse">5 things to Do</div>
+<div class="planContOnMouse"></div>
 <div class="timeTable_main_container">
-    <!-- Timetable Calendar View -->
-    <div class="timetable_calander_container">
-
+    <div data-page="month" class="timetable_calander_container">
         <div class="calendar_header">
+            <div class="timeTableTypeSwitch">
+                <img src="assets/icons/calendarView.png" class="switchToCalView">
+                <img src="assets/icons/todayTasks.png" class="switchToDayView" style="display:none">
+            </div>
             <div class="todayDateAtCalenda"><?php echo $html_title; ?></div>
             <div class="theSpaceBetweenDateNControl"></div>
             <div class="changeCalendarMonth" data-id="?ym=<?php echo $prev; ?>"><img src="assets/icons/left.png" alt=""></div>
             <div class="changeCalendarMonth" data-id="?ym=<?php echo $next; ?>"><img src="assets/icons/right.png" alt=""></div>
+            <div class="todayDayShower"><?php echo $toDayNum; ?></div>
+            <div class="addNewTaskBtn"><img src="assets/icons/calendarView.png"></div>
         </div>
 
-        
 
-        
-         
+    <!-- Each Day View Start -->
+        <div class="eachDayTimeTableContainer">
+            
+            <div class="EachDaytimeLineContainer">
+            <?php
+                    $i=1;
+                    while($i<13){
+                        if($i%2 == 0){
+                            echo "<div class='EachDayHours soneTime'>".$i.":00 AM</div>";
+                        }else{
+                            echo "<div class='EachDayHours'>".$i.":00 AM</div>";
+                        }
+                        $i++;
+                    }
 
+                    $r=1;
+                    while($r<13){
+                        if($r%2 == 0){
+                            echo "<div class='EachDayHours soneTime'>".$r.":00 PM</div>";
+                        }else{
+                            echo "<div class='EachDayHours'>".$r.":00 PM</div>";
+                        }
+                        $r++;
+                    }
+                ?>
+            </div>
+            <div class="eachDayTimeTableToDosContainer">
+
+            </div>
+        </div>
+    <!-- Each Day View end -->
+
+    <!-- Calendar view Start -->
         <table class="timeTableBody">
             <tr>
                 <th>SUN</th>
@@ -141,20 +175,25 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                     echo $week;
                 }
             ?>
-            
         </table>
-        <div class="eachDayTimeTable">sadf</div>
-        
-        
-
-
+     <!-- Calendar view End -->       
+    
     </div>
+
+
+
+            
+
+
+<!--Tasks Start-->
     <div class="timetable_plans_conntainer">
-            <?php
-                foreach($plannedDates as $dayWithPlan){
-                    echo $dayWithPlan."<br>";
-                }
-            ?>
+            
     </div>
+<!--Tasks Start-->
 
+
+</div>
+
+<div class="newTaskCreatorContainer">
+    <div class="newTaskCreator"></div>
 </div>

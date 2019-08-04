@@ -5,6 +5,7 @@ $(document).ready(function() {
     //     data: data
     // });
 
+
     $(document).on("mousemove", function(ev) {
         var X = $('body').offset().left;
         var Y = $('body').offset().top;
@@ -41,11 +42,25 @@ $(document).ready(function() {
         // var m = $(this).attr("data-m");
         // var y = $(this).attr("data-y");
         // var d = $(this).attr("data-d");
+        var target = $(".EachDaytimeLineContainer");
+        var dateShower = $(".todayDateAtCalenda");
         if ($(this).hasClass('planTaken')) {
-            alert($(this).attr("class").split(" ")[0]);
+            var data = $(this).attr("class").split(" ")[0];
         } else {
-            alert($(this).attr("class"));
+            var data = $(this).attr("class");
         }
+        target.html(data);
+        dateShower.html(data);
+        $(".timeTableTypeSwitch").click();
+    });
+
+    $(document).on("click", ".timeTableTypeSwitch", function() {
+        $(".switchToCalView").toggle();
+        $(".switchToDayView").toggle();
+        $(".timeTableBody").toggle();
+        $(".changeCalendarMonth").toggle();
+        $(".eachDayTimeTableContainer").toggle();
+        $(".todayDayShower").toggle();
     });
 
 

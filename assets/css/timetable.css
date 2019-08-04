@@ -1,125 +1,190 @@
-            /*extra small*/
-        
-        .today {
-            background: #ee4c4c!important;
-            color: white;
-        }
-        
-        .today:hover {
-            background: #c49b15;
-            color: white;
-        }
-        
-        td:hover {
-            background: #ddd;
-            color: #333;
-        }
-        
-        .planTaken {
-            background: #3ac485;
-            color: white;
-        }
-        
-        @media only screen and (max-width: 600px) {}
-        /*small================================================================================================================*/
-        
-        @media only screen and (min-width: 600px) and (max-width:767px) {}
-        /*medium*/
-        
-        @media only screen and (min-width: 768px) and (max-width:991px) {}
-        /*large=============================================================================================================*/
-        
-        @media only screen and (min-width: 992px) and (max-width:1199px) {}
-        /*extra large======================================================================================================*/
-        
-        @media only screen and (min-width: 1200px) {
-            .planContOnMouse {
-                width: 150px;
-                height: 25px;
-                text-align: center;
-                line-height: 25px;
-                border-radius: 10px;
-                font-size: 13px;
-                background: #f83939;
-                color: white;
-                position: fixed;
-                z-index: 100;
-                display: none;
-            }
-            .timeTable_main_container {
-                width: 100%;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: space-around;
-                align-items: center;
-            }
-            .timetable_calander_container {
-                width: 50%;
-                background: white;
-                margin-bottom: 30px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-                border-radius: 5px;
-            }
-            .calendar_header {
-                width: 100%;
-                height: 70px;
-                background: rgb(80, 69, 231);
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                padding: 0 20px;
-                box-sizing: border-box;
-                border-radius: 5px 5px 0 0;
-            }
-            .todayDateAtCalenda {
-                font-size: 20px;
-                color: #444;
-                font-weight: bold;
-                color: white;
-            }
-            .theSpaceBetweenDateNControl {
-                flex-grow: 1;
-            }
-            .changeCalendarMonth {
-                width: 30px;
-                height: 30px;
-                margin: 0 10px;
-            }
-            .changeCalendarMonth:hover {
-                cursor: pointer;
-            }
-            .changeCalendarMonth img {
-                width: 30px;
-                height: 30px;
-            }
-            .timeTableBody {
-                width: 100%;
-                height: 500px;
-            }
-            .timeTableBody th {
-                font-size: 18px;
-                color: #555;
-                letter-spacing: 0.2ch;
-            }
-            .timeTableBody td {
-                width: 14.2857%;
-                text-align: center;
-            }
-            .timeTableBody td:hover {
-                cursor: pointer;
-            }
-            .timetable_plans_conntainer {
-                width: 50%;
-                height: 100%;
-            }
-            /*eachDay TimeTable*/
-            .eachDayTimeTable {
-                width: 400px;
-                height: 400px;
-                background: green;
-                position: fixed;
-                top: 0;
-                left: 0;
-                z-index: 300;
-            }
+/*extra small*/
+
+.today {
+    background: #ee4c4c!important;
+    color: white;
+}
+
+.today:hover {
+    background: #c49b15;
+    color: white;
+}
+
+td:hover {
+    background: #ddd;
+    color: #333;
+}
+
+.planTaken {
+    background: #3ac485;
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {}
+
+
+/*small================================================================================================================*/
+
+@media only screen and (min-width: 600px) and (max-width:767px) {}
+
+
+/*medium*/
+
+@media only screen and (min-width: 768px) and (max-width:991px) {}
+
+
+/*large=============================================================================================================*/
+
+@media only screen and (min-width: 992px) and (max-width:1199px) {}
+
+
+/*extra large======================================================================================================*/
+
+@media only screen and (min-width: 1200px) {
+    .planContOnMouse {
+        width: 150px;
+        height: 25px;
+        text-align: center;
+        line-height: 25px;
+        border-radius: 10px;
+        font-size: 13px;
+        background: #f83939;
+        color: white;
+        position: fixed;
+        z-index: 100;
+        display: none;
+    }
+    .timeTable_main_container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .timetable_calander_container {
+        width: 50%;
+        background: white;
+        margin-bottom: 30px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+    }
+    .calendar_header {
+        width: 100%;
+        height: 70px;
+        background: rgb(80, 69, 231);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+        border-radius: 5px 5px 0 0;
+    }
+    .timeTableTypeSwitch {
+        width: 35px;
+        height: 35px;
+        margin-right: 20px;
+    }
+    .timeTableTypeSwitch img,
+    .addNewTaskBtn img {
+        width: 35px;
+        height: 35px;
+    }
+    .addNewTaskBtn {
+        width: 35px;
+        height: 35px;
+        margin-left: 20px;
+    }
+    .todayDateAtCalenda {
+        font-size: 20px;
+        color: #444;
+        font-weight: bold;
+        color: white;
+    }
+    .todayDayShower {
+        font-size: 30px;
+        color: #fff;
+    }
+    .theSpaceBetweenDateNControl {
+        flex-grow: 1;
+    }
+    .changeCalendarMonth {
+        width: 30px;
+        height: 30px;
+        margin: 0 10px;
+        display: none;
+    }
+    .changeCalendarMonth:hover {
+        cursor: pointer;
+    }
+    .changeCalendarMonth img {
+        width: 30px;
+        height: 30px;
+    }
+    .timeTableBody {
+        width: 100%;
+        height: 500px;
+        display: none;
+    }
+    .timeTableBody th {
+        font-size: 18px;
+        color: #555;
+        letter-spacing: 0.2ch;
+    }
+    .timeTableBody td {
+        width: 14.2857%;
+        text-align: center;
+    }
+    .timeTableBody td:hover {
+        cursor: pointer;
+    }
+    /*eachDay TimeTable*/
+    .eachDayTimeTableContainer {
+        width: 100%;
+        height: auto;
+        background: white;
+        display: flex;
+        flex-direction: row;
+    }
+    .EachDaytimeLineContainer {
+        width: 100px;
+        height: 100%;
+    }
+    .EachDayHours {
+        width: 100%;
+        height: 50px;
+        background: #eee;
+        text-align: center;
+        line-height: 50px;
+        color: #333;
+    }
+    .soneTime {
+        background: #ddd;
+    }
+    .eachDayTimeTableToDosContainer {
+        flex-grow: 1;
+    }
+    /*show all tasks*/
+    .timetable_plans_conntainer {
+        width: 50%;
+        height: 100%;
+    }
+    /*tasks Creator*/
+    .newTaskCreatorContainer {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        top: 0;
+        left: 0;
+        z-index: 200;
+        overflow-y: scroll;
+        display: none;
+    }
+    .newTaskCreator {
+        width: 350px;
+        height: 1000px;
+        background: #fff;
+        margin: 100px auto;
+    }
+}
