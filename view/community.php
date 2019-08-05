@@ -1,7 +1,7 @@
 <?php
     
-    include("../model/auth.php");
-    include("../model/getuserdatas.php");
+    require_once("../model/auth.php");
+    require_once("../model/getuserdatas.php");
     $_SESSION['pagename']="community";
     $UTuser=$_SESSION['UTuser'];
     $firstName=userData($UTuser,'firstName');

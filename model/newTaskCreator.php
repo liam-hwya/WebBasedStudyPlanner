@@ -1,9 +1,9 @@
 <?php
 
-    include("auth.php");
-    include("db_con.php");
+    require_once("auth.php");
+    require_once("db_con.php");
 
-
+        $uid=$_POST['uid'];
         $subject=$_POST['taskSubject'];
         $date=$_POST['taskDate'];
         $sHour=$_POST['shour'];
@@ -16,10 +16,11 @@
         $emotion=$_POST['taskEmotion'];
         $dFormet=$_POST['dformat'];
         $utColor=$_POST['utColor'];
+
         
 
-        $addQuery="INSERT INTO uttask (tasksubject,taskdate,shour,sminute,sampm,ehour,eminute,eampm,priority,emotion,dformat,utColor)
-        VALUES('$subject','$date','$sHour','$sMinute','$sAmPm','$eHour','$eMinute','$eAmPm','$priority','$emotion','$dFormet','$utColor')";
+        $addQuery="INSERT INTO uttask (userid,tasksubject,taskdate,shour,sminute,sampm,ehour,eminute,eampm,priority,emotion,dformat,utColor)
+        VALUES('$uid','$subject','$date','$sHour','$sMinute','$sAmPm','$eHour','$eMinute','$eAmPm','$priority','$emotion','$dFormet','$utColor')";
         $taskAdd=mysqli_query($con,$addQuery);
         if($taskAdd){
             //dosomething

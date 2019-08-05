@@ -84,6 +84,9 @@ $(document).ready(function() {
         $(".switchToDayView").toggle();
         $(".timeTableBody").toggle();
         $(".changeCalendarMonth").toggle();
+        if($( window ).width()<768){
+             $(".timetable_plans_conntainer").toggle();
+        }
         $(".eachDayTimeTableContainer").toggle();
         $(".todayDayShower").toggle();
         $(".clanderYMshower").toggle();
@@ -125,8 +128,10 @@ $(document).ready(function() {
         var D = ymd[2];
         var dformat = "d" + Y + M + D;
         var utColor = $(".utColorHolder").val();
-
-        console.log(utColor);
+        if(utColor==""){
+            var utColor="#3AC485";
+        }
+        var uid=$(this).attr("data-uid");
 
         $.post("model/newTaskCreator.php", {
             taskSubject: taskSubject,
@@ -140,7 +145,8 @@ $(document).ready(function() {
             taskPriority: taskPriority,
             taskEmotion: taskEmotion,
             dformat: dformat,
-            utColor: utColor
+            utColor: utColor,
+            uid:uid
         });
 
         $(".newTaskCreatorContainer").toggle();

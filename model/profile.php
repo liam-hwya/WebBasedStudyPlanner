@@ -1,7 +1,7 @@
 <?php
     
-    include("auth.php");
-    include("getuserdatas.php");
+    require_once("auth.php");
+    require_once("getuserdatas.php");
     $UTuser=$_SESSION['UTuser'];
     $firstName=userData($UTuser,'firstName');
     $lastName=userData($UTuser,'lastName');

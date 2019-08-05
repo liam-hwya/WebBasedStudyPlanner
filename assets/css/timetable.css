@@ -20,7 +20,171 @@ td:hover {
     color: white;
 }
 
-@media only screen and (max-width: 600px) {}
+@media only screen and (max-width: 600px) {
+    .planContOnMouse {
+        width: 150px;
+        height: 25px;
+        text-align: center;
+        line-height: 25px;
+        border-radius: 10px;
+        font-size: 13px;
+        background: #f83939;
+        color: white;
+        position: fixed;
+        z-index: 100;
+        display: none;
+    }
+    .timeTable_main_container {
+        width: 100%;
+        display: flex;
+        flex-direction:column;
+    }
+    .timetable_calander_container {
+        width: 100%;
+        background: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .calendar_header {
+        width: 100%;
+        height: 70px;
+        background: rgb(80, 69, 231);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    .timeTableTypeSwitch {
+        width: 35px;
+        height: 35px;
+        margin-right: 20px;
+    }
+    .timeTableTypeSwitch img,
+    .addNewTaskBtn img {
+        width: 35px;
+        height: 35px;
+    }
+    .clanderYMshower {
+        font-size: 20px;
+        color: #444;
+        font-weight: bold;
+        color: white;
+        display: none;
+    }
+    .todayYMshower {
+        font-size: 20px;
+        color: #444;
+        font-weight: bold;
+        color: white;
+        display: block;
+    }
+    .addNewTaskBtn {
+        width: 35px;
+        height: 35px;
+        margin-left: 20px;
+    }
+    .todayDayShower {
+        font-size: 20px;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        color: #333;
+        background: #fff;
+        text-align: center;
+        line-height: 40px;
+    }
+    .theSpaceBetweenDateNControl {
+        flex-grow: 1;
+    }
+    .changeCalendarMonth {
+        width: 30px;
+        height: 30px;
+        margin: 0 10px;
+        display: none;
+    }
+    .goBackTodayBtn {
+        line-height: 30px;
+        background: #fff;
+        color: #333;
+        text-align: center;
+        border-radius: 50%;
+    }
+    .changeCalendarMonth:hover {
+        cursor: pointer;
+    }
+    .changeCalendarMonth img {
+        width: 30px;
+        height: 30px;
+    }
+    .timeTableBody {
+        width: 100%;
+        height: 500px;
+        display: none;
+    }
+    .timeTableBody th {
+        font-size: 18px;
+        color: #555;
+        letter-spacing: 0.2ch;
+    }
+    .timeTableBody td {
+        width: 14.2857%;
+        text-align: center;
+    }
+    .timeTableBody td:hover {
+        cursor: pointer;
+    }
+    /*eachDay TimeTable*/
+    .eachDayTimeTableContainer {
+        width: 100%;
+        height: auto;
+        background: white;
+        display: flex;
+        flex-direction: row;
+    }
+    .EachDaytimeLineContainer {
+        width: 100px;
+        height: 100%;
+    }
+    .EachDayHours {
+        width: 100%;
+        height: 50px;
+        background: #eee;
+        text-align: center;
+        line-height: 50px;
+        color: #333;
+    }
+    .soneTime {
+        background: #ddd;
+    }
+    .eachDayTimeTableToDosContainer {
+        flex-grow: 1;
+    }
+    /*show all tasks*/
+    .timetable_plans_conntainer {
+        width:100%;
+        background:green;
+        display:none;
+        height:500px;
+    }
+    /*tasks Creator*/
+    .newTaskCreatorContainer {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        top: 0;
+        left: 0;
+        z-index: 200;
+        overflow-y: scroll;
+        display: none;
+    }
+    .newTaskCreator {
+        width: 350px;
+        height: 500px;
+        background: #fff;
+        margin: 100px auto;
+    }
+}
 
 
 /*small================================================================================================================*/
@@ -189,6 +353,7 @@ td:hover {
     .timetable_plans_conntainer {
         width: 50%;
         height: 100%;
+        background:green;
     }
     /*tasks Creator*/
     .newTaskCreatorContainer {

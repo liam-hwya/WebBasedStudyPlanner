@@ -1,9 +1,11 @@
 <?php
-include("../model/auth.php");
-include("../model/db_con.php");
-include("../model/today.php");
+require_once("../model/auth.php");
+require_once("../model/db_con.php");
+require_once("../model/today.php");
+require_once("../model/getuserdatas.php");
 $_SESSION['pagename']="timetable";
-$utuser=$_SESSION['UTuser'];
+$UTuserEmail=$_SESSION['UTuser'];
+$UTuserid=userData($UTuserEmail,'id');
 if(isset($_POST['dayPgStatus'])){
     $dayPgStatus=$_POST['dayPgStatus'];
 }
@@ -12,7 +14,7 @@ if(isset($_POST['monthPgStatus'])){
 }
 
 $plannedDates=array();
-$getQuery="SELECT * FROM uttask";
+$getQuery="SELECT * FROM uttask WHERE userid='$UTuserid'";
 $UTevents=mysqli_query($con,$getQuery);
 if(mysqli_num_rows($UTevents)>0){
     while($UTevent=mysqli_fetch_assoc($UTevents)){
@@ -128,6 +130,7 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
 
 <div class="planContOnMouse"></div>
 <div class="timeTable_main_container">
+
     <div data-page="month" class="timetable_calander_container">
         <div class="calendar_header">
             <div class="timeTableTypeSwitch">
@@ -172,7 +175,7 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                 ?>
             </div>
             <div class="eachDayTimeTableToDosContainer">
-                <?php include("../model/getTask.php"); ?>
+                <?php require_once("../model/getTask.php"); ?>
             </div>
         </div>
     <!-- Each Day View end -->
@@ -204,8 +207,8 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
 
 
 <!--Tasks Start-->
-    <div class="timetable_plans_conntainer">
-            
+    <div class="timetable_plans_conntainer" style="display:<?php echo $monthPgStatus; ?>">
+            Love YOu Ma Ma
     </div>
 <!--Tasks Start-->
 
@@ -328,7 +331,7 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                 <input type="range" class="newTaskEmotion" min="1" max="5">
                 
                 <!-- save task btn -->
-                <div class="newTaskSaveBtn">Save</div> 
+                <div data-uid="<?php echo $UTuserid; ?>" class="newTaskSaveBtn">Save</div> 
                 <div class="newTaskCancelBtn">Cancel</div> 
                 
             </form>

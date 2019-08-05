@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("db_con.php");
+    require_once("db_con.php");
 
     function securer($pass){
         $pass=md5($pass);
