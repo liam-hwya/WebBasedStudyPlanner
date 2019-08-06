@@ -292,6 +292,12 @@
     .postComment {
         width: 50%;
         text-align: center;
+        line-height: 40px;
+    }
+    .postLike:hover,
+    .postComment:hover {
+        cursor: pointer;
+        background: #ddd;
     }
     /*============================================= side bar================================== */
     .communitySearch {

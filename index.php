@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="assets/css/taskcreator.css">
     <link rel="stylesheet" href="assets/css/task.css">
     <link rel="stylesheet" href="assets/css/projects.css">
+    <link rel="stylesheet" href="assets/css/analyse.css">
 </head>
 
 <body data-calPg="day" data-page="<?php echo $currentPage;  ?>" data-id="<?php echo $UtimeUserId ?>">
