@@ -4,10 +4,12 @@ $(document).ready(function() {
     // $(".utime_calendar").load("backend.php", {
     //     data: data
     // });
-    function getTasksFor(dformat) {
-        taskHolder = $(".eachDayTimeTableToDosContainer");
-        taskHolder.load("model/getTask.php", {
-            dformat: dformat
+
+    function tasksShower(date) {
+        var target = $(".timetable_plans_conntainer");
+        var date = date;
+        target.load("model/getTask.php", {
+            date: date
         });
     }
 
@@ -24,15 +26,17 @@ $(document).ready(function() {
     });
 
     $(document).on("mouseover", "td", function() {
-        if ($(this).html() != "") {
-            $(".planContOnMouse").css("display", "block");
-            if ($(this).hasClass("planTaken")) {
-                $(".planContOnMouse").css("background", "green");
+        if ($(window).width() > 768) {
+            if ($(this).html() != "") {
+                $(".planContOnMouse").css("display", "block");
+                if ($(this).hasClass("planTaken")) {
+                    $(".planContOnMouse").css("background", "green");
+                }
+                $(".planContOnMouse").html($(this).attr("class").split(" ")[0]);
+            } else {
+                $(".planContOnMouse").css("display", "none");
+                $(".planContOnMouse").css("background", "red");
             }
-            $(".planContOnMouse").html($(this).attr("class").split(" ")[0]);
-        } else {
-            $(".planContOnMouse").css("display", "none");
-            $(".planContOnMouse").css("background", "red");
         }
     });
 
@@ -60,8 +64,7 @@ $(document).ready(function() {
         // var y = $(this).attr("data-y");
         // var d = $(this).attr("data-d");
         if ($(this).html() != "") {
-            var target = $(".eachDayTimeTableToDosContainer");
-            var dateShower = $(".todayDayShower");
+            var target = $(".timetable_plans_conntainer");
             if ($(this).hasClass('today')) {
                 var data = $(this).attr("class").split(" ")[1];
             } else if ($(this).hasClass('planTaken')) {
@@ -69,29 +72,14 @@ $(document).ready(function() {
             } else {
                 var data = $(this).attr("class");
             }
-            target.html(data);
-            dateShower.html($(this).html());
-            $(".timeTableTypeSwitch").click();
-            getTasksFor(data);
+            tasksShower(data)
         } else {
             alert("it's not a day");
         }
     });
 
 
-    $(document).on("click", ".timeTableTypeSwitch", function() {
-        $(".switchToCalView").toggle();
-        $(".switchToDayView").toggle();
-        $(".timeTableBody").toggle();
-        $(".changeCalendarMonth").toggle();
-        if($( window ).width()<768){
-             $(".timetable_plans_conntainer").toggle();
-        }
-        $(".eachDayTimeTableContainer").toggle();
-        $(".todayDayShower").toggle();
-        $(".clanderYMshower").toggle();
-        $(".todayYMshower").toggle();
-    });
+
 
     $(document).on("click", ".addNewTaskBtn", function() {
         $(".newTaskCreatorContainer").toggle();
@@ -128,10 +116,10 @@ $(document).ready(function() {
         var D = ymd[2];
         var dformat = "d" + Y + M + D;
         var utColor = $(".utColorHolder").val();
-        if(utColor==""){
-            var utColor="#3AC485";
+        if (utColor == "") {
+            var utColor = "#3AC485";
         }
-        var uid=$(this).attr("data-uid");
+        var uid = $(this).attr("data-uid");
 
         $.post("model/newTaskCreator.php", {
             taskSubject: taskSubject,
@@ -146,7 +134,7 @@ $(document).ready(function() {
             taskEmotion: taskEmotion,
             dformat: dformat,
             utColor: utColor,
-            uid:uid
+            uid: uid
         });
 
         $(".newTaskCreatorContainer").toggle();

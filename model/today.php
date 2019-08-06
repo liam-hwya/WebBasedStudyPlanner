@@ -9,5 +9,10 @@
     }
     $todayDate=date('F, Y', $TimeStamp);
     $dfToday="d".date('Ymd');
+    $forDformat=date('Ymd');
+    $todayDformat="d".$forDformat;
+    $nextDformat=date('Ymd');
+    $nextD=$nextDformat+1;
+    $nextdformat="d".$nextD;
 
 ?>

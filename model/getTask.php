@@ -5,8 +5,8 @@
     require_once("getuserdatas.php");
     $UTuserEmail=$_SESSION['UTuser'];
     $UTuserid=userData($UTuserEmail,'id');
-    if(isset($_POST['dformat'])){
-        $dformat=$_POST['dformat'];
+    if(isset($_POST['date'])){
+        $dformat=$_POST['date'];
     }else{
         $dformat=$dfToday;
     }

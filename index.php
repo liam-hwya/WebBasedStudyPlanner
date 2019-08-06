@@ -80,10 +80,6 @@
                     <div class="menu_icon"><img src="assets/icons/exam.png"></div>
                     <div class="menu_text">Exam</div>
                 </div>
-                <div id="analyse" class="menu hideOnSmall" >
-                    <div class="menu_icon"><img src="assets/icons/timeline.png"></div>
-                    <div class="menu_text">Time Line</div>
-                </div>
                 <div id="myclass" class="menu " >
                     <div class="menu_icon"><img src="assets/icons/class.png"></div>
                     <div class="menu_text">My Class</div>

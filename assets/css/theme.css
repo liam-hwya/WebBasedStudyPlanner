@@ -309,4 +309,16 @@ body {
     .menuAtTop {
         display: none;
     }
+    #analyse {
+        display: block !important;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+    }
+    #analyse img {
+        width: 30px;
+        height: 30px;
+        margin: 10px;
+        filter: invert(100%);
+    }
 }

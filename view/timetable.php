@@ -6,12 +6,16 @@ require_once("../model/getuserdatas.php");
 $_SESSION['pagename']="timetable";
 $UTuserEmail=$_SESSION['UTuser'];
 $UTuserid=userData($UTuserEmail,'id');
-if(isset($_POST['dayPgStatus'])){
-    $dayPgStatus=$_POST['dayPgStatus'];
-}
-if(isset($_POST['monthPgStatus'])){
-    $monthPgStatus=$_POST['monthPgStatus'];
-}
+
+function twoDigit($num){
+    if($num<10){
+        $num="0".$num;
+        return $num;
+    }else{
+        return $num;
+    }
+};
+
 
 $plannedDates=array();
 $getQuery="SELECT * FROM uttask WHERE userid='$UTuserid'";
@@ -131,55 +135,16 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
 
     <div data-page="month" class="timetable_calander_container">
         <div class="calendar_header">
-            <div class="timeTableTypeSwitch">
-                <img src="assets/icons/calendarView.png" class="switchToCalView">
-                <img src="assets/icons/todayTasks.png" class="switchToDayView" style="display:none">
-            </div>
-            <div class="todayDateAtCalenda clanderYMshower" style="display:<?php echo $monthPgStatus; ?>"><?php echo $html_title; ?></div>
-            <div id="<?php echo $dfToday; ?>" class="todayDateAtCalenda todayYMshower" style="display:<?php echo $dayPgStatus; ?>"> <?php echo $todayDate; ?></div>
+            <div class="todayDateAtCalenda clanderYMshower"><?php echo $html_title; ?></div>
             <div class="theSpaceBetweenDateNControl"></div>
-            <div style="display:<?php echo $monthPgStatus; ?>" class="changeCalendarMonth goBackTodayBtn" data-id=""><?php echo $toDayNum; ?></div>
-            <div style="display:<?php echo $monthPgStatus; ?>" class="changeCalendarMonth" data-id="?ym=<?php echo $prev; ?>"><img src="assets/icons/left.png" alt=""></div>
-            <div style="display:<?php echo $monthPgStatus; ?>" class="changeCalendarMonth" data-id="?ym=<?php echo $next; ?>"><img src="assets/icons/right.png" alt=""></div>
-            <div class="todayDayShower" style="display:<?php echo $dayPgStatus; ?>"><?php echo $toDayNum; ?></div>
-            <div class="addNewTaskBtn"><img src="assets/icons/calendarView.png"></div>
+            <div class="changeCalendarMonth goBackTodayBtn" data-id=""><?php echo $toDayNum; ?></div>
+            <div class="changeCalendarMonth" data-id="?ym=<?php echo $prev; ?>"><img src="assets/icons/left.png" alt=""></div>
+            <div class="changeCalendarMonth" data-id="?ym=<?php echo $next; ?>"><img src="assets/icons/right.png" alt=""></div>
+            <div class="addNewTaskBtn"><img src="assets/icons/add.png"></div>
         </div>
-
-
-    <!-- Each Day View Start -->
-        <div class="eachDayTimeTableContainer" style="display:<?php echo $dayPgStatus; ?>">
-            
-            <div class="EachDaytimeLineContainer">
-            <?php
-                    $i=1;
-                    while($i<13){
-                        if($i%2 == 0){
-                            echo "<div class='EachDayHours soneTime'>".$i.":00 AM</div>";
-                        }else{
-                            echo "<div class='EachDayHours'>".$i.":00 AM</div>";
-                        }
-                        $i++;
-                    }
-
-                    $r=1;
-                    while($r<13){
-                        if($r%2 == 0){
-                            echo "<div class='EachDayHours soneTime'>".$r.":00 PM</div>";
-                        }else{
-                            echo "<div class='EachDayHours'>".$r.":00 PM</div>";
-                        }
-                        $r++;
-                    }
-                ?>
-            </div>
-            <div class="eachDayTimeTableToDosContainer">
-                <?php require_once("../model/getTask.php"); ?>
-            </div>
-        </div>
-    <!-- Each Day View end -->
 
     <!-- Calendar view Start -->
-        <table class="timeTableBody" style="display:<?php echo $monthPgStatus; ?>">
+        <table class="timeTableBody">
             <tr>
                 <th>SUN</th>
                 <th>MON</th>
@@ -201,12 +166,106 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
 
 
 
-            
-
-
+        
 <!--Tasks Start-->
-    <div class="timetable_plans_conntainer" style="display:<?php echo $monthPgStatus; ?>">
-            <!-- Today ,Tomorrow, Coming Tasks are here -->
+    <div class="timetable_plans_conntainer">
+                <!-- <div class="taskTimeLineBtnHolder">
+                    <div class="timeLineBtn" >
+                        <div class="menu_icon"><img src="assets/icons/timeline.png"></div>
+                        <div class="menu_text">Time Line</div>
+                    </div>
+                </div> -->
+
+           <?php    
+                
+                //for today
+                echo "<div class='taskDayTitle'>Today</div>";
+                $getToday="SELECT * FROM uttask WHERE userid='$UTuserid' AND dformat='$todayDformat'";
+                $gettdTasks=mysqli_query($con,$getToday);
+                if(mysqli_num_rows($gettdTasks)>0){
+                    while($UTtask=mysqli_fetch_assoc($gettdTasks)){
+                        $shour= $UTtask['shour'];
+                        $sminute=$UTtask['sminute'];
+                        $sampm=$UTtask['sampm'];
+                        $ehour= $UTtask['ehour'];
+                        $eminute=$UTtask['eminute'];
+                        $eampm=$UTtask['eampm'];
+                        $taskDate= $UTtask['taskdate'];
+                        $taskColor=$UTtask['utColor'];
+                        $fromTime=twoDigit($shour).":".twoDigit($sminute)." ".$sampm;
+                        $toTime=twoDigit($ehour).":".twoDigit($eminute)." ".$eampm;
+                        $UTtask= $UTtask['tasksubject'];
+                        echo "<div class='UTeachTaskContainer' style='border-right-color:".$taskColor."'>
+                            <div class='utTaskTitle'>".$UTtask."</div>
+                            <div class='utTaskTime'>
+                                <div class='utTaskHours'>".$fromTime." to ".$toTime."</div>
+                                <div class='utTaskDate'>".$taskDate."</div>
+                            </div>
+                        </div>";
+                    }
+                }else{
+                    echo "No Task For Today";
+                }
+
+
+                //for tomorrow
+                echo "<div class='taskDayTitle'>Tomorrow</div>";
+                $getNextQuery="SELECT * FROM uttask WHERE userid='$UTuserid' AND dformat='$nextdformat'";
+                $getNextTasks=mysqli_query($con,$getNextQuery);
+                if(mysqli_num_rows($getNextTasks)>0){
+                    while($UTtask=mysqli_fetch_assoc($getNextTasks)){
+                        $shour= $UTtask['shour'];
+                        $sminute=$UTtask['sminute'];
+                        $sampm=$UTtask['sampm'];
+                        $ehour= $UTtask['ehour'];
+                        $eminute=$UTtask['eminute'];
+                        $eampm=$UTtask['eampm'];
+                        $taskDate= $UTtask['taskdate'];
+                        $taskColor=$UTtask['utColor'];
+                        $fromTime=twoDigit($shour).":".twoDigit($sminute)." ".$sampm;
+                        $toTime=twoDigit($ehour).":".twoDigit($eminute)." ".$eampm;
+                        $UTtask= $UTtask['tasksubject'];
+                        echo "<div class='UTeachTaskContainer' style='border-right-color:".$taskColor."'>
+                            <div class='utTaskTitle'>".$UTtask."</div>
+                            <div class='utTaskTime'>
+                                <div class='utTaskHours'>".$fromTime." to ".$toTime."</div>
+                                <div class='utTaskDate'>".$taskDate."</div>
+                            </div>
+                        </div>";
+                    }
+                }else{
+                    echo "No Task For Tomorrow";
+                }
+                
+                //for other days
+                echo "<div class='taskDayTitle'>Latter</div>";
+                $getQuery="SELECT * FROM uttask WHERE userid='$UTuserid' AND dformat != '$nextdformat' AND dformat!='$todayDformat'";
+                $getTasks=mysqli_query($con,$getQuery);
+                if(mysqli_num_rows($getTasks)>0){
+                    while($UTtask=mysqli_fetch_assoc($getTasks)){
+                        $shour= $UTtask['shour'];
+                        $sminute=$UTtask['sminute'];
+                        $sampm=$UTtask['sampm'];
+                        $ehour= $UTtask['ehour'];
+                        $eminute=$UTtask['eminute'];
+                        $eampm=$UTtask['eampm'];
+                        $taskDate= $UTtask['taskdate'];
+                        $taskColor=$UTtask['utColor'];
+                        $fromTime=twoDigit($shour).":".twoDigit($sminute)." ".$sampm;
+                        $toTime=twoDigit($ehour).":".twoDigit($eminute)." ".$eampm;
+                        $UTtask= $UTtask['tasksubject'];
+                        echo "<div class='UTeachTaskContainer' style='border-right-color:".$taskColor."'>
+                            <div class='utTaskTitle'>".$UTtask."</div>
+                            <div class='utTaskTime'>
+                                <div class='utTaskHours'>".$fromTime." to ".$toTime."</div>
+                                <div class='utTaskDate'>".$taskDate."</div>
+                            </div>
+                        </div>";
+                    }
+                }else{
+                    echo "No More Task";
+                }
+           ?>
     </div>
 <!--Tasks Start-->
 
