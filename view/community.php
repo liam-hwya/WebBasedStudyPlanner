@@ -106,16 +106,16 @@ human intelligence processes by machines, especially computer systems.
                 <div class="postHeader">
                     <div class="postProfilePicture"><img src="assets/images/nopp.png"></div>
                     <div class="postData">
-                        <div class="postUserName">Htet Waiyan Aung</div>
-                        <div class="postTime">2019 May,22</div>
+                        <div class="postUserName">Artificial intelligence</div>
+                        <div class="postTime">other info</div>
                     </div>
                 </div>
                 <br>
                 <div class="postHeader">
                     <div class="postProfilePicture"><img src="assets/images/nopp.png"></div>
                     <div class="postData">
-                        <div class="postUserName">Htet Waiyan Aung</div>
-                        <div class="postTime">2019 May,22</div>
+                        <div class="postUserName">Progrimming</div>
+                        <div class="postTime">other ingo</div>
                     </div>
                 </div>
     </div>  

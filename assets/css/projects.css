@@ -103,12 +103,18 @@
     }
     .addNewProjectBtn {
         width: 70%;
+        height:70px;
         margin: 20px;
         border-radius: 5px;
-        height: 50px;
-        text-align: center;
-        line-height: 50px;
         background: #d3daee;
+        display: flex;
+        justify-content:center;
+        align-items:center;
+    }
+    .addNewProjectBtn img{
+        width:50px;
+        height:50px;
+        opacity:0.5;
     }
     .addNewProjectBtn:hover {
         background: #cdd5e9;

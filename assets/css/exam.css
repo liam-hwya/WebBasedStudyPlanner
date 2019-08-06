@@ -1,0 +1,152 @@
+.text-red{
+    color:rgb(218, 65, 65);
+}
+.text-green{
+    color:rgb(65, 218, 83);
+}
+/*extra small*/
+
+@media only screen and (max-width: 600px) {}
+
+
+/*small================================================================================================================*/
+
+@media only screen and (min-width: 600px) and (max-width:767px) {}
+
+
+/*medium*/
+
+@media only screen and (min-width: 768px) and (max-width:991px) {}
+
+
+/*large=============================================================================================================*/
+
+@media only screen and (min-width: 992px) and (max-width:1199px) {}
+
+
+/*extra large======================================================================================================*/
+
+@media only screen and (min-width: 1200px) {
+    .examMainContainer{
+        width:100%;
+        height:100%;
+        display:flex;
+        flex-direction:row;
+        flex-wrap:nowrap;
+    }
+    .exampListContainer{
+        width:50%;
+        height:100%;
+        padding:20px;
+        box-sizing: border-box;
+    }
+    .examInListContainer{
+        width:80%;
+        height:100px;
+        background:#fff;
+        border-radius:5px;
+        box-shadow:0 0 10px rgba(0,0,0,0.2);
+        margin:30px;
+    }
+    .examTitle{
+        width:100%;
+        padding:15px;
+        box-sizing: border-box;
+        display:flex;
+        justify-content: space-between;
+    }
+    .examTitleName{
+        font-size:20px;
+        font-weight: bold;
+    }
+    .examTitleStatus{
+        font-size:12px;
+        padding:5px 10px;
+        border-radius:10px;
+        font-weight: bold;
+    }
+    .examSubList{
+        width:100%;
+        display:flex;
+        flex-wrap: wrap;
+    }
+    .subjectsInExamList{
+        font-size:14px;
+        padding:5px 10px;
+        background:#eee;
+        border-radius:10px;
+        margin:10px;
+    }
+    .addNewExamBtn{
+        width:80%;
+        height:100px;
+        background:rgb(243, 243, 243);
+        border-radius:5px;
+        box-shadow:0 0 5px rgba(0,0,0,0.2);
+        margin:30px;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+    }
+    .addNewExamBtn:hover{
+        box-shadow:0 0 2px rgba(0,0,0,0.2);
+        cursor: pointer;;
+    }
+    .addNewExamBtn img{
+        width:60px;
+        height:60px;
+        opacity: 0.5;
+    }
+
+    /* Each Exam */
+    .eachExamContainer{
+        width:50%;
+        height:100%;
+        background:#fff;
+        padding:20px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        box-sizing: border-box;
+    }
+    .eachExamHeader{
+        width:100%;
+        height:60px;
+        display:flex;
+        flex-direction:row;
+        background:#ddd;
+    }
+    .eachExamTitle{
+        font-size:20px;
+        font-weight: bold;
+        padding:20px;
+    }
+    .eachExamSubjectList{
+        width:90%;
+        margin:10px 5%;
+    }
+
+    .eachExamSubjectList table{
+        width:100%;
+    }
+    .eachExamTableHeader td{
+        font-size:17px;
+        font-weight: bold;
+    }
+    .trbg1{
+        background:rgb(241, 241, 241);
+    }
+    .eachExamContainer td{
+        height:40px;
+        overflow:hidden;
+        font-size:15px;
+        padding:0 10px;
+        margin:0;
+    }
+    .eachExamContainer td img{
+        width:20px;
+        height:20px;
+        opacity:0.5;
+    }
+    .settingsForEachSubjects{
+        background:white;
+    }
+}

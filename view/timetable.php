@@ -206,7 +206,7 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
 
 <!--Tasks Start-->
     <div class="timetable_plans_conntainer" style="display:<?php echo $monthPgStatus; ?>">
-            Love YOu Ma Ma
+            <!-- Today ,Tomorrow, Coming Tasks are here -->
     </div>
 <!--Tasks Start-->
 

@@ -32,6 +32,8 @@
     <link rel="stylesheet" href="assets/css/task.css">
     <link rel="stylesheet" href="assets/css/projects.css">
     <link rel="stylesheet" href="assets/css/analyse.css">
+    <link rel="stylesheet" href="assets/css/myclass.css">
+    <link rel="stylesheet" href="assets/css/exam.css">
 </head>
 
 <body data-calPg="day" data-page="<?php echo $currentPage;  ?>" data-id="<?php echo $UtimeUserId ?>">

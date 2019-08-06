@@ -1,0 +1,114 @@
+/*extra small*/
+
+@media only screen and (max-width: 600px) {}
+
+
+/*small================================================================================================================*/
+
+@media only screen and (min-width: 600px) and (max-width:767px) {}
+
+
+/*medium*/
+
+@media only screen and (min-width: 768px) and (max-width:991px) {}
+
+
+/*large=============================================================================================================*/
+
+@media only screen and (min-width: 992px) and (max-width:1199px) {}
+
+
+/*extra large======================================================================================================*/
+
+@media only screen and (min-width: 1200px) {
+    .myClassMainContainer{
+        width:100%;
+        height:100%;
+    }
+    .myClassMenus{
+        display:flex;
+        flex-direction:row;
+    }
+    .myClassMenu{
+        height:50px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        background:#fff;
+        margin:10px;
+        align-items: center;
+        padding:0 20px;
+        border-radius:5px;
+        box-shadow:0 0 10px rgba(0,0,0,0.2);
+    }
+    .myClassMenu:hover{
+        cursor:pointer;
+    }
+    .myClassMenu img{
+        width:30px;
+        height:30px;
+
+    }
+    .myClassMenu span{
+        margin-left:10px;
+    }
+    .activeMyClassMenu{
+        border-bottom:solid 4px rgb(105, 209, 53);
+    }
+
+    .myClassDataContainer{
+        width:100%;
+        display:flex;
+        flex-direction:row;
+    }
+    .myTeacher{
+        width:220px;
+        background:#fff;
+        border-radius:5px;
+        box-shadow:0 0 10px rgba(0,0,0,0.2);
+        margin:15px;
+        padding-bottom:20px;
+    }
+    .myTeacherImage{
+        width:120px;
+        height:120px;
+        margin:20px 50px;
+        background:#eee;
+        border-radius:50%;
+    }
+    .myTeacherImage img{
+        height:110px;
+        width:110px;
+        margin:5px;
+        opacity:0.5;
+    }
+    .myTeacherName{
+        width:100%;
+        font-size:20px;
+        text-align:center;
+        color:#333;
+    }
+    .myTeacherSubject{
+        width:100%;
+        font-size:15px;
+        text-align:center;
+        color:#555;
+        line-height:30px;
+    }
+    .myTeacherPhone,.myTeacherAdd{
+        display:flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding:10px;
+        box-sizing: border-box;
+        color:#333;
+        font-size:15px;
+    }
+    .myTeacherPhone img,.myTeacherAdd img{
+        width:25px;
+        height:25px;
+        margin-right:10px;
+        opacity:0.5;
+    }
+}

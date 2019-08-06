@@ -10,7 +10,7 @@
     color: white;
 }
 
-td:hover {
+.timeTableBody td:hover {
     background: #ddd;
     color: #333;
 }

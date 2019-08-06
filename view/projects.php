@@ -7,7 +7,7 @@
     
     <div class="projectListContainer">
 
-        <div class="addNewProjectBtn">New Project</div>
+        <div class="addNewProjectBtn"><img src="assets/icons/add.png"></div>
 
         <div class="eachProjectsInList bdblue">
             <div class="eachProjectTitle">Star Link</div>
