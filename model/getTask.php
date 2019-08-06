@@ -16,7 +16,17 @@
     if(mysqli_num_rows($getTasks)>0){
         while($UTtask=mysqli_fetch_assoc($getTasks)){
             $UTtask= $UTtask['tasksubject'];
-            echo $UTtask."<hr>";
+
+            // $shour=$UTtask['shour'];
+            // $sminute=$UTtask['sminute'];
+            // $sampm=$UTtask['sampm'];
+
+            // $ehour=$UTtask['ehour'];
+            // $eminute=$UTtask['eminute'];
+            // $eampm=$UTtask['eampm'];
+
+            // echo "<div data-stime='".$stime."' data-etime='".$etime."'>".$UTtask."</div>";
+            echo $UTtask;
         }
     }else{
         echo "empty tasks";

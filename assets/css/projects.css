@@ -1,0 +1,179 @@
+/*extra small*/
+
+@media only screen and (max-width: 600px) {}
+
+
+/*small================================================================================================================*/
+
+@media only screen and (min-width: 600px) and (max-width:767px) {}
+
+
+/*medium*/
+
+@media only screen and (min-width: 768px) and (max-width:991px) {}
+
+
+/*large=============================================================================================================*/
+
+@media only screen and (min-width: 992px) and (max-width:1199px) {}
+
+
+/*extra large======================================================================================================*/
+
+@media only screen and (min-width: 1200px) {
+    .projectsMagePageContainer {
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+    .projectListContainer {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .eachProjectsInList {
+        width: 70%;
+        margin: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        background: #fff;
+    }
+    .eachProjectTitle {
+        width: 100%;
+        height: 50px;
+        font-size: 20px;
+        line-height: 50px;
+        overflow: hidden;
+        padding: 0 10px;
+        box-sizing: border-box;
+        font-weight: bolder;
+    }
+    .eachProjectsTasksContainer {
+        width: 90%;
+        margin: 10px 5%;
+        display: flex;
+        flex-direction: column;
+    }
+    .eachProjectTask {
+        width: 100%;
+        height: 30px;
+        display: flex;
+        overflow: hidden;
+        align-items: center;
+        margin: 5px 0;
+        border-radius: 3px;
+    }
+    .projectTaskController {
+        width: 14px;
+        height: 14px;
+        border: solid 2px #333;
+        border-radius: 2px;
+        margin: 0 10px;
+        box-sizing: border-box;
+    }
+    .projectTaskText {
+        flex-grow: 1;
+        margin: 0 10px;
+    }
+    .bgRed {
+        background: rgb(250, 206, 206);
+        border-left: solid 5px rgb(212, 47, 47);
+    }
+    .bgGreen {
+        background: rgb(127, 209, 159);
+        border-left: solid 5px rgb(65, 179, 61);
+    }
+    .bgOrange {
+        background: #ebe267;
+        border-left: solid 5px rgb(212, 195, 47);
+    }
+    .bgGG {
+        background: rgb(225, 255, 215);
+        border-left: solid 5px rgb(115, 192, 79);
+    }
+    .bdblue {
+        border-left: solid 5px rgb(65, 74, 211);
+    }
+    .bdred {
+        border-left: solid 5px rgb(211, 65, 65);
+    }
+    .bdgreen {
+        border-left: solid 5px rgb(65, 211, 65);
+    }
+    .addNewProjectBtn {
+        width: 70%;
+        margin: 20px;
+        border-radius: 5px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        background: #d3daee;
+    }
+    .addNewProjectBtn:hover {
+        background: #cdd5e9;
+        cursor: pointer;
+    }
+    /* this Project container */
+    .thisProjectContainer {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        box-sizing: border-box;
+    }
+    .projectTitle {
+        width: 100%;
+        height: 60px;
+        background: #eee;
+        text-align: center;
+        line-height: 60px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+    }
+    .thisProjectTask {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .mainTask {
+        margin: 10px 20px;
+        height: 40px;
+        border-radius: 5px;
+        background: #e8f5e4;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .mainTaskControl {
+        width: 14px;
+        height: 14px;
+        border: solid 2px #333;
+        border-radius: 2px;
+        margin: 0 20px;
+        box-sizing: border-box;
+    }
+    .subTaskContainer {
+        margin-left: 50px;
+    }
+    .subTask {
+        margin: 7px 20px;
+        height: 35px;
+        border-radius: 5px;
+        background: #fcf6e5;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 14px;
+    }
+    .subTaskControl {
+        width: 14px;
+        height: 14px;
+        border: solid 2px #333;
+        border-radius: 2px;
+        margin: 0 20px;
+        box-sizing: border-box;
+    }
+}

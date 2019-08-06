@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 05, 2019 at 01:36 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 5.6.40
+-- Generation Time: Aug 05, 2019 at 10:52 AM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.1.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -100,6 +100,7 @@ INSERT INTO `utpassions` (`id`, `passions`, `count`) VALUES
 
 CREATE TABLE `uttask` (
   `id` int(10) NOT NULL,
+  `userid` int(10) NOT NULL,
   `tasksubject` text NOT NULL,
   `taskdate` varchar(225) NOT NULL,
   `shour` varchar(225) NOT NULL,
@@ -118,12 +119,17 @@ CREATE TABLE `uttask` (
 -- Dumping data for table `uttask`
 --
 
-INSERT INTO `uttask` (`id`, `tasksubject`, `taskdate`, `shour`, `sminute`, `sampm`, `ehour`, `eminute`, `eampm`, `priority`, `emotion`, `dformat`, `utColor`) VALUES
-(10, 'Love Ma Ma May', '2019-08-05', '1', '5', 'am', '1', '5', 'am', 3, 3, 'd20190805', '#99CC33'),
-(11, 'Make May Smile', '2019-08-05', '1', '5', 'am', '1', '5', 'am', 3, 3, 'd20190805', '#FFCC33'),
-(12, 'Say I Love You To Ma Ma', '2019-08-06', '2', '20', 'pm', '1', '5', 'am', 3, 3, 'd20190806', ''),
-(13, 'make a phone call to mama', '2019-08-08', '1', '5', 'am', '1', '5', 'am', 3, 3, 'd20190808', '#FFCC33'),
-(14, '', '2019-08-22', '4', '25', 'pm', '1', '5', 'am', 2, 4, 'd20190822', '');
+INSERT INTO `uttask` (`id`, `userid`, `tasksubject`, `taskdate`, `shour`, `sminute`, `sampm`, `ehour`, `eminute`, `eampm`, `priority`, `emotion`, `dformat`, `utColor`) VALUES
+(10, 0, 'Love Ma Ma May', '2019-08-05', '1', '5', 'am', '1', '5', 'am', 3, 3, 'd20190805', '#99CC33'),
+(11, 0, 'Make May Smile', '2019-08-05', '1', '5', 'am', '1', '5', 'am', 3, 3, 'd20190805', '#FFCC33'),
+(12, 0, 'Say I Love You To Ma Ma', '2019-08-06', '2', '20', 'pm', '1', '5', 'am', 3, 3, 'd20190806', ''),
+(13, 0, 'make a phone call to mama', '2019-08-08', '1', '5', 'am', '1', '5', 'am', 3, 3, 'd20190808', '#FFCC33'),
+(14, 0, '', '2019-08-22', '4', '25', 'pm', '1', '5', 'am', 2, 4, 'd20190822', ''),
+(15, 27, 'Love Mg Lay', '2019-02-25', '9', '55', 'pm', '1', '5', 'am', 2, 4, 'd20190225', ''),
+(16, 27, 'Unblock MgLay Phone', '2019-08-21', '6', '35', 'pm', '5', '40', 'pm', 2, 4, 'd20190821', '#3AC485'),
+(17, 27, 'Some thing', '2019-08-06', '1', '5', 'am', '1', '5', 'am', 2, 4, 'd20190806', '#3366FF'),
+(18, 27, 'say love u to mg lay', '2019-08-07', '3', '20', 'pm', '3', '20', 'pm', 2, 2, 'd20190807', '#3AC485'),
+(19, 27, '', '2019-08-07', '3', '15', 'am', '1', '5', 'am', 3, 4, 'd20190807', '#3AC485');
 
 -- --------------------------------------------------------
 
@@ -138,7 +144,7 @@ CREATE TABLE `utusers` (
   `Email` varchar(225) NOT NULL,
   `pass` varchar(225) NOT NULL,
   `passions` text NOT NULL,
-  `school` text,
+  `school` text DEFAULT NULL,
   `profilePicture` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -151,7 +157,8 @@ INSERT INTO `utusers` (`id`, `firstName`, `lastName`, `Email`, `pass`, `passions
 (23, 'JR', 'Alli', 'jralli@gmail.com', 'f46thmAIBTN.6', 'a:5:{i:0;s:10:\"Networking\";i:1;s:23:\"Artificial Intelligence\";i:2;s:16:\"Game Development\";i:3;s:12:\"Web Security\";i:4;s:11:\"Programming\";}', '', 'nopp.png'),
 (24, 'JK', 'Rolling', 'jkrolling@gmail.com', 'bcHe.ZbgZhOc.', 'a:4:{i:0;s:11:\"Programming\";i:1;s:23:\"Artificial Intelligence\";i:2;s:12:\"Web Security\";i:3;s:5:\"Space\";}', '', 'nopp.png'),
 (25, 'WE', 'Yo', 'weyo@gmail.com', '52AULRFggu7do', 'a:4:{i:0;s:11:\"Programming\";i:1;s:23:\"Artificial Intelligence\";i:2;s:12:\"Web Security\";i:3;s:16:\"Game Development\";}', '', 'nopp.png'),
-(26, 'Bu', 'Tu', 'buto@mail.comm', '63/cfHYVaivYE', 'a:5:{i:0;s:10:\"Networking\";i:1;s:5:\"Space\";i:2;s:16:\"Game Development\";i:3;s:12:\"Web Security\";i:4;s:11:\"Programming\";}', '', 'nopp.png');
+(26, 'Bu', 'Tu', 'buto@mail.comm', '63/cfHYVaivYE', 'a:5:{i:0;s:10:\"Networking\";i:1;s:5:\"Space\";i:2;s:16:\"Game Development\";i:3;s:12:\"Web Security\";i:4;s:11:\"Programming\";}', '', 'nopp.png'),
+(27, 'Ma', 'Ma', 'mama@gmail.com', 'c61NmhZuM67sI', 'a:3:{i:0;s:11:\"Programming\";i:1;s:12:\"Web Security\";i:2;s:23:\"Artificial Intelligence\";}', '', 'nopp.png');
 
 --
 -- Indexes for dumped tables
@@ -213,13 +220,13 @@ ALTER TABLE `utpassions`
 -- AUTO_INCREMENT for table `uttask`
 --
 ALTER TABLE `uttask`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `utusers`
 --
 ALTER TABLE `utusers`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

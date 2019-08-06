@@ -29,6 +29,8 @@
     <link rel="stylesheet" href="assets/css/profile.css">
     <link rel="stylesheet" href="assets/css/community.css">
     <link rel="stylesheet" href="assets/css/taskcreator.css">
+    <link rel="stylesheet" href="assets/css/task.css">
+    <link rel="stylesheet" href="assets/css/projects.css">
 </head>
 
 <body data-calPg="day" data-page="<?php echo $currentPage;  ?>" data-id="<?php echo $UtimeUserId ?>">
@@ -101,6 +103,7 @@
     <script src="controller/timetable.js"></script>
     <script src="controller/profile.js"></script>
     <script src="controller/community.js"></script>
+    <script src="controller/imagePreview.js"></script>
 </body>
 
 </html>

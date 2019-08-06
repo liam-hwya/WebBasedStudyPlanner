@@ -37,13 +37,14 @@
     }
     .questionFeedContainer {
         flex-grow: 1;
+        max-width: 800px;
         height: 1000px;
         margin-bottom: 30px;
         margin-left: 20px;
         margin-right: 20px;
     }
     .communitySideContainer {
-        width: 300px;
+        width: 350px;
         background: #fff;
         margin-bottom: 30px;
         margin-left: 20px;
@@ -191,5 +192,135 @@
     }
     .uploadPostBtn:hover {
         cursor: pointer;
+    }
+    .fileselectorForPostUpload {
+        display: none;
+    }
+    .postUploadImagePreview {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .postUploadImagePreview img {
+        height: 80px;
+        margin: 10px;
+    }
+    .questionsContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    /* this post */
+    .thisPost {
+        background: white;
+        margin: 10px 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .postHeader {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        flex-direction: row;
+    }
+    .postProfilePicture {
+        width: 50px;
+        height: 50px;
+        margin: 15px;
+        border-radius: 50%;
+    }
+    .postProfilePicture img {
+        width: 50px;
+        height: 50px;
+    }
+    .postData {
+        flex-grow: 1;
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .postUserName {
+        font-size: 20px;
+    }
+    .postTime {
+        font-size: 13px;
+        color: #777;
+    }
+    .postSetting {
+        width: 30px;
+        height: 30px;
+        margin: 25px;
+        background: #333;
+        text-align: center;
+        line-height: 30px;
+        color: white;
+        border-radius: 50%;
+    }
+    .postSetting:hover {
+        cursor: pointer
+    }
+    .postText {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: justify;
+    }
+    .postText span {
+        color: #777;
+        font-style: italic;
+    }
+    .postText span:hover {
+        color: #555;
+        cursor: pointer;
+    }
+    .postImage {
+        width: 100%;
+        max-height: 500px;
+    }
+    .postImage img {
+        width: 100%;
+    }
+    .postControl {
+        display: flex;
+        flex-direction: row;
+        height: 40px;
+        align-items: center;
+    }
+    .postLike,
+    .postComment {
+        width: 50%;
+        text-align: center;
+    }
+    /*============================================= side bar================================== */
+    .communitySearch {
+        width: 100%;
+        height: 70px;
+        background: #fff;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .communitySearchInput {
+        width: 270px;
+        height: 50px;
+        border: none;
+        border-bottom: solid 2px #666;
+        box-sizing: border-box;
+        outline: none;
+        padding: 0 10px;
+        font-size: 17px;
+        color: #333;
+    }
+    .communitySearchBtn {
+        width: 35px;
+        height: 35px;
+        margin: 0 10px;
+    }
+    .communitySearchBtn img {
+        width: 100%;
+        height: 100%;
     }
 }

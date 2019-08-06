@@ -21,8 +21,6 @@ if(mysqli_num_rows($UTevents)>0){
         $UTeventDate= $UTevent['dformat'];
         array_Push($plannedDates,$UTeventDate);
     }
-}else{
-    return NULL;
 }
 
 // Set your timezone

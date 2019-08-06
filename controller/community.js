@@ -12,4 +12,8 @@ $(document).ready(function() {
         postUploader.css("display", "none");
     });
 
+    $(document).on("click", ".instantFSforFupload", function() {
+        $(".fileselectorForPostUpload").click();
+    });
+
 });
