@@ -1,6 +1,7 @@
 <?php
 
     //date time
+    date_default_timezone_set('Asia/Yangon');
     $dateYM = date('Y-m');
     $TimeStamp = strtotime($dateYM . '-01');
     if ($TimeStamp === false) {

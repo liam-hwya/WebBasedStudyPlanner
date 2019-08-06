@@ -5,13 +5,6 @@ $(document).ready(function() {
     //     data: data
     // });
 
-    function tasksShower(date) {
-        var target = $(".timetable_plans_conntainer");
-        var date = date;
-        target.load("model/getTask.php", {
-            date: date
-        });
-    }
 
 
 
@@ -72,7 +65,11 @@ $(document).ready(function() {
             } else {
                 var data = $(this).attr("class");
             }
-            tasksShower(data)
+            var target = $(".timetable_plans_conntainer");
+            var dformat = data;
+            target.load("model/getTask.php", {
+                dformat: dformat
+            });
         } else {
             alert("it's not a day");
         }
@@ -143,7 +140,5 @@ $(document).ready(function() {
     $(document).on("click", ".newTaskCancelBtn", function() {
         $(".newTaskCreatorContainer").toggle();
     });
-
-
 
 });

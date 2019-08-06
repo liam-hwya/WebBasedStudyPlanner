@@ -304,7 +304,7 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
             <form method="post" class="TaskCreatorForm">
                 <div class="TaskCreatorHeader">
                     <span>Add New Task</span>
-                    <div class="showColorPickerBtn"></div>
+                    <div class="showColorPickerBtn"><img src="assets/icons/color.png" alt=""></div>
                 </div>
                 <!-- color picker -->
                 <div class="colorPickerBox">
@@ -323,7 +323,21 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                 <input type="text" class="newTasksubject" placeholder="Subject">
 
                 <!-- priority input -->
-                <input type="range" class="newTaskPriority" min="1" max="4">
+                <div class="prioritySelectorContainer">
+                    <div class="prioterSelectorTitle">Priority</div>
+                    <div class="eachPrioritySelector priorityRed">
+                         <input type="radio" name="priority" class="newTaskPriority" value="1"><div class="priorityLabel">Urgent</div>
+                    </div>
+                    <div class="eachPrioritySelector priorityOrange">
+                         <input type="radio" name="priority" class="newTaskPriority" value="2"><div class="priorityLabel">Important</div>
+                    </div>
+                    <div class="eachPrioritySelector priorityBlue">
+                         <input type="radio" name="priority" class="newTaskPriority" value="3"><div class="priorityLabel">Medium</div>
+                    </div>
+                    <div class="eachPrioritySelector priorityGreen">
+                         <input type="radio" name="priority" class="newTaskPriority" value="4"><div class="priorityLabel">Low</div>
+                    </div>
+                </div>
 
                 <!-- date picker -->
                 <input type="date" class="TCDatePicker" value="<?php echo date('Y-m-d');?>">
@@ -331,6 +345,7 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
 
                 <!-- start time start -->
                 <div class="CtTimesPicker">
+                    <div class="ctimepickerlabel">From Time</div>
                     <select class="startHourPicker">
                         <?php
                             $h=1;
@@ -340,8 +355,8 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                             }
                         ?>
                     </select>
+                    :
                     <select class="startMinutePicker">
-                        
                         <?php
                             $m=5;
                             while($m<60){
@@ -359,6 +374,7 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
 
                 <!-- start time start -->
                 <div class="CtTimesPicker">
+                    <div class="ctimepickerlabel">To Time</div>
                     <select class="endHourPicker">
                         <?php
                             $h=1;
@@ -368,6 +384,7 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                             }
                         ?>
                     </select>
+                    :
                     <select class="endMinutePicker">
                         <?php
                             $m=5;
@@ -385,11 +402,23 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                 <!-- start time end -->
 
                 <!-- emotion to do this -->
-                <input type="range" class="newTaskEmotion" min="1" max="5">
+                <div class="newTaskEmotionPickerContainer">
+                    <div class="prioterSelectorTitle">Emotion</div>
+                    <input type="range" class="newTaskEmotion" min="1" max="5">
+                    <div class="emotionIconsContainerInAddNew">
+                        <img src="assets/icons/emoji1.png">
+                        <img src="assets/icons/emoji2.png">
+                        <img src="assets/icons/emoji3.png">
+                        <img src="assets/icons/emoji4.png">
+                        <img src="assets/icons/emoji5.png">
+                    </div>
+                </div>
                 
                 <!-- save task btn -->
-                <div data-uid="<?php echo $UTuserid; ?>" class="newTaskSaveBtn">Save</div> 
-                <div class="newTaskCancelBtn">Cancel</div> 
+                <div class="addNewTaskBtns">
+                    <div data-uid="<?php echo $UTuserid; ?>" class="newTaskSaveBtn">Save</div> 
+                    <div class="newTaskCancelBtn">Cancel</div> 
+                </div>
                 
             </form>
             

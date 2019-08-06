@@ -206,22 +206,369 @@
 
 /*small================================================================================================================*/
 
-@media only screen and (min-width: 600px) and (max-width:767px) {}
+@media only screen and (min-width: 600px) and (max-width:767px) {
+    .planContOnMouse {
+        width: 150px;
+        height: 25px;
+        text-align: center;
+        line-height: 25px;
+        border-radius: 10px;
+        font-size: 13px;
+        background: #f83939;
+        color: white;
+        position: fixed;
+        z-index: 100;
+        display: none;
+    }
+    .timeTable_main_container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .timetable_calander_container {
+        width: 100%;
+        background: white;
+    }
+    .calendar_header {
+        width: 100%;
+        height: 50px;
+        background: rgb(231, 230, 255);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    .timeTableTypeSwitch img,
+    .addNewTaskBtn img {
+        width: 30px;
+        height: 30px;
+    }
+    .clanderYMshower {
+        font-size: 16px;
+        color: #444;
+        font-weight: bold;
+        color: #333;
+    }
+    .addNewTaskBtn {
+        width: 35px;
+        height: 35px;
+    }
+    .todayDayShower {
+        font-size: 20px;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        color: #333;
+        background: #fff;
+        text-align: center;
+        line-height: 40px;
+    }
+    .theSpaceBetweenDateNControl {
+        flex-grow: 1;
+    }
+    .changeCalendarMonth {
+        width: 30px;
+        height: 30px;
+        margin: 0 5px;
+    }
+    .goBackTodayBtn {
+        line-height: 30px;
+        background: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 50%;
+    }
+    .changeCalendarMonth:hover {
+        cursor: pointer;
+    }
+    .changeCalendarMonth img {
+        width: 30px;
+        height: 30px;
+        filter: invert(100);
+    }
+    .timeTableBody {
+        margin: auto;
+    }
+    .timeTableBody th {
+        font-size: 12px;
+        color: #555;
+        letter-spacing: 0.2ch;
+        height: 30px;
+    }
+    .timeTableBody td {
+        width: 40px;
+        text-align: center;
+        font-size: 12px;
+        height: 40px;
+        border-radius: 50%;
+    }
+    .timeTableBody td:hover {
+        cursor: pointer;
+    }
+    /*show all tasks*/
+    .timetable_plans_conntainer {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .taskDayTitle {
+        width: 80%;
+        font-size: 17px;
+        font-weight: bold;
+        color: #555;
+    }
+    .UTeachTaskContainer {
+        width: 90%;
+        height: 70px;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        margin: 10px 0;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 0 15px;
+        box-sizing: border-box;
+        border-right-style: solid;
+        border-right-width: 5px;
+        border-right-color: rgba(0, 0, 0, 0.0);
+    }
+    .utTaskTitle {
+        width: 100%;
+        font-size: 14px;
+        color: #444;
+    }
+    .utTaskTime {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        padding: 0 10px;
+        color: #444;
+        box-sizing: border-box;
+    }
+    /*tasks Creator*/
+    .newTaskCreatorContainer {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        top: 0;
+        left: 0;
+        z-index: 200;
+        overflow-y: scroll;
+        display: none;
+    }
+    .newTaskCreator {
+        width: 350px;
+        height: 500px;
+        background: #fff;
+        margin: 100px auto;
+    }
+}
 
 
 /*medium*/
 
-@media only screen and (min-width: 768px) and (max-width:991px) {}
+@media only screen and (min-width: 768px) and (max-width:1110px) {
+    .timeLineBtn {
+        background: #ddd;
+    }
+    .planContOnMouse {
+        width: 150px;
+        height: 25px;
+        text-align: center;
+        line-height: 25px;
+        border-radius: 10px;
+        font-size: 13px;
+        background: #f83939;
+        color: white;
+        position: fixed;
+        z-index: 100;
+        display: none;
+    }
+    .timeTable_main_container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .timetable_calander_container {
+        width: 100%;
+        height: 450px;
+        background: white;
+        margin-bottom: 30px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+    }
+    .calendar_header {
+        width: 100%;
+        height: 50px;
+        background: rgb(80, 69, 231);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+        border-radius: 5px 5px 0 0;
+    }
+    .timeTableTypeSwitch {
+        width: 35px;
+        height: 35px;
+        margin-right: 20px;
+    }
+    .timeTableTypeSwitch img,
+    .addNewTaskBtn img {
+        width: 35px;
+        height: 35px;
+        filter: invert(100);
+    }
+    .clanderYMshower {
+        font-size: 20px;
+        color: #444;
+        font-weight: bold;
+        color: white;
+    }
+    .todayYMshower {
+        font-size: 20px;
+        color: #444;
+        font-weight: bold;
+        color: white;
+        display: block;
+    }
+    .addNewTaskBtn {
+        width: 35px;
+        height: 35px;
+        margin-left: 20px;
+    }
+    .todayDayShower {
+        font-size: 20px;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        color: #333;
+        background: #fff;
+        text-align: center;
+        line-height: 40px;
+    }
+    .theSpaceBetweenDateNControl {
+        flex-grow: 1;
+    }
+    .changeCalendarMonth {
+        width: 30px;
+        height: 30px;
+        margin: 0 10px;
+    }
+    .goBackTodayBtn {
+        line-height: 30px;
+        background: #fff;
+        color: #333;
+        text-align: center;
+        border-radius: 50%;
+    }
+    .changeCalendarMonth:hover {
+        cursor: pointer;
+    }
+    .changeCalendarMonth img {
+        width: 30px;
+        height: 30px;
+    }
+    .timeTableBody {
+        width: 100%;
+        height: 400px;
+    }
+    .timeTableBody th {
+        font-size: 18px;
+        color: #555;
+        letter-spacing: 0.2ch;
+    }
+    .timeTableBody td {
+        width: 14.2857%;
+        text-align: center;
+    }
+    .timeTableBody td:hover {
+        cursor: pointer;
+    }
+    /*show all tasks*/
+    .timetable_plans_conntainer {
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .taskDayTitle {
+        width: 80%;
+        font-size: 20px;
+        font-weight: bold;
+        color: #555;
+    }
+    .UTeachTaskContainer {
+        width: 80%;
+        height: 70px;
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        margin: 20px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 0 15px;
+        box-sizing: border-box;
+        border-right-style: solid;
+        border-right-width: 5px;
+        border-right-color: rgba(0, 0, 0, 0.0);
+    }
+    .utTaskTitle {
+        width: 100%;
+        font-size: 16px;
+        color: #444;
+        font-weight: bold;
+    }
+    .utTaskTime {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        padding: 0 10px;
+        color: #444;
+        box-sizing: border-box;
+    }
+    /*tasks Creator*/
+    .newTaskCreatorContainer {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        top: 0;
+        left: 0;
+        z-index: 200;
+        overflow-y: scroll;
+        display: none;
+    }
+    .newTaskCreator {
+        width: 350px;
+        height: 500px;
+        background: #fff;
+        margin: 100px auto;
+    }
+}
 
 
 /*large=============================================================================================================*/
 
-@media only screen and (min-width: 992px) and (max-width:1199px) {}
-
-
-/*extra large======================================================================================================*/
-
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1110px) and (max-width:1199px) {
     .timeLineBtn {
         background: #ddd;
     }
@@ -406,4 +753,177 @@
         background: #fff;
         margin: 100px auto;
     }
+}
+
+
+/*extra large======================================================================================================*/
+
+@media only screen and (min-width: 1200px) {
+    .timeLineBtn {
+        background: #ddd;
+    }
+    .planContOnMouse {
+        width: 150px;
+        height: 25px;
+        text-align: center;
+        line-height: 25px;
+        border-radius: 10px;
+        font-size: 13px;
+        background: #f83939;
+        color: white;
+        position: fixed;
+        z-index: 100;
+        display: none;
+    }
+    .timeTable_main_container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .timetable_calander_container {
+        width: 50%;
+        height: 600px;
+        background: white;
+        margin-bottom: 30px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+    }
+    .calendar_header {
+        width: 100%;
+        height: 70px;
+        background: rgb(80, 69, 231);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+        border-radius: 5px 5px 0 0;
+    }
+    .timeTableTypeSwitch {
+        width: 35px;
+        height: 35px;
+        margin-right: 20px;
+    }
+    .timeTableTypeSwitch img,
+    .addNewTaskBtn img {
+        width: 35px;
+        height: 35px;
+        filter: invert(100);
+    }
+    .clanderYMshower {
+        font-size: 20px;
+        color: #444;
+        font-weight: bold;
+        color: white;
+    }
+    .todayYMshower {
+        font-size: 20px;
+        color: #444;
+        font-weight: bold;
+        color: white;
+        display: block;
+    }
+    .addNewTaskBtn {
+        width: 35px;
+        height: 35px;
+        margin-left: 20px;
+    }
+    .todayDayShower {
+        font-size: 20px;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        color: #333;
+        background: #fff;
+        text-align: center;
+        line-height: 40px;
+    }
+    .theSpaceBetweenDateNControl {
+        flex-grow: 1;
+    }
+    .changeCalendarMonth {
+        width: 30px;
+        height: 30px;
+        margin: 0 10px;
+    }
+    .goBackTodayBtn {
+        line-height: 30px;
+        background: #fff;
+        color: #333;
+        text-align: center;
+        border-radius: 50%;
+    }
+    .changeCalendarMonth:hover {
+        cursor: pointer;
+    }
+    .changeCalendarMonth img {
+        width: 30px;
+        height: 30px;
+    }
+    .timeTableBody {
+        width: 100%;
+        height: 500px;
+    }
+    .timeTableBody th {
+        font-size: 18px;
+        color: #555;
+        letter-spacing: 0.2ch;
+    }
+    .timeTableBody td {
+        width: 14.2857%;
+        text-align: center;
+    }
+    .timeTableBody td:hover {
+        cursor: pointer;
+    }
+    /*show all tasks*/
+    .timetable_plans_conntainer {
+        width: 50%;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .taskDayTitle {
+        width: 80%;
+        font-size: 20px;
+        font-weight: bold;
+        color: #555;
+    }
+    .UTeachTaskContainer {
+        width: 80%;
+        height: 70px;
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        margin: 20px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 0 15px;
+        box-sizing: border-box;
+        border-right-style: solid;
+        border-right-width: 5px;
+        border-right-color: rgba(0, 0, 0, 0.0);
+    }
+    .utTaskTitle {
+        width: 100%;
+        font-size: 16px;
+        color: #444;
+        font-weight: bold;
+    }
+    .utTaskTime {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        padding: 0 10px;
+        color: #444;
+        box-sizing: border-box;
+    }
+    /*tasks Creator*/
 }

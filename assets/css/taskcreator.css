@@ -1,29 +1,29 @@
 /*extra small*/
 
-@media only screen and (max-width: 600px) {}
-
-
-/*small================================================================================================================*/
-
-@media only screen and (min-width: 600px) and (max-width:767px) {}
-
-
-/*medium*/
-
-@media only screen and (min-width: 768px) and (max-width:991px) {}
-
-
-/*large=============================================================================================================*/
-
-@media only screen and (min-width: 992px) and (max-width:1199px) {}
-
-
-/*extra large======================================================================================================*/
-
-@media only screen and (min-width: 1200px) {
+@media only screen and (max-width: 600px) {
+    .newTaskCreatorContainer {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        top: 0;
+        left: 0;
+        z-index: 200;
+        overflow-y: scroll;
+        display: none;
+    }
+    .newTaskCreator {
+        width: 100%;
+        height: auto;
+        background: #fff;
+        margin: 100px auto;
+    }
     .TaskCreatorForm {
         width: 100%;
         height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .TaskCreatorHeader {
         width: 100%;
@@ -43,16 +43,25 @@
     .showColorPickerBtn {
         width: 50px;
         height: 50px;
-        background: #7629ce;
+    }
+    .showColorPickerBtn img {
+        width: 35px;
+        height: 35px;
+        margin: 10px;
+        filter: invert(100);
+    }
+    .showColorPickerBtn img:hover {
+        cursor: pointer;
     }
     .colorPickerBox {
-        width: 350px;
+        width: 100%;
         background: #333;
         position: absolute;
         z-index: 200;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        transform: translate(0px, 50px);
     }
     .colorToPick {
         width: 30px;
@@ -61,5 +70,1082 @@
         border-radius: 50%;
         margin: 10px;
         cursor: pointer;
+    }
+    .newTasksubject {
+        width: 90%;
+        height: 40px;
+        border: none;
+        outline: none;
+        background: #eee;
+        margin: 20px 0;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .newTaskPriority {
+        -webkit-appearance: checkbox;
+        /* Chrome, Safari, Opera */
+        -moz-appearance: checkbox;
+        /* Firefox */
+        -ms-appearance: checkbox;
+    }
+    .prioterSelectorTitle {
+        width: 100%;
+        font-size: 17px;
+        color: #333;
+        text-align: center;
+        line-height: 30px;
+    }
+    .prioritySelectorContainer {
+        width: 90%;
+        padding-bottom: 10px;
+        margin: 0px 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        background: #eee;
+    }
+    .eachPrioritySelector {
+        width: 110px;
+        font-size: 14px;
+        height: 30px;
+        display: flex;
+        background: #fff;
+        padding: 0 10px;
+        box-sizing: border-box;
+        align-items: center;
+        margin: 10px 0;
+        border: 5px;
+        border-left-style: solid;
+        border-left-width: 3px;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    }
+    .priorityRed {
+        border-color: red;
+        background: rgb(255, 223, 223);
+    }
+    .priorityOrange {
+        border-color: orange;
+        background: rgb(252, 239, 216)
+    }
+    .priorityBlue {
+        border-color: blue;
+        background: rgb(220, 220, 255)
+    }
+    .priorityGreen {
+        border-color: green;
+        background: #e1ffe1;
+    }
+    .eachPrioritySelector:hover {
+        cursor: pointer;
+    }
+    .priorityLabel {
+        margin-left: 5px;
+    }
+    .TCDatePicker {
+        width: 90%;
+        height: 40px;
+        border: none;
+        outline: none;
+        background: #eee;
+        margin: 20px 0;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .CtTimesPicker {
+        width: 90%;
+        border: none;
+        outline: none;
+        margin: 10px 0;
+        padding: 0 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .ctimepickerlabel {
+        width: 100px;
+        line-height: 30px;
+        font-size: 17px;
+        color: #333;
+    }
+    .CtTimesPicker select {
+        width: 50px;
+        height: 30px;
+        border: none;
+        outline: none;
+        background: #eee;
+        text-align: center;
+    }
+    .newTaskEmotionPickerContainer {
+        width: 90%;
+        box-sizing: border-box;
+        background: #eee;
+        margin: 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 10px;
+    }
+    .emotionIconsContainerInAddNew {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .emotionIconsContainerInAddNew img {
+        width: 30px;
+        height: 30px;
+    }
+    .newTaskEmotion {
+        width: 90%;
+        margin: 10px 0;
+    }
+    .addNewTaskBtns {
+        width: 100%;
+        display: flex;
+        height: 40px;
+        flex-direction: row;
+    }
+    .newTaskSaveBtn,
+    .newTaskCancelBtn {
+        width: 50%;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+    }
+    .newTaskSaveBtn:hover,
+    .newTaskCancelBtn:hover {
+        opacity: 0.9;
+        cursor: pointer;
+        margin: 10px;
+    }
+    .newTaskSaveBtn {
+        background: rgb(98, 196, 85);
+        color: #fff;
+    }
+    .newTaskCancelBtn {
+        background: rgb(204, 79, 79);
+        color: #fff;
+    }
+}
+
+
+/*small================================================================================================================*/
+
+@media only screen and (min-width: 600px) and (max-width:767px) {
+    .newTaskCreatorContainer {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        top: 0;
+        left: 0;
+        z-index: 200;
+        overflow-y: scroll;
+        display: none;
+    }
+    .newTaskCreator {
+        width: 400px;
+        height: auto;
+        background: #fff;
+        margin: 100px auto;
+    }
+    .TaskCreatorForm {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .TaskCreatorHeader {
+        width: 100%;
+        height: 50px;
+        background: rgb(62, 130, 219);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+        justify-content: space-between;
+    }
+    .TaskCreatorHeader span {
+        font-size: 20px;
+        color: #fff;
+    }
+    .showColorPickerBtn {
+        width: 50px;
+        height: 50px;
+    }
+    .showColorPickerBtn img {
+        width: 35px;
+        height: 35px;
+        margin: 10px;
+        filter: invert(100);
+    }
+    .showColorPickerBtn img:hover {
+        cursor: pointer;
+    }
+    .colorPickerBox {
+        width: 400px;
+        background: #333;
+        position: absolute;
+        z-index: 200;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        transform: translate(0px, 50px);
+    }
+    .colorToPick {
+        width: 30px;
+        height: 30px;
+        border: solid 2px #fff;
+        border-radius: 50%;
+        margin: 10px;
+        cursor: pointer;
+    }
+    .newTasksubject {
+        width: 340px;
+        height: 40px;
+        border: none;
+        outline: none;
+        background: #eee;
+        margin: 20px 30px;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .newTaskPriority {
+        -webkit-appearance: checkbox;
+        /* Chrome, Safari, Opera */
+        -moz-appearance: checkbox;
+        /* Firefox */
+        -ms-appearance: checkbox;
+    }
+    .prioterSelectorTitle {
+        width: 100%;
+        font-size: 17px;
+        color: #333;
+        text-align: center;
+        line-height: 30px;
+    }
+    .prioritySelectorContainer {
+        width: 350px;
+        padding-bottom: 10px;
+        margin: 0px 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        background: #eee;
+    }
+    .eachPrioritySelector {
+        width: 120px;
+        height: 30px;
+        display: flex;
+        background: #fff;
+        padding: 0 10px;
+        box-sizing: border-box;
+        align-items: center;
+        margin: 10px 0;
+        border: 5px;
+        border-left-style: solid;
+        border-left-width: 3px;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    }
+    .priorityRed {
+        border-color: red;
+        background: rgb(255, 223, 223);
+    }
+    .priorityOrange {
+        border-color: orange;
+        background: rgb(252, 239, 216)
+    }
+    .priorityBlue {
+        border-color: blue;
+        background: rgb(220, 220, 255)
+    }
+    .priorityGreen {
+        border-color: green;
+        background: #e1ffe1;
+    }
+    .eachPrioritySelector:hover {
+        cursor: pointer;
+    }
+    .priorityLabel {
+        margin-left: 5px;
+    }
+    .TCDatePicker {
+        width: 340px;
+        height: 40px;
+        border: none;
+        outline: none;
+        background: #eee;
+        margin: 20px 30px;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .CtTimesPicker {
+        width: 340px;
+        border: none;
+        outline: none;
+        margin: 10px 20px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .ctimepickerlabel {
+        width: 100px;
+        line-height: 30px;
+        font-size: 17px;
+        color: #333;
+    }
+    .CtTimesPicker select {
+        width: 50px;
+        height: 30px;
+        border: none;
+        outline: none;
+        background: #eee;
+        text-align: center;
+    }
+    .newTaskEmotionPickerContainer {
+        width: 340px;
+        box-sizing: border-box;
+        background: #eee;
+        margin: 20px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 10px;
+    }
+    .emotionIconsContainerInAddNew {
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .emotionIconsContainerInAddNew img {
+        width: 30px;
+        height: 30px;
+    }
+    .newTaskEmotion {
+        width: 300px;
+        margin: 10px 0;
+    }
+    .addNewTaskBtns {
+        display: flex;
+        height: 40px;
+        flex-direction: row;
+    }
+    .newTaskSaveBtn,
+    .newTaskCancelBtn {
+        width: 50%;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+    }
+    .newTaskSaveBtn:hover,
+    .newTaskCancelBtn:hover {
+        opacity: 0.9;
+        cursor: pointer;
+    }
+    .newTaskSaveBtn {
+        background: rgb(98, 196, 85);
+        color: #fff;
+    }
+    .newTaskCancelBtn {
+        background: rgb(204, 79, 79);
+        color: #fff;
+    }
+}
+
+
+/*medium*/
+
+@media only screen and (min-width: 768px) and (max-width:991px) {
+    .newTaskCreatorContainer {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        top: 0;
+        left: 0;
+        z-index: 200;
+        overflow-y: scroll;
+        display: none;
+    }
+    .newTaskCreator {
+        width: 400px;
+        height: auto;
+        background: #fff;
+        margin: 100px auto;
+    }
+    .TaskCreatorForm {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .TaskCreatorHeader {
+        width: 100%;
+        height: 50px;
+        background: rgb(62, 130, 219);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+        justify-content: space-between;
+    }
+    .TaskCreatorHeader span {
+        font-size: 20px;
+        color: #fff;
+    }
+    .showColorPickerBtn {
+        width: 50px;
+        height: 50px;
+    }
+    .showColorPickerBtn img {
+        width: 35px;
+        height: 35px;
+        margin: 10px;
+        filter: invert(100);
+    }
+    .showColorPickerBtn img:hover {
+        cursor: pointer;
+    }
+    .colorPickerBox {
+        width: 400px;
+        background: #333;
+        position: absolute;
+        z-index: 200;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        transform: translate(0px, 50px);
+    }
+    .colorToPick {
+        width: 30px;
+        height: 30px;
+        border: solid 2px #fff;
+        border-radius: 50%;
+        margin: 10px;
+        cursor: pointer;
+    }
+    .newTasksubject {
+        width: 340px;
+        height: 40px;
+        border: none;
+        outline: none;
+        background: #eee;
+        margin: 20px 30px;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .newTaskPriority {
+        -webkit-appearance: checkbox;
+        /* Chrome, Safari, Opera */
+        -moz-appearance: checkbox;
+        /* Firefox */
+        -ms-appearance: checkbox;
+    }
+    .prioterSelectorTitle {
+        width: 100%;
+        font-size: 17px;
+        color: #333;
+        text-align: center;
+        line-height: 30px;
+    }
+    .prioritySelectorContainer {
+        width: 350px;
+        padding-bottom: 10px;
+        margin: 0px 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        background: #eee;
+    }
+    .eachPrioritySelector {
+        width: 120px;
+        height: 30px;
+        display: flex;
+        background: #fff;
+        padding: 0 10px;
+        box-sizing: border-box;
+        align-items: center;
+        margin: 10px 0;
+        border: 5px;
+        border-left-style: solid;
+        border-left-width: 3px;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    }
+    .priorityRed {
+        border-color: red;
+        background: rgb(255, 223, 223);
+    }
+    .priorityOrange {
+        border-color: orange;
+        background: rgb(252, 239, 216)
+    }
+    .priorityBlue {
+        border-color: blue;
+        background: rgb(220, 220, 255)
+    }
+    .priorityGreen {
+        border-color: green;
+        background: #e1ffe1;
+    }
+    .eachPrioritySelector:hover {
+        cursor: pointer;
+    }
+    .priorityLabel {
+        margin-left: 5px;
+    }
+    .TCDatePicker {
+        width: 340px;
+        height: 40px;
+        border: none;
+        outline: none;
+        background: #eee;
+        margin: 20px 30px;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .CtTimesPicker {
+        width: 340px;
+        border: none;
+        outline: none;
+        margin: 10px 20px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .ctimepickerlabel {
+        width: 100px;
+        line-height: 30px;
+        font-size: 17px;
+        color: #333;
+    }
+    .CtTimesPicker select {
+        width: 50px;
+        height: 30px;
+        border: none;
+        outline: none;
+        background: #eee;
+        text-align: center;
+    }
+    .newTaskEmotionPickerContainer {
+        width: 340px;
+        box-sizing: border-box;
+        background: #eee;
+        margin: 20px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 10px;
+    }
+    .emotionIconsContainerInAddNew {
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .emotionIconsContainerInAddNew img {
+        width: 30px;
+        height: 30px;
+    }
+    .newTaskEmotion {
+        width: 300px;
+        margin: 10px 0;
+    }
+    .addNewTaskBtns {
+        display: flex;
+        height: 40px;
+        flex-direction: row;
+    }
+    .newTaskSaveBtn,
+    .newTaskCancelBtn {
+        width: 50%;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+    }
+    .newTaskSaveBtn:hover,
+    .newTaskCancelBtn:hover {
+        opacity: 0.9;
+        cursor: pointer;
+    }
+    .newTaskSaveBtn {
+        background: rgb(98, 196, 85);
+        color: #fff;
+    }
+    .newTaskCancelBtn {
+        background: rgb(204, 79, 79);
+        color: #fff;
+    }
+}
+
+
+/*large=============================================================================================================*/
+
+@media only screen and (min-width: 992px) and (max-width:1199px) {
+    .newTaskCreatorContainer {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        top: 0;
+        left: 0;
+        z-index: 200;
+        overflow-y: scroll;
+        display: none;
+    }
+    .newTaskCreator {
+        width: 400px;
+        height: auto;
+        background: #fff;
+        margin: 100px auto;
+    }
+    .TaskCreatorForm {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .TaskCreatorHeader {
+        width: 100%;
+        height: 50px;
+        background: rgb(62, 130, 219);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+        justify-content: space-between;
+    }
+    .TaskCreatorHeader span {
+        font-size: 20px;
+        color: #fff;
+    }
+    .showColorPickerBtn {
+        width: 50px;
+        height: 50px;
+    }
+    .showColorPickerBtn img {
+        width: 35px;
+        height: 35px;
+        margin: 10px;
+        filter: invert(100);
+    }
+    .showColorPickerBtn img:hover {
+        cursor: pointer;
+    }
+    .colorPickerBox {
+        width: 400px;
+        background: #333;
+        position: absolute;
+        z-index: 200;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        transform: translate(0px, 50px);
+    }
+    .colorToPick {
+        width: 30px;
+        height: 30px;
+        border: solid 2px #fff;
+        border-radius: 50%;
+        margin: 10px;
+        cursor: pointer;
+    }
+    .newTasksubject {
+        width: 340px;
+        height: 40px;
+        border: none;
+        outline: none;
+        background: #eee;
+        margin: 20px 30px;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .newTaskPriority {
+        -webkit-appearance: checkbox;
+        /* Chrome, Safari, Opera */
+        -moz-appearance: checkbox;
+        /* Firefox */
+        -ms-appearance: checkbox;
+    }
+    .prioterSelectorTitle {
+        width: 100%;
+        font-size: 17px;
+        color: #333;
+        text-align: center;
+        line-height: 30px;
+    }
+    .prioritySelectorContainer {
+        width: 350px;
+        padding-bottom: 10px;
+        margin: 0px 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        background: #eee;
+    }
+    .eachPrioritySelector {
+        width: 120px;
+        height: 30px;
+        display: flex;
+        background: #fff;
+        padding: 0 10px;
+        box-sizing: border-box;
+        align-items: center;
+        margin: 10px 0;
+        border: 5px;
+        border-left-style: solid;
+        border-left-width: 3px;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    }
+    .priorityRed {
+        border-color: red;
+        background: rgb(255, 223, 223);
+    }
+    .priorityOrange {
+        border-color: orange;
+        background: rgb(252, 239, 216)
+    }
+    .priorityBlue {
+        border-color: blue;
+        background: rgb(220, 220, 255)
+    }
+    .priorityGreen {
+        border-color: green;
+        background: #e1ffe1;
+    }
+    .eachPrioritySelector:hover {
+        cursor: pointer;
+    }
+    .priorityLabel {
+        margin-left: 5px;
+    }
+    .TCDatePicker {
+        width: 340px;
+        height: 40px;
+        border: none;
+        outline: none;
+        background: #eee;
+        margin: 20px 30px;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .CtTimesPicker {
+        width: 340px;
+        border: none;
+        outline: none;
+        margin: 10px 20px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .ctimepickerlabel {
+        width: 100px;
+        line-height: 30px;
+        font-size: 17px;
+        color: #333;
+    }
+    .CtTimesPicker select {
+        width: 50px;
+        height: 30px;
+        border: none;
+        outline: none;
+        background: #eee;
+        text-align: center;
+    }
+    .newTaskEmotionPickerContainer {
+        width: 340px;
+        box-sizing: border-box;
+        background: #eee;
+        margin: 20px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 10px;
+    }
+    .emotionIconsContainerInAddNew {
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .emotionIconsContainerInAddNew img {
+        width: 30px;
+        height: 30px;
+    }
+    .newTaskEmotion {
+        width: 300px;
+        margin: 10px 0;
+    }
+    .addNewTaskBtns {
+        display: flex;
+        height: 40px;
+        flex-direction: row;
+    }
+    .newTaskSaveBtn,
+    .newTaskCancelBtn {
+        width: 50%;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+    }
+    .newTaskSaveBtn:hover,
+    .newTaskCancelBtn:hover {
+        opacity: 0.9;
+        cursor: pointer;
+    }
+    .newTaskSaveBtn {
+        background: rgb(98, 196, 85);
+        color: #fff;
+    }
+    .newTaskCancelBtn {
+        background: rgb(204, 79, 79);
+        color: #fff;
+    }
+}
+
+
+/*extra large======================================================================================================*/
+
+@media only screen and (min-width: 1200px) {
+    .newTaskCreatorContainer {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        top: 0;
+        left: 0;
+        z-index: 200;
+        overflow-y: scroll;
+        display: none;
+    }
+    .newTaskCreator {
+        width: 400px;
+        background: #fff;
+        margin: 100px auto;
+    }
+    .TaskCreatorForm {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .TaskCreatorHeader {
+        width: 100%;
+        height: 50px;
+        background: rgb(62, 130, 219);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+        justify-content: space-between;
+    }
+    .TaskCreatorHeader span {
+        font-size: 20px;
+        color: #fff;
+    }
+    .showColorPickerBtn {
+        width: 50px;
+        height: 50px;
+    }
+    .showColorPickerBtn img {
+        width: 35px;
+        height: 35px;
+        margin: 10px;
+        filter: invert(100);
+    }
+    .showColorPickerBtn img:hover {
+        cursor: pointer;
+    }
+    .colorPickerBox {
+        width: 400px;
+        background: #333;
+        position: absolute;
+        z-index: 200;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        transform: translate(0px, 50px);
+    }
+    .colorToPick {
+        width: 30px;
+        height: 30px;
+        border: solid 2px #fff;
+        border-radius: 50%;
+        margin: 10px;
+        cursor: pointer;
+    }
+    .newTasksubject {
+        width: 340px;
+        height: 40px;
+        border: none;
+        outline: none;
+        background: #eee;
+        margin: 20px 30px;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .newTaskPriority {
+        -webkit-appearance: checkbox;
+        /* Chrome, Safari, Opera */
+        -moz-appearance: checkbox;
+        /* Firefox */
+        -ms-appearance: checkbox;
+    }
+    .prioterSelectorTitle {
+        width: 100%;
+        font-size: 17px;
+        color: #333;
+        text-align: center;
+        line-height: 30px;
+    }
+    .prioritySelectorContainer {
+        width: 350px;
+        padding-bottom: 10px;
+        margin: 0px 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        background: #eee;
+    }
+    .eachPrioritySelector {
+        width: 120px;
+        height: 30px;
+        display: flex;
+        background: #fff;
+        padding: 0 10px;
+        box-sizing: border-box;
+        align-items: center;
+        margin: 10px 0;
+        border: 5px;
+        border-left-style: solid;
+        border-left-width: 3px;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    }
+    .priorityRed {
+        border-color: red;
+        background: rgb(255, 223, 223);
+    }
+    .priorityOrange {
+        border-color: orange;
+        background: rgb(252, 239, 216)
+    }
+    .priorityBlue {
+        border-color: blue;
+        background: rgb(220, 220, 255)
+    }
+    .priorityGreen {
+        border-color: green;
+        background: #e1ffe1;
+    }
+    .eachPrioritySelector:hover {
+        cursor: pointer;
+    }
+    .priorityLabel {
+        margin-left: 5px;
+    }
+    .TCDatePicker {
+        width: 340px;
+        height: 40px;
+        border: none;
+        outline: none;
+        background: #eee;
+        margin: 20px 30px;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .CtTimesPicker {
+        width: 340px;
+        border: none;
+        outline: none;
+        margin: 10px 20px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .ctimepickerlabel {
+        width: 100px;
+        line-height: 30px;
+        font-size: 17px;
+        color: #333;
+    }
+    .CtTimesPicker select {
+        width: 50px;
+        height: 30px;
+        border: none;
+        outline: none;
+        background: #eee;
+        text-align: center;
+    }
+    .newTaskEmotionPickerContainer {
+        width: 340px;
+        box-sizing: border-box;
+        background: #eee;
+        margin: 20px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 10px;
+    }
+    .emotionIconsContainerInAddNew {
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .emotionIconsContainerInAddNew img {
+        width: 30px;
+        height: 30px;
+    }
+    .newTaskEmotion {
+        width: 300px;
+        margin: 10px 0;
+    }
+    .addNewTaskBtns {
+        display: flex;
+        height: 40px;
+        flex-direction: row;
+    }
+    .newTaskSaveBtn,
+    .newTaskCancelBtn {
+        width: 50%;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+    }
+    .newTaskSaveBtn:hover,
+    .newTaskCancelBtn:hover {
+        opacity: 0.9;
+        cursor: pointer;
+    }
+    .newTaskSaveBtn {
+        background: rgb(98, 196, 85);
+        color: #fff;
+    }
+    .newTaskCancelBtn {
+        background: rgb(204, 79, 79);
+        color: #fff;
     }
 }
