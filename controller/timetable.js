@@ -95,10 +95,18 @@ $(document).ready(function() {
         $(".utColorHolder").val(utColor);
         $(".colorPickerBox").toggle();
     });
+    
+    $(document).on("click",".priorityinstantCheckBox",function(){
+        var val=$(this).attr("data-val");
+        var color=$(this).attr("data-color");
+        $(".priorityinstantCheckBox").css("background","#eee");
+        $(this).css("background",color);
+        $(".priorityValueHolder").val(val);
+    });
 
     $(document).on("click", ".newTaskSaveBtn", function() {
         var taskSubject = $(".newTasksubject").val();
-        var taskPriority = $(".newTaskPriority").val();
+        var taskPriority = $(".priorityValueHolder").val();
         var taskDate = $(".TCDatePicker").val();
         var shour = $(".startHourPicker").val();
         var sminute = $(".startMinutePicker").val();
@@ -135,6 +143,7 @@ $(document).ready(function() {
         });
 
         $(".newTaskCreatorContainer").toggle();
+        $(".goBackTodayBtn").click();
     });
 
     $(document).on("click", ".newTaskCancelBtn", function() {

@@ -1,5 +1,12 @@
 $(document).ready(function() {
 
+    $('input').bind('keydown', function(e) {
+        if (e.keyCode == 13) {
+            e.preventDefault();
+        }
+    });
+
+    
 
     //get each input box state
     var FnStatus = $(".sign_up_first_name").attr("id"); //first name state
@@ -57,15 +64,31 @@ $(document).ready(function() {
 
 
     $(".signup_first_next").on("click", function() { //next btn on first signup page
+
+        function isEmailAvailable(email){
+            
+        
+        }
+        
         var thisStatus = nextBtnStatus();
         if (thisStatus === true) {
-            $(".sign_up_form_one").css("display", "none"); //hide name,emilm inputs
-            $(".sign_up_form_two").css("display", "flex"); //show password input
-            $(".Step1").removeClass("workingStep"); //update Signup Prograss
-            $(".Step1").addClass("completeStep"); //update Signup Prograss
-            $(".Step2").removeClass("waitingStep"); //update Signup Prograss
-            $(".Step2").addClass("workingStep"); //update Signup Prograss
-            $(".textSteps").html("Create a password"); //update Signup Prograss
+            var newEmail=$(".sign_up_email").val();
+            $.post("model/checkEmailExist.php", {
+                email:newEmail
+            },function(data,status){
+                console.log(data);
+                if(data==1){
+                    $(".sign_up_form_one").css("display", "none"); //hide name,emilm inputs
+                    $(".sign_up_form_two").css("display", "flex"); //show password input
+                    $(".Step1").removeClass("workingStep"); //update Signup Prograss
+                    $(".Step1").addClass("completeStep"); //update Signup Prograss
+                    $(".Step2").removeClass("waitingStep"); //update Signup Prograss
+                    $(".Step2").addClass("workingStep"); //update Signup Prograss
+                    $(".textSteps").html("Create a password"); //update Signup Prograss
+                }else{
+                    alert("email is already taken");
+                } 
+            });
         } else {
             alert("not valid yet");
         }

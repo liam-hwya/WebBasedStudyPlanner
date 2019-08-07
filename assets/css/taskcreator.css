@@ -1,3 +1,35 @@
+
+.priorityValueHolder{
+    display:none;
+}
+.newTaskEmotion{
+    -webkit-appearance: none;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+.newTaskEmotion:hover{
+    opacity: 1;
+}
+.newTaskEmotion::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+    border-radius:50%;
+  }
+  .newTaskEmotion::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+  }
+/* Custom Check Rang Slider End */
 /*extra small*/
 
 @media only screen and (max-width: 600px) {
@@ -121,19 +153,19 @@
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
     }
     .priorityRed {
-        border-color: red;
+        border-color: #e03535;
         background: rgb(255, 223, 223);
     }
     .priorityOrange {
-        border-color: orange;
+        border-color: #e59b28;
         background: rgb(252, 239, 216)
     }
     .priorityBlue {
-        border-color: blue;
+        border-color: #383fda;
         background: rgb(220, 220, 255)
     }
     .priorityGreen {
-        border-color: green;
+        border-color: #3dc737;
         background: #e1ffe1;
     }
     .eachPrioritySelector:hover {
@@ -329,9 +361,9 @@
         line-height: 30px;
     }
     .prioritySelectorContainer {
-        width: 350px;
+        width: 340px;
         padding-bottom: 10px;
-        margin: 0px 20px;
+        margin: 0px 30px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -559,9 +591,9 @@
         line-height: 30px;
     }
     .prioritySelectorContainer {
-        width: 350px;
+        width: 340px;
         padding-bottom: 10px;
-        margin: 0px 20px;
+        margin: 0px 30px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -789,9 +821,9 @@
         line-height: 30px;
     }
     .prioritySelectorContainer {
-        width: 350px;
+        width: 340px;
         padding-bottom: 10px;
-        margin: 0px 20px;
+        margin: 0px 30px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -1018,9 +1050,9 @@
         line-height: 30px;
     }
     .prioritySelectorContainer {
-        width: 350px;
+        width: 340px;
         padding-bottom: 10px;
-        margin: 0px 20px;
+        margin: 0px 30px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;

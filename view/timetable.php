@@ -326,18 +326,19 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                 <div class="prioritySelectorContainer">
                     <div class="prioterSelectorTitle">Priority</div>
                     <div class="eachPrioritySelector priorityRed">
-                         <input type="radio" name="priority" class="newTaskPriority" value="1"><div class="priorityLabel">Urgent</div>
+                         <div class="priorityinstantCheckBox" data-val="1" data-color="#e03535"></div><div class="priorityLabel">Urgent</div>
                     </div>
                     <div class="eachPrioritySelector priorityOrange">
-                         <input type="radio" name="priority" class="newTaskPriority" value="2"><div class="priorityLabel">Important</div>
+                        <div class="priorityinstantCheckBox" data-val="2" data-color="#e59b28"></div><div class="priorityLabel">Important</div>
                     </div>
                     <div class="eachPrioritySelector priorityBlue">
-                         <input type="radio" name="priority" class="newTaskPriority" value="3"><div class="priorityLabel">Medium</div>
+                        <div class="priorityinstantCheckBox" data-val="3" data-color="#383fda"></div><div class="priorityLabel">Medium</div>
                     </div>
                     <div class="eachPrioritySelector priorityGreen">
-                         <input type="radio" name="priority" class="newTaskPriority" value="4"><div class="priorityLabel">Low</div>
+                        <div class="priorityinstantCheckBox" data-val="4" data-color="#3dc737"></div><div class="priorityLabel">Low</div>
                     </div>
                 </div>
+                <input type="text" class="priorityValueHolder">
 
                 <!-- date picker -->
                 <input type="date" class="TCDatePicker" value="<?php echo date('Y-m-d');?>">
