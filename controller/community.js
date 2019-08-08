@@ -17,24 +17,46 @@ $(document).ready(function() {
     });
 
 
-
+    //get post by category
     function getPosts(categories) {
         $(".communityPostContainer").load("model/getPosts.php", {
             categories: categories
         });
     }
 
-    $(document).on("click", ".uploaderPp", function() {
-        // var catlist = ['Space', 'Design', 'Physic'];
-        var catlist = [];
-        if (catlist.length == 0) {
-            catlist = "";
+    var catlist = [];//categories list to show
+    //select categories to show
+    $(document).on("click",".categorytoSelectInCommunity",function(){ 
+        if($(this).hasClass("selectedCat")){
+            $(this).removeClass("selectedCat");
+            var removeCat = $(this).html();
+            var index = catlist.indexOf(removeCat);
+            catlist.splice(index, 1);
+        }else{
+            var newCat = $(this).html();
+            $(this).addClass("selectedCat");
+            catlist.push(newCat);
+        }
+        if(catlist.length==0){
+             $(".showAllCategoriesInCommunity").addClass("showingAllCats");
+        }else{
+            $(".showAllCategoriesInCommunity").removeClass("showingAllCats");
         }
         getPosts(catlist);
     });
 
+    //For "All" btn in category selector
+    $(document).on("click",".showAllCategoriesInCommunity",function(){
+        $(this).addClass("showingAllCats");
+        $(".categorytoSelectInCommunity").removeClass("selectedCat");
+        catlist = [];
+        getPosts(catlist);
+    });
 
 
+    
+
+    //Upload Post
     $(document).on("click", ".uploadPostBtn", function() {
         var Title = $(".postUploaderTitle").val();
         var Description = $(".postUploaderTextbox").html();
@@ -57,5 +79,21 @@ $(document).ready(function() {
         $(".postUploaderTitle").val("");
     });
 
+
+    //search
+    $(document).on("keyup",".communitySearchInput",function(){
+        $(".communitySearchResultContainer").css("display","block");
+        var keyword=$(this).val();
+        $(".communitySearchResultContainer").load("model/search.php",{
+            keyword:keyword
+        });
+        if(keyword==""){
+            $(".communitySearchResultContainer").css("display","none");
+        }
+    });
+
+    $(document).on("blur",".communitySearchInput",function(){
+        $(".communitySearchResultContainer").css("display","none");
+    });
 
 });

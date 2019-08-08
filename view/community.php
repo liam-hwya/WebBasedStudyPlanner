@@ -32,6 +32,7 @@
                         
                     }
                 ?>
+                <div class='showAllCategoriesInCommunity showingAllCats'>All</div>
         </div>
     <!-- Category Selector start -->
 
@@ -60,6 +61,15 @@
         <div class="communitySearch">
             <input type="text" placeholder="Search" class="communitySearchInput">
             <div class="communitySearchBtn"><img src="assets/icons/search.png" alt=""></div>
+        </div>
+        <div class="communitySearchResultContainer"></div><!--Search Result Holder-->
+        <div class="communityMyArticles">
+            <script>
+                catlist = [];
+                $(".communityPostContainer").load("model/getPosts.php", {
+                    categories: catlist
+                });
+            </script>
         </div>
     </div>  
     <!-- search area end -->

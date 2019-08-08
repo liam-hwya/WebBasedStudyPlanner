@@ -3,7 +3,7 @@
     include_once("auth.php");
     include_once("db_con.php");
     $title=$_POST['title'];
-    $description=mysql_real_escape_string($_POST['description']);
+    $description=mysqli_real_escape_string($con,$_POST['description']);
     $category=$_POST['category'];
     $userid=$_POST['userid'];
     $starcount=0;
