@@ -37,21 +37,14 @@
     <!-- Category Selector start -->
 
 
-        <div class="postUploader">
-            <div class="postUPloaderPpContainer">
-                <div class="uploaderPp"><img src="assets/images/<?php echo $profilePicture; ?>"></div>
-                <div class="uploaderName"><?php echo $name; ?></div>
-            </div>  
-            <div class="postUploaderInputContainer">
-                <input type="text" class="uploaderTextbox showRealUploader" placeholder="Any Question" readonly>
-                <div class="uploaderControls">
-                    <img src="assets/icons/addimg.png" class="showRealUploader" alt="">
-                </div>
-            </div>
-        </div>
-
         <div class="communityPostContainer">
             <!-- other users post will appear here -->
+            <script>
+                catlist = [];
+                $(".communityPostContainer").load("model/getPosts.php", {
+                    categories: catlist
+                });
+            </script>
         </div>
 
     </div>
@@ -64,12 +57,11 @@
         </div>
         <div class="communitySearchResultContainer"></div><!--Search Result Holder-->
         <div class="communityMyArticles">
-            <script>
-                catlist = [];
-                $(".communityPostContainer").load("model/getPosts.php", {
-                    categories: catlist
-                });
-            </script>
+            
+        </div>
+        <div class="addNewArticleBtn">
+            <span>Add Article</span>
+            <div class="addNewArticleIcon"><img src="assets/icons/add.png" alt=""></div>
         </div>
     </div>  
     <!-- search area end -->
@@ -84,7 +76,7 @@
                 <div class="cancelPostUpload"><img src="assets/icons/cancel.png" alt=""></div>
             </div>
             <input type="text" class="postUploaderTitle" placeholder="Title">
-            <div class="postUploaderTextbox" contenteditable="true" ondragenter="return false;" ondragleave="return false;" ondragover="return false;" ondrop="return false;"></div>
+            <textarea class="postUploaderTextbox"></textarea>
             <!-- <div class="postUploadImagePreview"></div> -->
             <div class="postUploaderControls">
                 <select class="postUploaderCategorySelector select-css">

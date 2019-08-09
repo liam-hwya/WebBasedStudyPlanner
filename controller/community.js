@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 
 
-    $(document).on("click", ".showRealUploader", function() {
+    $(document).on("click", ".addNewArticleBtn", function() {
         var postUploader = $(".realuploaderContainer");
         postUploader.css("display", "flex");
     });
@@ -59,7 +59,7 @@ $(document).ready(function() {
     //Upload Post
     $(document).on("click", ".uploadPostBtn", function() {
         var Title = $(".postUploaderTitle").val();
-        var Description = $(".postUploaderTextbox").html();
+        var Description = $(".postUploaderTextbox").val();
         var category = $(".postUploaderCategorySelector").val();
         var userid = $(this).attr("data-uid");
         $.post("model/postUploader.php", {
@@ -69,7 +69,7 @@ $(document).ready(function() {
             userid: userid
         }, function(data, status) {
             if (data == 1) {
-                alert("post uploader");
+                getPosts(catlist);
             } else {
                 alert("someting want wrong");
             }
@@ -94,6 +94,35 @@ $(document).ready(function() {
 
     $(document).on("blur",".communitySearchInput",function(){
         $(".communitySearchResultContainer").css("display","none");
+    });
+
+
+
+    //post controls
+    //post read more
+    $(document).on("click",".readMorethisPost",function(){
+        var postid=$(this).attr("data-postid");
+        $(this).parent().load("model/readmore.php",{
+            postid:postid
+        });
+    });
+
+    //post Star btn
+    $(document).on("click",".thisArticleStars",function(){
+        var postid=$(this).attr("data-postId");
+        if($(this).hasClass("beforestar")){
+            $(this).addClass('afterstar');
+            $(this).removeClass('beforestar');
+            var todo="add";
+        }else{
+            $(this).addClass('beforestar');
+            $(this).removeClass('afterstar');
+            var todo="remove";
+        }
+        $(this).load("model/star.php",{
+            postid:postid,
+            todo:todo
+        });
     });
 
 });
