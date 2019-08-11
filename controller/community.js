@@ -92,7 +92,7 @@ $(document).ready(function() {
 
     //search
     $(document).on("keyup", ".communitySearchInput", function() {
-        $(".communitySearchResultContainer").css("display", "block");
+        $(".communitySearchResultContainer").css("display", "flex");
         var keyword = $(this).val();
         $(".communitySearchResultContainer").load("model/search.php", {
             keyword: keyword
@@ -102,9 +102,7 @@ $(document).ready(function() {
         }
     });
 
-    $(document).on("blur", ".communitySearchInput", function() {
-        $(".communitySearchResultContainer").css("display", "none");
-    });
+
 
 
 
@@ -262,5 +260,25 @@ $(document).ready(function() {
             $('.communitySideContainer').css("display", "none");
         }
     });
+
+    $(document).on("click", ".changeThisCategory", function() {
+        var todo = $(this).attr('data-todo');
+        var catid = $(this).attr('data-id');
+        $.post("model/changeCatList.php", {
+            todo: todo,
+            catid: catid
+        }, function(data, status) {
+            //do something
+        });
+        $(".categorySelectorContainer").load("model/catList.php");
+        var catlist = [];
+        getPosts(catlist);
+        $(".communitySearchResultContainer").css("display", "none");
+        $(".communitySearchInput").val("");
+    });
+
+    // $(document).on("blur", ".communitySearchInput", function() {
+    //     $(".communitySearchResultContainer").css("display", "none");
+    // });
 
 });
