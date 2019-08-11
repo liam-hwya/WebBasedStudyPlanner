@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 08, 2019 at 04:05 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 5.6.40
+-- Generation Time: Aug 09, 2019 at 01:19 PM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.1.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -113,9 +113,23 @@ CREATE TABLE `utposts` (
 --
 
 INSERT INTO `utposts` (`id`, `userid`, `title`, `utdescription`, `starcount`, `category`) VALUES
-(24, 30, 'Space', 'This is Space<br>', 0, 'Space'),
-(25, 30, 'Physic', 'Hey guys Love Physic<br>', 0, 'Physic'),
-(26, 30, 'Programming ', 'for those Who Love Programming<br>', 0, 'Programming');
+(41, 33, 'bj,b', 'huu', 0, 'Programming'),
+(42, 33, 'asdfasdfasdf', 'dfgasdfg', 0, 'Physic'),
+(43, 33, 'gsdfgdsfg', 'dfgdsfgdsf', 0, 'Physic'),
+(44, 33, 'Welcom from', 'uadfklj', 0, 'Physic'),
+(55, 33, 'That Girl Lyrics', 'There\'s a girl but I let her get away\nIt\'s all my fault \'cause pride got in the way\nAnd I\'d be lying if I said I was ok\nAbout that girl the one I let get away\nI keep saying no\nThis can\'t be the way we\'re supposed to be\nI keep saying no\nThere\'s gotta be a way to get you close to me\nNow I know you gotta\nSpeak up if you want somebody\nCan\'t let him get away, oh no\nYou don\'t wanna end up sorry\nThe way that I\'m feeling everyday\nNo no no no\nThere\'s no hope for the broken heart\nNo no no no\nThere\'s no hope for the broken\nThere\'s a girl but I let her get away\nIt\'s my fault \'cause I said I needed space\nI\'ve been torturing myself night and day\nAbout that girl, the one I let get away\nI keep saying no\nThis can\'t be the way we\'re supposed to be\nI keep saying no\nThere\'s gottaâ€¦', 0, 'Design'),
+(56, 33, 'Old Tow Road Lyrics', 'Yeah, I\'m gonna take my horse to the old town road\nI\'m gonna ride \'til I can\'t no more\nI\'m gonna take my horse to the old town road\nI\'m gonna ride \'til I can\'t no more (Kio, Kio)\nI got the horses in the back\nHorse tack is attached\nHat is matte black\nGot the boots that\'s black to match\nRidin\' on a horse, ha\nYou can whip your Porsche\nI been in the valley\nYou ain\'t been up off that porch, now\nCan\'t nobody tell me nothin\'\nYou can\'t tell me nothin\'\nCan\'t nobody tell me nothin\'\nYou can\'t tell me nothin\'\nRidin\' on a tractor\nLean all in my bladder\nCheated on my baby\nYou can go and ask her\nMy life is a movie\nBull ridin\' and boobies\nCowboy hat from Gucci\nWrangler onâ€¦', 0, 'Physic');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `utstar`
+--
+
+CREATE TABLE `utstar` (
+  `postId` int(10) NOT NULL,
+  `userId` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -153,7 +167,8 @@ INSERT INTO `uttask` (`id`, `userid`, `tasksubject`, `taskdate`, `shour`, `sminu
 (33, 30, 'Sleep two Hour', '2019-08-06', '1', '5', 'am', '1', '5', 'am', 3, 3, 'd20190806', '#3366FF'),
 (34, 30, 'Sleep', '2019-08-07', '3', '30', 'am', '8', '30', 'am', 1, 5, 'd20190807', '#99CC33'),
 (36, 30, 'Wakeup early and Code agein', '2019-08-07', '7', '10', 'am', '8', '45', 'am', 1, 5, 'd20190807', '#e93a3a'),
-(37, 30, 'Code till the morning', '2019-08-08', '1', '5', 'am', '7', '5', 'am', 1, 3, 'd20190808', '#e93a3a');
+(37, 30, 'Code till the morning', '2019-08-08', '1', '5', 'am', '7', '5', 'am', 1, 3, 'd20190808', '#e93a3a'),
+(38, 30, 'Finish Time Table and Community Pages completely', '2019-08-09', '9', '30', 'am', '11', '55', 'pm', 1, 5, 'd20190809', '#3AC485');
 
 -- --------------------------------------------------------
 
@@ -168,7 +183,7 @@ CREATE TABLE `utusers` (
   `Email` varchar(225) NOT NULL,
   `pass` varchar(225) NOT NULL,
   `passions` text NOT NULL,
-  `school` text,
+  `school` text DEFAULT NULL,
   `profilePicture` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -187,7 +202,9 @@ INSERT INTO `utusers` (`id`, `firstName`, `lastName`, `Email`, `pass`, `passions
 (29, 'Hla', 'Myo', 'hlamyo@gmail.com', '0d9H5N4pBwLm2', 'a:3:{i:0;s:11:\"Programming\";i:1;s:23:\"Artificial Intelligence\";i:2;s:16:\"Game Development\";}', '', 'nopp.png'),
 (30, 'May', 'Myat Noe Zaw', 'mglaymama@gmail.com', 'fezN0/xk5iDcQ', 'a:8:{i:0;s:6:\"Physic\";i:1;s:11:\"Programming\";i:2;s:10:\"Networking\";i:3;s:6:\"Design\";i:4;s:5:\"Space\";i:5;s:23:\"Artificial Intelligence\";i:6;s:12:\"Web Security\";i:7;s:16:\"Game Development\";}', '', 'nopp.png'),
 (31, 'Jo', 'Kar', 'jokar@gmail.com', '83SPit.UeQ22E', 'a:4:{i:0;s:10:\"Networking\";i:1;s:23:\"Artificial Intelligence\";i:2;s:5:\"Space\";i:3;s:6:\"Design\";}', '', 'nopp.png'),
-(32, 'Oz', 'O', 'ozo@gmail.com', 'e8OxPQ356c3is', 'a:5:{i:0;s:10:\"Networking\";i:1;s:23:\"Artificial Intelligence\";i:2;s:5:\"Space\";i:3;s:12:\"Web Security\";i:4;s:16:\"Game Development\";}', '', 'nopp.png');
+(32, 'Oz', 'O', 'ozo@gmail.com', 'e8OxPQ356c3is', 'a:5:{i:0;s:10:\"Networking\";i:1;s:23:\"Artificial Intelligence\";i:2;s:5:\"Space\";i:3;s:12:\"Web Security\";i:4;s:16:\"Game Development\";}', '', 'nopp.png'),
+(33, 'Ki', 'Ki', 'kiki@gmail.com', 'a3v3l8Me6MOjA', 'a:5:{i:0;s:6:\"Physic\";i:1;s:10:\"Networking\";i:2;s:5:\"Space\";i:3;s:6:\"Design\";i:4;s:16:\"Game Development\";}', '', 'nopp.png'),
+(34, 'Re', 'Core', 'recore@gmail.com', 'a3v3l8Me6MOjA', 'a:8:{i:0;s:6:\"Physic\";i:1;s:11:\"Programming\";i:2;s:10:\"Networking\";i:3;s:6:\"Design\";i:4;s:23:\"Artificial Intelligence\";i:5;s:5:\"Space\";i:6;s:12:\"Web Security\";i:7;s:16:\"Game Development\";}', '', 'nopp.png');
 
 --
 -- Indexes for dumped tables
@@ -255,19 +272,19 @@ ALTER TABLE `utpassions`
 -- AUTO_INCREMENT for table `utposts`
 --
 ALTER TABLE `utposts`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `uttask`
 --
 ALTER TABLE `uttask`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `utusers`
 --
 ALTER TABLE `utusers`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

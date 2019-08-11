@@ -20,7 +20,9 @@
     <div class="questionFeedContainer">
 
     <!-- Category Selector start -->
+        
         <div class="categorySelectorContainer">
+                <div class="showCommunitySideBarBtn"><img src="assets/icons/menu.png"></div>
                 <?php
                     $getPassions="SELECT * FROM utusers WHERE id='$UTuserid'";
                     $Passions=mysqli_query($con,$getPassions);
@@ -41,19 +43,28 @@
             <!-- other users post will appear here -->
             <script>
                 catlist = [];
+                var showPostCount = 7;
                 $(".communityPostContainer").load("model/getPosts.php", {
-                    categories: catlist
+                    categories: catlist,
+                    showPostCount:showPostCount
                 });
+                $(".communityMyArticles").load("model/getsavedpost.php");
             </script>
+        </div>
+        <div class="comunityPostDetailContainer">
+            
         </div>
 
     </div>
 
     <!-- search aera start -->
     <div class="communitySideContainer">
-        <div class="communitySearch">
-            <input type="text" placeholder="Search" class="communitySearchInput">
-            <div class="communitySearchBtn"><img src="assets/icons/search.png" alt=""></div>
+        <div class="communitySideHeader">
+            <div class="hideCommunitySearch"><img src="assets/icons/back.png"></div>
+            <div class="communitySearch">
+                <input type="text" placeholder="Search" class="communitySearchInput">
+                <div class="communitySearchBtn"><img src="assets/icons/search.png" alt=""></div>
+            </div>
         </div>
         <div class="communitySearchResultContainer"></div><!--Search Result Holder-->
         <div class="communityMyArticles">
@@ -95,5 +106,9 @@
         </div>
     </div>
     <!-- popup uploader end -->
+
+    <div class="articlePopupMenu">
+        thisis
+    </div>
 
 </div>

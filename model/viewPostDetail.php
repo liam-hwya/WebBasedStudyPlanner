@@ -6,26 +6,10 @@
     $UTuser=$_SESSION['UTuser'];
     $UTuserid=userData($UTuser,'id');
     
-    if(isset($_POST['categories'])){
-        $categories=$_POST['categories'];
-    }else{
-        $categories="";
-    }
-
-    $showPostCount=$_POST['showPostCount'];
-
-    if($categories==""){
-        $getQuery="SELECT * FROM utposts ORDER BY id DESC LIMIT $showPostCount";
-    }else{
-        $categs=array();
-        foreach($categories as $category){
-            $cat="'".$category."'";
-            array_push($categs,$cat);
-        }
-        
-        $getQuery="SELECT * FROM utposts WHERE category IN (" . implode(',', $categs) . ") ORDER BY id DESC LIMIT 3";
-    }
+    $postid=$_POST['postid'];
+    $curpos=$_POST['curpos'];
     
+    $getQuery="SELECT * FROM utposts WHERE id='$postid'";    
     $runQuery=mysqli_query($con,$getQuery);
     if(mysqli_num_rows($runQuery)>0){
         while($utpost=mysqli_fetch_assoc($runQuery)){
@@ -36,12 +20,8 @@
             $category=$utpost['category'];
             $descrip=$utpost['utdescription'];
             $thisPostid=$utpost['id'];
-            if(strlen($descrip)>200){
-                $shortDescrip=substr($description, 0, 200);
-                $description="<p class='thisPostShortDescription'>".$shortDescrip." <span class='readMorethisPost viewPostDetailBtn' data-postid='".$thisPostid."'>Read More...</span></p>";
-            }else{
-                $description="<p>".$descrip."</p>";
-            }
+            $description="<p class='thisPostShortDescription'>".$descrip."</p>";
+            
 
             
             //getstar
@@ -82,6 +62,7 @@
                     $userName=$firstName." ".$lastName;
                     $userPP=$userData['profilePicture'];
                     echo "
+                    <div data-curpos='".$curpos."' class='backFromPostDetail'><img src='assets/icons/back.png'><span>Back</span></div>
                     <div class='thisArticleContainer'>
 
                         <div class='thisArticleMenu'><img src='assets/icons/dotmenu2.png' class='articleMenu' data-uid='".$id."' data-postid='".$thisPostid."'></div>
@@ -104,20 +85,64 @@
                                 </div>
                                 <div class='thisArticleControls'>
                                     <div data-postId='".$thisPostid."' class='thisArticleStars ".$starStatus."'><img src='assets/icons/star.png'>".$thisStarcount."</div>
-                                    <div data-postid='".$thisPostid."' class='thisArticleComment viewPostDetailBtn'><img src='assets/icons/message.png'>".$thisMentCount."</div>
+                                    <div class='thisArticleComment'><img src='assets/icons/message.png'>".$thisMentCount."</div>
                                 </div>
                             </div>
+                            <div class='thisArticleCommentContainer'>
+                                <div class='addCommentContainer'>
+                                    <textarea class='addCommentInputBox'></textarea><div data-postid='".$thisPostid."' class='addCommentBtn'>Comment</div>
+                                </div>
+                                <div class='articleDetailAllComentContainer'>";
 
+                                $thisMentQuery="SELECT * FROM utcomment WHERE postid='$thisPostid'";
+                                $getThisments=mysqli_query($con,$thisMentQuery);
+                                if(mysqli_num_rows($getThisments)>0){
+                                    while($comments=mysqli_fetch_assoc($getThisments)){
+                                        $comment=$comments['comment'];
+                                        $date=$comments['mentDate'];
+                                        $comUserid=$comments['userid'];
+                                        $getcomUserQuery="SELECT * FROM utusers WHERE id='$comUserid'";
+                                        $getcomUser=mysqli_query($con,$getcomUserQuery);
+                                        if(mysqli_num_rows($getcomUser)>0){
+                                            while($mentUser=mysqli_fetch_assoc($getcomUser)){
+                                                $MUfname=$mentUser['firstName'];
+                                                $MUlname=$mentUser['lastName'];
+                                                $mentUserName=$MUfname." ".$MUlname;
+                                                $mentUserPP=$mentUser['profilePicture'];
+                                            }
+                                        }
+                                
+                                        echo "
+                                                <div class='articleComment'>
+                                                    <div class='articleCommentHeader'>
+                                                        <div class='articleCommentPP'><img src='assets/images/".$mentUserPP."'></div>
+                                                        <div class='articleCommentInfo'>
+                                                            <div class='articleCommentUserName'>".$mentUserName."</div>
+                                                            <div class='articleCommentDate'>".$date."</div>
+                                                        </div>
+                                                        <div class='articleCommentMenus'><img src='assets/icons/dotmenu2.png'></div>
+                                                    </div>
+                                                    <div class='articleCommentData'>".$comment."</div>
+                                                </div>
+                                                
+                                                ";
+                                
+                                    }
+                                }else{
+                                    echo "nocoment";
+                                }
+
+                               echo" </div>
+                            </div>
                         </div>
-
-
-                    </div>
-                ";
+                    </div>";
                 }
             }
+
+           
         }
     }
 ?>
-<div class="lodeMorePostBtn">View More</div>
+
 
 <!--  -->
