@@ -209,62 +209,62 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
 
 
                 //for tomorrow
-                echo "<div class='taskDayTitle'>Tomorrow</div>";
-                $getNextQuery="SELECT * FROM uttask WHERE userid='$UTuserid' AND dformat='$nextdformat'";
-                $getNextTasks=mysqli_query($con,$getNextQuery);
-                if(mysqli_num_rows($getNextTasks)>0){
-                    while($UTtask=mysqli_fetch_assoc($getNextTasks)){
-                        $shour= $UTtask['shour'];
-                        $sminute=$UTtask['sminute'];
-                        $sampm=$UTtask['sampm'];
-                        $ehour= $UTtask['ehour'];
-                        $eminute=$UTtask['eminute'];
-                        $eampm=$UTtask['eampm'];
-                        $taskDate= $UTtask['taskdate'];
-                        $taskColor=$UTtask['utColor'];
-                        $fromTime=twoDigit($shour).":".twoDigit($sminute)." ".$sampm;
-                        $toTime=twoDigit($ehour).":".twoDigit($eminute)." ".$eampm;
-                        $UTtask= $UTtask['tasksubject'];
-                        echo "<div class='UTeachTaskContainer' style='border-right-color:".$taskColor."'>
-                            <div class='utTaskTitle'>".$UTtask."</div>
-                            <div class='utTaskTime'>
-                                <div class='utTaskHours'>".$fromTime." to ".$toTime."</div>
-                                <div class='utTaskDate'>".$taskDate."</div>
-                            </div>
-                        </div>";
-                    }
-                }else{
-                    echo "No Task For Tomorrow";
-                }
+                // echo "<div class='taskDayTitle'>Tomorrow</div>";
+                // $getNextQuery="SELECT * FROM uttask WHERE userid='$UTuserid' AND dformat='$nextdformat'";
+                // $getNextTasks=mysqli_query($con,$getNextQuery);
+                // if(mysqli_num_rows($getNextTasks)>0){
+                //     while($UTtask=mysqli_fetch_assoc($getNextTasks)){
+                //         $shour= $UTtask['shour'];
+                //         $sminute=$UTtask['sminute'];
+                //         $sampm=$UTtask['sampm'];
+                //         $ehour= $UTtask['ehour'];
+                //         $eminute=$UTtask['eminute'];
+                //         $eampm=$UTtask['eampm'];
+                //         $taskDate= $UTtask['taskdate'];
+                //         $taskColor=$UTtask['utColor'];
+                //         $fromTime=twoDigit($shour).":".twoDigit($sminute)." ".$sampm;
+                //         $toTime=twoDigit($ehour).":".twoDigit($eminute)." ".$eampm;
+                //         $UTtask= $UTtask['tasksubject'];
+                //         echo "<div class='UTeachTaskContainer' style='border-right-color:".$taskColor."'>
+                //             <div class='utTaskTitle'>".$UTtask."</div>
+                //             <div class='utTaskTime'>
+                //                 <div class='utTaskHours'>".$fromTime." to ".$toTime."</div>
+                //                 <div class='utTaskDate'>".$taskDate."</div>
+                //             </div>
+                //         </div>";
+                //     }
+                // }else{
+                //     echo "No Task For Tomorrow";
+                // }
                 
                 //for other days
-                echo "<div class='taskDayTitle'>Latter</div>";
-                $getQuery="SELECT * FROM uttask WHERE userid='$UTuserid' AND dformat != '$nextdformat' AND dformat!='$todayDformat'";
-                $getTasks=mysqli_query($con,$getQuery);
-                if(mysqli_num_rows($getTasks)>0){
-                    while($UTtask=mysqli_fetch_assoc($getTasks)){
-                        $shour= $UTtask['shour'];
-                        $sminute=$UTtask['sminute'];
-                        $sampm=$UTtask['sampm'];
-                        $ehour= $UTtask['ehour'];
-                        $eminute=$UTtask['eminute'];
-                        $eampm=$UTtask['eampm'];
-                        $taskDate= $UTtask['taskdate'];
-                        $taskColor=$UTtask['utColor'];
-                        $fromTime=twoDigit($shour).":".twoDigit($sminute)." ".$sampm;
-                        $toTime=twoDigit($ehour).":".twoDigit($eminute)." ".$eampm;
-                        $UTtask= $UTtask['tasksubject'];
-                        echo "<div class='UTeachTaskContainer' style='border-right-color:".$taskColor."'>
-                            <div class='utTaskTitle'>".$UTtask."</div>
-                            <div class='utTaskTime'>
-                                <div class='utTaskHours'>".$fromTime." to ".$toTime."</div>
-                                <div class='utTaskDate'>".$taskDate."</div>
-                            </div>
-                        </div>";
-                    }
-                }else{
-                    echo "No More Task";
-                }
+                // echo "<div class='taskDayTitle'>Latter</div>";
+                // $getQuery="SELECT * FROM uttask WHERE userid='$UTuserid' AND dformat != '$nextdformat' AND dformat!='$todayDformat'";
+                // $getTasks=mysqli_query($con,$getQuery);
+                // if(mysqli_num_rows($getTasks)>0){
+                //     while($UTtask=mysqli_fetch_assoc($getTasks)){
+                //         $shour= $UTtask['shour'];
+                //         $sminute=$UTtask['sminute'];
+                //         $sampm=$UTtask['sampm'];
+                //         $ehour= $UTtask['ehour'];
+                //         $eminute=$UTtask['eminute'];
+                //         $eampm=$UTtask['eampm'];
+                //         $taskDate= $UTtask['taskdate'];
+                //         $taskColor=$UTtask['utColor'];
+                //         $fromTime=twoDigit($shour).":".twoDigit($sminute)." ".$sampm;
+                //         $toTime=twoDigit($ehour).":".twoDigit($eminute)." ".$eampm;
+                //         $UTtask= $UTtask['tasksubject'];
+                //         echo "<div class='UTeachTaskContainer' style='border-right-color:".$taskColor."'>
+                //             <div class='utTaskTitle'>".$UTtask."</div>
+                //             <div class='utTaskTime'>
+                //                 <div class='utTaskHours'>".$fromTime." to ".$toTime."</div>
+                //                 <div class='utTaskDate'>".$taskDate."</div>
+                //             </div>
+                //         </div>";
+                //     }
+                // }else{
+                //     echo "No More Task";
+                // }
            ?>
     </div>
 <!--Tasks Start-->

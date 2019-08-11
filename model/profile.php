@@ -15,3 +15,5 @@
     }
 
 ?>
+<hr>
+<a href="model/logout.php">Logout</a>

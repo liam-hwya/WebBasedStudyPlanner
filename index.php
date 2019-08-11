@@ -103,6 +103,7 @@
     <script src="controller/profile.js"></script>
     <script src="controller/community.js"></script>
     <script src="controller/imagePreview.js"></script>
+    <script src="controller/exam.js"></script>
 </body>
 
 </html>
