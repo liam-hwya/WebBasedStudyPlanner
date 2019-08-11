@@ -70,11 +70,12 @@
         <div class="communityMyArticles">
             
         </div>
-        <div class="addNewArticleBtn">
+        
+    </div> 
+    <div class="addNewArticleBtn">
             <span>Add Article</span>
             <div class="addNewArticleIcon"><img src="assets/icons/add.png" alt=""></div>
-        </div>
-    </div>  
+    </div> 
     <!-- search area end -->
 
     <!-- popup uploader start -->

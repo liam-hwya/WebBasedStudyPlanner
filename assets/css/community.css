@@ -198,15 +198,19 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         display: none;
         overflow-y: scroll;
     }
     .realuploaderbox {
-        width: 500px;
+        width: 95%;
+        margin: 0 2.5%;
         height: auto;
         background: white;
-        position: absolute;
-        top: 120px;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
     }
     .postUploaderTitle {
         height: 40px;

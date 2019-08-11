@@ -35,6 +35,7 @@
             $starcount=$utpost['starcount'];
             $category=$utpost['category'];
             $descrip=$utpost['utdescription'];
+            $postDate=$utpost['utdate'];
             $thisPostid=$utpost['id'];
             if(strlen($descrip)>200){
                 $shortDescrip=substr($description, 0, 200);
@@ -100,7 +101,7 @@
                             <div class='thisArticleFooter'>
                                 <div class='thisArticleCatTime'>
                                     <div class='thisArticleCategory'>".$category."</div>
-                                    <div class='thisArticleTime'>2019-8-7</div>
+                                    <div class='thisArticleTime'>".$postDate."</div>
                                 </div>
                                 <div class='thisArticleControls'>
                                     <div data-postId='".$thisPostid."' class='thisArticleStars ".$starStatus."'><img src='assets/icons/star.png'>".$thisStarcount."</div>
