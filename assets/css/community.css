@@ -634,23 +634,1691 @@
         background: #3AC485;
         color: #fff;
     }
+    .lodeMorePostBtn{
+        background:#eee !important;
+        width:90% !important;
+        height:40px !important;
+        line-height:40px !important;
+        margin:10px 5% !important;
+    }
     /* Category Selector end ================================================================ */
 }
 
 
 /*small================================================================================================================*/
 
-@media only screen and (min-width: 600px) and (max-width:767px) {}
+@media only screen and (min-width: 600px) and (max-width:767px) {
+    .communityMainContainer {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background: #ddd;
+    }
+    .questionFeedContainer {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .communitySideContainer {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 10px;
+        padding-top: 5px;
+        position: fixed;
+        background: #eee;
+        z-index: 300;
+        overflow-y: scroll;
+        display: none;
+    }
+    /*post uploader*/
+    .postUploader {
+        width: 100%;
+        height: auto;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+    /*header of postuploader*/
+    .postUPloaderPpContainer {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        padding-top: 10px;
+    }
+    .uploaderPp {
+        width: 55px;
+        height: 55px;
+        margin: 0 20px;
+        border-radius: 50%;
+        background: #ddd;
+    }
+    .uploaderPp img {
+        width: 55px;
+        height: 55px;
+    }
+    .uploaderName {
+        font-size: 20px;
+        color: #333;
+    }
+    .theSpaceBetweenNameNcancel {
+        flex-grow: 1;
+    }
+    .cancelPostUpload {
+        width: 25px;
+        height: 25px;
+        margin-right: 20px;
+        opacity: 0.5;
+    }
+    .cancelPostUpload:hover {
+        opacity: 0.7;
+        cursor: pointer;
+    }
+    .cancelPostUpload img {
+        width: 25px;
+        height: 25px;
+    }
+    /* Add new Btn */
+    .addNewArticleBtn {
+        height: 50px;
+        position: fixed;
+        bottom: 80px;
+        right: 30px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .addNewArticleBtn span {
+        display: none;
+    }
+    .addNewArticleIcon {
+        width: 50px;
+        height: 50px;
+        background: #3AC485;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .addNewArticleIcon img {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        filter: invert(100);
+    }
+    /*post uploader container*/
+    .realuploaderContainer {
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        display: none;
+        overflow-y: scroll;
+    }
+    .realuploaderbox {
+        width: 95%;
+        margin: 0 2.5%;
+        height: auto;
+        background: white;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .postUploaderTitle {
+        height: 40px;
+        width: 90%;
+        margin: 10px 5%;
+        border: none;
+        outline: none;
+        background: #eee;
+        padding: 0 10px;
+        box-sizing: border-box;
+        font-family: "maian";
+        font-size: 16px;
+    }
+    .postUploaderTextbox {
+        border: none;
+        outline: none;
+        width: 90%;
+        margin: 10px 5%;
+        min-height: 200px;
+        overflow: auto;
+        box-sizing: border-box;
+        word-wrap: break-word;
+        background: #eee;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .postUploaderControls {
+        width: 100%;
+        height: 55px;
+        background: #ccc;
+        display: flex;
+        justify-content: space-between;
+    }
+    .postUploaderControls img {
+        width: 35px;
+        height: 35px;
+        margin: 10px 20px;
+        opacity: 0.5;
+    }
+    .postUploaderControls img:hover {
+        cursor: pointer;
+    }
+    .postUploaderCategorySelector {
+        height: 32px;
+        margin: 11.5px 20px;
+    }
+    .uploadPostBtn {
+        width: 80px;
+        height: 32px;
+        background: #3ac485;
+        text-align: center;
+        line-height: 32px;
+        font-size: 16px;
+        color: #fff;
+        margin: 11.5px 20px;
+    }
+    .uploadPostBtn:hover {
+        cursor: pointer;
+    }
+    .fileselectorForPostUpload {
+        display: none;
+    }
+    /* Articles */
+    .communityPostContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        margin-top: 30px;
+    }
+    .thisArticleContainer {
+        width: 100%;
+        height: auto;
+        background: #fff;
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .thisArticleMenu {
+        display: none;
+    }
+    .thisArticleMainBody {
+        width: 100%;
+        -webkit-order: 1;
+        order: 1;
+    }
+    .thisArticleHeader {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        box-sizing: border-box;
+    }
+    .thisArticleUserInfo,
+    .thisArticleMenuTitle {
+        display: flex;
+        height: 50px;
+        align-items: center;
+    }
+    .thisArticleUserInfo {
+        -webkit-order: 1;
+        order: 1;
+    }
+    .thisArticleTitle {
+        -webkit-order: 2;
+        order: 2;
+    }
+    .thisArticleTitle {
+        height: 35px;
+        line-height: 35px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+    }
+    .thisArticleUserProfilePicture {
+        width: 50px;
+        height: 50px;
+    }
+    .thisArticleUserName {
+        font-size: 16px;
+        color: #333;
+        margin-right: 5px;
+        margin-left: auto;
+    }
+    .thisArticleUserProfilePicture img {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        border-radius: 50%;
+    }
+    .thisArticleMenuInSmall {
+        width: 50px;
+        height: 50px;
+    }
+    .thisArticleMenuInSmall img {
+        width: 30px;
+        height: 30px;
+        padding: 10px;
+    }
+    .thisArticleBody {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 10px 0;
+        white-space: pre-line;
+        font-size: 15px;
+    }
+    .readMorethisPost {
+        color: #3AC485;
+        font-style: italic;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    .thisArticleFooter {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .thisArticleCatTime {
+        font-size: 13px;
+        height: 25px;
+        margin: 5px 0;
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+    }
+    .thisArticleControls {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        border-top: solid 1px #555;
+        justify-content: space-around;
+        margin-bottom: -10px;
+    }
+    .thisArticleTime {
+        font-size: 13px;
+        margin-left: 8px;
+        padding-left: 7px;
+        border-left: solid 2px #333;
+    }
+    .thisArticleStars,
+    .thisArticleComment {
+        display: flex;
+        align-items: center;
+        margin: 0 20px;
+        cursor: pointer;
+        height: 40px;
+    }
+    .thisArticleStars img {
+        width: 20px;
+        height: 20px;
+        margin: 0 10px;
+    }
+    .thisArticleComment img {
+        width: 25px;
+        height: 25px;
+        margin: 0 10px;
+        opacity: 0.5;
+    }
+    /* ==================================ArticleDetail========================================== */
+    .comunityPostDetailContainer {
+        width: 100%;
+        flex-direction: column;
+        margin-bottom: 20px;
+        display: none;
+    }
+    .backFromPostDetail {
+        width: 100px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+    .backFromPostDetail img {
+        height: 30px;
+        opacity: 0.8;
+    }
+    .backFromPostDetail span {
+        margin-left: 10px;
+        color: #333;
+    }
+    .thisArticleCommentContainer {
+        width: 100%;
+    }
+    .addCommentContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0;
+    }
+    .addCommentInputBox {
+        flex-grow: 1;
+        height: 60px;
+        background: #eee;
+        border: none;
+        outline: none;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        font-family: 'maian';
+        border-radius: 10px;
+    }
+    .addCommentBtn {
+        width: 100px;
+        height: 30px;
+        background: #3AC485;
+        text-align: center;
+        border-radius: 20px;
+        line-height: 30px;
+        font-size: 16px;
+        color: #fff;
+        margin: 10px 0;
+        cursor: pointer;
+    }
+    .articleComment {
+        width: 100%;
+        border-top: solid 2px #ddd;
+        padding-top: 10px;
+        margin-top: 5px;
+    }
+    .articleCommentHeader {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .articleCommentPP {
+        height: 50px;
+        width: 50px;
+    }
+    .articleCommentPP img {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        border-radius: 50%;
+    }
+    .articleCommentInfo {
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: center;
+    }
+    .articleCommentUserName {
+        font-size: 19px;
+        color: #333;
+    }
+    .articleCommentDate {
+        font-size: 13px;
+        color: #555;
+    }
+    .articleCommentMenus {
+        width: 50px;
+        height: 50px;
+    }
+    .articleCommentMenus img {
+        width: 20px;
+        height: 20px;
+        margin: 15px;
+        opacity: 0.5;
+    }
+    .articleCommentData {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    /*============================================= side bar================================== */
+    .communitySearch {
+        flex-grow: 1;
+        height: 40px;
+        border: solid 1.5px #3AC485;
+        box-sizing: border-box;
+        border-radius: 25px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .communitySideHeader {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .hideCommunitySearch {
+        width: auto;
+        height: 40px;
+        margin: 0 10px;
+    }
+    .hideCommunitySearch img {
+        height: 40px;
+    }
+    .communitySearchInput {
+        flex-grow: 1;
+        padding: 0 30px;
+        font-size: 16px;
+        box-sizing: border-box;
+        font-family: 'maian';
+        height: 40px;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        background: none;
+        color: #3AC485;
+    }
+    .communitySearchBtn {
+        width: 35px;
+        height: 35px;
+        margin: 0 10px;
+    }
+    .communitySearchBtn img {
+        width: 100%;
+        height: 100%;
+    }
+    .communitySearchResultContainer {
+        width: 90%;
+        overflow-y: scroll;
+        padding: 15px;
+        background: #fff;
+        color: #3AC485;
+        box-sizing: border-box;
+        border-radius: 25px;
+        margin: 10px 5%;
+        display: none;
+        position: fixed;
+        top: 100px;
+        left: 0;
+        z-index: 320;
+        flex-direction: column;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    /* My articles start */
+    .communityMyArticles {
+        width: 100%;
+        margin-top: 10px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    /* My articles end */
+    /* Category Selector start ================================================================ */
+    .categorySelectorContainer {
+        width: 100%;
+        height: 50px;
+        overflow: scroll;
+        position: fixed;
+        z-index: 300;
+        background: #fff;
+        justify-content: flex-start;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+    }
+    .showCommunitySideBarBtn {
+        width: 30px;
+        height: 30px;
+        margin: 0 20px;
+    }
+    .showCommunitySideBarBtn img {
+        width: 30px;
+        height: 30px;
+    }
+    .categorytoSelectInCommunity,
+    .showAllCategoriesInCommunity {
+        color: #333;
+        padding: 5px 10px;
+        margin: 0 10px;
+        background: #eee;
+        white-space: nowrap;
+        border-radius: 15px;
+    }
+    .categorytoSelectInCommunity:hover,
+    .showAllCategoriesInCommunity:hover {
+        cursor: pointer;
+    }
+    .selectedCat,
+    .showingAllCats {
+        background: #3AC485;
+        color: #fff;
+    }
+    .lodeMorePostBtn{
+        background:#eee !important;
+        width:90% !important;
+        height:40px !important;
+        line-height:40px !important;
+        margin:10px 5% !important;
+    }
+}
 
 
 /*medium*/
 
-@media only screen and (min-width: 768px) and (max-width:991px) {}
+@media only screen and (min-width: 768px) and (max-width:991px) {
+    .communityMainContainer {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .questionFeedContainer {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .communitySideContainer {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 10px;
+        padding-top: 5px;
+        background: #eee;
+        z-index: 300;
+        overflow-y: scroll;
+        display: none;
+        
+    }
+    /*post uploader*/
+    .postUploader {
+        width: 100%;
+        height: auto;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+    /*header of postuploader*/
+    .postUPloaderPpContainer {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        padding-top: 10px;
+    }
+    .uploaderPp {
+        width: 55px;
+        height: 55px;
+        margin: 0 20px;
+        border-radius: 50%;
+        background: #ddd;
+    }
+    .uploaderPp img {
+        width: 55px;
+        height: 55px;
+    }
+    .uploaderName {
+        font-size: 20px;
+        color: #333;
+    }
+    .theSpaceBetweenNameNcancel {
+        flex-grow: 1;
+    }
+    .cancelPostUpload {
+        width: 25px;
+        height: 25px;
+        margin-right: 20px;
+        opacity: 0.5;
+    }
+    .cancelPostUpload:hover {
+        opacity: 0.7;
+        cursor: pointer;
+    }
+    .cancelPostUpload img {
+        width: 25px;
+        height: 25px;
+    }
+    /* Add new Btn */
+    .addNewArticleBtn {
+        height: 50px;
+        position: fixed;
+        bottom: 80px;
+        right: 30px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .addNewArticleBtn span {
+        display: none;
+    }
+    .addNewArticleIcon {
+        width: 50px;
+        height: 50px;
+        background: #3AC485;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .addNewArticleIcon img {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        filter: invert(100);
+    }
+    /*post uploader container*/
+    .realuploaderContainer {
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        display: none;
+        overflow-y: scroll;
+    }
+    .realuploaderbox {
+        width: 95%;
+        margin: 0 2.5%;
+        height: auto;
+        background: white;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .postUploaderTitle {
+        height: 40px;
+        width: 90%;
+        margin: 10px 5%;
+        border: none;
+        outline: none;
+        background: #eee;
+        padding: 0 10px;
+        box-sizing: border-box;
+        font-family: "maian";
+        font-size: 16px;
+    }
+    .postUploaderTextbox {
+        border: none;
+        outline: none;
+        width: 90%;
+        margin: 10px 5%;
+        min-height: 200px;
+        overflow: auto;
+        box-sizing: border-box;
+        word-wrap: break-word;
+        background: #eee;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .postUploaderControls {
+        width: 100%;
+        height: 55px;
+        background: #ccc;
+        display: flex;
+        justify-content: space-between;
+    }
+    .postUploaderControls img {
+        width: 35px;
+        height: 35px;
+        margin: 10px 20px;
+        opacity: 0.5;
+    }
+    .postUploaderControls img:hover {
+        cursor: pointer;
+    }
+    .postUploaderCategorySelector {
+        height: 32px;
+        margin: 11.5px 20px;
+    }
+    .uploadPostBtn {
+        width: 80px;
+        height: 32px;
+        background: #3ac485;
+        text-align: center;
+        line-height: 32px;
+        font-size: 16px;
+        color: #fff;
+        margin: 11.5px 20px;
+    }
+    .uploadPostBtn:hover {
+        cursor: pointer;
+    }
+    .fileselectorForPostUpload {
+        display: none;
+    }
+    /* Articles */
+    .communityPostContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    .thisArticleContainer {
+        width: 100%;
+        height: auto;
+        background: #fff;
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .thisArticleMenu {
+        display: none;
+    }
+    .thisArticleMainBody {
+        width: 100%;
+        -webkit-order: 1;
+        order: 1;
+    }
+    .thisArticleHeader {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        box-sizing: border-box;
+    }
+    .thisArticleUserInfo,
+    .thisArticleMenuTitle {
+        display: flex;
+        height: 50px;
+        align-items: center;
+    }
+    .thisArticleUserInfo {
+        -webkit-order: 1;
+        order: 1;
+    }
+    .thisArticleTitle {
+        -webkit-order: 2;
+        order: 2;
+    }
+    .thisArticleTitle {
+        height: 35px;
+        line-height: 35px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+    }
+    .thisArticleUserProfilePicture {
+        width: 50px;
+        height: 50px;
+    }
+    .thisArticleUserName {
+        font-size: 16px;
+        color: #333;
+        margin-right: 5px;
+        margin-left: auto;
+    }
+    .thisArticleUserProfilePicture img {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        border-radius: 50%;
+    }
+    .thisArticleMenuInSmall {
+        width: 50px;
+        height: 50px;
+    }
+    .thisArticleMenuInSmall img {
+        width: 30px;
+        height: 30px;
+        padding: 10px;
+    }
+    .thisArticleBody {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 10px 0;
+        white-space: pre-line;
+        font-size: 15px;
+    }
+    .readMorethisPost {
+        color: #3AC485;
+        font-style: italic;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    .thisArticleFooter {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .thisArticleCatTime {
+        font-size: 13px;
+        height: 25px;
+        margin: 5px 0;
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+    }
+    .thisArticleControls {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        border-top: solid 1px #555;
+        justify-content: space-around;
+        margin-bottom: -10px;
+    }
+    .thisArticleTime {
+        font-size: 13px;
+        margin-left: 8px;
+        padding-left: 7px;
+        border-left: solid 2px #333;
+    }
+    .thisArticleStars,
+    .thisArticleComment {
+        display: flex;
+        align-items: center;
+        margin: 0 20px;
+        cursor: pointer;
+        height: 40px;
+    }
+    .thisArticleStars img {
+        width: 20px;
+        height: 20px;
+        margin: 0 10px;
+    }
+    .thisArticleComment img {
+        width: 25px;
+        height: 25px;
+        margin: 0 10px;
+        opacity: 0.5;
+    }
+    /* ==================================ArticleDetail========================================== */
+    .comunityPostDetailContainer {
+        width: 100%;
+        flex-direction: column;
+        margin-bottom: 20px;
+        display: none;
+    }
+    .backFromPostDetail {
+        width: 100px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+    .backFromPostDetail img {
+        height: 30px;
+        opacity: 0.8;
+    }
+    .backFromPostDetail span {
+        margin-left: 10px;
+        color: #333;
+    }
+    .thisArticleCommentContainer {
+        width: 100%;
+    }
+    .addCommentContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0;
+    }
+    .addCommentInputBox {
+        flex-grow: 1;
+        height: 60px;
+        background: #eee;
+        border: none;
+        outline: none;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        font-family: 'maian';
+        border-radius: 10px;
+    }
+    .addCommentBtn {
+        width: 100px;
+        height: 30px;
+        background: #3AC485;
+        text-align: center;
+        border-radius: 20px;
+        line-height: 30px;
+        font-size: 16px;
+        color: #fff;
+        margin: 10px 0;
+        cursor: pointer;
+    }
+    .articleComment {
+        width: 100%;
+        border-top: solid 2px #ddd;
+        padding-top: 10px;
+        margin-top: 5px;
+    }
+    .articleCommentHeader {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .articleCommentPP {
+        height: 50px;
+        width: 50px;
+    }
+    .articleCommentPP img {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        border-radius: 50%;
+    }
+    .articleCommentInfo {
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: center;
+    }
+    .articleCommentUserName {
+        font-size: 19px;
+        color: #333;
+    }
+    .articleCommentDate {
+        font-size: 13px;
+        color: #555;
+    }
+    .articleCommentMenus {
+        width: 50px;
+        height: 50px;
+    }
+    .articleCommentMenus img {
+        width: 20px;
+        height: 20px;
+        margin: 15px;
+        opacity: 0.5;
+    }
+    .articleCommentData {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    /*============================================= side bar================================== */
+    .communitySearch {
+        flex-grow: 1;
+        height: 40px;
+        border: solid 1.5px #3AC485;
+        box-sizing: border-box;
+        border-radius: 25px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .communitySideHeader {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .hideCommunitySearch {
+        width: auto;
+        height: 40px;
+        margin: 0 10px;
+    }
+    .hideCommunitySearch img {
+        height: 40px;
+    }
+    .communitySearchInput {
+        flex-grow: 1;
+        padding: 0 30px;
+        font-size: 16px;
+        box-sizing: border-box;
+        font-family: 'maian';
+        height: 40px;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        background: none;
+        color: #3AC485;
+    }
+    .communitySearchBtn {
+        width: 35px;
+        height: 35px;
+        margin: 0 10px;
+    }
+    .communitySearchBtn img {
+        width: 100%;
+        height: 100%;
+    }
+    .communitySearchResultContainer {
+        width: 90%;
+        overflow-y: scroll;
+        padding: 15px;
+        background: #fff;
+        color: #3AC485;
+        box-sizing: border-box;
+        border-radius: 25px;
+        margin: 10px 5%;
+        display: none;
+        position: fixed;
+        top: 100px;
+        left: 0;
+        z-index: 320;
+        flex-direction: column;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    /* My articles start */
+    .communityMyArticles {
+        width: 100%;
+        margin-top: 10px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    /* My articles end */
+
+    /* Category Selector start ================================================================ */
+    .categorySelectorContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .showCommunitySideBarBtn {
+        width: 30px;
+        height: 30px;
+        margin: 0 20px;
+    }
+    .showCommunitySideBarBtn img {
+        width: 30px;
+        height: 30px;
+    }
+    .categorytoSelectInCommunity,
+    .showAllCategoriesInCommunity {
+        padding: 5px 20px;
+        margin: 5px;
+        background: #fff;
+        border-radius: 25px;
+        color: #3AC485;
+    }
+    .categorytoSelectInCommunity:hover,
+    .showAllCategoriesInCommunity:hover {
+        cursor: pointer;
+    }
+    .selectedCat,
+    .showingAllCats {
+        background: #3AC485;
+        color: #fff;
+    }
+    .lodeMorePostBtn{
+        background:#eee !important;
+        width:90% !important;
+        height:40px !important;
+        line-height:40px !important;
+        margin:10px 5% !important;
+    }
+}
 
 
 /*large=============================================================================================================*/
 
-@media only screen and (min-width: 992px) and (max-width:1199px) {}
+@media only screen and (min-width: 992px) and (max-width:1199px) {
+    .communityMainContainer {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .questionFeedContainer {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .communitySideContainer {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 10px;
+        padding-top: 5px;
+        background: #eee;
+        z-index: 300;
+        overflow-y: scroll;
+        display: none;
+        
+    }
+    /*post uploader*/
+    .postUploader {
+        width: 100%;
+        height: auto;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+    /*header of postuploader*/
+    .postUPloaderPpContainer {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        padding-top: 10px;
+    }
+    .uploaderPp {
+        width: 55px;
+        height: 55px;
+        margin: 0 20px;
+        border-radius: 50%;
+        background: #ddd;
+    }
+    .uploaderPp img {
+        width: 55px;
+        height: 55px;
+    }
+    .uploaderName {
+        font-size: 20px;
+        color: #333;
+    }
+    .theSpaceBetweenNameNcancel {
+        flex-grow: 1;
+    }
+    .cancelPostUpload {
+        width: 25px;
+        height: 25px;
+        margin-right: 20px;
+        opacity: 0.5;
+    }
+    .cancelPostUpload:hover {
+        opacity: 0.7;
+        cursor: pointer;
+    }
+    .cancelPostUpload img {
+        width: 25px;
+        height: 25px;
+    }
+    /* Add new Btn */
+    .addNewArticleBtn {
+        height: 50px;
+        position: fixed;
+        bottom: 80px;
+        right: 30px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .addNewArticleBtn span {
+        display: none;
+    }
+    .addNewArticleIcon {
+        width: 50px;
+        height: 50px;
+        background: #3AC485;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .addNewArticleIcon img {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        filter: invert(100);
+    }
+    /*post uploader container*/
+    .realuploaderContainer {
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        display: none;
+        overflow-y: scroll;
+    }
+    .realuploaderbox {
+        width: 95%;
+        margin: 0 2.5%;
+        height: auto;
+        background: white;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .postUploaderTitle {
+        height: 40px;
+        width: 90%;
+        margin: 10px 5%;
+        border: none;
+        outline: none;
+        background: #eee;
+        padding: 0 10px;
+        box-sizing: border-box;
+        font-family: "maian";
+        font-size: 16px;
+    }
+    .postUploaderTextbox {
+        border: none;
+        outline: none;
+        width: 90%;
+        margin: 10px 5%;
+        min-height: 200px;
+        overflow: auto;
+        box-sizing: border-box;
+        word-wrap: break-word;
+        background: #eee;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .postUploaderControls {
+        width: 100%;
+        height: 55px;
+        background: #ccc;
+        display: flex;
+        justify-content: space-between;
+    }
+    .postUploaderControls img {
+        width: 35px;
+        height: 35px;
+        margin: 10px 20px;
+        opacity: 0.5;
+    }
+    .postUploaderControls img:hover {
+        cursor: pointer;
+    }
+    .postUploaderCategorySelector {
+        height: 32px;
+        margin: 11.5px 20px;
+    }
+    .uploadPostBtn {
+        width: 80px;
+        height: 32px;
+        background: #3ac485;
+        text-align: center;
+        line-height: 32px;
+        font-size: 16px;
+        color: #fff;
+        margin: 11.5px 20px;
+    }
+    .uploadPostBtn:hover {
+        cursor: pointer;
+    }
+    .fileselectorForPostUpload {
+        display: none;
+    }
+    /* Articles */
+    .communityPostContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    .thisArticleContainer {
+        width: 100%;
+        height: auto;
+        background: #fff;
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .thisArticleMenu {
+        display: none;
+    }
+    .thisArticleMainBody {
+        width: 100%;
+        -webkit-order: 1;
+        order: 1;
+    }
+    .thisArticleHeader {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        box-sizing: border-box;
+    }
+    .thisArticleUserInfo,
+    .thisArticleMenuTitle {
+        display: flex;
+        height: 50px;
+        align-items: center;
+    }
+    .thisArticleUserInfo {
+        -webkit-order: 1;
+        order: 1;
+    }
+    .thisArticleTitle {
+        -webkit-order: 2;
+        order: 2;
+    }
+    .thisArticleTitle {
+        height: 35px;
+        line-height: 35px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+    }
+    .thisArticleUserProfilePicture {
+        width: 50px;
+        height: 50px;
+    }
+    .thisArticleUserName {
+        font-size: 16px;
+        color: #333;
+        margin-right: 5px;
+        margin-left: auto;
+    }
+    .thisArticleUserProfilePicture img {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        border-radius: 50%;
+    }
+    .thisArticleMenuInSmall {
+        width: 50px;
+        height: 50px;
+    }
+    .thisArticleMenuInSmall img {
+        width: 30px;
+        height: 30px;
+        padding: 10px;
+    }
+    .thisArticleBody {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 10px 0;
+        white-space: pre-line;
+        font-size: 15px;
+    }
+    .readMorethisPost {
+        color: #3AC485;
+        font-style: italic;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    .thisArticleFooter {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .thisArticleCatTime {
+        font-size: 13px;
+        height: 25px;
+        margin: 5px 0;
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+    }
+    .thisArticleControls {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        border-top: solid 1px #555;
+        justify-content: space-around;
+        margin-bottom: -10px;
+    }
+    .thisArticleTime {
+        font-size: 13px;
+        margin-left: 8px;
+        padding-left: 7px;
+        border-left: solid 2px #333;
+    }
+    .thisArticleStars,
+    .thisArticleComment {
+        display: flex;
+        align-items: center;
+        margin: 0 20px;
+        cursor: pointer;
+        height: 40px;
+    }
+    .thisArticleStars img {
+        width: 20px;
+        height: 20px;
+        margin: 0 10px;
+    }
+    .thisArticleComment img {
+        width: 25px;
+        height: 25px;
+        margin: 0 10px;
+        opacity: 0.5;
+    }
+    /* ==================================ArticleDetail========================================== */
+    .comunityPostDetailContainer {
+        width: 100%;
+        flex-direction: column;
+        margin-bottom: 20px;
+        display: none;
+    }
+    .backFromPostDetail {
+        width: 100px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+    .backFromPostDetail img {
+        height: 30px;
+        opacity: 0.8;
+    }
+    .backFromPostDetail span {
+        margin-left: 10px;
+        color: #333;
+    }
+    .thisArticleCommentContainer {
+        width: 100%;
+    }
+    .addCommentContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0;
+    }
+    .addCommentInputBox {
+        flex-grow: 1;
+        height: 60px;
+        background: #eee;
+        border: none;
+        outline: none;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        font-family: 'maian';
+        border-radius: 10px;
+    }
+    .addCommentBtn {
+        width: 100px;
+        height: 30px;
+        background: #3AC485;
+        text-align: center;
+        border-radius: 20px;
+        line-height: 30px;
+        font-size: 16px;
+        color: #fff;
+        margin: 10px 0;
+        cursor: pointer;
+    }
+    .articleComment {
+        width: 100%;
+        border-top: solid 2px #ddd;
+        padding-top: 10px;
+        margin-top: 5px;
+    }
+    .articleCommentHeader {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .articleCommentPP {
+        height: 50px;
+        width: 50px;
+    }
+    .articleCommentPP img {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        border-radius: 50%;
+    }
+    .articleCommentInfo {
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: center;
+    }
+    .articleCommentUserName {
+        font-size: 19px;
+        color: #333;
+    }
+    .articleCommentDate {
+        font-size: 13px;
+        color: #555;
+    }
+    .articleCommentMenus {
+        width: 50px;
+        height: 50px;
+    }
+    .articleCommentMenus img {
+        width: 20px;
+        height: 20px;
+        margin: 15px;
+        opacity: 0.5;
+    }
+    .articleCommentData {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    /*============================================= side bar================================== */
+    .communitySearch {
+        flex-grow: 1;
+        height: 40px;
+        border: solid 1.5px #3AC485;
+        box-sizing: border-box;
+        border-radius: 25px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .communitySideHeader {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .hideCommunitySearch {
+        width: auto;
+        height: 40px;
+        margin: 0 10px;
+    }
+    .hideCommunitySearch img {
+        height: 40px;
+    }
+    .communitySearchInput {
+        flex-grow: 1;
+        padding: 0 30px;
+        font-size: 16px;
+        box-sizing: border-box;
+        font-family: 'maian';
+        height: 40px;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        background: none;
+        color: #3AC485;
+    }
+    .communitySearchBtn {
+        width: 35px;
+        height: 35px;
+        margin: 0 10px;
+    }
+    .communitySearchBtn img {
+        width: 100%;
+        height: 100%;
+    }
+    .communitySearchResultContainer {
+        width: 90%;
+        overflow-y: scroll;
+        padding: 15px;
+        background: #fff;
+        color: #3AC485;
+        box-sizing: border-box;
+        border-radius: 25px;
+        margin: 10px 5%;
+        display: none;
+        position: fixed;
+        top: 100px;
+        left: 0;
+        z-index: 320;
+        flex-direction: column;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    /* My articles start */
+    .communityMyArticles {
+        width: 100%;
+        margin-top: 10px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    /* My articles end */
+
+    /* Category Selector start ================================================================ */
+    .categorySelectorContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .showCommunitySideBarBtn {
+        width: 30px;
+        height: 30px;
+        margin: 0 20px;
+    }
+    .showCommunitySideBarBtn img {
+        width: 30px;
+        height: 30px;
+    }
+    .categorytoSelectInCommunity,
+    .showAllCategoriesInCommunity {
+        padding: 5px 20px;
+        margin: 5px;
+        background: #fff;
+        border-radius: 25px;
+        color: #3AC485;
+    }
+    .categorytoSelectInCommunity:hover,
+    .showAllCategoriesInCommunity:hover {
+        cursor: pointer;
+    }
+    .selectedCat,
+    .showingAllCats {
+        background: #3AC485;
+        color: #fff;
+    }
+    .lodeMorePostBtn{
+        background:#eee !important;
+        width:90% !important;
+        height:40px !important;
+        line-height:40px !important;
+        margin:10px 5% !important;
+    }
+}
 
 
 /*extra large======================================================================================================*/

@@ -202,9 +202,11 @@ $(document).ready(function() {
     //hid search
     $(document).on("click", ".hideCommunitySearch", function() {
         $(".communitySideContainer").toggle();
+        $(".questionFeedContainer").toggle();
     });
     $(document).on("click", ".showCommunitySideBarBtn", function() {
         $(".communitySideContainer").toggle();
+        $(".questionFeedContainer").toggle();
     });
 
 
