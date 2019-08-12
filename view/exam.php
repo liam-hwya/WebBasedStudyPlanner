@@ -104,4 +104,12 @@
             <div class="addNewSubjectSubmitBtn">Add</div>
         </div>
     </div>
+
+
+    <div class="addResultFromContainer">
+        <div class="addResultForm">
+            
+        </div>
+    </div>
+
 </div>

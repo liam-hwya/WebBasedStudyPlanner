@@ -106,5 +106,6 @@ $(document).ready(function() {
     //Add Exam Result
     $(document).on("click", ".addExamResultBtn", function() {
         var examid = $(this).attr("data-examid");
+        alert(examid);
     });
 });

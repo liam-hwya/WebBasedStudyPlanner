@@ -8,30 +8,30 @@ $(document).ready(function() {
 
 
 
-    $(document).on("mousemove", function(ev) {
-        var X = $('body').offset().left;
-        var Y = $('body').offset().top;
-        mouseX = ev.pageX - X;
-        mouseY = ev.pageY - Y;
-        // $(".position").html(mouseX + " and " +    mouseY);
-        $(".planContOnMouse").css("top", mouseY + 10);
-        $(".planContOnMouse").css("left", mouseX + 10);
-    });
+    // $(document).on("mousemove", function(ev) {
+    //     var X = $('body').offset().left;
+    //     var Y = $('body').offset().top;
+    //     mouseX = ev.pageX - X;
+    //     mouseY = ev.pageY - Y;
+    //     // $(".position").html(mouseX + " and " +    mouseY);
+    //     $(".planContOnMouse").css("top", mouseY + 10);
+    //     $(".planContOnMouse").css("left", mouseX + 10);
+    // });
 
-    $(document).on("mouseover", "td", function() {
-        if ($(window).width() > 768) {
-            if ($(this).html() != "") {
-                $(".planContOnMouse").css("display", "block");
-                if ($(this).hasClass("planTaken")) {
-                    $(".planContOnMouse").css("background", "green");
-                }
-                $(".planContOnMouse").html($(this).attr("class").split(" ")[0]);
-            } else {
-                $(".planContOnMouse").css("display", "none");
-                $(".planContOnMouse").css("background", "red");
-            }
-        }
-    });
+    // $(document).on("mouseover", "td", function() {
+    //     if ($(window).width() > 768) {
+    //         if ($(this).html() != "") {
+    //             $(".planContOnMouse").css("display", "block");
+    //             if ($(this).hasClass("planTaken")) {
+    //                 $(".planContOnMouse").css("background", "green");
+    //             }
+    //             $(".planContOnMouse").html($(this).attr("class").split(" ")[0]);
+    //         } else {
+    //             $(".planContOnMouse").css("display", "none");
+    //             $(".planContOnMouse").css("background", "red");
+    //         }
+    //     }
+    // });
 
     $(document).on("mouseout", "td", function() {
         $(".planContOnMouse").css("display", "none");

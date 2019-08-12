@@ -149,7 +149,7 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                 <th>SUN</th>
                 <th>MON</th>
                 <th>THU</th>
-                <th>Wed</th>
+                <th>WED</th>
                 <th>THU</th>
                 <th>FRI</th>
                 <th>SAT</th>
