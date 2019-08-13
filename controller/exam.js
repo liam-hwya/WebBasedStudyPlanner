@@ -22,9 +22,10 @@ $(document).ready(function() {
                 //show alert
             }
         });
+        getExamList();
         $(".addNewExam").toggleClass("addBtnImgRotate");
         $(".addNewExamForm").toggle();
-        getExamList();
+
     });
 
     //viewthis exam
@@ -113,19 +114,40 @@ $(document).ready(function() {
     });
 
     //add mark
-    $(document).on("click", ".addSubMarkBtn", function() {
+    $(document).on("keyup", ".addMarkInput", function() {
         var subid = $(this).attr("data-subid");
-        var submark = $(".id" + subid).val();
+        var submark = $(this).val();
         if ($.isNumeric(submark)) {
             $.post("model/addMark.php", {
                 subid: subid,
                 submark: submark
             }, function(data, status) {
-                alert(data);
+                //do something
             });
+        } else if (submark == "") {
+            alert("your mark cannot be blank");
         } else {
             alert("your mark cannot be text");
         }
+    });
+
+    //calculate Exam Result
+    $(document).on("click", ".calcExamResultBtn", function() {
+        var examid = $(this).attr("data-examid");
+        $.post("model/calcResult.php", {
+            examid: examid
+        }, function(data, status) {
+            //do something
+        });
+
+        $(".addResultFromContainer").css("display", "none");
+        $(".addResultTable :input").val("");
+        getExamList();
+    });
+
+    $(document).on("click", ".cancelExamResultBtn", function() {
+        $(".addResultFromContainer").css("display", "none");
+        $(".addResultTable :input").val("");
     });
 
 });

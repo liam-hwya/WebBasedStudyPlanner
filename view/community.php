@@ -63,7 +63,7 @@
             <div class="hideCommunitySearch"><img src="assets/icons/back.png"></div>
             <div class="communitySearch">
                 <input type="text" placeholder="Search" class="communitySearchInput">
-                <div class="communitySearchBtn"><img src="assets/icons/search.png" alt=""></div>
+                <!-- <div class="communitySearchBtn"><img src="assets/icons/search.png" alt=""></div> -->
             </div>
         </div>
         <div class="communitySearchResultContainer"></div><!--Search Result Holder-->

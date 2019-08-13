@@ -247,7 +247,7 @@ $(document).ready(function() {
         var currentPos = $(".Utime_main_body").scrollTop();
         var postid = $(this).attr("data-postid");
 
-
+        $(".questionFeedContainer").css("display", "block");
         $(".comunityPostDetailContainer").css("display", "flex");
         $(".communityPostContainer").css("display", "none");
         $(".comunityPostDetailContainer").load("model/viewPostDetail.php", {

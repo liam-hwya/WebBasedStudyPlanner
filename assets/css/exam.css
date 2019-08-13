@@ -6,6 +6,17 @@
     color: rgb(65, 218, 83);
 }
 
+.noComingExam {
+    width: 100%;
+    line-height: 50px;
+    text-align: center;
+    margin: 10px;
+    border: solid 2px rgb(28, 153, 17);
+    background: #c4ffad;
+    color: rgb(28, 153, 17);
+    font-size: 17px;
+}
+
 
 /*extra small*/
 
@@ -19,7 +30,6 @@
     }
     .utExamDetailContainer {
         width: 100%;
-        min-height: 300px;
         margin-right: 20px;
         display: flex;
         flex-direction: column;
@@ -29,31 +39,32 @@
     .utExamListContainer {
         width: 100%;
         margin: 20px 0;
+        display: flex;
+        flex-direction: column;
     }
     .failExamList {
-        -webkit-order: 3;
-        order: 3;
+        -webkit-order: 6;
+        order: 6;
     }
     .passExamList {
-        -webkit-order: 2;
-        order: 2;
+        -webkit-order: 4;
+        order: 4;
     }
     .commingExamList {
-        -webkit-order: 1;
-        order: 1;
+        -webkit-order: 2;
+        order: 2;
     }
     .addNewExam {
         height: 50px;
         position: absolute;
-        bottom: 30px;
-        right: 50px;
+        bottom: 70px;
+        right: 30px;
         display: flex;
         flex-direction: row;
         align-items: center;
     }
     .addNewExam span {
-        margin: 0 10px;
-        color: #333;
+        display: none;
     }
     .addNewExamIcon {
         width: 50px;
@@ -79,9 +90,9 @@
     .addNewExamForm {
         width: 250px;
         background: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         position: fixed;
-        bottom: 100px;
+        bottom: 150px;
         right: 50px;
         border-radius: 10px;
         padding: 10px 25px;
@@ -146,18 +157,24 @@
         color: red;
         margin: 0 20px;
         font-weight: bold;
+        -webkit-order: 5;
+        order: 5;
     }
     .passexamListTypeTitle {
         font-size: 14px;
         color: blue;
         margin: 0 20px;
         font-weight: bold;
+        -webkit-order: 3;
+        order: 3;
     }
     .comingexamListTypeTitle {
         font-size: 14px;
         color: green;
         margin: 0 20px;
         font-weight: bold;
+        -webkit-order: 1;
+        order: 1;
     }
     .examDetailHeader {
         width: 100%;
@@ -345,6 +362,68 @@
         opacity: 1;
         cursor: pointer;
     }
+    /* add result  */
+    .addResultFromContainer {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 300;
+        flex-direction: row;
+        justify-content: center;
+        overflow-y: scroll;
+        display: none;
+        align-items: flex-start;
+    }
+    .addResultForm {
+        padding: 10px 20px;
+        border-radius: 10px;
+        background: #fff;
+        margin: 60px 0;
+    }
+    .addResultTable td {
+        height: 40px;
+    }
+    .addResultTable th {
+        height: 40px;
+    }
+    .addResultTable input {
+        width: 50px;
+        height: 30px;
+        padding: 0 10px;
+        border: none;
+        outline: none;
+        background: #eee;
+    }
+    .addResultFormFooter {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .cancelExamResultBtn {
+        width: 70px;
+        text-align: center;
+        line-height: 35px;
+        font-size: 15px;
+        color: #fff;
+        background: #ffae46;
+        cursor: pointer;
+        margin: 0 10px;
+    }
+    .calcExamResultBtn {
+        width: 70px;
+        text-align: center;
+        line-height: 35px;
+        font-size: 15px;
+        color: #fff;
+        background: #3AC485;
+        cursor: pointer;
+        margin: 0 10px;
+    }
 }
 
 
@@ -360,7 +439,6 @@
     }
     .utExamDetailContainer {
         width: 100%;
-        min-height: 300px;
         margin-right: 20px;
         display: flex;
         flex-direction: column;
@@ -369,31 +447,32 @@
     .utExamListContainer {
         width: 100%;
         margin: 20px 0;
+        display: flex;
+        flex-direction: column;
     }
     .failExamList {
-        -webkit-order: 3;
-        order: 3;
+        -webkit-order: 6;
+        order: 6;
     }
     .passExamList {
-        -webkit-order: 2;
-        order: 2;
+        -webkit-order: 4;
+        order: 4;
     }
     .commingExamList {
-        -webkit-order: 1;
-        order: 1;
+        -webkit-order: 2;
+        order: 2;
     }
     .addNewExam {
         height: 50px;
         position: absolute;
-        bottom: 30px;
-        right: 50px;
+        bottom: 70px;
+        right: 30px;
         display: flex;
         flex-direction: row;
         align-items: center;
     }
     .addNewExam span {
-        margin: 0 10px;
-        color: #333;
+        display: none;
     }
     .addNewExamIcon {
         width: 50px;
@@ -421,7 +500,7 @@
         background: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         position: fixed;
-        bottom: 100px;
+        bottom: 150px;
         right: 50px;
         border-radius: 10px;
         padding: 10px 25px;
@@ -486,18 +565,24 @@
         color: red;
         margin: 0 20px;
         font-weight: bold;
+        -webkit-order: 5;
+        order: 5;
     }
     .passexamListTypeTitle {
         font-size: 14px;
         color: blue;
         margin: 0 20px;
         font-weight: bold;
+        -webkit-order: 3;
+        order: 3;
     }
     .comingexamListTypeTitle {
         font-size: 14px;
         color: green;
         margin: 0 20px;
         font-weight: bold;
+        -webkit-order: 1;
+        order: 1;
     }
     .examDetailHeader {
         width: 100%;
@@ -686,6 +771,68 @@
     .deleteThisSubjectBtn:hover {
         opacity: 1;
         cursor: pointer;
+    }
+    /* add result  */
+    .addResultFromContainer {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 300;
+        flex-direction: row;
+        justify-content: center;
+        overflow-y: scroll;
+        display: none;
+        align-items: flex-start;
+    }
+    .addResultForm {
+        padding: 10px 20px;
+        border-radius: 10px;
+        background: #fff;
+        margin: 60px 0;
+    }
+    .addResultTable td {
+        height: 40px;
+    }
+    .addResultTable th {
+        height: 40px;
+    }
+    .addResultTable input {
+        width: 50px;
+        height: 30px;
+        padding: 0 10px;
+        border: none;
+        outline: none;
+        background: #eee;
+    }
+    .addResultFormFooter {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .cancelExamResultBtn {
+        width: 70px;
+        text-align: center;
+        line-height: 35px;
+        font-size: 15px;
+        color: #fff;
+        background: #ffae46;
+        cursor: pointer;
+        margin: 0 10px;
+    }
+    .calcExamResultBtn {
+        width: 70px;
+        text-align: center;
+        line-height: 35px;
+        font-size: 15px;
+        color: #fff;
+        background: #3AC485;
+        cursor: pointer;
+        margin: 0 10px;
     }
 }
 
@@ -702,7 +849,6 @@
     }
     .utExamDetailContainer {
         width: 100%;
-        min-height: 300px;
         margin-right: 20px;
         display: flex;
         flex-direction: column;
@@ -711,18 +857,20 @@
     .utExamListContainer {
         width: 100%;
         margin: 20px 0;
+        display: flex;
+        flex-direction: column;
     }
     .failExamList {
-        -webkit-order: 3;
-        order: 3;
+        -webkit-order: 6;
+        order: 6;
     }
     .passExamList {
-        -webkit-order: 2;
-        order: 2;
+        -webkit-order: 4;
+        order: 4;
     }
     .commingExamList {
-        -webkit-order: 1;
-        order: 1;
+        -webkit-order: 2;
+        order: 2;
     }
     .addNewExam {
         height: 50px;
@@ -828,18 +976,24 @@
         color: red;
         margin: 0 20px;
         font-weight: bold;
+        -webkit-order: 5;
+        order: 5;
     }
     .passexamListTypeTitle {
         font-size: 14px;
         color: blue;
         margin: 0 20px;
         font-weight: bold;
+        -webkit-order: 3;
+        order: 3;
     }
     .comingexamListTypeTitle {
         font-size: 14px;
         color: green;
         margin: 0 20px;
         font-weight: bold;
+        -webkit-order: 1;
+        order: 1;
     }
     .examDetailHeader {
         width: 100%;
@@ -1028,6 +1182,68 @@
     .deleteThisSubjectBtn:hover {
         opacity: 1;
         cursor: pointer;
+    }
+    /* add result  */
+    .addResultFromContainer {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 300;
+        flex-direction: row;
+        justify-content: center;
+        overflow-y: scroll;
+        display: none;
+        align-items: flex-start;
+    }
+    .addResultForm {
+        padding: 10px 20px;
+        border-radius: 10px;
+        background: #fff;
+        margin: 60px 0;
+    }
+    .addResultTable td {
+        height: 40px;
+    }
+    .addResultTable th {
+        height: 40px;
+    }
+    .addResultTable input {
+        width: 50px;
+        height: 30px;
+        padding: 0 10px;
+        border: none;
+        outline: none;
+        background: #eee;
+    }
+    .addResultFormFooter {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .cancelExamResultBtn {
+        width: 70px;
+        text-align: center;
+        line-height: 35px;
+        font-size: 15px;
+        color: #fff;
+        background: #ffae46;
+        cursor: pointer;
+        margin: 0 10px;
+    }
+    .calcExamResultBtn {
+        width: 70px;
+        text-align: center;
+        line-height: 35px;
+        font-size: 15px;
+        color: #fff;
+        background: #3AC485;
+        cursor: pointer;
+        margin: 0 10px;
     }
 }
 
@@ -1044,7 +1260,6 @@
     }
     .utExamDetailContainer {
         width: 100%;
-        min-height: 300px;
         background: #fff;
         margin-right: 20px;
         display: flex;
@@ -1054,18 +1269,20 @@
     .utExamListContainer {
         width: 100%;
         margin: 20px 0;
+        display: flex;
+        flex-direction: column;
     }
     .failExamList {
-        -webkit-order: 3;
-        order: 3;
+        -webkit-order: 6;
+        order: 6;
     }
     .passExamList {
-        -webkit-order: 2;
-        order: 2;
+        -webkit-order: 4;
+        order: 4;
     }
     .commingExamList {
-        -webkit-order: 1;
-        order: 1;
+        -webkit-order: 2;
+        order: 2;
     }
     .addNewExam {
         height: 50px;
@@ -1171,18 +1388,24 @@
         color: red;
         margin: 0 20px;
         font-weight: bold;
+        -webkit-order: 5;
+        order: 5;
     }
     .passexamListTypeTitle {
         font-size: 14px;
         color: blue;
         margin: 0 20px;
         font-weight: bold;
+        -webkit-order: 3;
+        order: 3;
     }
     .comingexamListTypeTitle {
         font-size: 14px;
         color: green;
         margin: 0 20px;
         font-weight: bold;
+        -webkit-order: 1;
+        order: 1;
     }
     .examDetailHeader {
         width: 100%;
@@ -1372,6 +1595,68 @@
         opacity: 1;
         cursor: pointer;
     }
+    /* add result  */
+    .addResultFromContainer {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 300;
+        flex-direction: row;
+        justify-content: center;
+        overflow-y: scroll;
+        display: none;
+        align-items: flex-start;
+    }
+    .addResultForm {
+        padding: 10px 20px;
+        border-radius: 10px;
+        background: #fff;
+        margin: 60px 0;
+    }
+    .addResultTable td {
+        height: 40px;
+    }
+    .addResultTable th {
+        height: 40px;
+    }
+    .addResultTable input {
+        width: 50px;
+        height: 30px;
+        padding: 0 10px;
+        border: none;
+        outline: none;
+        background: #eee;
+    }
+    .addResultFormFooter {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .cancelExamResultBtn {
+        width: 70px;
+        text-align: center;
+        line-height: 35px;
+        font-size: 15px;
+        color: #fff;
+        background: #ffae46;
+        cursor: pointer;
+        margin: 0 10px;
+    }
+    .calcExamResultBtn {
+        width: 70px;
+        text-align: center;
+        line-height: 35px;
+        font-size: 15px;
+        color: #fff;
+        background: #3AC485;
+        cursor: pointer;
+        margin: 0 10px;
+    }
 }
 
 
@@ -1387,7 +1672,6 @@
     }
     .utExamDetailContainer {
         flex-grow: 1;
-        min-height: 300px;
         background: #fff;
         margin-right: 20px;
         display: flex;
@@ -1719,8 +2003,50 @@
         align-items: flex-start;
     }
     .addResultForm {
-        width: 400px;
-        height: 200px;
+        padding: 10px 20px;
+        border-radius: 10px;
         background: #fff;
+        margin: 60px 0;
+    }
+    .addResultTable td {
+        height: 40px;
+    }
+    .addResultTable th {
+        height: 40px;
+    }
+    .addResultTable input {
+        width: 50px;
+        height: 30px;
+        padding: 0 10px;
+        border: none;
+        outline: none;
+        background: #eee;
+    }
+    .addResultFormFooter {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .cancelExamResultBtn {
+        width: 70px;
+        text-align: center;
+        line-height: 35px;
+        font-size: 15px;
+        color: #fff;
+        background: #ffae46;
+        cursor: pointer;
+        margin: 0 10px;
+    }
+    .calcExamResultBtn {
+        width: 70px;
+        text-align: center;
+        line-height: 35px;
+        font-size: 15px;
+        color: #fff;
+        background: #3AC485;
+        cursor: pointer;
+        margin: 0 10px;
     }
 }

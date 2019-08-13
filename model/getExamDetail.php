@@ -20,7 +20,7 @@
             $examStatus=$examdata['examStatus'];
             if($examStatus==0){
                 $addbtn="<div data-examid='".$examid."' class='addMoreSubjectsBtn'><span>Add Subjects</span><img src='assets/icons/add.png'></div>";
-                echo "<div class='examDetailHeader'><span>".$examName."</span><img src='assets/icons/!.png'></div>";
+                echo "<div class='examDetailHeader'><span>".$examName."</span></div>";
                 echo "<div class='subListTaleContainer'><table data-examid='".$examid."' class='examDetailTable'>
                         <th>Subject</th>
                         <th>Date</th>
@@ -52,15 +52,12 @@
                             
             }else{
                 $addbtn="";
-                echo "<div class='examDetailHeader'><span>".$examName."</span><img src='assets/icons/!.png'></div>";
+                echo "<div class='examDetailHeader'><span>".$examName."</div>";
                 echo "<div class='subListTaleContainer'><table data-examid='".$examid."' class='examDetailTable'>
                         <th>Subject</th>
                         <th>Date</th>
-                        <th>From Time</th>
-                        <th>To Time</th>
-                        <th>Room</th>
-                        <th>Chair No</th>
-                        <th></th>
+                        <th>Pass Mark</th>
+                        <th>Get Mark</th>
                             ";
                             $getsubsQuery="SELECT * FROM utsubjects WHERE examid='$examid'";
                             $getsubjects=mysqli_query($con,$getsubsQuery);
@@ -70,17 +67,14 @@
                                         echo "
                                             <td>".$subject['utsubject']."</td>
                                             <td>".$subject['subjectDate']."</td>
-                                            <td>".$subject['fromTime']."</td>
-                                            <td>".$subject['toTime']."</td>
-                                            <td>".$subject['roomNo']."</td>
-                                            <td>".$subject['chairNo']."</td>
-                                            <td><img data-subid='".$subject['id']."' src='assets/icons/delsubject.png' class='deleteThisSubjectBtn'></td>
+                                            <td>".$subject['minMark']."</td>
+                                            <td>".$subject['getMark']."</td>
                                         ";
                                     echo "</tr>";
                                 }
                             }
-                            // echo "</table>".$addbtn."</div>";
-                            // echo "<div data-examid='".$examid."' class='addExamResultBtn'><img src='assets/icons/addresult.png'><span>Add Result</span></div>";
+                            echo "</table>".$addbtn."</div>";
+                            echo "<div data-examid='".$examid."' class='addExamResultBtn'><img src='assets/icons/addresult.png'><span>Edit Result</span></div>";
             }
             
         }
@@ -88,7 +82,7 @@
         
 
     }else{
-        echo "no Exam";
+        echo "<div class='noComingExam'>No Coming Exam</div>";
     }
 
     
