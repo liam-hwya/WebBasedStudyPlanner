@@ -106,6 +106,26 @@ $(document).ready(function() {
     //Add Exam Result
     $(document).on("click", ".addExamResultBtn", function() {
         var examid = $(this).attr("data-examid");
-        alert(examid);
+        $(".addResultFromContainer").css("display", "flex");
+        $(".addResultForm").load("model/addresult.php", {
+            examid: examid
+        });
     });
+
+    //add mark
+    $(document).on("click", ".addSubMarkBtn", function() {
+        var subid = $(this).attr("data-subid");
+        var submark = $(".id" + subid).val();
+        if ($.isNumeric(submark)) {
+            $.post("model/addMark.php", {
+                subid: subid,
+                submark: submark
+            }, function(data, status) {
+                alert(data);
+            });
+        } else {
+            alert("your mark cannot be text");
+        }
+    });
+
 });
