@@ -104,6 +104,7 @@
     <script src="controller/community.js"></script>
     <script src="controller/imagePreview.js"></script>
     <script src="controller/exam.js"></script>
+    <script src="controller/project.js"></script>
 </body>
 
 </html>

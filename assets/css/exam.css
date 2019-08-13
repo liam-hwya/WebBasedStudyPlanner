@@ -54,7 +54,8 @@
         -webkit-order: 2;
         order: 2;
     }
-    .addNewExam {
+    .addNewExam,
+    .addNewProject {
         height: 50px;
         position: absolute;
         bottom: 70px;
@@ -63,17 +64,20 @@
         flex-direction: row;
         align-items: center;
     }
-    .addNewExam span {
+    .addNewExam span,
+    .addNewProject span {
         display: none;
     }
-    .addNewExamIcon {
+    .addNewExamIcon,
+    .addNewProjectIcon {
         width: 50px;
         height: 50px;
         background: #ffae46;
         border-radius: 50%;
         cursor: pointer;
     }
-    .addNewExamIcon img {
+    .addNewExamIcon img,
+    .addNewProjectIcon img {
         width: 40px;
         height: 40px;
         margin: 5px;
@@ -87,7 +91,8 @@
     .addBtnImgRotate span {
         display: none;
     }
-    .addNewExamForm {
+    .addNewExamForm,
+    .addNewProjectForm {
         width: 250px;
         background: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -100,7 +105,9 @@
         display: none;
     }
     .addNewExamName,
-    .addNewExamDate {
+    .addNewExamDate,
+    .addNewProjectName,
+    .addNewProjectDate {
         width: 200px;
         height: 40px;
         border: none;
@@ -130,7 +137,8 @@
         flex-wrap: wrap;
         margin-bottom: 20px;
     }
-    .eachExamContainer {
+    .eachExamContainer,
+    .eachProjectContainer {
         width: 100px;
         height: 100px;
         margin: 10px 5px;
@@ -140,15 +148,18 @@
         justify-content: space-around;
         border-radius: 5px;
     }
-    .eachExamContainer:hover {
+    .eachExamContainer:hover,
+    .eachProjectContainer:hover {
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         cursor: pointer;
     }
-    .eachExamContainer img {
+    .eachExamContainer img,
+    .eachProjectContainer img {
         width: 50px;
         opacity: 0.5;
     }
-    .eachExamContainer span {
+    .eachExamContainer span,
+    .eachProjectContainer span {
         font-size: 14px;
         color: #333;
     }
@@ -462,7 +473,8 @@
         -webkit-order: 2;
         order: 2;
     }
-    .addNewExam {
+    .addNewExam,
+    .addNewProject {
         height: 50px;
         position: absolute;
         bottom: 70px;
@@ -471,17 +483,20 @@
         flex-direction: row;
         align-items: center;
     }
-    .addNewExam span {
+    .addNewExam span,
+    .addNewProject span {
         display: none;
     }
-    .addNewExamIcon {
+    .addNewExamIcon,
+    .addNewProjectIcon {
         width: 50px;
         height: 50px;
         background: #ffae46;
         border-radius: 50%;
         cursor: pointer;
     }
-    .addNewExamIcon img {
+    .addNewExamIcon img,
+    .addNewProjectIcon img {
         width: 40px;
         height: 40px;
         margin: 5px;
@@ -495,7 +510,8 @@
     .addBtnImgRotate span {
         display: none;
     }
-    .addNewExamForm {
+    .addNewExamForm,
+    .addNewProjectForm {
         width: 250px;
         background: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -508,7 +524,9 @@
         display: none;
     }
     .addNewExamName,
-    .addNewExamDate {
+    .addNewExamDate,
+    .addNewProjectName,
+    .addNewProjectDate {
         width: 200px;
         height: 40px;
         border: none;
@@ -538,7 +556,8 @@
         flex-wrap: wrap;
         margin-bottom: 20px;
     }
-    .eachExamContainer {
+    .eachExamContainer,
+    .eachProjectContainer {
         width: 100px;
         height: 100px;
         margin: 10px 5px;
@@ -548,15 +567,18 @@
         justify-content: space-around;
         border-radius: 5px;
     }
-    .eachExamContainer:hover {
+    .eachExamContainer:hover,
+    .eachProjectContainer:hover {
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         cursor: pointer;
     }
-    .eachExamContainer img {
+    .eachExamContainer img,
+    .eachProjectContainer img {
         width: 50px;
         opacity: 0.5;
     }
-    .eachExamContainer span {
+    .eachExamContainer span,
+    .eachProjectContainer span {
         font-size: 14px;
         color: #333;
     }
@@ -872,7 +894,8 @@
         -webkit-order: 2;
         order: 2;
     }
-    .addNewExam {
+    .addNewExam,
+    .addNewProject {
         height: 50px;
         position: absolute;
         bottom: 30px;
@@ -881,18 +904,21 @@
         flex-direction: row;
         align-items: center;
     }
-    .addNewExam span {
+    .addNewExam span,
+    .addNewProject span {
         margin: 0 10px;
         color: #333;
     }
-    .addNewExamIcon {
+    .addNewExamIcon,
+    .addNewProjectIcon {
         width: 50px;
         height: 50px;
         background: #ffae46;
         border-radius: 50%;
         cursor: pointer;
     }
-    .addNewExamIcon img {
+    .addNewExamIcon img,
+    .addNewProjectIcon img {
         width: 40px;
         height: 40px;
         margin: 5px;
@@ -906,7 +932,8 @@
     .addBtnImgRotate span {
         display: none;
     }
-    .addNewExamForm {
+    .addNewExamForm,
+    .addNewProjectForm {
         width: 250px;
         background: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -919,7 +946,9 @@
         display: none;
     }
     .addNewExamName,
-    .addNewExamDate {
+    .addNewExamDate,
+    .addNewProjectName,
+    .addNewProjectDate {
         width: 200px;
         height: 40px;
         border: none;
@@ -949,7 +978,8 @@
         flex-wrap: wrap;
         margin-bottom: 20px;
     }
-    .eachExamContainer {
+    .eachExamContainer,
+    .eachProjectContainer {
         width: 100px;
         height: 100px;
         margin: 10px 5px;
@@ -959,15 +989,18 @@
         justify-content: space-around;
         border-radius: 5px;
     }
-    .eachExamContainer:hover {
+    .eachExamContainer:hover,
+    .eachProjectContainer:hover {
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         cursor: pointer;
     }
-    .eachExamContainer img {
+    .eachExamContainer img,
+    .eachProjectContainer img {
         width: 50px;
         opacity: 0.5;
     }
-    .eachExamContainer span {
+    .eachExamContainer span,
+    .eachProjectContainer span {
         font-size: 14px;
         color: #333;
     }
@@ -1284,7 +1317,8 @@
         -webkit-order: 2;
         order: 2;
     }
-    .addNewExam {
+    .addNewExam,
+    .addNewProject {
         height: 50px;
         position: absolute;
         bottom: 30px;
@@ -1293,18 +1327,21 @@
         flex-direction: row;
         align-items: center;
     }
-    .addNewExam span {
+    .addNewExam span,
+    .addNewProject span {
         margin: 0 10px;
         color: #333;
     }
-    .addNewExamIcon {
+    .addNewExamIcon,
+    .addNewProjectIcon {
         width: 50px;
         height: 50px;
         background: #ffae46;
         border-radius: 50%;
         cursor: pointer;
     }
-    .addNewExamIcon img {
+    .addNewExamIcon img,
+    .addNewProjectIcon img {
         width: 40px;
         height: 40px;
         margin: 5px;
@@ -1318,7 +1355,8 @@
     .addBtnImgRotate span {
         display: none;
     }
-    .addNewExamForm {
+    .addNewExamForm,
+    .addNewProjectForm {
         width: 250px;
         background: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -1331,7 +1369,9 @@
         display: none;
     }
     .addNewExamName,
-    .addNewExamDate {
+    .addNewExamDate,
+    .addNewProjectName,
+    .addNewProjectDate {
         width: 200px;
         height: 40px;
         border: none;
@@ -1361,7 +1401,8 @@
         flex-wrap: wrap;
         margin-bottom: 20px;
     }
-    .eachExamContainer {
+    .eachExamContainer,
+    .eachProjectContainer {
         width: 100px;
         height: 100px;
         margin: 10px 5px;
@@ -1371,15 +1412,18 @@
         justify-content: space-around;
         border-radius: 5px;
     }
-    .eachExamContainer:hover {
+    .eachExamContainer:hover,
+    .eachProjectContainer:hover {
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         cursor: pointer;
     }
-    .eachExamContainer img {
+    .eachExamContainer img,
+    .eachProjectContainer img {
         width: 50px;
         opacity: 0.5;
     }
-    .eachExamContainer span {
+    .eachExamContainer span,
+    .eachProjectContainer span {
         font-size: 14px;
         color: #333;
     }
@@ -1682,7 +1726,8 @@
         width: 350px;
         padding-bottom: 50px;
     }
-    .addNewExam {
+    .addNewExam,
+    .addNewProject {
         height: 50px;
         position: absolute;
         bottom: 30px;
@@ -1691,18 +1736,21 @@
         flex-direction: row;
         align-items: center;
     }
-    .addNewExam span {
+    .addNewExam span,
+    .addNewProject span {
         margin: 0 10px;
         color: #333;
     }
-    .addNewExamIcon {
+    .addNewExamIcon,
+    .addNewProjectIcon {
         width: 50px;
         height: 50px;
         background: #ffae46;
         border-radius: 50%;
         cursor: pointer;
     }
-    .addNewExamIcon img {
+    .addNewExamIcon img,
+    .addNewProjectIcon img {
         width: 40px;
         height: 40px;
         margin: 5px;
@@ -1716,7 +1764,8 @@
     .addBtnImgRotate span {
         display: none;
     }
-    .addNewExamForm {
+    .addNewExamForm,
+    .addNewProjectForm {
         width: 250px;
         background: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -1729,7 +1778,9 @@
         display: none;
     }
     .addNewExamName,
-    .addNewExamDate {
+    .addNewExamDate,
+    .addNewProjectName,
+    .addNewProjectDate {
         width: 200px;
         height: 40px;
         border: none;
@@ -1759,7 +1810,8 @@
         flex-wrap: wrap;
         margin-bottom: 20px;
     }
-    .eachExamContainer {
+    .eachExamContainer,
+    .eachProjectContainer {
         width: 100px;
         height: 100px;
         margin: 10px 5px;
@@ -1769,15 +1821,18 @@
         justify-content: space-around;
         border-radius: 5px;
     }
-    .eachExamContainer:hover {
+    .eachExamContainer:hover,
+    .eachProjectContainer:hover {
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         cursor: pointer;
     }
-    .eachExamContainer img {
+    .eachExamContainer img,
+    .eachProjectContainer img {
         width: 50px;
         opacity: 0.5;
     }
-    .eachExamContainer span {
+    .eachExamContainer span,
+    .eachProjectContainer span {
         font-size: 14px;
         color: #333;
     }
