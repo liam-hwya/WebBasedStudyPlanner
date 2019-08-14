@@ -119,7 +119,7 @@
         color: #333;
         margin: 5px 0;
     }
-    .createExamBtn {
+    .createExamBtn,.createProjectBtn {
         width: 200px;
         height: 35px;
         border: none;
@@ -538,7 +538,7 @@
         color: #333;
         margin: 5px 0;
     }
-    .createExamBtn {
+    .createExamBtn,.createProjectBtn {
         width: 200px;
         height: 35px;
         border: none;
@@ -960,7 +960,7 @@
         color: #333;
         margin: 5px 0;
     }
-    .createExamBtn {
+    .createExamBtn,.createProjectBtn {
         width: 200px;
         height: 35px;
         border: none;
@@ -1383,7 +1383,7 @@
         color: #333;
         margin: 5px 0;
     }
-    .createExamBtn {
+    .createExamBtn,.createProjectBtn {
         width: 200px;
         height: 35px;
         border: none;
@@ -1792,7 +1792,7 @@
         color: #333;
         margin: 5px 0;
     }
-    .createExamBtn {
+    .createExamBtn,.createProjectBtn {
         width: 200px;
         height: 35px;
         border: none;

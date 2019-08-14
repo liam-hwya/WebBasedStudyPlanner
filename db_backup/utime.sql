@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 11, 2019 at 11:01 PM
+-- Generation Time: Aug 13, 2019 at 10:56 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 5.6.40
 
@@ -47,7 +47,7 @@ INSERT INTO `saved` (`id`, `userid`, `postid`) VALUES
 (12, 40, 60),
 (13, 40, 59),
 (14, 40, 57),
-(15, 40, 56);
+(16, 40, 55);
 
 -- --------------------------------------------------------
 
@@ -99,7 +99,8 @@ INSERT INTO `utcomment` (`id`, `postid`, `userid`, `comment`, `mentDate`) VALUES
 (6, 60, 36, 'Wow cool post thanks for sharing ðŸ˜ðŸ˜', '2019-08-10'),
 (7, 60, 39, 'Wow', '2019-08-10'),
 (8, 69, 37, '', '2019-08-10'),
-(9, 69, 37, 'apparent that,\nand .. I\'m sorry for every thing', '2019-08-10');
+(9, 69, 37, 'apparent that,\nand .. I\'m sorry for every thing', '2019-08-10'),
+(10, 59, 40, 'What\'s a nice songðŸŽ¼ðŸ’šâ¤', '2019-08-13');
 
 -- --------------------------------------------------------
 
@@ -142,12 +143,8 @@ CREATE TABLE `utexam` (
 --
 
 INSERT INTO `utexam` (`id`, `userid`, `examName`, `examDate`, `examStatus`) VALUES
-(1, 40, 'Final Exam', '2019-08-29', 0),
-(3, 40, 'Next Exam', '2019-08-23', 2),
-(4, 40, 'First EXam', '2019-08-20', 2),
-(5, 40, 'Blah Blah Exam', '2020-09-23', 1),
-(6, 40, 'Finished Exam', '2019-08-30', 1),
-(7, 30, 'Final Exam', '2019-08-21', 0);
+(1, 40, 'Final Exam', '2019-08-29', 2),
+(8, 40, 'Next Exam', '2019-08-30', 0);
 
 -- --------------------------------------------------------
 
@@ -204,7 +201,29 @@ INSERT INTO `utposts` (`id`, `userid`, `title`, `utdescription`, `starcount`, `c
 (56, 33, 'Old Tow Road Lyrics', 'Yeah, I\'m gonna take my horse to the old town road\nI\'m gonna ride \'til I can\'t no more\nI\'m gonna take my horse to the old town road\nI\'m gonna ride \'til I can\'t no more (Kio, Kio)\nI got the horses in the back\nHorse tack is attached\nHat is matte black\nGot the boots that\'s black to match\nRidin\' on a horse, ha\nYou can whip your Porsche\nI been in the valley\nYou ain\'t been up off that porch, now\nCan\'t nobody tell me nothin\'\nYou can\'t tell me nothin\'\nCan\'t nobody tell me nothin\'\nYou can\'t tell me nothin\'\nRidin\' on a tractor\nLean all in my bladder\nCheated on my baby\nYou can go and ask her\nMy life is a movie\nBull ridin\' and boobies\nCowboy hat from Gucci\nWrangler onâ€¦', 0, 'Physic', '2019-08-11'),
 (57, 35, 'blur Blur', '    Server: 127.0.0.1 via TCP/IP\r\n    Server type: MariaDB\r\n    Server connection: SSL is not being used Documentation\r\n    Server version: 10.1.38-MariaDB - mariadb.org binary distribution\r\n    Protocol version: 10\r\n    User: root@localhost\r\n    Server charset: UTF-8 Unicode (utf8)\r\n', 0, 'Web Security', '2019-08-11'),
 (59, 37, 'Dangerously Lyrics', 'This is gonna hurt but I blame myself first\n\'Cause I ignored the truth\nDrunk off that love, my head up\nThere\'s no forgetting you\nYou\'ve awoken me, but you\'re choking me\nI was so obsessed\nGave you all of me, and now honestly, I got nothing left\nI loved you dangerously\nMore than the air that I breathe\nKnew we would crash at the speed that we were going\nDidn\'t care if the explosion ruined me\nBaby, I loved you dangerously\nMmmm, mmmm\nI loved you dangerously\nUsually, I hold the power with both my hands\nTied behind my back\nLook at how things change, \'cause now you\'re the train\nAnd I\'m tied to the track\nYou\'ve awoken me, but you\'re choking me\nI was so obsessed\nGave you all of me, and now honestly, I got nothing left\n\'Cause I loved you dangerously\nMore than the air that I breathe\nKnew we would crash at the speed that we were going\nDidn\'t care if the explosion ruined me\nBaby, I loved you dangerously\nYou took me down, down, down, down\nAnd kissed my lips quick goodbye\nI see it now, now, now, now\nIt was a matter of time\nYou know I know, there\'s only one place this could lead\nBut you are the fire, I\'m gasoline\nI love you, I love you, I love you\nI loved you dangerously\nOoh, more than the air that I breathe\nOh now, knew we would crash at the speed that we were going\nDidn\'t care if the explosion ruined me\nOh, oh baby, I loved you dangerously\nMmmm, mmmm\nOoh, I loved you dangerously\nOoh ooh, I loved you dangerously', 0, 'Game Development', '2019-08-11'),
-(60, 37, 'How to be a superhero', 'When I was seven years old, I got the greatest Christmas gift ever. As I tore away the crisp, Santa-Claus-decorated paper, it revealed the most perfect present: a Batman costume, complete with belt and shoes. I ran, I jumped, I rolled, I climbed, I hid and I saved everyone in the house from all the dangers that the holiday season could bring. It was one of the best days of my life.\n\nEver since that day, Iâ€™ve been fixated on comic books and superheroes, their place as Modern Mythology, and all the ideals they bring: saving lives, fighting crime and making the world a better place.\n\nAs an adult, I realize I actually have the power to be a superhero. I may not be able to fly, grow claws or regenerate my limbs â€” but I can make a difference to someoneâ€™s life.\n\nWe all have the power to be a superhero to someone, even if we donâ€™t have the spandex to go with it. Here are five ways you can be a real life superhero:', 0, 'Space', '2019-08-11');
+(60, 37, 'How to be a superhero', 'When I was seven years old, I got the greatest Christmas gift ever. As I tore away the crisp, Santa-Claus-decorated paper, it revealed the most perfect present: a Batman costume, complete with belt and shoes. I ran, I jumped, I rolled, I climbed, I hid and I saved everyone in the house from all the dangers that the holiday season could bring. It was one of the best days of my life.\n\nEver since that day, Iâ€™ve been fixated on comic books and superheroes, their place as Modern Mythology, and all the ideals they bring: saving lives, fighting crime and making the world a better place.\n\nAs an adult, I realize I actually have the power to be a superhero. I may not be able to fly, grow claws or regenerate my limbs â€” but I can make a difference to someoneâ€™s life.\n\nWe all have the power to be a superhero to someone, even if we donâ€™t have the spandex to go with it. Here are five ways you can be a real life superhero:', 0, 'Space', '2019-08-11'),
+(62, 40, 'All Of Me', 'What would I do without your smart mouth\nDrawing me in, and you kicking me out\nGot my head spinning, no kidding, I can\'t pin you down\nWhat\'s going on in that beautiful mind\nI\'m on your magical mystery ride\nAnd I\'m so dizzy, don\'t know what hit me, but I\'ll be alright\nMy head\'s under water\nBut I\'m breathing fine\nYou\'re crazy and I\'m out of my mind\n\'Cause all of me\nLoves all of you\nLove your curves and all your edges\nAll your perfect imperfections\nGive your all to me\nI\'ll give my all to you\nYou\'re my end and my beginning\nEven when I lose I\'m winning\n\'Cause I give you all, all of me\nAnd you give me all, all of you\nHow many times do I have to tell you\nEven when you\'re crying you\'re beautiful too\nThe world is beating you down, I\'m around through every move\nYou\'re my downfall, you\'re my muse\nMy worst distraction, my rhythm and blues\nI can\'t stop singing, it\'s ringing, in my head for you\nMy head\'s under water\nBut I\'m breathing fine\nYou\'re crazy and I\'m out of my mind\n\'Cause all of me\nLoves all of you\nLove your curves and all your edges\nAll your perfect imperfections\nGive your all to me\nI\'ll give my all to you\nYou\'re my end and my beginning\nEven when I lose I\'m winning\n\'Cause I give you all of me\nAnd you give me all, all of you\nGive me all of you\nCards on the table, we\'re both showing hearts\nRisking it all, though it\'s hard\n\'Cause all of me\nLoves all of you\nLove your curves and all your edges\nAll your perfect imperfections\nGive your all to me\nI\'ll give my all to you\nYou\'re my end and my beginning\nEven when I lose I\'m winning\n\'Cause I give you all of me\nAnd you give me all of you\nI give you all, all of me\nAnd you give me all, all of you\nSource: LyricFind', 0, 'Programming', '2019-08-13');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `utproject`
+--
+
+CREATE TABLE `utproject` (
+  `id` int(11) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `projectName` varchar(225) NOT NULL,
+  `deadline` date NOT NULL,
+  `projectStatus` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `utproject`
+--
+
+INSERT INTO `utproject` (`id`, `userid`, `projectName`, `deadline`, `projectStatus`) VALUES
+(1, 40, 'Utime', '2019-08-16', 0);
 
 -- --------------------------------------------------------
 
@@ -235,7 +254,10 @@ INSERT INTO `utstar` (`id`, `postId`, `userId`) VALUES
 (57, 42, 37),
 (59, 69, 37),
 (62, 69, 30),
-(63, 60, 40);
+(63, 60, 40),
+(64, 56, 40),
+(65, 61, 40),
+(66, 59, 40);
 
 -- --------------------------------------------------------
 
@@ -261,13 +283,12 @@ CREATE TABLE `utsubjects` (
 --
 
 INSERT INTO `utsubjects` (`id`, `examid`, `utsubject`, `subjectDate`, `fromTime`, `toTime`, `roomNo`, `chairNo`, `minMark`, `getMark`) VALUES
-(1, 1, 'Programming', '2019-08-11', '9:00AM', '12:00PM', '221b', '135', 40, 0),
-(2, 1, 'Networking', '2019-08-11', '9:00AM', '12:00PM', '221b', '135', 40, 0),
-(3, 1, 'Physic', '2019-08-11', '9:00AM', '12:00PM', '221b', '135', 40, 0),
-(4, 1, 'Something Else', '2019-08-11', '9:00AM', '12:00PM', '221b', '135', 40, 0),
-(5, 1, 'Game Development', '2019-08-30', '08:00 AM', '11:00 AM', '101', '404', 30, 0),
-(6, 1, 'Web Security', '2019-08-29', '05:30 AM', '12:40 PM', '303', 'b-12', 50, 0),
-(8, 7, 'asdf', '2019-08-08', '01:00 AM', '01:00 AM', 'dsaf', 'sdf', 23, 0);
+(1, 1, 'Programming', '2019-08-11', '9:00AM', '12:00PM', '221b', '135', 40, 30),
+(2, 1, 'Networking', '2019-08-11', '9:00AM', '12:00PM', '221b', '135', 40, 50),
+(3, 1, 'Physic', '2019-08-11', '9:00AM', '12:00PM', '221b', '135', 40, 50),
+(4, 1, 'Something Else', '2019-08-11', '9:00AM', '12:00PM', '221b', '135', 40, 50),
+(5, 1, 'Game Development', '2019-08-30', '08:00 AM', '11:00 AM', '101', '404', 30, 50),
+(6, 1, 'Web Security', '2019-08-29', '05:30 AM', '12:40 PM', '303', 'b-12', 50, 50);
 
 -- --------------------------------------------------------
 
@@ -352,7 +373,7 @@ INSERT INTO `utusers` (`id`, `firstName`, `lastName`, `Email`, `pass`, `passions
 (37, 'Debu', 'Gger', 'debugger@gmail.com', 'c6NQakceFUPLQ', 'a:8:{i:0;s:10:\"Networking\";i:1;s:23:\"Artificial Intelligence\";i:2;s:5:\"Space\";i:3;s:12:\"Web Security\";i:4;s:16:\"Game Development\";i:5;s:11:\"Programming\";i:6;s:6:\"Physic\";i:7;s:6:\"Design\";}', '', 'nopp.png'),
 (38, 'JR', 'Alli', 'jralli2@gmail.com', 'a3v3l8Me6MOjA', 'a:5:{i:0;s:6:\"Physic\";i:1;s:11:\"Programming\";i:2;s:23:\"Artificial Intelligence\";i:3;s:5:\"Space\";i:4;s:16:\"Game Development\";}', '', 'nopp.png'),
 (39, 'Myo', 'Mann', 'myimann@gmail.com', '93l2LRJI.up46', 'a:6:{i:0;s:6:\"Physic\";i:1;s:23:\"Artificial Intelligence\";i:2;s:10:\"Networking\";i:3;s:16:\"Game Development\";i:4;s:12:\"Web Security\";i:5;s:5:\"Space\";}', '', 'nopp.png'),
-(40, 'Fre', 'Ya', 'freya@gmail.com', 'dfAiVru2FUfAw', 'a:4:{i:0;s:6:\"Physic\";i:1;s:11:\"Programming\";i:2;s:6:\"Design\";i:3;s:23:\"Artificial Intelligence\";}', '', 'nopp.png');
+(40, 'Fre', 'Ya', 'freya@gmail.com', 'dfAiVru2FUfAw', 'a:5:{i:0;s:6:\"Physic\";i:1;s:11:\"Programming\";i:2;s:6:\"Design\";i:3;s:23:\"Artificial Intelligence\";i:4;s:16:\"Game Development\";}', '', 'nopp.png');
 
 --
 -- Indexes for dumped tables
@@ -401,6 +422,12 @@ ALTER TABLE `utposts`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `utproject`
+--
+ALTER TABLE `utproject`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `utstar`
 --
 ALTER TABLE `utstar`
@@ -432,7 +459,7 @@ ALTER TABLE `utusers`
 -- AUTO_INCREMENT for table `saved`
 --
 ALTER TABLE `saved`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `utcolors`
@@ -444,7 +471,7 @@ ALTER TABLE `utcolors`
 -- AUTO_INCREMENT for table `utcomment`
 --
 ALTER TABLE `utcomment`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `utevent`
@@ -456,7 +483,7 @@ ALTER TABLE `utevent`
 -- AUTO_INCREMENT for table `utexam`
 --
 ALTER TABLE `utexam`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `utpassions`
@@ -468,19 +495,25 @@ ALTER TABLE `utpassions`
 -- AUTO_INCREMENT for table `utposts`
 --
 ALTER TABLE `utposts`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+
+--
+-- AUTO_INCREMENT for table `utproject`
+--
+ALTER TABLE `utproject`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `utstar`
 --
 ALTER TABLE `utstar`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `utsubjects`
 --
 ALTER TABLE `utsubjects`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `uttask`

@@ -12,9 +12,9 @@ $getQuery2="SELECT * FROM utproject WHERE userid='$UTuserid' AND projectStatus='
 $getProject2=mysqli_query($con,$getQuery2);
 if(mysqli_num_rows($getProject2)>0){
     while($project2=mysqli_fetch_assoc($getProject2)){
-        echo "<div data-examid='".$project2['id']."' class='eachProjectContainer'>
+        echo "<div data-projectid='".$project2['id']."' class='eachProjectContainer'>
                 <img src='assets/icons/folder.png'>
-                <span>".$project2['deadline']."</span>
+                <span>".$project2['projectName']."</span>
               </div>";
     }
 }
@@ -27,9 +27,9 @@ $getQuery1="SELECT * FROM utproject WHERE userid='$UTuserid' AND projectStatus='
 $getProject1=mysqli_query($con,$getQuery1);
 if(mysqli_num_rows($getProject1)>0){
     while($project1=mysqli_fetch_assoc($getProject1)){
-        echo "<div data-examid='".$project1['id']."' class='eachProjectContainer'>
+        echo "<div data-projectid='".$project1['id']."' class='eachProjectContainer'>
                 <img src='assets/icons/folder.png'>
-                <span>".$project1['deadline']."</span>
+                <span>".$project1['projectName']."</span>
               </div>";
     }
 }
@@ -41,9 +41,9 @@ $getQuery0="SELECT * FROM utproject WHERE userid='$UTuserid' AND projectStatus='
 $getProject0=mysqli_query($con,$getQuery0);
 if(mysqli_num_rows($getProject0)>0){
     while($project0=mysqli_fetch_assoc($getProject0)){
-        echo "<div data-examid='".$project0['id']."' class='eachProjectContainer'>
+        echo "<div data-projectid='".$project0['id']."' class='eachProjectContainer'>
                 <img src='assets/icons/folder.png'>
-                <span>".$project0['deadline']."</span>
+                <span>".$project0['projectName']."</span>
               </div>";
     }
 }

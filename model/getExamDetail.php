@@ -49,7 +49,7 @@
                             }
                             echo "</table>".$addbtn."</div>";
                             echo "<div data-examid='".$examid."' class='addExamResultBtn'><img src='assets/icons/addresult.png'><span>Add Result</span></div>";
-                            
+                                                        
             }else{
                 $addbtn="";
                 echo "<div class='examDetailHeader'><span>".$examName."</div>";
