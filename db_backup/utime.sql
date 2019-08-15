@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 13, 2019 at 10:56 PM
+-- Generation Time: Aug 15, 2019 at 03:35 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 5.6.40
 
@@ -228,6 +228,51 @@ INSERT INTO `utproject` (`id`, `userid`, `projectName`, `deadline`, `projectStat
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `utpsubtask`
+--
+
+CREATE TABLE `utpsubtask` (
+  `id` int(10) NOT NULL,
+  `taskid` int(10) NOT NULL,
+  `subtask` text NOT NULL,
+  `subtaskStatus` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `utpsubtask`
+--
+
+INSERT INTO `utpsubtask` (`id`, `taskid`, `subtask`, `subtaskStatus`) VALUES
+(1, 1, 'show notification on right time', 1),
+(2, 1, 'show notification for missed works', 1),
+(3, 1, 'planner task status according to noti return', 1),
+(5, 1, 'Show Finish And not finish Tasks', 0),
+(6, 1, 'Will it show ?', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `utptask`
+--
+
+CREATE TABLE `utptask` (
+  `id` int(10) NOT NULL,
+  `projectid` int(10) NOT NULL,
+  `ptask` text NOT NULL,
+  `ptaskStatus` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `utptask`
+--
+
+INSERT INTO `utptask` (`id`, `projectid`, `ptask`, `ptaskStatus`) VALUES
+(1, 1, 'planner notification system', 0),
+(2, 1, 'User Profile and Something else', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `utstar`
 --
 
@@ -428,6 +473,18 @@ ALTER TABLE `utproject`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `utpsubtask`
+--
+ALTER TABLE `utpsubtask`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `utptask`
+--
+ALTER TABLE `utptask`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `utstar`
 --
 ALTER TABLE `utstar`
@@ -483,7 +540,7 @@ ALTER TABLE `utevent`
 -- AUTO_INCREMENT for table `utexam`
 --
 ALTER TABLE `utexam`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `utpassions`
@@ -501,7 +558,19 @@ ALTER TABLE `utposts`
 -- AUTO_INCREMENT for table `utproject`
 --
 ALTER TABLE `utproject`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `utpsubtask`
+--
+ALTER TABLE `utpsubtask`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `utptask`
+--
+ALTER TABLE `utptask`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `utstar`
@@ -513,7 +582,7 @@ ALTER TABLE `utstar`
 -- AUTO_INCREMENT for table `utsubjects`
 --
 ALTER TABLE `utsubjects`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `uttask`

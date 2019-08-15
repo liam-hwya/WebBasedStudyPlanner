@@ -28,6 +28,7 @@
 
     <script>
         $(".projectListContainer").load("model/getProjectsList.php");
+        $(".thisProjectContainer").load("model/getProjectDetail.php");
     </script>
 
     

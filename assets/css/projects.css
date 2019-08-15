@@ -1,30 +1,605 @@
+.delTaskBtnBox{
+    width:50px;
+    height:50px;
+    position: fixed;
+    top:300px;
+    left:100px;
+    z-index:100;
+    transform:translate(-50%,-100%);
+    display:none;
+    cursor: pointer;
+}
+.showDeleteTaskBox{
+    cursor: pointer;
+}
+.delTaskBtnBox img{
+    width:50px;
+    height:50px;
+}
 /*extra small*/
 
-@media only screen and (max-width: 600px) {}
+@media only screen and (max-width: 600px) {
+    .projectsMagePageContainer {
+        width: 100%;
+        display: flex;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+    .projectListContainer {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    /* this Project container */
+    .thisProjectContainer {
+        width: 100%;
+        flex-direction: column;
+        box-sizing: border-box;
+        margin-bottom: 50px;
+        display:none;
+    }
+    .projectDetailHeader {
+        width: 100%;
+        height: 60px;
+        background: #eee;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .projectTitle {
+        flex-grow: 1;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        color: #555;
+    }
+    .projectInfoBtn {
+        width: 20px;
+        height: 20px;
+        border: solid 2px #666;
+        color: #333;
+        text-align: center;
+        line-height: 20px;
+        margin: 20px;
+        border-radius: 50%;
+    }
+    .projectInfoBtn:hover {
+        cursor: pointer;
+        background: #666;
+        color: #fff;
+    }
+    .projectPrograssBarContainer {
+        width: 100%;
+        height: 50px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .projectPrograssBar{
+        width:80%;
+        height:25px;
+        background:#eee;
+        border-radius:15px;
+        overflow:hidden;
+    }
+    .projectProjectBarData{
+        height:100%;
+        background:rgb(250, 209, 26);
+        line-height:25px;
+        text-align:center;
+        font-size: 14px;
+        width:0px;
+    }
+    /* Each Task */
+    .projectEachTaskContainer {
+        width: 100%;
+        padding: 10px 0;
+    }
+    .projectTask {
+        width: 90%;
+        margin: 0 5%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 30px;
+    }
+    .subTask {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 30px;
+    }
+    .projectTaskControl,
+    .subTaskControl {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+    .projectTaskText {
+        font-size: 16px;
+        color: #444;
+        margin: 0 10px;
+        font-weight: bold;
+    }
+    .subTaskText {
+        font-size: 14px;
+        color: #444;
+        margin: 0 10px;
+    }
+    .projectSubTask {
+        width: 85%;
+        margin-left: 10%;
+    }
+    .addNewSubTaskContainer {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+    }
+    .showAddSubTaskInput {
+        width: 20px;
+        height: 20px;
+        margin: 10px 0;
+        filter: grayscale(1);
+        transition: 0.2s;
+        cursor: pointer;
+    }
+    .addNewSubTaskInput {
+        flex-grow: 1;
+        display: none;
+        align-items: center;
+        height: 40px;
+    }
+    .addNewSubTaskText {
+        width: 200px;
+        height: 30px;
+        font-size: 13px;
+        color: #555;
+        padding: 0 10px;
+        margin: 0 10px;
+        border: none;
+        outline: none;
+        background: #eee;
+        border-radius: 15px;
+    }
+    .addNewSubTaskBtn {
+        width: 25px;
+        height: 25px;
+    }
+    .addNewTaskContainer {
+        width: 100%;
+        height: 70px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    .addNewTaskInput {
+        flex-grow: 1;
+        height: 35px;
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        background: #ccc;
+        padding: 0 20px;
+        box-sizing: border-box;
+        color: #444;
+        -webkit-order: 2; /* Safari 6.1+ */
+        order: 2;
+        margin:0 10px;
+    }
+    .addNewTaskBtn {
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        -webkit-order: 1; /* Safari 6.1+ */
+        order: 1;
+    }
+    .hideProjectDetailinMobile{
+        height:30px;
+        width:30px;
+        margin:10px;
+        opacity:0.5;
+    }
+}
 
 
 /*small================================================================================================================*/
 
-@media only screen and (min-width: 600px) and (max-width:767px) {}
+@media only screen and (min-width: 600px) and (max-width:767px) {
+    .projectsMagePageContainer {
+        width: 100%;
+        display: flex;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+    .projectListContainer {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    /* this Project container */
+    .thisProjectContainer {
+        width: 100%;
+        flex-direction: column;
+        box-sizing: border-box;
+        margin-bottom: 50px;
+        display:none;
+    }
+    .projectDetailHeader {
+        width: 100%;
+        height: 60px;
+        background: #eee;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .projectTitle {
+        flex-grow: 1;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        color: #555;
+    }
+    .projectInfoBtn {
+        width: 20px;
+        height: 20px;
+        border: solid 2px #666;
+        color: #333;
+        text-align: center;
+        line-height: 20px;
+        margin: 20px;
+        border-radius: 50%;
+    }
+    .projectInfoBtn:hover {
+        cursor: pointer;
+        background: #666;
+        color: #fff;
+    }
+    .projectPrograssBarContainer {
+        width: 100%;
+        height: 50px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .projectPrograssBar{
+        width:80%;
+        height:25px;
+        background:#eee;
+        border-radius:15px;
+        overflow:hidden;
+    }
+    .projectProjectBarData{
+        height:100%;
+        background:rgb(250, 209, 26);
+        line-height:25px;
+        text-align:center;
+        font-size: 14px;
+        width:0px;
+    }
+    /* Each Task */
+    .projectEachTaskContainer {
+        width: 100%;
+        padding: 10px 0;
+    }
+    .projectTask {
+        width: 90%;
+        margin: 0 5%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 30px;
+    }
+    .subTask {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 30px;
+    }
+    .projectTaskControl,
+    .subTaskControl {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+    .projectTaskText {
+        font-size: 16px;
+        color: #444;
+        margin: 0 10px;
+        font-weight: bold;
+    }
+    .subTaskText {
+        font-size: 14px;
+        color: #444;
+        margin: 0 10px;
+    }
+    .projectSubTask {
+        width: 85%;
+        margin-left: 10%;
+    }
+    .addNewSubTaskContainer {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+    }
+    .showAddSubTaskInput {
+        width: 20px;
+        height: 20px;
+        margin: 10px 0;
+        filter: grayscale(1);
+        transition: 0.2s;
+        cursor: pointer;
+    }
+    .addNewSubTaskInput {
+        flex-grow: 1;
+        display: none;
+        align-items: center;
+        height: 40px;
+    }
+    .addNewSubTaskText {
+        width: 200px;
+        height: 30px;
+        font-size: 13px;
+        color: #555;
+        padding: 0 10px;
+        margin: 0 10px;
+        border: none;
+        outline: none;
+        background: #eee;
+        border-radius: 15px;
+    }
+    .addNewSubTaskBtn {
+        width: 25px;
+        height: 25px;
+    }
+    .addNewTaskContainer {
+        width: 100%;
+        height: 70px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    .addNewTaskInput {
+        flex-grow: 1;
+        height: 35px;
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        background: #ccc;
+        padding: 0 20px;
+        box-sizing: border-box;
+        color: #444;
+        -webkit-order: 2; /* Safari 6.1+ */
+        order: 2;
+        margin:0 10px;
+    }
+    .addNewTaskBtn {
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        -webkit-order: 1; /* Safari 6.1+ */
+        order: 1;
+    }
+    .hideProjectDetailinMobile{
+        height:30px;
+        width:30px;
+        margin:10px;
+        opacity:0.5;
+    }
+}
 
 
 /*medium*/
 
-@media only screen and (min-width: 768px) and (max-width:991px) {}
+@media only screen and (min-width: 768px) and (max-width:991px) {
+    .projectsMagePageContainer {
+        width: 100%;
+        display: flex;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+    .projectListContainer {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    /* this Project container */
+    .thisProjectContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        box-sizing: border-box;
+        margin-bottom: 30px;
+    }
+    .projectDetailHeader {
+        width: 100%;
+        height: 60px;
+        background: #eee;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .projectTitle {
+        flex-grow: 1;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        color: #555;
+        margin-left: 50px;
+    }
+    .projectInfoBtn {
+        width: 20px;
+        height: 20px;
+        border: solid 2px #666;
+        color: #333;
+        text-align: center;
+        line-height: 20px;
+        margin: 20px;
+        border-radius: 50%;
+    }
+    .projectInfoBtn:hover {
+        cursor: pointer;
+        background: #666;
+        color: #fff;
+    }
+    .projectPrograssBarContainer {
+        width: 100%;
+        height: 50px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .projectPrograssBar{
+        width:80%;
+        height:25px;
+        background:#eee;
+        border-radius:15px;
+        overflow:hidden;
+    }
+    .projectProjectBarData{
+        height:100%;
+        background:rgb(250, 209, 26);
+        line-height:25px;
+        text-align:center;
+        font-size: 14px;
+        width:0px;
+    }
+    /* Each Task */
+    .projectEachTaskContainer {
+        width: 100%;
+        padding: 10px 0;
+    }
+    .projectTask {
+        width: 90%;
+        margin: 0 5%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 30px;
+    }
+    .subTask {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 30px;
+    }
+    .projectTaskControl,
+    .subTaskControl {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+    .projectTaskText {
+        font-size: 16px;
+        color: #444;
+        margin: 0 10px;
+        font-weight: bold;
+    }
+    .subTaskText {
+        font-size: 14px;
+        color: #444;
+        margin: 0 10px;
+    }
+    .projectSubTask {
+        width: 85%;
+        margin-left: 10%;
+    }
+    .addNewSubTaskContainer {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+    }
+    .showAddSubTaskInput {
+        width: 20px;
+        height: 20px;
+        margin: 10px 0;
+        filter: grayscale(1);
+        transition: 0.2s;
+        cursor: pointer;
+    }
+    .addNewSubTaskInput {
+        flex-grow: 1;
+        display: none;
+        align-items: center;
+        height: 40px;
+    }
+    .addNewSubTaskText {
+        width: 200px;
+        height: 30px;
+        font-size: 13px;
+        color: #555;
+        padding: 0 10px;
+        margin: 0 10px;
+        border: none;
+        outline: none;
+        background: #eee;
+        border-radius: 15px;
+    }
+    .addNewSubTaskBtn {
+        width: 25px;
+        height: 25px;
+    }
+    .addNewTaskContainer {
+        width: 100%;
+        height: 70px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    .addNewTaskInput {
+        flex-grow: 1;
+        height: 35px;
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        background: #ccc;
+        padding: 0 20px;
+        box-sizing: border-box;
+        color: #444;
+    }
+    .addNewTaskBtn {
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+    }
+    .hideProjectDetailinMobile{
+        display:none;
+    }
+}
 
 
 /*large=============================================================================================================*/
 
-@media only screen and (min-width: 992px) and (max-width:1199px) {}
-
-
-/*extra large======================================================================================================*/
-
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 992px) and (max-width:1199px) {
     .projectsMagePageContainer {
         width: 100%;
-        height: 100%;
         display: flex;
+        align-items:flex-start;
     }
     .projectListContainer {
         width: 50%;
@@ -34,93 +609,193 @@
         padding: 20px;
         box-sizing: border-box;
     }
-    .eachProjectsInList {
-        width: 70%;
-        margin: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        background: #fff;
-    }
-    .eachProjectTitle {
-        width: 100%;
-        height: 50px;
-        font-size: 20px;
-        line-height: 50px;
-        overflow: hidden;
-        padding: 0 10px;
-        box-sizing: border-box;
-        font-weight: bolder;
-    }
-    .eachProjectsTasksContainer {
-        width: 90%;
-        margin: 10px 5%;
+    /* this Project container */
+    .thisProjectContainer {
+        width: 50%;
         display: flex;
         flex-direction: column;
-    }
-    .eachProjectTask {
-        width: 100%;
-        height: 30px;
-        display: flex;
-        overflow: hidden;
-        align-items: center;
-        margin: 5px 0;
-        border-radius: 3px;
-    }
-    .projectTaskController {
-        width: 14px;
-        height: 14px;
-        border: solid 2px #333;
-        border-radius: 2px;
-        margin: 0 10px;
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         box-sizing: border-box;
+        margin-bottom: 30px;
+    }
+    .projectDetailHeader {
+        width: 100%;
+        height: 60px;
+        background: #eee;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .projectTitle {
+        flex-grow: 1;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        color: #555;
+        margin-left: 50px;
+    }
+    .projectInfoBtn {
+        width: 20px;
+        height: 20px;
+        border: solid 2px #666;
+        color: #333;
+        text-align: center;
+        line-height: 20px;
+        margin: 20px;
+        border-radius: 50%;
+    }
+    .projectInfoBtn:hover {
+        cursor: pointer;
+        background: #666;
+        color: #fff;
+    }
+    .projectPrograssBarContainer {
+        width: 100%;
+        height: 50px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .projectPrograssBar{
+        width:80%;
+        height:25px;
+        background:#eee;
+        border-radius:15px;
+        overflow:hidden;
+    }
+    .projectProjectBarData{
+        height:100%;
+        background:rgb(250, 209, 26);
+        line-height:25px;
+        text-align:center;
+        font-size: 14px;
+        width:0px;
+    }
+    /* Each Task */
+    .projectEachTaskContainer {
+        width: 100%;
+        padding: 10px 0;
+    }
+    .projectTask {
+        width: 90%;
+        margin: 0 5%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 30px;
+    }
+    .subTask {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 30px;
+    }
+    .projectTaskControl,
+    .subTaskControl {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
     }
     .projectTaskText {
-        flex-grow: 1;
+        font-size: 16px;
+        color: #444;
+        margin: 0 10px;
+        font-weight: bold;
+    }
+    .subTaskText {
+        font-size: 14px;
+        color: #444;
         margin: 0 10px;
     }
-    .bgRed {
-        background: rgb(250, 206, 206);
-        border-left: solid 5px rgb(212, 47, 47);
+    .projectSubTask {
+        width: 85%;
+        margin-left: 10%;
     }
-    .bgGreen {
-        background: rgb(127, 209, 159);
-        border-left: solid 5px rgb(65, 179, 61);
-    }
-    .bgOrange {
-        background: #ebe267;
-        border-left: solid 5px rgb(212, 195, 47);
-    }
-    .bgGG {
-        background: rgb(225, 255, 215);
-        border-left: solid 5px rgb(115, 192, 79);
-    }
-    .bdblue {
-        border-left: solid 5px rgb(65, 74, 211);
-    }
-    .bdred {
-        border-left: solid 5px rgb(211, 65, 65);
-    }
-    .bdgreen {
-        border-left: solid 5px rgb(65, 211, 65);
-    }
-    .addNewProjectBtn {
-        width: 70%;
-        height: 70px;
-        margin: 20px;
-        border-radius: 5px;
-        background: #d3daee;
+    .addNewSubTaskContainer {
+        width: 100%;
+        height: 40px;
         display: flex;
-        justify-content: center;
         align-items: center;
     }
-    .addNewProjectBtn img {
-        width: 50px;
-        height: 50px;
-        opacity: 0.5;
-    }
-    .addNewProjectBtn:hover {
-        background: #cdd5e9;
+    .showAddSubTaskInput {
+        width: 20px;
+        height: 20px;
+        margin: 10px 0;
+        filter: grayscale(1);
+        transition: 0.2s;
         cursor: pointer;
+    }
+    .addNewSubTaskInput {
+        flex-grow: 1;
+        display: none;
+        align-items: center;
+        height: 40px;
+    }
+    .addNewSubTaskText {
+        width: 200px;
+        height: 30px;
+        font-size: 13px;
+        color: #555;
+        padding: 0 10px;
+        margin: 0 10px;
+        border: none;
+        outline: none;
+        background: #eee;
+        border-radius: 15px;
+    }
+    .addNewSubTaskBtn {
+        width: 25px;
+        height: 25px;
+    }
+    .addNewTaskContainer {
+        width: 100%;
+        height: 70px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    .addNewTaskInput {
+        flex-grow: 1;
+        height: 35px;
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        background: #ccc;
+        padding: 0 20px;
+        box-sizing: border-box;
+        color: #444;
+    }
+    .addNewTaskBtn {
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+    }
+    .hideProjectDetailinMobile{
+        display:none;
+    }
+}
+
+
+/*extra large======================================================================================================*/
+
+@media only screen and (min-width: 1200px) {
+    .projectsMagePageContainer {
+        width: 100%;
+        display: flex;
+        align-items:flex-start;
+    }
+    .projectListContainer {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        box-sizing: border-box;
     }
     /* this Project container */
     .thisProjectContainer {
@@ -130,58 +805,165 @@
         background: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         box-sizing: border-box;
+        margin-bottom: 30px;
     }
-    .projectTitle {
+    .projectDetailHeader {
         width: 100%;
         height: 60px;
         background: #eee;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .projectTitle {
+        flex-grow: 1;
         text-align: center;
-        line-height: 60px;
         font-size: 18px;
         font-weight: bold;
-        color: #333;
-    }
-    .thisProjectTask {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-    .mainTask {
-        margin: 10px 20px;
-        height: 40px;
-        border-radius: 5px;
-        background: #e8f5e4;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-    .mainTaskControl {
-        width: 14px;
-        height: 14px;
-        border: solid 2px #333;
-        border-radius: 2px;
-        margin: 0 20px;
-        box-sizing: border-box;
-    }
-    .subTaskContainer {
+        color: #555;
         margin-left: 50px;
     }
-    .subTask {
-        margin: 7px 20px;
-        height: 35px;
-        border-radius: 5px;
-        background: #fcf6e5;
+    .projectInfoBtn {
+        width: 20px;
+        height: 20px;
+        border: solid 2px #666;
+        color: #333;
+        text-align: center;
+        line-height: 20px;
+        margin: 20px;
+        border-radius: 50%;
+    }
+    .projectInfoBtn:hover {
+        cursor: pointer;
+        background: #666;
+        color: #fff;
+    }
+    .projectPrograssBarContainer {
+        width: 100%;
+        height: 50px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .projectPrograssBar{
+        width:80%;
+        height:25px;
+        background:#eee;
+        border-radius:15px;
+        overflow:hidden;
+    }
+    .projectProjectBarData{
+        height:100%;
+        background:rgb(250, 209, 26);
+        line-height:25px;
+        text-align:center;
+        font-size: 14px;
+        width:0px;
+    }
+    /* Each Task */
+    .projectEachTaskContainer {
+        width: 100%;
+        padding: 10px 0;
+    }
+    .projectTask {
+        width: 90%;
+        margin: 0 5%;
         display: flex;
         flex-direction: row;
         align-items: center;
-        font-size: 14px;
+        height: 30px;
     }
+    .subTask {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 30px;
+    }
+    .projectTaskControl,
     .subTaskControl {
-        width: 14px;
-        height: 14px;
-        border: solid 2px #333;
-        border-radius: 2px;
-        margin: 0 20px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+    .projectTaskText {
+        font-size: 16px;
+        color: #444;
+        margin: 0 10px;
+        font-weight: bold;
+    }
+    .subTaskText {
+        font-size: 14px;
+        color: #444;
+        margin: 0 10px;
+    }
+    .projectSubTask {
+        width: 85%;
+        margin-left: 10%;
+    }
+    .addNewSubTaskContainer {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+    }
+    .showAddSubTaskInput {
+        width: 20px;
+        height: 20px;
+        margin: 10px 0;
+        filter: grayscale(1);
+        transition: 0.2s;
+        cursor: pointer;
+    }
+    .addNewSubTaskInput {
+        flex-grow: 1;
+        display: none;
+        align-items: center;
+        height: 40px;
+    }
+    .addNewSubTaskText {
+        width: 200px;
+        height: 30px;
+        font-size: 13px;
+        color: #555;
+        padding: 0 10px;
+        margin: 0 10px;
+        border: none;
+        outline: none;
+        background: #eee;
+        border-radius: 15px;
+    }
+    .addNewSubTaskBtn {
+        width: 25px;
+        height: 25px;
+    }
+    .addNewTaskContainer {
+        width: 100%;
+        height: 70px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
         box-sizing: border-box;
+    }
+    .addNewTaskInput {
+        flex-grow: 1;
+        height: 35px;
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        background: #ccc;
+        padding: 0 20px;
+        box-sizing: border-box;
+        color: #444;
+    }
+    .addNewTaskBtn {
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+    }
+    .hideProjectDetailinMobile{
+        display:none;
     }
 }
