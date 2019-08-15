@@ -33,6 +33,8 @@ $(document).ready(function() {
     //     }
     // });
 
+
+
     $(document).on("mouseout", "td", function() {
         $(".planContOnMouse").css("display", "none");
         $(".planContOnMouse").css("background", "red");
@@ -95,12 +97,12 @@ $(document).ready(function() {
         $(".utColorHolder").val(utColor);
         $(".colorPickerBox").toggle();
     });
-    
-    $(document).on("click",".priorityinstantCheckBox",function(){
-        var val=$(this).attr("data-val");
-        var color=$(this).attr("data-color");
-        $(".priorityinstantCheckBox").css("background","#eee");
-        $(this).css("background",color);
+
+    $(document).on("click", ".priorityinstantCheckBox", function() {
+        var val = $(this).attr("data-val");
+        var color = $(this).attr("data-color");
+        $(".priorityinstantCheckBox").css("background", "#eee");
+        $(this).css("background", color);
         $(".priorityValueHolder").val(val);
     });
 
@@ -148,6 +150,22 @@ $(document).ready(function() {
 
     $(document).on("click", ".newTaskCancelBtn", function() {
         $(".newTaskCreatorContainer").toggle();
+    });
+
+    $(document).on("click", ".uttaskchecker", function() {
+        var taskid = $(this).attr("data-taskid");
+        if ($(this).hasClass("checked")) {
+            $(this).attr("src", "assets/icons/beforeCheck.png");
+            $(this).removeClass("checked");
+            $(".uttaskid" + taskid).text("Missed");
+            $(".uttaskid" + taskid).css("color", "#f83939");
+
+        } else {
+            $(this).attr("src", "assets/icons/afterCheck.png");
+            $(this).addClass("checked");
+            $(".uttaskid" + taskid).text("Success");
+            $(".uttaskid" + taskid).css("color", "#36b179");
+        }
     });
 
 });

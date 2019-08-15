@@ -19,6 +19,7 @@ $getProject=mysqli_query($con,$getProjectQuery);
 if(mysqli_num_rows($getProject)>0){
     While($project=mysqli_fetch_assoc($getProject)){
         $projectid=$project['id'];
+        $projectStatus=$project['projectStatus'];
         echo "<div class='projectDetailHeader'>
             <img src='assets/icons/back.png' class='hideProjectDetailinMobile'><div class='projectTitle'>".$project['projectName']."</div><div class='projectInfoBtn'>i</div>
         </div>
@@ -97,27 +98,62 @@ if(mysqli_num_rows($getProject)>0){
                                 </div>";
                         }
                     }
-                    echo"<div class='addNewSubTaskContainer'>
+                    if($projectStatus==0){
+                        echo"<div class='addNewSubTaskContainer'>
                         <img data-taskid='".$ptaskid."' src='assets/icons/addtask.png' class='showAddSubTaskInput'>
                         <div class='addNewSubTaskInput addSubTaskbox".$ptaskid."'>
                             <input type='text' class='addNewSubTaskText addNewSubTaskBox".$ptaskid."'>
                             <img data-projectid='".$projectid."' data-subtaskid='".$ptaskid."' src='assets/icons/addNewTask.png' class='addNewSubTaskBtn'>
                         </div>
-                    </div></div>
+                    </div>";
+                    }
+                    echo"</div>
                 </div>";
     }
 }
 
     }
+
+
+    if($projectStatus==0){
+        echo "
+        <div class='projectControlContainer'>
+            <div data-projectid='".$projectid."' class='finishProjectBtn'>Finish Project</div>
+            <div data-projectid='".$projectid."' class='closeProjectBtn'>Close Project</div>
+            <div data-projectid='".$projectid."' class='delProjectBtn'>Delete Project</div>
+        </div>
+        ";
+
+        echo "<div class='addNewTaskContainer'>
+            <input type='text' class='addNewTaskInput addTaskTextFor".$projectid."' placeholder='Add New State'>
+            <img data-projectid='".$projectid."' src='assets/icons/addNewTask.png' class='addNewTaskBtn'>
+        </div>";
+    }elseif($projectStatus==1){
+        echo "
+        <div class='projectControlContainer'>
+            <div data-projectid='".$projectid."' class='upDateProject'>Update Project</div>
+            <div data-projectid='".$projectid."' class='delProjectBtn'>Delete Project</div>
+        </div>
+        ";
+    }elseif($projectStatus==2){
+        echo "
+        <div class='projectControlContainer'>
+            <div data-projectid='".$projectid."' class='upDateProject'>Restore Project</div>
+            <div data-projectid='".$projectid."' class='delProjectBtn'>Delete Project</div>
+        </div>
+        ";
+    }
+    
+}else{
+    echo "<div class='noWorkingProjectYet'>No Working Project Yet!</div>";
 }
 
-echo "<div class='addNewTaskContainer'>
-        <input type='text' class='addNewTaskInput addTaskTextFor".$projectid."' placeholder='Add New State'>
-        <img data-projectid='".$projectid."' src='assets/icons/addNewTask.png' class='addNewTaskBtn'>
-    </div>";
+
 ?>
 
 <div data-projectid="<?php echo $projectid; ?>" class='delTaskBtnBox'>
     <img src="assets/icons/delptask.png">
 </div>
+
+
 

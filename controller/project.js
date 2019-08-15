@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    
+
 
     $(document).on("click", ".addNewProject", function() {
         $(this).toggleClass("addBtnImgRotate");
@@ -29,15 +29,15 @@ $(document).ready(function() {
         $(".thisProjectContainer").load("model/getProjectDetail.php", {
             projectid: projectid
         });
-        if($(window).width()<767){
-            $(".projectListContainer").css("display","none");
-            $(".thisProjectContainer").css("display","flex");
+        if ($(window).width() < 767) {
+            $(".projectListContainer").css("display", "none");
+            $(".thisProjectContainer").css("display", "flex");
         }
     });
 
-    $(document).on("click",".hideProjectDetailinMobile",function(){
-            $(".projectListContainer").css("display","flex");
-            $(".thisProjectContainer").css("display","none");
+    $(document).on("click", ".hideProjectDetailinMobile", function() {
+        $(".projectListContainer").css("display", "flex");
+        $(".thisProjectContainer").css("display", "none");
     });
 
     //get main task status
@@ -49,16 +49,16 @@ $(document).ready(function() {
     }
 
     //getProject Prograss Bar
-    function projectPrograss(projectid){
-        $('.projectPrograssBarContainer').load('model/projectPrograss.php',{
-            projectid:projectid
+    function projectPrograss(projectid) {
+        $('.projectPrograssBarContainer').load('model/projectPrograss.php', {
+            projectid: projectid
         });
     }
 
     //check done tasks
     $(document).on("click", ".projectTaskControl", function() {
         var taskid = $(this).attr("data-taskid");
-        var projectid=$(this).attr("data-projectid");
+        var projectid = $(this).attr("data-projectid");
         if ($(this).hasClass("checkable")) {
             if ($(this).hasClass("checked")) {
                 $(this).removeClass("checked");
@@ -89,7 +89,7 @@ $(document).ready(function() {
                 alert("Finish All Tasks");
             }
         }
-        
+
     });
 
 
@@ -97,7 +97,7 @@ $(document).ready(function() {
     $(document).on("click", ".subTaskControl", function() {
         var subTaskid = $(this).attr("data-subTaskid");
         var taskid = $(this).attr("data-taskid");
-        var projectid=$(this).attr("data-projectid");
+        var projectid = $(this).attr("data-projectid");
         if ($(this).hasClass("checked")) {
             $(this).removeClass("checked");
             $(this).attr("src", "assets/icons/beforeCheck.png");
@@ -143,24 +143,24 @@ $(document).ready(function() {
         var ptaskid = $(this).attr("data-subtaskid");
         var projectid = $(this).attr("data-projectid");
         var newtaskText = $(".addNewSubTaskBox" + ptaskid).val();
-        if(newtaskText!=""){
+        if (newtaskText != "") {
             $.post("model/addNewSubTask.php", {
                 ptaskid: ptaskid,
-                projectid:projectid,
+                projectid: projectid,
                 newtaskText: newtaskText
             }, function(data, status) {
                 //do some thing
             });
-    
+
             //reloat the whole project detail
             $(".thisProjectContainer").load("model/getProjectDetail.php", {
                 projectid: projectid
             });
             projectPrograss(projectid);
-        }else{
+        } else {
             alert("Empty");
         }
-        
+
     });
 
 
@@ -168,63 +168,63 @@ $(document).ready(function() {
     $(document).on("click", ".addNewTaskBtn", function() {
         var projectid = $(this).attr("data-projectid");
         var newTaskText = $(".addTaskTextFor" + projectid).val();
-        if(newTaskText!=""){
+        if (newTaskText != "") {
             $.post("model/addNewPTask.php", {
                 projectid: projectid,
                 newTaskText: newTaskText
             }, function(data, status) {
                 //do something
             });
-    
+
             //reloat the whole project detail
             $(".thisProjectContainer").load("model/getProjectDetail.php", {
                 projectid: projectid
             });
             projectPrograss(projectid);
-        }else{
+        } else {
             alert("Empty");
         }
-        
+
     });
 
-    $(document).on("click",function(e){
-        var text=$(".showDeleteTaskBox");
-        var deleteBtn=$(".delTaskBtnBox");
-        if(text.is(e.target) || deleteBtn.is(e.target)){
-            deleteBtn.css("display","block");
-        }else{
-            deleteBtn.css("display","none");
+    $(document).on("click", function(e) {
+        var text = $(".showDeleteTaskBox");
+        var deleteBtn = $(".delTaskBtnBox");
+        if (text.is(e.target) || deleteBtn.is(e.target)) {
+            deleteBtn.css("display", "block");
+        } else {
+            deleteBtn.css("display", "none");
         }
     });
 
 
     //show deleteTaskbox
-    $(document).on("click",".showDeleteTaskBox",function(e){
-        var x=e.pageX;
-        var y=e.pageY;
-        var deleteBtn=$(".delTaskBtnBox");
-        deleteBtn.css("top",y+"px");
-        deleteBtn.css("left",x+"px");
-        
-        if($(this).hasClass("projectTaskText")){
-            var taskid=$(this).attr("data-taskid");
-            deleteBtn.attr("data-id",taskid);
-            deleteBtn.attr("data-target","task");
-        }else if($(this).hasClass("subTaskText")){
-            var subtaskid=$(this).attr("data-subtaskid");
-            deleteBtn.attr("data-id",subtaskid);
-            deleteBtn.attr("data-target","subtask");
+    $(document).on("click", ".showDeleteTaskBox", function(e) {
+        var x = e.pageX;
+        var y = e.pageY;
+        var deleteBtn = $(".delTaskBtnBox");
+        deleteBtn.css("top", y + "px");
+        deleteBtn.css("left", x + "px");
+
+        if ($(this).hasClass("projectTaskText")) {
+            var taskid = $(this).attr("data-taskid");
+            deleteBtn.attr("data-id", taskid);
+            deleteBtn.attr("data-target", "task");
+        } else if ($(this).hasClass("subTaskText")) {
+            var subtaskid = $(this).attr("data-subtaskid");
+            deleteBtn.attr("data-id", subtaskid);
+            deleteBtn.attr("data-target", "subtask");
         }
     });
 
-    $(document).on("click",".delTaskBtnBox",function(){
-        var projectid=$(this).attr("data-projectid");
-        var id=$(this).attr("data-id");
-        var target=$(this).attr("data-target");
-        $.post("model/delptask.php",{
-            id:id,
-            target:target
-        },function(data,status){
+    $(document).on("click", ".delTaskBtnBox", function() {
+        var projectid = $(this).attr("data-projectid");
+        var id = $(this).attr("data-id");
+        var target = $(this).attr("data-target");
+        $.post("model/delptask.php", {
+            id: id,
+            target: target
+        }, function(data, status) {
             //do something
         });
         $(".thisProjectContainer").load("model/getProjectDetail.php", {
@@ -232,5 +232,90 @@ $(document).ready(function() {
         });
     });
 
+    $(".Utime_main_body").on("scroll", function() {
+        $(".delTaskBtnBox").css("display", "none");
+    });
+
+    //show project controls 
+    $(document).on("click", ".projectInfoBtn", function(e) {
+        var y = e.pageY;
+        var x = e.pageX;
+        var controller = $(".projectControlContainer");
+        controller.css("left", x + "px");
+        controller.css("top", y + "px");
+        controller.toggle();
+
+    });
+
+    $(".Utime_main_body").on("scroll", function() {
+        $(".projectControlContainer").css("display", "none");
+    });
+
+    $(document).on("click", ".finishProjectBtn", function() {
+        var projectid = $(this).attr("data-projectid");
+        var status = 1;
+        if ($(".projectProjectBarData").attr("data-projectPrograss") == 100) {
+            $.post("model/updateProjectStatus.php", {
+                projectid: projectid,
+                status: status
+            }, function(data, status) {
+                //dosomething
+            });
+        } else {
+            alert("not finished yet");
+        }
+        $(".projectListContainer").load("model/getProjectsList.php");
+        $(".projectControlContainer").css("display", "none");
+        $(".thisProjectContainer").load("model/getProjectDetail.php", {
+            projectid: projectid
+        });
+    });
+
+    $(document).on("click", ".closeProjectBtn", function() {
+        var projectid = $(this).attr("data-projectid");
+        var status = 2;
+        $.post("model/updateProjectStatus.php", {
+            projectid: projectid,
+            status: status
+        }, function(data, status) {
+            //dosomething
+        });
+        $(".projectListContainer").load("model/getProjectsList.php");
+        $(".projectControlContainer").css("display", "none");
+        $(".thisProjectContainer").load("model/getProjectDetail.php", {
+            projectid: projectid
+        });
+    });
+
+    $(document).on("click", ".upDateProject", function() {
+        var projectid = $(this).attr("data-projectid");
+        var status = 0;
+        $.post("model/updateProjectStatus.php", {
+            projectid: projectid,
+            status: status
+        }, function(data, status) {
+            //dosomething
+        });
+        $(".projectListContainer").load("model/getProjectsList.php");
+        $(".projectControlContainer").css("display", "none");
+        $(".thisProjectContainer").load("model/getProjectDetail.php", {
+            projectid: projectid
+        });
+    });
+
+    //delete project
+    $(document).on("click", ".delProjectBtn", function() {
+        var projectid = $(".addNewTaskBtn").attr("data-projectid");
+        $.post("model/deleteProject.php", {
+            projectid: projectid,
+        }, function(data, status) {
+            //dosomething
+        });
+        $(".projectListContainer").load("model/getProjectsList.php");
+        $(".projectControlContainer").css("display", "none");
+        $(".thisProjectContainer").load("model/getProjectDetail.php", {
+            projectid: projectid
+        });
+    });
 
 });

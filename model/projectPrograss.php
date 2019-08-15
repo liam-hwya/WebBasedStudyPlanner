@@ -44,7 +44,7 @@ if(mysqli_num_rows($getFinishTasks)>0){
     }
 }
 
-if($taskcount>0){
+if($taskcount>0 || $subTaskcount>0){
     $totalTask=$subTaskcount+$taskcount;
 $totalFinish=$finishSubtaskCount+$finishTaskCount;
 
@@ -55,7 +55,7 @@ $projectStatus=round(($totalFinish/$totalTask)*100,1);
 ?>
 
 <div class="projectPrograssBar">
-    <div class="projectProjectBarData" style="width:<?php echo $projectStatus; ?>%;">
+    <div class="projectProjectBarData" data-projectPrograss="<?php echo $projectStatus; ?>" style="width:<?php echo $projectStatus; ?>%;">
         <?php echo $projectStatus."%"; ?>
     </div>
 </div>

@@ -47,6 +47,7 @@ if ($timestamp === false) {
 
 // Today
 $today = date('Y-m-j', time());
+$todaydate=date('Ymd');
 
 // For H3 title
 $html_title = date('F, Y', $timestamp);
@@ -184,6 +185,7 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                 $gettdTasks=mysqli_query($con,$getToday);
                 if(mysqli_num_rows($gettdTasks)>0){
                     while($UTtask=mysqli_fetch_assoc($gettdTasks)){
+                        $taskid=$UTtask['id'];
                         $shour= $UTtask['shour'];
                         $sminute=$UTtask['sminute'];
                         $sampm=$UTtask['sampm'];
@@ -192,16 +194,21 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                         $eampm=$UTtask['eampm'];
                         $taskDate= $UTtask['taskdate'];
                         $taskColor=$UTtask['utColor'];
+                        $priorities=array("Urgent","Important","Medium","Low");
+                        $priority=$UTtask['priority']-1;
                         $fromTime=twoDigit($shour).":".twoDigit($sminute)." ".$sampm;
                         $toTime=twoDigit($ehour).":".twoDigit($eminute)." ".$eampm;
                         $UTtask= $UTtask['tasksubject'];
                         echo "<div class='UTeachTaskContainer' style='border-right-color:".$taskColor."'>
-                            <div class='utTaskTitle'>".$UTtask."</div>
-                            <div class='utTaskTime'>
-                                <div class='utTaskHours'>".$fromTime." to ".$toTime."</div>
-                                <div class='utTaskDate'>".$taskDate."</div>
-                            </div>
-                        </div>";
+                                <div class='utTaskTitle'>
+                                    <span>".$UTtask."</span>
+                                    <div class='utTaskHours'>".$fromTime." - ".$toTime."</div>
+                                </div>
+                                <div class='utTaskTime'>
+                                    <div class='utTaskHours'>".$priorities[$priority]."</div>
+                                    
+                                </div>
+                            </div>";
                     }
                 }else{
                     echo "No Task For Today";

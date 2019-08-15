@@ -1,29 +1,73 @@
-.delTaskBtnBox{
-    width:50px;
-    height:50px;
+.delTaskBtnBox {
+    width: 50px;
+    height: 50px;
     position: fixed;
-    top:300px;
-    left:100px;
-    z-index:100;
-    transform:translate(-50%,-100%);
-    display:none;
+    top: 300px;
+    left: 100px;
+    z-index: 100;
+    transform: translate(-50%, -100%);
+    display: none;
     cursor: pointer;
 }
-.showDeleteTaskBox{
+
+.showDeleteTaskBox {
     cursor: pointer;
 }
-.delTaskBtnBox img{
-    width:50px;
-    height:50px;
+
+.delTaskBtnBox img {
+    width: 50px;
+    height: 50px;
 }
+
+.projectControlContainer {
+    padding: 10px;
+    width: 150px;
+    background: rgba(255, 255, 255, 0.6);
+    position: fixed;
+    top: 100px;
+    left: 400px;
+    z-index: 100;
+    transform: translate(-110%, 10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+.projectControlContainer div {
+    background: rgba(255, 255, 255, 0.9);
+    width: 130px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 15px;
+    color: #333;
+    margin: 5px 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.noWorkingProjectYet {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 16px;
+    color: #777;
+    font-weight: bold;
+}
+
+
 /*extra small*/
 
 @media only screen and (max-width: 600px) {
     .projectsMagePageContainer {
         width: 100%;
         display: flex;
-        flex-direction:column;
-        align-items:flex-start;
+        flex-direction: column;
+        align-items: flex-start;
     }
     .projectListContainer {
         width: 100%;
@@ -39,7 +83,7 @@
         flex-direction: column;
         box-sizing: border-box;
         margin-bottom: 50px;
-        display:none;
+        display: none;
     }
     .projectDetailHeader {
         width: 100%;
@@ -74,24 +118,24 @@
     .projectPrograssBarContainer {
         width: 100%;
         height: 50px;
-        display:flex;
+        display: flex;
         align-items: center;
         justify-content: center;
     }
-    .projectPrograssBar{
-        width:80%;
-        height:25px;
-        background:#eee;
-        border-radius:15px;
-        overflow:hidden;
+    .projectPrograssBar {
+        width: 80%;
+        height: 25px;
+        background: #eee;
+        border-radius: 15px;
+        overflow: hidden;
     }
-    .projectProjectBarData{
-        height:100%;
-        background:rgb(250, 209, 26);
-        line-height:25px;
-        text-align:center;
+    .projectProjectBarData {
+        height: 100%;
+        background: rgb(250, 209, 26);
+        line-height: 25px;
+        text-align: center;
         font-size: 14px;
-        width:0px;
+        width: 0px;
     }
     /* Each Task */
     .projectEachTaskContainer {
@@ -190,22 +234,24 @@
         padding: 0 20px;
         box-sizing: border-box;
         color: #444;
-        -webkit-order: 2; /* Safari 6.1+ */
+        -webkit-order: 2;
+        /* Safari 6.1+ */
         order: 2;
-        margin:0 10px;
+        margin: 0 10px;
     }
     .addNewTaskBtn {
         width: 35px;
         height: 35px;
         cursor: pointer;
-        -webkit-order: 1; /* Safari 6.1+ */
+        -webkit-order: 1;
+        /* Safari 6.1+ */
         order: 1;
     }
-    .hideProjectDetailinMobile{
-        height:30px;
-        width:30px;
-        margin:10px;
-        opacity:0.5;
+    .hideProjectDetailinMobile {
+        height: 30px;
+        width: 30px;
+        margin: 10px;
+        opacity: 0.5;
     }
 }
 
@@ -216,8 +262,8 @@
     .projectsMagePageContainer {
         width: 100%;
         display: flex;
-        flex-direction:column;
-        align-items:flex-start;
+        flex-direction: column;
+        align-items: flex-start;
     }
     .projectListContainer {
         width: 100%;
@@ -233,7 +279,7 @@
         flex-direction: column;
         box-sizing: border-box;
         margin-bottom: 50px;
-        display:none;
+        display: none;
     }
     .projectDetailHeader {
         width: 100%;
@@ -268,24 +314,24 @@
     .projectPrograssBarContainer {
         width: 100%;
         height: 50px;
-        display:flex;
+        display: flex;
         align-items: center;
         justify-content: center;
     }
-    .projectPrograssBar{
-        width:80%;
-        height:25px;
-        background:#eee;
-        border-radius:15px;
-        overflow:hidden;
+    .projectPrograssBar {
+        width: 80%;
+        height: 25px;
+        background: #eee;
+        border-radius: 15px;
+        overflow: hidden;
     }
-    .projectProjectBarData{
-        height:100%;
-        background:rgb(250, 209, 26);
-        line-height:25px;
-        text-align:center;
+    .projectProjectBarData {
+        height: 100%;
+        background: rgb(250, 209, 26);
+        line-height: 25px;
+        text-align: center;
         font-size: 14px;
-        width:0px;
+        width: 0px;
     }
     /* Each Task */
     .projectEachTaskContainer {
@@ -384,22 +430,24 @@
         padding: 0 20px;
         box-sizing: border-box;
         color: #444;
-        -webkit-order: 2; /* Safari 6.1+ */
+        -webkit-order: 2;
+        /* Safari 6.1+ */
         order: 2;
-        margin:0 10px;
+        margin: 0 10px;
     }
     .addNewTaskBtn {
         width: 35px;
         height: 35px;
         cursor: pointer;
-        -webkit-order: 1; /* Safari 6.1+ */
+        -webkit-order: 1;
+        /* Safari 6.1+ */
         order: 1;
     }
-    .hideProjectDetailinMobile{
-        height:30px;
-        width:30px;
-        margin:10px;
-        opacity:0.5;
+    .hideProjectDetailinMobile {
+        height: 30px;
+        width: 30px;
+        margin: 10px;
+        opacity: 0.5;
     }
 }
 
@@ -410,8 +458,8 @@
     .projectsMagePageContainer {
         width: 100%;
         display: flex;
-        flex-direction:column;
-        align-items:flex-start;
+        flex-direction: column;
+        align-items: flex-start;
     }
     .projectListContainer {
         width: 100%;
@@ -465,24 +513,24 @@
     .projectPrograssBarContainer {
         width: 100%;
         height: 50px;
-        display:flex;
+        display: flex;
         align-items: center;
         justify-content: center;
     }
-    .projectPrograssBar{
-        width:80%;
-        height:25px;
-        background:#eee;
-        border-radius:15px;
-        overflow:hidden;
+    .projectPrograssBar {
+        width: 80%;
+        height: 25px;
+        background: #eee;
+        border-radius: 15px;
+        overflow: hidden;
     }
-    .projectProjectBarData{
-        height:100%;
-        background:rgb(250, 209, 26);
-        line-height:25px;
-        text-align:center;
+    .projectProjectBarData {
+        height: 100%;
+        background: rgb(250, 209, 26);
+        line-height: 25px;
+        text-align: center;
         font-size: 14px;
-        width:0px;
+        width: 0px;
     }
     /* Each Task */
     .projectEachTaskContainer {
@@ -587,8 +635,8 @@
         height: 35px;
         cursor: pointer;
     }
-    .hideProjectDetailinMobile{
-        display:none;
+    .hideProjectDetailinMobile {
+        display: none;
     }
 }
 
@@ -599,7 +647,7 @@
     .projectsMagePageContainer {
         width: 100%;
         display: flex;
-        align-items:flex-start;
+        align-items: flex-start;
     }
     .projectListContainer {
         width: 50%;
@@ -653,24 +701,24 @@
     .projectPrograssBarContainer {
         width: 100%;
         height: 50px;
-        display:flex;
+        display: flex;
         align-items: center;
         justify-content: center;
     }
-    .projectPrograssBar{
-        width:80%;
-        height:25px;
-        background:#eee;
-        border-radius:15px;
-        overflow:hidden;
+    .projectPrograssBar {
+        width: 80%;
+        height: 25px;
+        background: #eee;
+        border-radius: 15px;
+        overflow: hidden;
     }
-    .projectProjectBarData{
-        height:100%;
-        background:rgb(250, 209, 26);
-        line-height:25px;
-        text-align:center;
+    .projectProjectBarData {
+        height: 100%;
+        background: rgb(250, 209, 26);
+        line-height: 25px;
+        text-align: center;
         font-size: 14px;
-        width:0px;
+        width: 0px;
     }
     /* Each Task */
     .projectEachTaskContainer {
@@ -775,8 +823,8 @@
         height: 35px;
         cursor: pointer;
     }
-    .hideProjectDetailinMobile{
-        display:none;
+    .hideProjectDetailinMobile {
+        display: none;
     }
 }
 
@@ -787,7 +835,7 @@
     .projectsMagePageContainer {
         width: 100%;
         display: flex;
-        align-items:flex-start;
+        align-items: flex-start;
     }
     .projectListContainer {
         width: 50%;
@@ -841,24 +889,24 @@
     .projectPrograssBarContainer {
         width: 100%;
         height: 50px;
-        display:flex;
+        display: flex;
         align-items: center;
         justify-content: center;
     }
-    .projectPrograssBar{
-        width:80%;
-        height:25px;
-        background:#eee;
-        border-radius:15px;
-        overflow:hidden;
+    .projectPrograssBar {
+        width: 80%;
+        height: 25px;
+        background: #eee;
+        border-radius: 15px;
+        overflow: hidden;
     }
-    .projectProjectBarData{
-        height:100%;
-        background:rgb(250, 209, 26);
-        line-height:25px;
-        text-align:center;
+    .projectProjectBarData {
+        height: 100%;
+        background: rgb(250, 209, 26);
+        line-height: 25px;
+        text-align: center;
         font-size: 14px;
-        width:0px;
+        width: 0px;
     }
     /* Each Task */
     .projectEachTaskContainer {
@@ -963,7 +1011,7 @@
         height: 35px;
         cursor: pointer;
     }
-    .hideProjectDetailinMobile{
-        display:none;
+    .hideProjectDetailinMobile {
+        display: none;
     }
 }

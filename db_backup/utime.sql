@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 15, 2019 at 03:35 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 5.6.40
+-- Generation Time: Aug 15, 2019 at 12:45 PM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.1.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -223,7 +223,8 @@ CREATE TABLE `utproject` (
 --
 
 INSERT INTO `utproject` (`id`, `userid`, `projectName`, `deadline`, `projectStatus`) VALUES
-(1, 40, 'Utime', '2019-08-16', 0);
+(1, 40, 'Utime', '2019-08-16', 0),
+(3, 40, 'New Project', '2019-08-20', 0);
 
 -- --------------------------------------------------------
 
@@ -233,6 +234,7 @@ INSERT INTO `utproject` (`id`, `userid`, `projectName`, `deadline`, `projectStat
 
 CREATE TABLE `utpsubtask` (
   `id` int(10) NOT NULL,
+  `projectid` int(10) NOT NULL,
   `taskid` int(10) NOT NULL,
   `subtask` text NOT NULL,
   `subtaskStatus` int(10) NOT NULL
@@ -242,12 +244,17 @@ CREATE TABLE `utpsubtask` (
 -- Dumping data for table `utpsubtask`
 --
 
-INSERT INTO `utpsubtask` (`id`, `taskid`, `subtask`, `subtaskStatus`) VALUES
-(1, 1, 'show notification on right time', 1),
-(2, 1, 'show notification for missed works', 1),
-(3, 1, 'planner task status according to noti return', 1),
-(5, 1, 'Show Finish And not finish Tasks', 0),
-(6, 1, 'Will it show ?', 0);
+INSERT INTO `utpsubtask` (`id`, `projectid`, `taskid`, `subtask`, `subtaskStatus`) VALUES
+(1, 1, 1, 'show notification on right time', 1),
+(2, 1, 1, 'show notification for missed works', 1),
+(3, 1, 1, 'planner task status according to noti return', 1),
+(27, 3, 21, 'sdfsadfsdaf', 1),
+(28, 3, 21, 'sadfsdafsadf', 1),
+(29, 3, 21, 'sdafasdfasdfasdf', 1),
+(30, 3, 21, 'fasdfasdfasdfsadf', 1),
+(31, 3, 21, 'asdfasdfasdfasdfsadf', 1),
+(32, 3, 21, 'sdafsadfasdfsadfsa', 1),
+(33, 3, 21, 'asdfsadfasdfasdf', 1);
 
 -- --------------------------------------------------------
 
@@ -267,8 +274,8 @@ CREATE TABLE `utptask` (
 --
 
 INSERT INTO `utptask` (`id`, `projectid`, `ptask`, `ptaskStatus`) VALUES
-(1, 1, 'planner notification system', 0),
-(2, 1, 'User Profile and Something else', 0);
+(1, 1, 'planner notification system', 1),
+(21, 3, 'fasdfsaddasf', 1);
 
 -- --------------------------------------------------------
 
@@ -391,7 +398,7 @@ CREATE TABLE `utusers` (
   `Email` varchar(225) NOT NULL,
   `pass` varchar(225) NOT NULL,
   `passions` text NOT NULL,
-  `school` text,
+  `school` text DEFAULT NULL,
   `profilePicture` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -558,19 +565,19 @@ ALTER TABLE `utposts`
 -- AUTO_INCREMENT for table `utproject`
 --
 ALTER TABLE `utproject`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `utpsubtask`
 --
 ALTER TABLE `utpsubtask`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `utptask`
 --
 ALTER TABLE `utptask`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `utstar`

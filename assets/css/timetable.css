@@ -1,7 +1,7 @@
 /*extra small*/
 
 .today {
-    background: #ee4c4c!important;
+    background: #ee4c4c !important;
     color: white;
 }
 
@@ -20,6 +20,16 @@
     color: white;
 }
 
+.planTaken:hover {
+    background: #36b179 !important;
+    color: white !important;
+}
+
+.today:hover {
+    background: #c73d3d !important;
+    color: white;
+}
+
 .taskTimeLineBtnHolder {
     width: 100%;
     margin-left: 20px;
@@ -34,12 +44,12 @@
     justify-content: center;
 }
 
-.priorityinstantCheckBox{
-    width:12px;
-    height:12px;
-    background:#eee;
-    border:solid 2px #666;
-    border-radius:2px;
+.priorityinstantCheckBox {
+    width: 12px;
+    height: 12px;
+    background: #eee;
+    border: solid 2px #666;
+    border-radius: 2px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -179,14 +189,21 @@
     }
     .utTaskTitle {
         width: 100%;
+        display: flex;
+        justify-content: space-between;
         font-size: 14px;
         color: #444;
+    }
+    .utTaskTitle span {
+        font-size: 16px;
+        color: #444;
+        font-weight: bold;
     }
     .utTaskTime {
         width: 100%;
         display: flex;
         justify-content: space-between;
-        font-size: 12px;
+        font-size: 14px;
         padding: 0 10px;
         color: #444;
         box-sizing: border-box;
@@ -351,14 +368,21 @@
     }
     .utTaskTitle {
         width: 100%;
+        display: flex;
+        justify-content: space-between;
         font-size: 14px;
         color: #444;
+    }
+    .utTaskTitle span {
+        font-size: 16px;
+        color: #444;
+        font-weight: bold;
     }
     .utTaskTime {
         width: 100%;
         display: flex;
         justify-content: space-between;
-        font-size: 12px;
+        font-size: 14px;
         padding: 0 10px;
         color: #444;
         box-sizing: border-box;
@@ -540,6 +564,12 @@
     }
     .utTaskTitle {
         width: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #444;
+    }
+    .utTaskTitle span {
         font-size: 16px;
         color: #444;
         font-weight: bold;
@@ -603,7 +633,7 @@
     .timetable_calander_container {
         width: auto;
         margin-bottom: 30px;
-        margin-left:auto;
+        margin-left: auto;
         border-radius: 5px;
     }
     .calendar_header {
@@ -688,10 +718,10 @@
         height: 64.28px;
     }
     .timeTableBody td {
-        width:64px;
-        height:64px;
+        width: 64px;
+        height: 64px;
         text-align: center;
-        border-radius:50%;
+        border-radius: 50%;
     }
     .timeTableBody td:hover {
         cursor: pointer;
@@ -699,7 +729,7 @@
     /*show all tasks*/
     .timetable_plans_conntainer {
         flex-grow: 1;
-        max-width:50%;
+        max-width: 50%;
         height: 100%;
         padding: 20px;
         box-sizing: border-box;
@@ -731,6 +761,12 @@
     }
     .utTaskTitle {
         width: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #444;
+    }
+    .utTaskTitle span {
         font-size: 16px;
         color: #444;
         font-weight: bold;
@@ -777,7 +813,7 @@
     .timetable_calander_container {
         width: auto;
         margin-bottom: 30px;
-        margin-left:auto;
+        margin-left: auto;
         border-radius: 5px;
     }
     .calendar_header {
@@ -856,16 +892,16 @@
         width: 100%;
     }
     .timeTableBody th {
-        font-size: 18px;
+        font-size: 15px;
         color: #555;
         letter-spacing: 0.2ch;
         height: 64.28px;
     }
     .timeTableBody td {
-        width:64px;
-        height:64px;
+        width: 50px;
+        height: 50px;
         text-align: center;
-        border-radius:50%;
+        border-radius: 50%;
     }
     .timeTableBody td:hover {
         cursor: pointer;
@@ -873,7 +909,7 @@
     /*show all tasks*/
     .timetable_plans_conntainer {
         flex-grow: 1;
-        max-width:50%;
+        max-width: 50%;
         height: 100%;
         padding: 20px;
         box-sizing: border-box;
@@ -905,6 +941,12 @@
     }
     .utTaskTitle {
         width: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #444;
+    }
+    .utTaskTitle span {
         font-size: 16px;
         color: #444;
         font-weight: bold;
@@ -918,5 +960,21 @@
         color: #444;
         box-sizing: border-box;
     }
-    /*tasks Creator*/
+    .utTaskStatusContainer img {
+        width: 20px;
+        height: 20px;
+    }
+    .utTaskStatusContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .missedTasktext {
+        margin: 0 10px;
+        color: #f83939;
+    }
+    .successTasktext {
+        margin: 0 10px;
+        color: #36b179;
+    }
 }
