@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="assets/css/analyse.css">
     <link rel="stylesheet" href="assets/css/myclass.css">
     <link rel="stylesheet" href="assets/css/exam.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
 </head>
 
 <body data-calPg="day" data-page="<?php echo $currentPage;  ?>" data-id="<?php echo $UtimeUserId ?>">
@@ -103,6 +104,7 @@
     <script src="controller/imagePreview.js"></script>
     <script src="controller/exam.js"></script>
     <script src="controller/project.js"></script>
+    <script src="controller/dashboard.js"></script>
 </body>
 
 </html>

@@ -10,7 +10,7 @@ $(document).ready(function() {
         pmc.load("model/profile.php");
     });
 
-    $(document).on("click",".profilePPcontainer",function(){
+    $(document).on("click", ".profilePPcontainer", function() {
         $(".newPPselector").click();
     });
 
@@ -34,17 +34,21 @@ $(document).ready(function() {
 
     function oneImgPreview(input) {
         if (input.files && input.files[0]) {
-          var reader = new FileReader();
-          reader.onload = function(e) {
-            $(".profilePPcontainer").attr("style","background-image: url('"+e.target.result+"')");
-          }
-          reader.readAsDataURL(input.files[0]);
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $(".profilePPcontainer").attr("style", "background-image: url('" + e.target.result + "')");
+            }
+            reader.readAsDataURL(input.files[0]);
         }
-      }
+    }
 
 
-    $(document).on("change",".newPPselector",function(){
+    $(document).on("change", ".newPPselector", function() {
         oneImgPreview(this);
     });
 
-});e.target.result
+    $(document).on("click", function(e) {
+
+    });
+
+});

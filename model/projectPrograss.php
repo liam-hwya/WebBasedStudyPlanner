@@ -50,6 +50,9 @@ $totalFinish=$finishSubtaskCount+$finishTaskCount;
 
 
 $projectStatus=round(($totalFinish/$totalTask)*100,1);
+
+$updatePrograssQuery="UPDATE utproject SET projectPrograss='$projectStatus' WHERE id='$projectid'";
+$updatePrograss=mysqli_query($con,$updatePrograssQuery);
 }
 
 ?>

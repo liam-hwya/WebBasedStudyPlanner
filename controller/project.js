@@ -12,14 +12,17 @@ $(document).ready(function() {
     $(document).on("click", ".createProjectBtn", function() {
         var projectName = $(".addNewProjectName").val();
         var projectDate = $(".addNewProjectDate").val();
+        var projectDescription = $(".addNewProjectDescription").val();
         $.post("model/createNewProject.php", {
             projectName: projectName,
-            projectDate: projectDate
+            projectDate: projectDate,
+            projectDescription: projectDescription
         }, function(data, status) {
-            alert(data);
+            //dosomething
         });
         $(".projectListContainer").load("model/getProjectsList.php");
         $(".addNewProjectForm").toggle();
+        $(".addNewProject").toggleClass("addBtnImgRotate");
     });
 
 

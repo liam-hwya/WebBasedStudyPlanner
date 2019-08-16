@@ -82,6 +82,7 @@
                     $lastName=$userData['lastName'];
                     $userName=$firstName." ".$lastName;
                     $userPP=$userData['profilePicture'];
+                    $profilePicture="assets/images/".$userPP;
                     echo "
                     <div class='thisArticleContainer'>
 
@@ -92,7 +93,7 @@
                                 <div class='thisArticleUserInfo'>
                                     <div class='thisArticleMenuInSmall'><img src='assets/icons/dotmenu2.png' class='articleMenu' data-uid='".$id."' data-postid='".$thisPostid."'></div>
                                     <div class='thisArticleUserName'>".$userName."</div>
-                                    <div class='thisArticleUserProfilePicture'><img src='assets/images/".$userPP."'></div>
+                                    <div class='thisArticleUserProfilePicture' style='background-image:url(".$profilePicture.")'></div>
                                 </div>
                             </div>
 

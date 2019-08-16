@@ -14,7 +14,7 @@ function twoDigit($num){
     }else{
         return $num;
     }
-};
+}
 
 
 $plannedDates=array();
@@ -163,7 +163,10 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
         </table>
      <!-- Calendar view End -->       
     <div class="timeTableTaskAnalyseContainer">
-        
+        <script>
+            var userid="<?php echo $UTuserid; ?>";
+            $(".timeTableTaskAnalyseContainer").load("model/taskAnalyse.php");
+        </script>
     </div>
 </div>
 
@@ -208,13 +211,18 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                         $priorities=array("Urgent","Important","Medium","Low");
                         $priority=$UTtask['priority']-1;
 
+                        if($ehour==12){
+                            $ehour=0;
+                        }
+        
+                        if($shour==12){
+                            $shour=0;
+                        }
+        
                         $nowhour = ampm(date('a')).date('H').date('i');
                         $taskshour= ampm($sampm).twoDigit($shour).twoDigit($sminute);
                         $taskehour= ampm($eampm).twoDigit($ehour).twoDigit($eminute);
                             
-                            $nowhour = ampm(date('a')).date('h').date('i');
-                            $taskshour= ampm($sampm).twoDigit($shour).twoDigit($sminute);
-                            $taskehour= ampm($eampm).twoDigit($ehour).twoDigit($eminute);
                             
                             if($nowhour>$taskehour){
                                 if($taskStatus==0){

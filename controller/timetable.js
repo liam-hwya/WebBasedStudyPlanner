@@ -155,30 +155,31 @@ $(document).ready(function() {
     $(document).on("click", ".uttaskchecker", function() {
         var taskid = $(this).attr("data-taskid");
         if ($(this).hasClass("checked")) {
-            var status=0;
+            var status = 0;
             $(this).attr("src", "assets/icons/beforeCheck.png");
             $(this).removeClass("checked");
             $(".uttaskid" + taskid).text("Missed");
             $(".uttaskid" + taskid).css("color", "#f83939");
-            $.post("model/successTask.php",{
-                taskid:taskid,
-                status:status
-            },function(data,status){
+            $.post("model/successTask.php", {
+                taskid: taskid,
+                status: status
+            }, function(data, status) {
                 //doSomething
             });
         } else {
-            var status=1;
+            var status = 1;
             $(this).attr("src", "assets/icons/afterCheck.png");
             $(this).addClass("checked");
             $(".uttaskid" + taskid).text("Success");
             $(".uttaskid" + taskid).css("color", "#36b179");
-            $.post("model/successTask.php",{
-                taskid:taskid,
-                status:status
-            },function(data,status){
+            $.post("model/successTask.php", {
+                taskid: taskid,
+                status: status
+            }, function(data, status) {
                 //doSomething
             });
         }
+        $(".timeTableTaskAnalyseContainer").load("model/taskAnalyse.php");
     });
 
 });

@@ -3,6 +3,12 @@
     font-family: 'maian';
 }
 
+.thisArticleUserProfilePicture {
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
 .lodeMorePostBtn {
     width: 100%;
     height: 50px;
@@ -634,12 +640,12 @@
         background: #3AC485;
         color: #fff;
     }
-    .lodeMorePostBtn{
-        background:#eee !important;
-        width:90% !important;
-        height:40px !important;
-        line-height:40px !important;
-        margin:10px 5% !important;
+    .lodeMorePostBtn {
+        background: #eee !important;
+        width: 90% !important;
+        height: 40px !important;
+        line-height: 40px !important;
+        margin: 10px 5% !important;
     }
     /* Category Selector end ================================================================ */
 }
@@ -1197,12 +1203,12 @@
         background: #3AC485;
         color: #fff;
     }
-    .lodeMorePostBtn{
-        background:#eee !important;
-        width:90% !important;
-        height:40px !important;
-        line-height:40px !important;
-        margin:10px 5% !important;
+    .lodeMorePostBtn {
+        background: #eee !important;
+        width: 90% !important;
+        height: 40px !important;
+        line-height: 40px !important;
+        margin: 10px 5% !important;
     }
 }
 
@@ -1231,7 +1237,6 @@
         z-index: 300;
         overflow-y: scroll;
         display: none;
-        
     }
     /*post uploader*/
     .postUploader {
@@ -1717,7 +1722,6 @@
         box-sizing: border-box;
     }
     /* My articles end */
-
     /* Category Selector start ================================================================ */
     .categorySelectorContainer {
         width: 100%;
@@ -1754,12 +1758,12 @@
         background: #3AC485;
         color: #fff;
     }
-    .lodeMorePostBtn{
-        background:#eee !important;
-        width:90% !important;
-        height:40px !important;
-        line-height:40px !important;
-        margin:10px 5% !important;
+    .lodeMorePostBtn {
+        background: #eee !important;
+        width: 90% !important;
+        height: 40px !important;
+        line-height: 40px !important;
+        margin: 10px 5% !important;
     }
 }
 
@@ -1788,7 +1792,6 @@
         z-index: 300;
         overflow-y: scroll;
         display: none;
-        
     }
     /*post uploader*/
     .postUploader {
@@ -2274,7 +2277,6 @@
         box-sizing: border-box;
     }
     /* My articles end */
-
     /* Category Selector start ================================================================ */
     .categorySelectorContainer {
         width: 100%;
@@ -2311,12 +2313,12 @@
         background: #3AC485;
         color: #fff;
     }
-    .lodeMorePostBtn{
-        background:#eee !important;
-        width:90% !important;
-        height:40px !important;
-        line-height:40px !important;
-        margin:10px 5% !important;
+    .lodeMorePostBtn {
+        background: #eee !important;
+        width: 90% !important;
+        height: 40px !important;
+        line-height: 40px !important;
+        margin: 10px 5% !important;
     }
 }
 

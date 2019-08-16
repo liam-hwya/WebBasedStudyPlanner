@@ -22,6 +22,7 @@
     </div>
     <div class='addNewProjectForm'>
         <input type="text" placeholder="Project Name" class='addNewProjectName'>
+        <textarea placeholder="Description" class='addNewProjectDescription'></textarea>
         <input type="date" class='addNewProjectDate'>
         <div class="createProjectBtn">Create</div>
     </div>

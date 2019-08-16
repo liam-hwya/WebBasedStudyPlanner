@@ -52,9 +52,18 @@
             $i=1;
                 
             if($unDformat==$todayDate){
-                $nowhour = ampm(date('a')).date('h').date('i');
+                if($ehour==12){
+                    $ehour=0;
+                }
+
+                if($shour==12){
+                    $shour=0;
+                }
+
+                $nowhour = ampm(date('a')).date('H').date('i');
                 $taskshour= ampm($sampm).twoDigit($shour).twoDigit($sminute);
                 $taskehour= ampm($eampm).twoDigit($ehour).twoDigit($eminute);
+
 
                 if($nowhour>$taskehour){
                     if($taskStatus==0){

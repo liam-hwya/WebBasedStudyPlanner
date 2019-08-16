@@ -1,7 +1,7 @@
 /*extra small*/
 
 .today {
-    background: #ee4c4c !important;
+    background: #4cadee !important;
     color: white;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .today:hover {
-    background: #c73d3d !important;
+    background: #4094cc !important;
     color: white;
 }
 
@@ -51,19 +51,76 @@
     border: solid 2px #666;
     border-radius: 2px;
 }
-.timeTableNoTaskText{
-    width:100%;
-    height:50px;
-    background:rgba(55,188,58,0.2);
+
+.timeTableNoTaskText {
+    width: 100%;
+    height: 50px;
+    background: rgba(55, 188, 58, 0.2);
     text-align: center;
     line-height: 50px;
-    margin:10px 0;
+    margin: 10px 0;
 }
-.timeTableTaskAnalyseContainer{
-    width:100%;
-    height:50px;
-    background:green;
+
+.timeTableTaskAnalyseContainer {
+    width: 100%;
     margin: 40px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.succssTaskAnaliseContainer,
+.missTaskAnaliseContainer {
+    width: 70px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 10px;
+}
+
+.successTaskAnalyseText,
+.missTaskAnalyseText {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.successTaskAnalyseText {
+    color: #36b179;
+}
+
+.missTaskAnalyseText {
+    color: #c52e2e;
+}
+
+.sucessTaskAnalyseGUI,
+.missTaskAnalyseGUI {
+    width: 70px;
+    height: 70px;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.sucessTaskAnalyseGUI {
+    border: solid 3px #36b179;
+}
+
+.missTaskAnalyseGUI {
+    border: solid 3px #c52e2e;
+}
+
+.sucessTaskAnalyseGUI span,
+.missTaskAnalyseGUI span {
+    color: #333;
+    font-size: 15px;
+    font-weight: 100;
 }
 
 @media only screen and (max-width: 600px) {
@@ -239,7 +296,6 @@
         background: #fff;
         margin: 100px auto;
     }
-    
     .utTaskStatusContainer img {
         width: 20px;
         height: 20px;
@@ -480,7 +536,7 @@
     }
     .timetable_calander_container {
         width: 100%;
-        padding:10px 0;
+        padding: 10px 0;
     }
     .calendar_header {
         width: 100%;
@@ -630,7 +686,6 @@
         background: #fff;
         margin: 100px auto;
     }
-    
     .utTaskStatusContainer img {
         width: 20px;
         height: 20px;
@@ -679,13 +734,13 @@
     }
     .timetable_calander_container {
         width: auto;
-        margin:30px 0;
+        margin: 30px 0;
         border-radius: 5px;
     }
     .calendar_header {
         width: 100%;
         height: 70px;
-        background: rgb(80, 69, 231);
+        background: rgb(211, 211, 211);
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -702,13 +757,11 @@
     .addNewTaskBtn img {
         width: 35px;
         height: 35px;
-        filter: invert(100);
     }
     .clanderYMshower {
-        font-size: 20px;
+        font-size: 18px;
         color: #444;
         font-weight: bold;
-        color: white;
     }
     .todayYMshower {
         font-size: 20px;
@@ -727,8 +780,8 @@
         height: 40px;
         width: 40px;
         border-radius: 50%;
-        color: #333;
-        background: #fff;
+        color: #fff;
+        background: #333;
         text-align: center;
         line-height: 40px;
     }
@@ -742,8 +795,8 @@
     }
     .goBackTodayBtn {
         line-height: 30px;
-        background: #fff;
-        color: #333;
+        background: #333;
+        color: #fff;
         text-align: center;
         border-radius: 50%;
     }
@@ -753,6 +806,7 @@
     .changeCalendarMonth img {
         width: 30px;
         height: 30px;
+        filter: invert(1);
     }
     .timeTableBody {
         width: 100%;
@@ -794,7 +848,7 @@
         height: 70px;
         background: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        margin: 20px;
+        margin: 15px 20px;
         border-radius: 5px;
         display: flex;
         flex-direction: column;
@@ -875,16 +929,16 @@
     }
     .timetable_calander_container {
         width: auto;
-        margin:30px 0;
+        margin: 30px 0;
         border-radius: 5px;
-        display:flex;
+        display: flex;
         flex-direction: column;
         align-items: center;
     }
     .calendar_header {
         width: 100%;
         height: 70px;
-        background: rgb(80, 69, 231);
+        background: rgb(211, 211, 211);
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -901,13 +955,11 @@
     .addNewTaskBtn img {
         width: 35px;
         height: 35px;
-        filter: invert(100);
     }
     .clanderYMshower {
-        font-size: 20px;
+        font-size: 18px;
         color: #444;
         font-weight: bold;
-        color: white;
     }
     .todayYMshower {
         font-size: 20px;
@@ -941,8 +993,8 @@
     }
     .goBackTodayBtn {
         line-height: 30px;
-        background: #fff;
-        color: #333;
+        background: #333;
+        color: #fff;
         text-align: center;
         border-radius: 50%;
     }
@@ -952,6 +1004,7 @@
     .changeCalendarMonth img {
         width: 30px;
         height: 30px;
+        filter: invert(1);
     }
     .timeTableBody {
         width: 100%;
@@ -993,7 +1046,7 @@
         height: 70px;
         background: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        margin: 20px;
+        margin: 15px 20px;
         border-radius: 5px;
         display: flex;
         flex-direction: column;

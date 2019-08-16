@@ -1,0 +1,104 @@
+/*extra small*/
+
+@media only screen and (max-width: 600px) {}
+
+
+/*small================================================================================================================*/
+
+@media only screen and (min-width: 600px) and (max-width:767px) {}
+
+
+/*medium*/
+
+@media only screen and (min-width: 768px) and (max-width:991px) {}
+
+
+/*large=============================================================================================================*/
+
+@media only screen and (min-width: 992px) and (max-width:1199px) {}
+
+
+/*extra large======================================================================================================*/
+
+@media only screen and (min-width: 1200px) {
+    .dashboardMainContainer {
+        width: calc(100%+60px);
+        height: 100%;
+        margin: -30px;
+        display: flex;
+        flex-direction: row;
+    }
+    .dashboardTaskContainer {
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-right: solid 1px #ccc;
+    }
+    .dashboardTaskHeader {
+        width: 100%;
+        height: 70px;
+        background: #fff;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    }
+    /* Project */
+    .dashboardProjectContainer {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .dashboardProjectHeader {
+        width: 100%;
+        height: 70px;
+        background: #fff;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    }
+    .dashboardEachProjectContainer {
+        width: 90%;
+        height: 70px;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        margin: 15px 5%;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+    .dbProjectName {
+        width: 100%;
+        height: 35px;
+        line-height: 35px;
+        font-size: 17px;
+        color: #333;
+        font-weight: bold;
+    }
+    .dbProjectinfos {
+        width: 100%;
+        height: 35px;
+        background: red;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .dbProjectDesc {
+        flex-grow: 1;
+        background: blue;
+    }
+    .dbProjectProg {
+        width: 70px;
+        background: orange;
+    }
+    /* Exam*/
+    .dashboardExamContainer {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .dashboardExamHeader {
+        width: 100%;
+        height: 70px;
+        background: #fff;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    }
+}
