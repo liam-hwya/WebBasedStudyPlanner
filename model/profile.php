@@ -6,14 +6,12 @@
     $firstName=userData($UTuser,'firstName');
     $lastName=userData($UTuser,'lastName');
     $name=$firstName." ".$lastName;
-    $passions=userData($UTuser,'passions');
-    $passions=unserialize($passions);
+    $pp=userData($UTuser,'profilePicture');
     
-    echo $name."<hr>";
-    foreach($passions as $passion){
-        echo $passion."<br>";
-    }
 
 ?>
-<hr>
+
+<input type="file" class='newPPselector'>
+<div class="profilePPcontainer" style="background-image: url('assets/images/<?php echo $pp; ?>');"></div>
+<div class='profileUserName'><?php echo $name; ?></div>
 <a href="model/logout.php">Logout</a>

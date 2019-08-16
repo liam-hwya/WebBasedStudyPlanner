@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 15, 2019 at 12:45 PM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.1.30
+-- Generation Time: Aug 15, 2019 at 11:52 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 5.6.40
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -223,8 +223,7 @@ CREATE TABLE `utproject` (
 --
 
 INSERT INTO `utproject` (`id`, `userid`, `projectName`, `deadline`, `projectStatus`) VALUES
-(1, 40, 'Utime', '2019-08-16', 0),
-(3, 40, 'New Project', '2019-08-20', 0);
+(1, 40, 'Utime', '2019-08-16', 2);
 
 -- --------------------------------------------------------
 
@@ -247,14 +246,16 @@ CREATE TABLE `utpsubtask` (
 INSERT INTO `utpsubtask` (`id`, `projectid`, `taskid`, `subtask`, `subtaskStatus`) VALUES
 (1, 1, 1, 'show notification on right time', 1),
 (2, 1, 1, 'show notification for missed works', 1),
-(3, 1, 1, 'planner task status according to noti return', 1),
+(3, 1, 1, 'planner task status according to noti return', 0),
 (27, 3, 21, 'sdfsadfsdaf', 1),
 (28, 3, 21, 'sadfsdafsadf', 1),
 (29, 3, 21, 'sdafasdfasdfasdf', 1),
-(30, 3, 21, 'fasdfasdfasdfsadf', 1),
 (31, 3, 21, 'asdfasdfasdfasdfsadf', 1),
 (32, 3, 21, 'sdafsadfasdfsadfsa', 1),
-(33, 3, 21, 'asdfsadfasdfasdf', 1);
+(33, 3, 21, 'asdfsadfasdfasdf', 1),
+(37, 4, 27, 'adfasdf', 1),
+(38, 4, 27, 'dsfsafasdfasdf', 0),
+(39, 5, 28, 'asdfasdfasdf', 0);
 
 -- --------------------------------------------------------
 
@@ -274,8 +275,21 @@ CREATE TABLE `utptask` (
 --
 
 INSERT INTO `utptask` (`id`, `projectid`, `ptask`, `ptaskStatus`) VALUES
-(1, 1, 'planner notification system', 1),
-(21, 3, 'fasdfsaddasf', 1);
+(1, 1, 'planner notification system', 0),
+(21, 3, 'fasdfsaddasf', 1),
+(27, 4, 'asdfasdfd', 0),
+(28, 5, 'sadfasdfasdf', 0),
+(29, 0, '', 0),
+(30, 0, '', 0),
+(31, 0, '', 0),
+(32, 0, '', 0),
+(33, 0, '', 0),
+(34, 0, '', 0),
+(35, 0, '', 0),
+(36, 0, '', 0),
+(37, 0, '', 0),
+(38, 0, '', 0),
+(39, 0, '', 0);
 
 -- --------------------------------------------------------
 
@@ -362,28 +376,32 @@ CREATE TABLE `uttask` (
   `priority` int(1) NOT NULL,
   `emotion` int(1) NOT NULL,
   `dformat` varchar(225) NOT NULL,
-  `utColor` varchar(225) NOT NULL
+  `utColor` varchar(225) NOT NULL,
+  `taskStatus` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `uttask`
 --
 
-INSERT INTO `uttask` (`id`, `userid`, `tasksubject`, `taskdate`, `shour`, `sminute`, `sampm`, `ehour`, `eminute`, `eampm`, `priority`, `emotion`, `dformat`, `utColor`) VALUES
-(28, 30, 'Some things to Do', '2019-08-07', '1', '5', 'am', '1', '5', 'am', 3, 3, 'd20190807', '#3AC485'),
-(29, 30, 'Finish Time Table Page', '2019-08-06', '10', '30', 'pm', '11', '50', 'pm', 4, 5, 'd20190806', '#3AC485'),
-(30, 30, 'Drink Coffee after split Days', '2019-08-06', '1', '5', 'am', '1', '5', 'am', 4, 5, 'd20190806', '#3AC485'),
-(31, 30, 'Do Every Thing Make Me Happy', '2019-08-22', '1', '5', 'am', '1', '5', 'am', 3, 3, 'd20190822', '#3AC485'),
-(32, 30, 'play piano every day', '2019-08-16', '1', '5', 'am', '1', '5', 'am', 3, 3, 'd20190816', '#3AC485'),
-(33, 30, 'Sleep two Hour', '2019-08-06', '1', '5', 'am', '1', '5', 'am', 3, 3, 'd20190806', '#3366FF'),
-(34, 30, 'Sleep', '2019-08-07', '3', '30', 'am', '8', '30', 'am', 1, 5, 'd20190807', '#99CC33'),
-(36, 30, 'Wakeup early and Code agein', '2019-08-07', '7', '10', 'am', '8', '45', 'am', 1, 5, 'd20190807', '#e93a3a'),
-(37, 30, 'Code till the morning', '2019-08-08', '1', '5', 'am', '7', '5', 'am', 1, 3, 'd20190808', '#e93a3a'),
-(38, 30, 'Finish Time Table and Community Pages completely', '2019-08-09', '9', '30', 'am', '11', '55', 'pm', 1, 5, 'd20190809', '#3AC485'),
-(39, 40, 'Play Piano', '2019-08-13', '1', '5', 'am', '1', '5', 'am', 1, 5, 'd20190813', '#3AC485'),
-(40, 40, 'Hate MaMa', '2019-08-29', '1', '5', 'am', '1', '5', 'am', 1, 1, 'd20190829', '#3AC485'),
-(41, 40, 'Project Meeting', '2019-08-16', '1', '5', 'am', '1', '5', 'am', 2, 5, 'd20190816', '#3AC485'),
-(42, 40, 'Finish Exam Page For U-Time', '2019-08-28', '12', '30', 'pm', '12', '30', 'am', 1, 3, 'd20190828', '#e93a3a');
+INSERT INTO `uttask` (`id`, `userid`, `tasksubject`, `taskdate`, `shour`, `sminute`, `sampm`, `ehour`, `eminute`, `eampm`, `priority`, `emotion`, `dformat`, `utColor`, `taskStatus`) VALUES
+(28, 30, 'Some things to Do', '2019-08-07', '1', '5', 'am', '1', '5', 'am', 3, 3, 'd20190807', '#3AC485', 0),
+(29, 30, 'Finish Time Table Page', '2019-08-06', '10', '30', 'pm', '11', '50', 'pm', 4, 5, 'd20190806', '#3AC485', 0),
+(30, 30, 'Drink Coffee after split Days', '2019-08-06', '1', '5', 'am', '1', '5', 'am', 4, 5, 'd20190806', '#3AC485', 0),
+(31, 30, 'Do Every Thing Make Me Happy', '2019-08-22', '1', '5', 'am', '1', '5', 'am', 3, 3, 'd20190822', '#3AC485', 0),
+(32, 30, 'play piano every day', '2019-08-16', '1', '5', 'am', '1', '5', 'am', 3, 3, 'd20190816', '#3AC485', 0),
+(33, 30, 'Sleep two Hour', '2019-08-06', '1', '5', 'am', '1', '5', 'am', 3, 3, 'd20190806', '#3366FF', 0),
+(34, 30, 'Sleep', '2019-08-07', '3', '30', 'am', '8', '30', 'am', 1, 5, 'd20190807', '#99CC33', 0),
+(36, 30, 'Wakeup early and Code agein', '2019-08-07', '7', '10', 'am', '8', '45', 'am', 1, 5, 'd20190807', '#e93a3a', 0),
+(37, 30, 'Code till the morning', '2019-08-08', '1', '5', 'am', '7', '5', 'am', 1, 3, 'd20190808', '#e93a3a', 0),
+(38, 30, 'Finish Time Table and Community Pages completely', '2019-08-09', '9', '30', 'am', '11', '55', 'pm', 1, 5, 'd20190809', '#3AC485', 0),
+(39, 40, 'Play Piano', '2019-08-13', '1', '5', 'am', '1', '5', 'am', 1, 5, 'd20190813', '#3AC485', 0),
+(40, 40, 'Hate MaMa', '2019-08-29', '1', '5', 'am', '1', '5', 'am', 1, 1, 'd20190829', '#3AC485', 0),
+(41, 40, 'Project Meeting', '2019-08-16', '1', '5', 'am', '1', '5', 'am', 2, 5, 'd20190816', '#3AC485', 1),
+(42, 40, 'Finish Exam Page For U-Time', '2019-08-28', '12', '30', 'pm', '12', '30', 'am', 1, 3, 'd20190828', '#e93a3a', 0),
+(43, 40, 'Second Task', '2019-08-13', '1', '5', 'am', '1', '5', 'am', 4, 4, 'd20190813', '#3AC485', 0),
+(44, 40, 'Finished Task', '2019-08-15', '1', '5', 'am', '1', '5', 'am', 2, 5, 'd20190815', '#3AC485', 1),
+(45, 40, 'What will be go on', '2019-08-16', '3', '55', 'am', '4', '5', 'am', 1, 5, 'd20190816', '#3AC485', 0);
 
 -- --------------------------------------------------------
 
@@ -398,7 +416,7 @@ CREATE TABLE `utusers` (
   `Email` varchar(225) NOT NULL,
   `pass` varchar(225) NOT NULL,
   `passions` text NOT NULL,
-  `school` text DEFAULT NULL,
+  `school` text,
   `profilePicture` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -565,19 +583,19 @@ ALTER TABLE `utposts`
 -- AUTO_INCREMENT for table `utproject`
 --
 ALTER TABLE `utproject`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `utpsubtask`
 --
 ALTER TABLE `utpsubtask`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `utptask`
 --
 ALTER TABLE `utptask`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `utstar`
@@ -595,7 +613,7 @@ ALTER TABLE `utsubjects`
 -- AUTO_INCREMENT for table `uttask`
 --
 ALTER TABLE `uttask`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `utusers`

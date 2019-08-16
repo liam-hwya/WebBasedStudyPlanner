@@ -37,11 +37,9 @@
 </head>
 
 <body data-calPg="day" data-page="<?php echo $currentPage;  ?>" data-id="<?php echo $UtimeUserId ?>">
-    <div class="profileMainContainer" data-UTuser="<?php echo $UTuser; ?>">
-        <div class="profileContainer">
+        <div class="profileContainer"  data-UTuser="<?php echo $UTuser; ?>">
             
         </div>
-    </div>
 
     <div class="dashboard_main_container">
     <!--============= Top Bar Start============ -->

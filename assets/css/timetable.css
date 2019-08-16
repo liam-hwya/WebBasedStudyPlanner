@@ -51,6 +51,20 @@
     border: solid 2px #666;
     border-radius: 2px;
 }
+.timeTableNoTaskText{
+    width:100%;
+    height:50px;
+    background:rgba(55,188,58,0.2);
+    text-align: center;
+    line-height: 50px;
+    margin:10px 0;
+}
+.timeTableTaskAnalyseContainer{
+    width:100%;
+    height:50px;
+    background:green;
+    margin: 40px 0;
+}
 
 @media only screen and (max-width: 600px) {
     .planContOnMouse {
@@ -72,7 +86,6 @@
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: space-around;
-        align-items: center;
     }
     .timetable_calander_container {
         width: 100%;
@@ -225,6 +238,24 @@
         height: 500px;
         background: #fff;
         margin: 100px auto;
+    }
+    
+    .utTaskStatusContainer img {
+        width: 20px;
+        height: 20px;
+    }
+    .utTaskStatusContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .missedTasktext {
+        margin: 0 10px;
+        color: #f83939;
+    }
+    .successTasktext {
+        margin: 0 10px;
+        color: #36b179;
     }
 }
 
@@ -251,7 +282,6 @@
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: space-around;
-        align-items: center;
     }
     .timetable_calander_container {
         width: 100%;
@@ -405,15 +435,29 @@
         background: #fff;
         margin: 100px auto;
     }
+    .utTaskStatusContainer img {
+        width: 20px;
+        height: 20px;
+    }
+    .utTaskStatusContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .missedTasktext {
+        margin: 0 10px;
+        color: #f83939;
+    }
+    .successTasktext {
+        margin: 0 10px;
+        color: #36b179;
+    }
 }
 
 
 /*medium*/
 
 @media only screen and (min-width: 768px) and (max-width:1110px) {
-    .timeLineBtn {
-        background: #ddd;
-    }
     .planContOnMouse {
         width: 150px;
         height: 25px;
@@ -436,51 +480,32 @@
     }
     .timetable_calander_container {
         width: 100%;
-        height: 450px;
-        background: white;
-        margin-bottom: 30px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        border-radius: 5px;
+        padding:10px 0;
     }
     .calendar_header {
         width: 100%;
         height: 50px;
-        background: rgb(80, 69, 231);
+        background: rgb(231, 230, 255);
         display: flex;
         flex-direction: row;
         align-items: center;
         padding: 0 20px;
         box-sizing: border-box;
-        border-radius: 5px 5px 0 0;
-    }
-    .timeTableTypeSwitch {
-        width: 35px;
-        height: 35px;
-        margin-right: 20px;
     }
     .timeTableTypeSwitch img,
     .addNewTaskBtn img {
-        width: 35px;
-        height: 35px;
-        filter: invert(100);
+        width: 30px;
+        height: 30px;
     }
     .clanderYMshower {
-        font-size: 20px;
+        font-size: 16px;
         color: #444;
         font-weight: bold;
-        color: white;
-    }
-    .todayYMshower {
-        font-size: 20px;
-        color: #444;
-        font-weight: bold;
-        color: white;
-        display: block;
+        color: #333;
     }
     .addNewTaskBtn {
         width: 35px;
         height: 35px;
-        margin-left: 20px;
     }
     .todayDayShower {
         font-size: 20px;
@@ -498,12 +523,12 @@
     .changeCalendarMonth {
         width: 30px;
         height: 30px;
-        margin: 0 10px;
+        margin: 0 5px;
     }
     .goBackTodayBtn {
         line-height: 30px;
-        background: #fff;
-        color: #333;
+        background: #333;
+        color: #fff;
         text-align: center;
         border-radius: 50%;
     }
@@ -513,19 +538,23 @@
     .changeCalendarMonth img {
         width: 30px;
         height: 30px;
+        filter: invert(100);
     }
     .timeTableBody {
-        width: 100%;
-        height: 400px;
+        margin: auto;
     }
     .timeTableBody th {
-        font-size: 18px;
+        font-size: 12px;
         color: #555;
         letter-spacing: 0.2ch;
+        height: 30px;
     }
     .timeTableBody td {
-        width: 14.2857%;
+        width: 40px;
         text-align: center;
+        font-size: 12px;
+        height: 40px;
+        border-radius: 50%;
     }
     .timeTableBody td:hover {
         cursor: pointer;
@@ -533,8 +562,8 @@
     /*show all tasks*/
     .timetable_plans_conntainer {
         width: 100%;
-        height: 100%;
-        padding: 20px;
+        height: auto;
+        padding: 10px;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
@@ -542,16 +571,16 @@
     }
     .taskDayTitle {
         width: 80%;
-        font-size: 20px;
+        font-size: 17px;
         font-weight: bold;
         color: #555;
     }
     .UTeachTaskContainer {
-        width: 80%;
+        width: 90%;
         height: 70px;
         background: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        margin: 20px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        margin: 10px 0;
         border-radius: 5px;
         display: flex;
         flex-direction: column;
@@ -600,6 +629,24 @@
         height: 500px;
         background: #fff;
         margin: 100px auto;
+    }
+    
+    .utTaskStatusContainer img {
+        width: 20px;
+        height: 20px;
+    }
+    .utTaskStatusContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .missedTasktext {
+        margin: 0 10px;
+        color: #f83939;
+    }
+    .successTasktext {
+        margin: 0 10px;
+        color: #36b179;
     }
 }
 
@@ -632,8 +679,7 @@
     }
     .timetable_calander_container {
         width: auto;
-        margin-bottom: 30px;
-        margin-left: auto;
+        margin:30px 0;
         border-radius: 5px;
     }
     .calendar_header {
@@ -712,14 +758,14 @@
         width: 100%;
     }
     .timeTableBody th {
-        font-size: 18px;
+        font-size: 15px;
         color: #555;
         letter-spacing: 0.2ch;
         height: 64.28px;
     }
     .timeTableBody td {
-        width: 64px;
-        height: 64px;
+        width: 50px;
+        height: 50px;
         text-align: center;
         border-radius: 50%;
     }
@@ -780,6 +826,23 @@
         color: #444;
         box-sizing: border-box;
     }
+    .utTaskStatusContainer img {
+        width: 20px;
+        height: 20px;
+    }
+    .utTaskStatusContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .missedTasktext {
+        margin: 0 10px;
+        color: #f83939;
+    }
+    .successTasktext {
+        margin: 0 10px;
+        color: #36b179;
+    }
     /*tasks Creator*/
 }
 
@@ -812,9 +875,11 @@
     }
     .timetable_calander_container {
         width: auto;
-        margin-bottom: 30px;
-        margin-left: auto;
+        margin:30px 0;
         border-radius: 5px;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
     }
     .calendar_header {
         width: 100%;

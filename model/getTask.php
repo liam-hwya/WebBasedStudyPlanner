@@ -27,11 +27,14 @@
     $UTuserid=userData($UTuserEmail,'id');
     $dformat=$_POST['dformat'];
     $unDformat=substr($dformat,1);
-
     
+    $ThisDateToShow=date("Y F,d", strtotime(substr($dformat,1,45)."-".substr($dformat,5,6)."-".substr($dformat,7,8)));
+
+    echo "<div class='taskDayTitle'>".$ThisDateToShow."</div>";
     $getQuery="SELECT * FROM uttask WHERE userid='$UTuserid' AND dformat='$dformat'";
     $getTasks=mysqli_query($con,$getQuery);
     if(mysqli_num_rows($getTasks)>0){
+        
         while($UTtask=mysqli_fetch_assoc($getTasks)){
             $taskid=$UTtask['id'];
             $shour= $UTtask['shour'];
@@ -43,27 +46,31 @@
             $taskDate= $UTtask['taskdate'];
             $taskColor=$UTtask['utColor'];
             $taskStatus=$UTtask['taskStatus'];
+            // $ThisDateToShow=date("Y F,d", strtotime($taskDate));
             $priorities=array("Urgent","Important","Medium","Low");
             $priority=$UTtask['priority']-1;
-            if($taskStatus==0 && $unDformat<$todayDate){
-                $taskChecker="<span class='missedTasktext uttaskid".$taskid."'>Missed</span><img data-taskid='".$taskid."' class='uttaskchecker' src='assets/icons/beforeCheck.png'>";
-            }elseif($taskStatus==1 && $unDformat<$todayDate){
-                $taskChecker="<span class='successTasktext uttaskid".$taskid."'>Success</span><img data-taskid='".$taskid."' class='uttaskchecker checked' src='assets/icons/afterCheck.png'>";
-            }elseif($unDformat==$todayDate){
-                $nowhour = ampm(date('a')).date('H').date('i');
+            $i=1;
+                
+            if($unDformat==$todayDate){
+                $nowhour = ampm(date('a')).date('h').date('i');
                 $taskshour= ampm($sampm).twoDigit($shour).twoDigit($sminute);
                 $taskehour= ampm($eampm).twoDigit($ehour).twoDigit($eminute);
-                if($nowhour>$taskshour && $nowhour<$taskehour){
-                    $taskChecker="<span class='successTasktext uttaskid".$taskid."'>Now</span>";
-                }elseif($nowhour>$taskehour){
+
+                if($nowhour>$taskehour){
                     if($taskStatus==0){
                         $taskChecker="<span class='missedTasktext uttaskid".$taskid."'>Missed</span><img data-taskid='".$taskid."' class='uttaskchecker' src='assets/icons/beforeCheck.png'>";
                     }else{
                         $taskChecker="<span class='successTasktext uttaskid".$taskid."'>Success</span><img data-taskid='".$taskid."' class='uttaskchecker checked' src='assets/icons/afterCheck.png'>";
                     }
+                }elseif($nowhour>$taskshour && $nowhour<$taskehour){
+                    $taskChecker="<span class='successTasktext uttaskid".$taskid."'>Now</span>";
                 }elseif($nowhour<$taskshour){
                     $taskChecker="<span class='successTasktext uttaskid".$taskid."'>Coming</span>";
                 }
+            }elseif($taskStatus==0 && $unDformat<$todayDate){
+                $taskChecker="<span class='missedTasktext uttaskid".$taskid."'>Missed</span><img data-taskid='".$taskid."' class='uttaskchecker' src='assets/icons/beforeCheck.png'>";
+            }elseif($taskStatus==1 && $unDformat<$todayDate){
+                $taskChecker="<span class='successTasktext uttaskid".$taskid."'>Success</span><img data-taskid='".$taskid."' class='uttaskchecker checked' src='assets/icons/afterCheck.png'>";
             }else{
                 $taskChecker="<span class='successTasktext uttaskid".$taskid."'>Coming</span>";
             }
@@ -82,6 +89,6 @@
             </div>";
         }
     }else{
-        echo "No Task Today";
+        echo "<div class='timeTableNoTaskText'>No Task For Today</div>";
     }
 ?>
