@@ -43,12 +43,30 @@ $(document).ready(function() {
     }
 
 
-    $(document).on("change", ".newPPselector", function() {
+    $(document).on("change", ".newPPselector", function(e) {
+        e.preventDefault();
+        var $thisFormObj = $(this).closest('form');
+        var formdata = new FormData($thisFormObj[0]);
+
+        $.ajax({
+            type: "POST",
+            url: "model/updatePP.php",
+            data: formdata,
+            processData: false,
+            contentType: false,
+            dataType: "json"
+        });
         oneImgPreview(this);
+        $(".profileContainer").css("display", "none");
+        recoreAlert("Profile Picture Updated", 1);
     });
 
     $(document).on("click", function(e) {
-
+        if (e.target.className == "profileContainer" || e.target.className == "") {
+            //donothing
+        } else {
+            $(".profileContainer").css("display", "none");
+        }
     });
 
 });

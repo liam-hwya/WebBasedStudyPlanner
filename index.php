@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="assets/css/myclass.css">
     <link rel="stylesheet" href="assets/css/exam.css">
     <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/recoreAlert.css">
 </head>
 
 <body data-calPg="day" data-page="<?php echo $currentPage;  ?>" data-id="<?php echo $UtimeUserId ?>">
@@ -95,7 +96,13 @@
         </div>
     </div>
 
+    <div class="recoreAlert">
+        <img src="" class='recoreAlertIcon'>
+        <div class="recoreAlertMessage"></div>
+    </div>
+
     <script src="resources/js/jquery.js"></script>
+    <script src="assets/js/recoreAlert.js"></script>
     <script src="assets/js/app.js"></script>
     <script src="assets/js/dashboard.js"></script>
     <script src="controller/timetable.js"></script>
@@ -105,6 +112,7 @@
     <script src="controller/exam.js"></script>
     <script src="controller/project.js"></script>
     <script src="controller/dashboard.js"></script>
+    <script src="controller/myclass.js"></script>
 </body>
 
 </html>

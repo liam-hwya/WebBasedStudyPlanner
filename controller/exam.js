@@ -19,7 +19,9 @@ $(document).ready(function() {
             examDate: examDate
         }, function(data, status) {
             if (data == 1) {
-                //show alert
+                recoreAlert("Successfully Added", 1);
+            } else {
+                recoreAlert("Something is wrong", 0)
             }
         });
         getExamList();
@@ -77,7 +79,7 @@ $(document).ready(function() {
                 minmark: minmark,
                 examid: examid
             }, function(data, status) {
-                //do someting
+                recoreAlert("Added New Subject", 1);
             });
             $(".addNewSubjectFormContanier").css("display", "none");
             $(".addNewSubjectFormContanier :input").val("");
@@ -96,7 +98,7 @@ $(document).ready(function() {
         $.post("model/delsubject.php", {
             subid: subid
         }, function(data, status) {
-            //dosomething
+            recoreAlert("Removed Subject", 1);
         });
         $(".utExamDetailContainer").load("model/getExamDetail.php", {
             examid: examid
@@ -137,7 +139,13 @@ $(document).ready(function() {
         $.post("model/calcResult.php", {
             examid: examid
         }, function(data, status) {
-            //do something
+            if (data == "pass") {
+                recoreAlert("CONGRATULATION! You Passed The Exam", 1);
+            } else if (data == "fail") {
+                recoreAlert("OPPS! You Failed The Exam", 0);
+            } else {
+                recoreAlert("Something is Wrong!");
+            }
         });
 
         $(".addResultFromContainer").css("display", "none");
@@ -148,6 +156,18 @@ $(document).ready(function() {
     $(document).on("click", ".cancelExamResultBtn", function() {
         $(".addResultFromContainer").css("display", "none");
         $(".addResultTable :input").val("");
+    });
+
+    //delete exam
+    $(document).on("click", ".delExamBtn", function() {
+        var examid = $(this).attr("data-examid");
+        $.post("model/delExam.php", {
+            examid: examid
+        }, function(data, status) {
+            recoreAlert("Deleted Exam", 1);
+        });
+        getExamList();
+        $(".utExamDetailContainer").load("model/getExamDetail.php");
     });
 
 });

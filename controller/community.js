@@ -80,8 +80,9 @@ $(document).ready(function() {
         }, function(data, status) {
             if (data == 1) {
                 getPosts(catlist);
+                recoreAlert("Successfully Uploaded", 1);
             } else {
-                alert("someting want wrong");
+                recoreAlert("Opps! Something is Wrong..", 0);
             }
         });
         $(".realuploaderContainer").css("display", "none");
@@ -234,6 +235,7 @@ $(document).ready(function() {
         });
         $(".articlePopupMenu").toggle();
         getPosts(catlist);
+        recoreAlert("Post Deleted", 1);
     });
 
 

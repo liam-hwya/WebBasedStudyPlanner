@@ -29,7 +29,7 @@
         flex-direction: row;
     }
     .dashboardTaskContainer {
-        width: 400px;
+        flex-grow: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -37,9 +37,46 @@
     }
     .dashboardTaskHeader {
         width: 100%;
-        height: 70px;
+        height: 80px;
         background: #fff;
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 30px;
+        box-sizing: border-box;
+    }
+    .dashboardHeaderTexts {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+    }
+    .dashboardHeaderTitle {
+        font-size: 16px;
+        font-weight: 700;
+        color: #444;
+        line-height: 25px;
+    }
+    .dashboardHeadersubTitle {
+        line-height: 25px;
+        font-size: 14px;
+        color: #444;
+        font-weight: 100;
+    }
+    .dashboardHeaderGui {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: solid 1px #444;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .dashboardHeaderGui span {
+        font-size: 13px;
     }
     /* Project */
     .dashboardProjectContainer {
@@ -47,14 +84,22 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        border-right: solid 1px #ccc;
     }
     .dashboardProjectHeader {
         width: 100%;
-        height: 70px;
+        height: 80px;
         background: #fff;
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 30px;
+        box-sizing: border-box;
     }
-    .dashboardEachProjectContainer {
+    .dashboardEachProjectContainer,
+    .dashboardEachExamContainer {
         width: 90%;
         height: 70px;
         background: #fff;
@@ -63,30 +108,47 @@
         border-radius: 5px;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        padding: 0 10px;
+        box-sizing: border-box;
+        cursor: pointer;
     }
     .dbProjectName {
         width: 100%;
-        height: 35px;
-        line-height: 35px;
-        font-size: 17px;
-        color: #333;
+        height: 25px;
+        line-height: 25px;
+        font-size: 15px;
+        color: #444;
         font-weight: bold;
+        padding: 0 10px;
+        box-sizing: border-box;
     }
     .dbProjectinfos {
         width: 100%;
-        height: 35px;
-        background: red;
+        height: 25px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
     .dbProjectDesc {
         flex-grow: 1;
-        background: blue;
+        line-height: 25px;
+        padding: 0 10px;
+        overflow: hidden;
+        word-wrap: break-word;
+        font-size: 14px;
+        font-weight: 100;
+        color: #444;
     }
     .dbProjectProg {
-        width: 70px;
-        background: orange;
+        padding: 0 10px;
+        line-height: 25px;
+        padding: 0 10px;
+        overflow: hidden;
+        word-wrap: break-word;
+        font-size: 14px;
+        font-weight: 100;
+        color: #444;
     }
     /* Exam*/
     .dashboardExamContainer {
@@ -97,8 +159,14 @@
     }
     .dashboardExamHeader {
         width: 100%;
-        height: 70px;
+        height: 80px;
         background: #fff;
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 30px;
+        box-sizing: border-box;
     }
 }

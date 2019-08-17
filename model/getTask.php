@@ -86,7 +86,7 @@
             $fromTime=twoDigit($shour).":".twoDigit($sminute)." ".$sampm;
             $toTime=twoDigit($ehour).":".twoDigit($eminute)." ".$eampm;
             $UTtask= $UTtask['tasksubject'];
-            echo "<div class='UTeachTaskContainer' style='border-right-color:".$taskColor."'>
+            echo "<div class='UTeachTaskContainer' data-taskid='".$taskid."' style='border-right-color:".$taskColor."'>
                 <div class='utTaskTitle'>
                     <span>".$UTtask."</span>
                     <div class='utTaskHours'>".$fromTime." - ".$toTime."</div>

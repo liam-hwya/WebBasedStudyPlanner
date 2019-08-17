@@ -38,7 +38,7 @@
         height: 100px;
         border-radius: 50%;
         margin: 10px 25px;
-        background: green;
+        background: #fff;
         background-size: cover;
     }
     .profileUserName {

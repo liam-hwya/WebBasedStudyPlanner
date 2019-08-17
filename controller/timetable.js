@@ -182,4 +182,15 @@ $(document).ready(function() {
         $(".timeTableTaskAnalyseContainer").load("model/taskAnalyse.php");
     });
 
+    //delete task
+    $(document).on("dblclick", ".UTeachTaskContainer", function() {
+        var taskid = $(this).attr("data-taskid");
+        $.post("model/deleteTask.php", {
+            taskid: taskid
+        }, function(data, status) {
+            recoreAlert("Removed Task", 1);
+        });
+        $(this).css("display", "none");
+    });
+
 });

@@ -11,7 +11,7 @@
 
 ?>
 
-<input type="file" class='newPPselector'>
+<form method="post" enctype='multipart/form-data'><input type="file" class='newPPselector' name='newpp'></form>
 <div class="profilePPcontainer" style="background-image: url('assets/images/<?php echo $pp; ?>');"></div>
 <div class='profileUserName'><?php echo $name; ?></div>
 <a href="model/logout.php">Logout</a>

@@ -16,9 +16,19 @@
     </div>
     
     <div class="utExamListContainer">
+    
+    <?php 
+        if(isset($_POST['dbexamid'])){
+            $getexamdetail="$('.utExamDetailContainer').load('model/getExamDetail.php',{
+                projectid:".$_POST['dbexamid']."
+            })";
+        }else{
+            $getexamdetail="$('.utExamDetailContainer').load('model/getExamDetail.php')";
+        }
+    ?>
 <script>
     $(".utExamListContainer").load("model/getExamList.php");
-    $(".utExamDetailContainer").load("model/getExamDetail.php");
+    <?php echo $getexamdetail; ?>
 </script>
     </div>
 

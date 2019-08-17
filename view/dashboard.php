@@ -28,13 +28,28 @@
                         return 2;
                     }
                 }
+                date_default_timezone_set('Asia/Yangon');
+                $today=date('d F, l');
                 
                 //for today
                 
                 $getToday="SELECT * FROM uttask WHERE userid='$UTuserid' AND dformat='$todayDformat'";
                 $gettdTasks=mysqli_query($con,$getToday);
+                $taskCount=mysqli_num_rows($gettdTasks);
+                if($taskCount<2){
+                    $taskCounttext=$taskCount."<span>task</span>";
+                }else{
+                    $taskCounttext=$taskCount."<span>tasks</span>";
+                }
+                echo "<div class='dashboardTaskHeader'>
+                <div class='dashboardHeaderTexts'>
+                    <div class='dashboardHeaderTitle'>Today</div>
+                    <div class='dashboardHeadersubTitle'>".$today."</div>
+                </div>
+                <div class='dashboardHeaderGui'>".$taskCounttext."</div>
+            </div>";
                 if(mysqli_num_rows($gettdTasks)>0){
-                    echo "<div class='dashboardTaskHeader'></div>";
+                    
                     while($UTtask=mysqli_fetch_assoc($gettdTasks)){
                         $taskid=$UTtask['id'];
                         $shour= $UTtask['shour'];
@@ -81,7 +96,7 @@
                         echo "<div class='UTeachTaskContainer' style='border-right-color:".$taskColor."'>
                             <div class='utTaskTitle'>
                                 <span>".$UTtask."</span>
-                                <div class='utTaskHours'>".$fromTime." - ".$toTime."</div>
+                                <div class='utTaskHours'>".$fromTime."</div>
                             </div>
                             <div class='utTaskTime'>
                                 <div class='utTaskHours'>".$priorities[$priority]."</div>
@@ -89,8 +104,6 @@
                             </div>
                         </div>";
                     }
-                }else{
-                    echo "No Task For Today";
                 }
 
 
@@ -100,9 +113,30 @@
 
     <div class="dashboardProjectContainer">
         <?php
-            $getProjectQuery="SELECT * FROM utproject WHERE userid='$UTuserid' AND projectStatus='0'";
+            $getProjectQuery="SELECT * FROM utproject WHERE userid='$UTuserid' AND projectStatus='0'  ORDER BY id DESC";
             $getProject=mysqli_query($con,$getProjectQuery);
-            echo "<div class='dashboardProjectHeader'></div>";
+            $projectCout=mysqli_num_rows($getProject);
+            $getLastProjectQuery="SELECT * FROM utproject WHERE userid='$UTuserid' AND projectStatus='0' ORDER BY id DESC LIMIT 1";
+            $getLastProject=mysqli_query($con,$getLastProjectQuery);
+            if(mysqli_num_rows($getLastProject)>0){
+                while($lastproject=mysqli_fetch_assoc($getLastProject)){
+                    $lastModified="last modified on ".date("d F", strtotime($lastproject['modifiedTime']));
+                }
+            }else{
+                $lastModified="No Project";
+            }
+            if($projectCout<2){
+                $projectCoutText=$projectCout."<span>project</span>";
+            }else{
+                $projectCoutText=$projectCout."<span>projects</span>";
+            }
+            echo "<div class='dashboardProjectHeader'>
+                    <div class='dashboardHeaderTexts'>
+                    <div class='dashboardHeaderTitle'>Projects</div>
+                    <div class='dashboardHeadersubTitle'>".$lastModified."</div>
+                </div>
+                <div class='dashboardHeaderGui'>".$projectCoutText."</div>
+            </div>";
             if(mysqli_num_rows($getProject)>0){
                 while($project=mysqli_fetch_assoc($getProject)){
                     echo "<div data-projectid='".$project['id']."' class='dashboardEachProjectContainer'>
@@ -110,8 +144,8 @@
                                     ".$project['projectName']."
                                 </div>
                                 <div class='dbProjectinfos'>
-                                    <div class='dbProjectDesc'></div>
-                                    <div class='dbProjectProg'></div>
+                                    <div class='dbProjectDesc'>".$project['projectDescription']."</div>
+                                    <div class='dbProjectProg'>".$project['projectPrograss']."%</div>
                                 </div>
                           </div>";
                 }
@@ -123,17 +157,32 @@
         <?php
             $getExamQuery="SELECT * FROM utexam WHERE userid='$UTuserid' AND examstatus='0'";
             $getExam=mysqli_query($con,$getExamQuery);
-            echo "<div class='dashboardExamHeader'></div>";
+            $examCount=mysqli_num_rows($getExam);
+            if($examCount<2){
+                $examCountText=$examCount."<span>exam</span>";
+            }else{
+                $examCountText=$examCount."<span>exams</span>";
+            }
+            echo "<div class='dashboardExamHeader'>
+                        <div class='dashboardHeaderTexts'>
+                            <div class='dashboardHeaderTitle'>Exam</div>
+                            <div class='dashboardHeadersubTitle'>....</div>
+                        </div>
+                        <div class='dashboardHeaderGui'>".$examCountText."</div>
+                </div>";
             if(mysqli_num_rows($getExam)>0){
-                echo "<span class='comingexamListTypeTitle'>Coming Exam</span>";
-                echo "<div class='examListContainer commingExamList'> ";
                 while($exams=mysqli_fetch_assoc($getExam)){
-                    echo "<div data-examid='".$exams['id']."' class='eachExamContainer'>
-                        <img src='assets/icons/folder.png'>
-                        <span>".$exams['examDate']."</span>
-                    </div>";
+                    $examDate=date("Y F,d", strtotime($exams['examDate']));
+                    echo "<div data-examid='".$exams['id']."' class='dashboardEachExamContainer'>
+                                <div class='dbProjectName'>
+                                    ".$exams['examName']."
+                                </div>
+                                <div class='dbProjectinfos'>
+                                    <div class='dbProjectDesc'>".$examDate."</div>
+                                    <div class='dbProjectProg'></div>
+                                </div>
+                          </div>";
                 }
-                echo "</div>";
             }
         ?>
     </div>

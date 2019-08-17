@@ -97,12 +97,14 @@
         background: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         position: fixed;
-        bottom: 150px;
-        right: 50px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         border-radius: 10px;
         padding: 10px 25px;
         box-sizing: border-box;
         display: none;
+        z-index: 500;
     }
     .addNewExamName,
     .addNewExamDate,
@@ -119,7 +121,8 @@
         color: #333;
         margin: 5px 0;
     }
-    .createExamBtn,.createProjectBtn {
+    .createExamBtn,
+    .createProjectBtn {
         width: 200px;
         height: 35px;
         border: none;
@@ -199,11 +202,17 @@
         font-weight: 500;
         font-size: 17px;
     }
+    .examDetailHeader span {
+        flex-grow: 1;
+        text-align: center;
+        margin-left: 50px;
+    }
     .examDetailHeader img {
         width: 25px;
         height: 25px;
-        margin: 0 20px;
+        margin: 0 17.5px;
         opacity: 0.5;
+        cursor: pointer;
     }
     .subListTaleContainer {
         width: 100%;
@@ -516,8 +525,10 @@
         background: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         position: fixed;
-        bottom: 150px;
-        right: 50px;
+        top: 50%;
+        left: 50%;
+        z-index: 500;
+        transform: translate(-50%, -50%);
         border-radius: 10px;
         padding: 10px 25px;
         box-sizing: border-box;
@@ -538,7 +549,8 @@
         color: #333;
         margin: 5px 0;
     }
-    .createExamBtn,.createProjectBtn {
+    .createExamBtn,
+    .createProjectBtn {
         width: 200px;
         height: 35px;
         border: none;
@@ -618,11 +630,17 @@
         font-weight: 500;
         font-size: 17px;
     }
+    .examDetailHeader span {
+        flex-grow: 1;
+        text-align: center;
+        margin-left: 70px;
+    }
     .examDetailHeader img {
         width: 25px;
         height: 25px;
         margin: 0 20px;
         opacity: 0.5;
+        cursor: pointer;
     }
     .subListTaleContainer {
         width: 550px;
@@ -960,7 +978,8 @@
         color: #333;
         margin: 5px 0;
     }
-    .createExamBtn,.createProjectBtn {
+    .createExamBtn,
+    .createProjectBtn {
         width: 200px;
         height: 35px;
         border: none;
@@ -1040,11 +1059,17 @@
         font-weight: 500;
         font-size: 17px;
     }
+    .examDetailHeader span {
+        flex-grow: 1;
+        text-align: center;
+        margin-left: 70px;
+    }
     .examDetailHeader img {
         width: 25px;
         height: 25px;
         margin: 0 20px;
         opacity: 0.5;
+        cursor: pointer;
     }
     .subListTaleContainer {
         width: 550px;
@@ -1383,7 +1408,8 @@
         color: #333;
         margin: 5px 0;
     }
-    .createExamBtn,.createProjectBtn {
+    .createExamBtn,
+    .createProjectBtn {
         width: 200px;
         height: 35px;
         border: none;
@@ -1463,11 +1489,17 @@
         font-weight: 500;
         font-size: 17px;
     }
+    .examDetailHeader span {
+        flex-grow: 1;
+        text-align: center;
+        margin-left: 70px;
+    }
     .examDetailHeader img {
         width: 25px;
         height: 25px;
         margin: 0 20px;
         opacity: 0.5;
+        cursor: pointer;
     }
     .subListTaleContainer {
         width: 550px;
@@ -1792,7 +1824,8 @@
         color: #333;
         margin: 5px 0;
     }
-    .createExamBtn,.createProjectBtn {
+    .createExamBtn,
+    .createProjectBtn {
         width: 200px;
         height: 35px;
         border: none;
@@ -1866,11 +1899,17 @@
         font-weight: 500;
         font-size: 17px;
     }
+    .examDetailHeader span {
+        flex-grow: 1;
+        text-align: center;
+        margin-left: 70px;
+    }
     .examDetailHeader img {
         width: 25px;
         height: 25px;
         margin: 0 20px;
         opacity: 0.5;
+        cursor: pointer;
     }
     .subListTaleContainer {
         width: 550px;
@@ -2104,4 +2143,5 @@
         cursor: pointer;
         margin: 0 10px;
     }
+    .
 }

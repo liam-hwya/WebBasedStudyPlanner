@@ -1,114 +1,877 @@
 /*extra small*/
 
-@media only screen and (max-width: 600px) {}
+@media only screen and (max-width: 600px) {
+    .myClassMainContainer {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .myClassMenus {
+        margin: 20px 0;
+        display: flex;
+        flex-direction: row;
+    }
+    .myClassMenu {
+        height: 30px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        background: #3ac485;
+        margin: 5px;
+        align-items: center;
+        padding: 0 7px;
+        border-radius: 20px;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    }
+    .myClassMenu:hover {
+        cursor: pointer;
+    }
+    .myClassMenu img {
+        width: 12px;
+        height: 12px;
+        filter: invert(1);
+    }
+    .myClassMenu span {
+        margin-left: 5px;
+        color: #fff;
+        font-size: 13px;
+    }
+    .activeMyClassMenu {
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+    }
+    .myClassDataContainer {
+        max-width: 340px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .myclassAddBtn {
+        width: 50px;
+        height: 50px;
+        background: #3ac485;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 80px;
+        right: 30px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+    .myclassAddBtn img {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        filter: invert(1);
+    }
+    .myClassAndNewForm {
+        width: 250px;
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 500;
+        border-radius: 5px;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+    .myClassaddNewTextBox {
+        width: 200px;
+        height: 40px;
+        background: #eee;
+        border: none;
+        outline: none;
+        margin: 10px 0;
+        padding: 0 10px;
+        box-sizing: border-box;
+        font-size: 15px;
+        color: #444;
+    }
+    .myClassAddBtn {
+        width: 200px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        background: #3ac485;
+        color: #fff;
+        margin: 10px 0;
+        cursor: pointer;
+    }
+    .myClassaddNewTextarea {
+        width: 200px;
+        height: 80px;
+        background: #eee;
+        border: none;
+        outline: none;
+        margin: 10px 0;
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 15px;
+        color: #444;
+        font-family: 'maian';
+    }
+    .classCardContainer {
+        width: 150px;
+        height: 150px;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        margin: 10px;
+        overflow: hidden;
+    }
+    .classCardinnerContainer {
+        width: 150px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        transition: 0.2s;
+        margin-top: -150px;
+        cursor: pointer;
+    }
+    .openClassCard {
+        margin-top: 0 !important;
+    }
+    .classCardDetail {
+        width: 150px;
+        height: 150px;
+        background: #3ac485;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .classCardInfo {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin: 5px 0;
+    }
+    .classCardInfo img {
+        width: 20px;
+        height: 20px;
+        margin: 0 10px;
+    }
+    .invertColor {
+        filter: invert(1);
+    }
+    .classCardInfo span {
+        font-size: 14px;
+        color: #fff;
+        width: 110px;
+        line-height: 20px;
+    }
+    .classCardFace {
+        width: 150px;
+        height: 150px;
+        background: #fff;
+        border-top: solid 5px #3ac485;
+        box-sizing: border-box;
+        line-height: 140px;
+        text-align: center;
+        font-size: 14px;
+        color: #555;
+        font-weight: bold;
+        color: #3ac485;
+    }
+}
 
 
 /*small================================================================================================================*/
 
-@media only screen and (min-width: 600px) and (max-width:767px) {}
+@media only screen and (min-width: 600px) and (max-width:767px) {
+    .myClassMainContainer {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .myClassMenus {
+        display: flex;
+        flex-direction: row;
+    }
+    .myClassMenu {
+        height: 35px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        background: #3ac485;
+        margin: 10px;
+        align-items: center;
+        padding: 0 10px;
+        border-radius: 25px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .myClassMenu:hover {
+        cursor: pointer;
+    }
+    .myClassMenu img {
+        width: 15px;
+        height: 15px;
+        filter: invert(1);
+    }
+    .myClassMenu span {
+        margin-left: 5px;
+        color: #fff;
+        font-size: 14px;
+    }
+    .activeMyClassMenu {
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+    }
+    .myClassDataContainer {
+        max-width: 380px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .myclassAddBtn {
+        width: 50px;
+        height: 50px;
+        background: #3ac485;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 80px;
+        right: 50px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+    .myclassAddBtn img {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        filter: invert(1);
+    }
+    .myClassAndNewForm {
+        width: 250px;
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 500;
+        border-radius: 5px;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+    .myClassaddNewTextBox {
+        width: 200px;
+        height: 40px;
+        background: #eee;
+        border: none;
+        outline: none;
+        margin: 10px 0;
+        padding: 0 10px;
+        box-sizing: border-box;
+        font-size: 15px;
+        color: #444;
+    }
+    .myClassAddBtn {
+        width: 200px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        background: #3ac485;
+        color: #fff;
+        margin: 10px 0;
+        cursor: pointer;
+    }
+    .myClassaddNewTextarea {
+        width: 200px;
+        height: 80px;
+        background: #eee;
+        border: none;
+        outline: none;
+        margin: 10px 0;
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 15px;
+        color: #444;
+        font-family: 'maian';
+    }
+    .classCardContainer {
+        width: 170px;
+        height: 170px;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        margin: 10px;
+        overflow: hidden;
+    }
+    .classCardinnerContainer {
+        width: 170px;
+        height: 340px;
+        display: flex;
+        flex-direction: column;
+        transition: 0.2s;
+        margin-top: -170px;
+        cursor: pointer;
+    }
+    .openClassCard {
+        margin-top: 0 !important;
+    }
+    .classCardDetail {
+        width: 170px;
+        height: 170px;
+        background: #3ac485;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .classCardInfo {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin: 5px 0;
+    }
+    .classCardInfo img {
+        width: 20px;
+        height: 20px;
+        margin: 0 10px;
+    }
+    .invertColor {
+        filter: invert(1);
+    }
+    .classCardInfo span {
+        font-size: 14px;
+        color: #fff;
+        width: 130px;
+        line-height: 20px;
+    }
+    .classCardFace {
+        width: 170px;
+        height: 170px;
+        background: #fff;
+        border-top: solid 5px #3ac485;
+        box-sizing: border-box;
+        line-height: 160px;
+        text-align: center;
+        font-size: 14px;
+        color: #555;
+        font-weight: bold;
+        color: #3ac485;
+    }
+}
 
 
 /*medium*/
 
-@media only screen and (min-width: 768px) and (max-width:991px) {}
+@media only screen and (min-width: 768px) and (max-width:991px) {
+    .myClassMainContainer {
+        width: 100%;
+        height: 100%;
+    }
+    .myClassMenus {
+        display: flex;
+        flex-direction: row;
+    }
+    .myClassMenu {
+        height: 35px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        background: #3ac485;
+        margin: 10px;
+        align-items: center;
+        padding: 0 10px;
+        border-radius: 25px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .myClassMenu:hover {
+        cursor: pointer;
+    }
+    .myClassMenu img {
+        width: 15px;
+        height: 15px;
+        filter: invert(1);
+    }
+    .myClassMenu span {
+        margin-left: 5px;
+        color: #fff;
+        font-size: 14px;
+    }
+    .activeMyClassMenu {
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+    }
+    .myClassDataContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .myclassAddBtn {
+        width: 50px;
+        height: 50px;
+        background: #3ac485;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+    .myclassAddBtn img {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        filter: invert(1);
+    }
+    .myClassAndNewForm {
+        width: 250px;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        position: fixed;
+        bottom: 120px;
+        right: 100px;
+        border-radius: 5px;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+    .myClassaddNewTextBox {
+        width: 200px;
+        height: 40px;
+        background: #eee;
+        border: none;
+        outline: none;
+        margin: 10px 0;
+        padding: 0 10px;
+        box-sizing: border-box;
+        font-size: 15px;
+        color: #444;
+    }
+    .myClassAddBtn {
+        width: 200px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        background: #3ac485;
+        color: #fff;
+        margin: 10px 0;
+        cursor: pointer;
+    }
+    .myClassaddNewTextarea {
+        width: 200px;
+        height: 80px;
+        background: #eee;
+        border: none;
+        outline: none;
+        margin: 10px 0;
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 15px;
+        color: #444;
+        font-family: 'maian';
+    }
+    .classCardContainer {
+        width: 170px;
+        height: 170px;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        margin: 10px;
+        overflow: hidden;
+    }
+    .classCardinnerContainer {
+        width: 170px;
+        height: 340px;
+        display: flex;
+        flex-direction: column;
+        transition: 0.2s;
+        margin-top: -170px;
+        cursor: pointer;
+    }
+    .openClassCard {
+        margin-top: 0 !important;
+    }
+    .classCardDetail {
+        width: 170px;
+        height: 170px;
+        background: #3ac485;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .classCardInfo {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin: 5px 0;
+    }
+    .classCardInfo img {
+        width: 20px;
+        height: 20px;
+        margin: 0 10px;
+    }
+    .invertColor {
+        filter: invert(1);
+    }
+    .classCardInfo span {
+        font-size: 14px;
+        color: #fff;
+        width: 130px;
+        line-height: 20px;
+    }
+    .classCardFace {
+        width: 170px;
+        height: 170px;
+        background: #fff;
+        border-top: solid 5px #3ac485;
+        box-sizing: border-box;
+        line-height: 160px;
+        text-align: center;
+        font-size: 14px;
+        color: #555;
+        font-weight: bold;
+        color: #3ac485;
+    }
+}
 
 
 /*large=============================================================================================================*/
 
-@media only screen and (min-width: 992px) and (max-width:1199px) {}
+@media only screen and (min-width: 992px) and (max-width:1199px) {
+    .myClassMainContainer {
+        width: 100%;
+        height: 100%;
+    }
+    .myClassMenus {
+        display: flex;
+        flex-direction: row;
+    }
+    .myClassMenu {
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        background: #3ac485;
+        margin: 10px;
+        align-items: center;
+        padding: 0 20px;
+        border-radius: 25px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .myClassMenu:hover {
+        cursor: pointer;
+    }
+    .myClassMenu img {
+        width: 20px;
+        height: 20px;
+        filter: invert(1);
+    }
+    .myClassMenu span {
+        margin-left: 10px;
+        color: #fff;
+    }
+    .activeMyClassMenu {
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+    }
+    .myClassDataContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .myclassAddBtn {
+        width: 50px;
+        height: 50px;
+        background: #3ac485;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+    .myclassAddBtn img {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        filter: invert(1);
+    }
+    .myClassAndNewForm {
+        width: 250px;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        position: fixed;
+        bottom: 120px;
+        right: 100px;
+        border-radius: 5px;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+    .myClassaddNewTextBox {
+        width: 200px;
+        height: 40px;
+        background: #eee;
+        border: none;
+        outline: none;
+        margin: 10px 0;
+        padding: 0 10px;
+        box-sizing: border-box;
+        font-size: 15px;
+        color: #444;
+    }
+    .myClassAddBtn {
+        width: 200px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        background: #3ac485;
+        color: #fff;
+        margin: 10px 0;
+        cursor: pointer;
+    }
+    .myClassaddNewTextarea {
+        width: 200px;
+        height: 80px;
+        background: #eee;
+        border: none;
+        outline: none;
+        margin: 10px 0;
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 15px;
+        color: #444;
+        font-family: 'maian';
+    }
+    .classCardContainer {
+        width: 170px;
+        height: 170px;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        margin: 10px;
+        overflow: hidden;
+    }
+    .classCardinnerContainer {
+        width: 170px;
+        height: 340px;
+        display: flex;
+        flex-direction: column;
+        transition: 0.2s;
+        margin-top: -170px;
+        cursor: pointer;
+    }
+    .openClassCard {
+        margin-top: 0 !important;
+    }
+    .classCardDetail {
+        width: 170px;
+        height: 170px;
+        background: #3ac485;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .classCardInfo {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin: 5px 0;
+    }
+    .classCardInfo img {
+        width: 20px;
+        height: 20px;
+        margin: 0 10px;
+    }
+    .invertColor {
+        filter: invert(1);
+    }
+    .classCardInfo span {
+        font-size: 14px;
+        color: #fff;
+        width: 130px;
+        line-height: 20px;
+    }
+    .classCardFace {
+        width: 170px;
+        height: 170px;
+        background: #fff;
+        border-top: solid 5px #3ac485;
+        box-sizing: border-box;
+        line-height: 160px;
+        text-align: center;
+        font-size: 14px;
+        color: #555;
+        font-weight: bold;
+        color: #3ac485;
+    }
+}
 
 
 /*extra large======================================================================================================*/
 
 @media only screen and (min-width: 1200px) {
-    .myClassMainContainer{
-        width:100%;
-        height:100%;
+    .myClassMainContainer {
+        width: 100%;
+        height: 100%;
     }
-    .myClassMenus{
-        display:flex;
-        flex-direction:row;
+    .myClassMenus {
+        display: flex;
+        flex-direction: row;
     }
-    .myClassMenu{
-        height:50px;
+    .myClassMenu {
+        height: 40px;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        background:#fff;
-        margin:10px;
+        background: #3ac485;
+        margin: 10px;
         align-items: center;
-        padding:0 20px;
-        border-radius:5px;
-        box-shadow:0 0 10px rgba(0,0,0,0.2);
+        padding: 0 20px;
+        border-radius: 25px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
-    .myClassMenu:hover{
-        cursor:pointer;
+    .myClassMenu:hover {
+        cursor: pointer;
     }
-    .myClassMenu img{
-        width:30px;
-        height:30px;
-
+    .myClassMenu img {
+        width: 20px;
+        height: 20px;
+        filter: invert(1);
     }
-    .myClassMenu span{
-        margin-left:10px;
+    .myClassMenu span {
+        margin-left: 10px;
+        color: #fff;
     }
-    .activeMyClassMenu{
-        border-bottom:solid 4px rgb(105, 209, 53);
+    .activeMyClassMenu {
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
     }
-
-    .myClassDataContainer{
-        width:100%;
-        display:flex;
-        flex-direction:row;
+    .myClassDataContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
-    .myTeacher{
-        width:220px;
-        background:#fff;
-        border-radius:5px;
-        box-shadow:0 0 10px rgba(0,0,0,0.2);
-        margin:15px;
-        padding-bottom:20px;
+    .myclassAddBtn {
+        width: 50px;
+        height: 50px;
+        background: #3ac485;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        cursor: pointer;
+        transition: 0.2s;
     }
-    .myTeacherImage{
-        width:120px;
-        height:120px;
-        margin:20px 50px;
-        background:#eee;
-        border-radius:50%;
+    .myclassAddBtn img {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        filter: invert(1);
     }
-    .myTeacherImage img{
-        height:110px;
-        width:110px;
-        margin:5px;
-        opacity:0.5;
+    .myClassAndNewForm {
+        width: 250px;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        position: fixed;
+        bottom: 120px;
+        right: 100px;
+        border-radius: 5px;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
     }
-    .myTeacherName{
-        width:100%;
-        font-size:20px;
-        text-align:center;
-        color:#333;
+    .myClassaddNewTextBox {
+        width: 200px;
+        height: 40px;
+        background: #eee;
+        border: none;
+        outline: none;
+        margin: 10px 0;
+        padding: 0 10px;
+        box-sizing: border-box;
+        font-size: 15px;
+        color: #444;
     }
-    .myTeacherSubject{
-        width:100%;
-        font-size:15px;
-        text-align:center;
-        color:#555;
-        line-height:30px;
+    .myClassAddBtn {
+        width: 200px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        background: #3ac485;
+        color: #fff;
+        margin: 10px 0;
+        cursor: pointer;
     }
-    .myTeacherPhone,.myTeacherAdd{
-        display:flex;
+    .myClassaddNewTextarea {
+        width: 200px;
+        height: 80px;
+        background: #eee;
+        border: none;
+        outline: none;
+        margin: 10px 0;
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 15px;
+        color: #444;
+        font-family: 'maian';
+    }
+    .classCardContainer {
+        width: 170px;
+        height: 170px;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        margin: 10px;
+        overflow: hidden;
+    }
+    .classCardinnerContainer {
+        width: 170px;
+        height: 340px;
+        display: flex;
+        flex-direction: column;
+        transition: 0.2s;
+        margin-top: -170px;
+        cursor: pointer;
+    }
+    .openClassCard {
+        margin-top: 0 !important;
+    }
+    .classCardDetail {
+        width: 170px;
+        height: 170px;
+        background: #3ac485;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .classCardInfo {
+        display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        align-items: center;
-        padding:10px;
-        box-sizing: border-box;
-        color:#333;
-        font-size:15px;
+        margin: 5px 0;
     }
-    .myTeacherPhone img,.myTeacherAdd img{
-        width:25px;
-        height:25px;
-        margin-right:10px;
-        opacity:0.5;
+    .classCardInfo img {
+        width: 20px;
+        height: 20px;
+        margin: 0 10px;
+    }
+    .invertColor {
+        filter: invert(1);
+    }
+    .classCardInfo span {
+        font-size: 14px;
+        color: #fff;
+        width: 130px;
+        line-height: 20px;
+    }
+    .classCardFace {
+        width: 170px;
+        height: 170px;
+        background: #fff;
+        border-top: solid 5px #3ac485;
+        box-sizing: border-box;
+        line-height: 160px;
+        text-align: center;
+        font-size: 14px;
+        color: #555;
+        font-weight: bold;
+        color: #3ac485;
     }
 }

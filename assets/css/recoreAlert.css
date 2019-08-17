@@ -1,0 +1,55 @@
+.recoreAlert {
+    display: flex;
+    padding: 10px 15px;
+    height: 40px;
+    align-items: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    left: 50%;
+    top: -100px;
+    transform: translate(-50%, 0);
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    z-index: 500;
+    background: #fff;
+}
+
+@keyframes recoreAlert {
+    0% {
+        top: -100px;
+    }
+    5% {
+        top: 50%;
+    }
+    10% {
+        top: 40%;
+    }
+    90% {
+        top: 40%;
+    }
+    95% {
+        top: 55%;
+    }
+    100% {
+        top: -100px;
+    }
+}
+
+.recoreError {
+    border-bottom: solid 3px rgb(253, 82, 82);
+}
+
+.recoreSuccess {
+    border-bottom: solid 3px rgb(130, 243, 55);
+}
+
+.recoreAlertIcon {
+    width: 30px;
+    height: 30px;
+}
+
+.recoreAlertMessage {
+    margin-left: 10px;
+    font-size: 16px;
+    color: #555;
+}

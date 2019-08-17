@@ -26,10 +26,18 @@
         <input type="date" class='addNewProjectDate'>
         <div class="createProjectBtn">Create</div>
     </div>
-
+    <?php 
+        if(isset($_POST['dbprojectid'])){
+            $getprojectDetail="$('.thisProjectContainer').load('model/getProjectDetail.php',{
+                projectid:".$_POST['dbprojectid']."
+            })";
+        }else{
+            $getprojectDetail="$('.thisProjectContainer').load('model/getProjectDetail.php')";
+        }
+    ?>
     <script>
         $(".projectListContainer").load("model/getProjectsList.php");
-        $(".thisProjectContainer").load("model/getProjectDetail.php");
+        <?php echo $getprojectDetail;  ?>
     </script>
 
     
