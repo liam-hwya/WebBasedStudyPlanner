@@ -18,7 +18,7 @@ if($todo=="Save"){
     $delQuery="DELETE FROM saved WHERE postid='$postid' AND userid='$UTuserid'";
     $del=mysqli_query($con,$delQuery);
     if($del){
-        echo "Removed";
+        echo "Unsaved";
     }
 }
 ?>

@@ -6,8 +6,19 @@ $(document).ready(function() {
 
 
     $(".showHideProfile").on("click", function() {
-        pmc.css("display", "flex");
-        pmc.load("model/profile.php");
+        if ($(this).hasClass("showingPP")) {
+            pmc.css("display", "none");
+            $(this).removeClass("showingPP");
+        } else {
+            pmc.css("display", "flex");
+            pmc.load("model/profile.php");
+            $(this).addClass("showingPP");
+        }
+    });
+
+    $(".Utime_main_body").on("scroll", function() {
+        $(".profileContainer").css("display", "none");
+        $(".showHideProfile").removeClass("showingPP");
     });
 
     $(document).on("click", ".profilePPcontainer", function() {
@@ -61,12 +72,6 @@ $(document).ready(function() {
         recoreAlert("Profile Picture Updated", 1);
     });
 
-    $(document).on("click", function(e) {
-        if (e.target.className == "profileContainer" || e.target.className == "") {
-            //donothing
-        } else {
-            $(".profileContainer").css("display", "none");
-        }
-    });
+
 
 });

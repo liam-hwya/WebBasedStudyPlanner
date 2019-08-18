@@ -212,17 +212,17 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                         $priority=$UTtask['priority']-1;
 
                         if($ehour==12){
-                            $ehour=0;
+                            $ehour=00;
                         }
         
                         if($shour==12){
-                            $shour=0;
+                            $shour=00;
                         }
-        
-                        $nowhour = ampm(date('a')).date('H').date('i');
+                        
+
+                        $nowhour = ampm(date('a')).date('h').date('i');
                         $taskshour= ampm($sampm).twoDigit($shour).twoDigit($sminute);
                         $taskehour= ampm($eampm).twoDigit($ehour).twoDigit($eminute);
-                            
                             
                             if($nowhour>$taskehour){
                                 if($taskStatus==0){
@@ -239,7 +239,7 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                         $fromTime=twoDigit($shour).":".twoDigit($sminute)." ".$sampm;
                         $toTime=twoDigit($ehour).":".twoDigit($eminute)." ".$eampm;
                         $UTtask= $UTtask['tasksubject'];
-                        echo "<div class='UTeachTaskContainer' style='border-right-color:".$taskColor."'>
+                        echo "<div class='UTeachTaskContainer' data-taskid='".$taskid."' style='border-right-color:".$taskColor."'>
                             <div class='utTaskTitle'>
                                 <span>".$UTtask."</span>
                                 <div class='utTaskHours'>".$fromTime." - ".$toTime."</div>
@@ -251,7 +251,7 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                         </div>";
                     }
                 }else{
-                    echo "No Task For Today";
+                    echo "<div class='timeTableNoTaskText'>No Task For Today</div>";
                 }
 
 

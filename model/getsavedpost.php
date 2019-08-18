@@ -33,7 +33,6 @@ if(mysqli_num_rows($getSaved)>0){
         
     }
 }else{
-    echo "noothing is saved";
 }
 
 ?>

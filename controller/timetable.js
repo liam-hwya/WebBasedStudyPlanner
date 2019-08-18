@@ -146,6 +146,7 @@ $(document).ready(function() {
 
         $(".newTaskCreatorContainer").toggle();
         $(".goBackTodayBtn").click();
+        $(".utNotiPopupContainer").load("model/notipopup.php");
     });
 
     $(document).on("click", ".newTaskCancelBtn", function() {
@@ -191,6 +192,8 @@ $(document).ready(function() {
             recoreAlert("Removed Task", 1);
         });
         $(this).css("display", "none");
+        $(".goBackTodayBtn").click();
+        $(".timeTableTaskAnalyseContainer").load("model/taskAnalyse.php");
     });
 
 });

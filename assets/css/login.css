@@ -36,6 +36,8 @@ form {
     line-height: 40px;
     font-family: 'maian';
     margin: 15px 0;
+    border: none;
+    outline: none;
 }
 
 .loginBtn:hover {

@@ -219,7 +219,7 @@ $(document).ready(function() {
             postid: postid,
             todo: todo
         }, function(data, status) {
-            alert(data);
+            recoreAlert(data, 1);
         });
         $(".articlePopupMenu").toggle();
         loadSavedPosts();
@@ -231,7 +231,7 @@ $(document).ready(function() {
         $.post("model/postdelete.php", {
             postid: postid
         }, function(data, status) {
-            // alert(data);
+            recoreAlert("Post Deleted", 1);
         });
         $(".articlePopupMenu").toggle();
         getPosts(catlist);

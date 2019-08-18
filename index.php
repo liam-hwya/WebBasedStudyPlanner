@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    require_once("model/auth.php");
     if(!$_SESSION['UTuser']){
         header("location:utime.php");
     }else{
@@ -11,6 +11,7 @@
     }else{
         $currentPage="dashboard";
     }
+    
 
 ?>
 
@@ -36,6 +37,8 @@
     <link rel="stylesheet" href="assets/css/exam.css">
     <link rel="stylesheet" href="assets/css/dashboard.css">
     <link rel="stylesheet" href="assets/css/recoreAlert.css">
+    <link rel="stylesheet" href="assets/css/feedback.css">
+    <link rel="stylesheet" href="assets/css/noti.css">
 </head>
 
 <body data-calPg="day" data-page="<?php echo $currentPage;  ?>" data-id="<?php echo $UtimeUserId ?>">
@@ -49,10 +52,10 @@
             <div class="showHideMenu"><img src="assets/icons/menu.png"></div>
             <div id="dashboard"  class="menuAtTop"><img src="assets/icons/dashboard.png"></div><!--Timeline Menu-->
             <div class="theSpaceBetweenUnME"></div><!--The space between You and Me :( -->
-            <!-- <div class="menuAtTop"><img src="assets/icons/feedback.png"></div> -->
-            <div id="analyse" class="menuAtTop"><img src="assets/icons/timeline.png"></div><!--Timeline Menu-->
+            <!-- <div id="analyse" class="menuAtTop"><img src="assets/icons/timeline.png"></div> -->
             <div class="showHideNoti"><img src="assets/icons/noti.png"></div><!--View Notis-->
             <div class="showHideProfile"><img src="assets/icons/Pp.png"></div><!--Show Profile-->
+            <div id="feedback" class="menuAtTop"><img src="assets/icons/feedback.png"></div>
         </div>
     <!-- ====================Top Bar End================== -->
         
@@ -101,6 +104,16 @@
         <div class="recoreAlertMessage"></div>
     </div>
 
+    <div class="notificationContainer"></div>
+
+    <span class='doubleClickToDel'>Double Click to Delete</span>
+
+
+
+
+<div class="utNotiPopupContainer"></div>
+    
+
     <script src="resources/js/jquery.js"></script>
     <script src="assets/js/recoreAlert.js"></script>
     <script src="assets/js/app.js"></script>
@@ -113,6 +126,45 @@
     <script src="controller/project.js"></script>
     <script src="controller/dashboard.js"></script>
     <script src="controller/myclass.js"></script>
+    <script src="controller/feedback.js"></script>
+    <script src="controller/noti.js"></script>
+    <script>
+        $(".notificationContainer").load("model/noti.php");
+        $(".utNotiPopupContainer").load("model/notipopup.php");
+        $(document).ready(function(){
+            function twodig(int){
+                if(int<10){
+                    int="0"+int;
+                }else if(int==12){
+                    int="00";
+                }else{
+                    int=int;
+                }
+                return int;
+            }
+            setInterval(() => {
+                var notiTime=$(".utimeNotificationBox").attr("data-notiTime")
+                var taskid=$(".utimeNotificationBox").attr("data-taskid");
+                var d=new Date();
+                var h=d.getHours();
+                var s=d.getSeconds();
+                if(h>12){
+                    hh=h-12;
+                    ampm=2;
+                }else{
+                    hh=h;
+                    ampm=1;
+                }
+                var m=d.getMinutes();
+                var movingTime=ampm+""+twodig(hh)+""+twodig(m);
+                console.log(movingTime + " " +notiTime+ " " + s);
+                if(movingTime==notiTime && s=="30"){
+                    $(".utimeNotificationBox").css("display","flex");
+                }
+            }, 1000);
+        });
+    </script>
+
 </body>
 
 </html>

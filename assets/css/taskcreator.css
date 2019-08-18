@@ -1,19 +1,21 @@
+.priorityValueHolder {
+    display: none;
+}
 
-.priorityValueHolder{
-    display:none;
-}
-.newTaskEmotion{
+.newTaskEmotion {
     -webkit-appearance: none;
-  height: 25px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
 }
-.newTaskEmotion:hover{
+
+.newTaskEmotion:hover {
     opacity: 1;
 }
+
 .newTaskEmotion::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -21,15 +23,20 @@
     height: 25px;
     background: #4CAF50;
     cursor: pointer;
-    border-radius:50%;
-  }
-  .newTaskEmotion::-moz-range-thumb {
+    border-radius: 50%;
+}
+
+.newTaskEmotion::-moz-range-thumb {
     width: 25px;
     height: 25px;
     background: #4CAF50;
     cursor: pointer;
-  }
+}
+
+
 /* Custom Check Rang Slider End */
+
+
 /*extra small*/
 
 @media only screen and (max-width: 600px) {
@@ -40,15 +47,17 @@
         background: rgba(0, 0, 0, 0.5);
         top: 0;
         left: 0;
-        z-index: 200;
+        z-index: 1000;
         overflow-y: scroll;
         display: none;
     }
     .newTaskCreator {
-        width: 100%;
+        width: 95%;
         height: auto;
         background: #fff;
-        margin: 100px auto;
+        margin: 100px 2.5%;
+        border-radius: 10px;
+        overflow: hidden;
     }
     .TaskCreatorForm {
         width: 100%;
@@ -274,7 +283,7 @@
         background: rgba(0, 0, 0, 0.5);
         top: 0;
         left: 0;
-        z-index: 200;
+        z-index: 1000;
         overflow-y: scroll;
         display: none;
     }

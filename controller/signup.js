@@ -6,7 +6,7 @@ $(document).ready(function() {
         }
     });
 
-    
+
 
     //get each input box state
     var FnStatus = $(".sign_up_first_name").attr("id"); //first name state
@@ -65,19 +65,19 @@ $(document).ready(function() {
 
     $(".signup_first_next").on("click", function() { //next btn on first signup page
 
-        function isEmailAvailable(email){
-            
-        
+        function isEmailAvailable(email) {
+
+
         }
-        
+
         var thisStatus = nextBtnStatus();
         if (thisStatus === true) {
-            var newEmail=$(".sign_up_email").val();
+            var newEmail = $(".sign_up_email").val();
             $.post("model/checkEmailExist.php", {
-                email:newEmail
-            },function(data,status){
+                email: newEmail
+            }, function(data, status) {
                 console.log(data);
-                if(data==1){
+                if (data == 1) {
                     $(".sign_up_form_one").css("display", "none"); //hide name,emilm inputs
                     $(".sign_up_form_two").css("display", "flex"); //show password input
                     $(".Step1").removeClass("workingStep"); //update Signup Prograss
@@ -85,12 +85,12 @@ $(document).ready(function() {
                     $(".Step2").removeClass("waitingStep"); //update Signup Prograss
                     $(".Step2").addClass("workingStep"); //update Signup Prograss
                     $(".textSteps").html("Create a password"); //update Signup Prograss
-                }else{
-                    alert("email is already taken");
-                } 
+                } else {
+                    recoreAlert("email is already taken", 0);
+                }
             });
         } else {
-            alert("not valid yet");
+            recoreAlert("!OPPS", 0);
         }
     });
 
@@ -100,7 +100,7 @@ $(document).ready(function() {
         var pass = $(".sign_up_password").val();
         var passCount = pass.length; //get password count
         name_pasStatus = nextBtnStatus(); //get name,email valid checking function
-        if (name_pasStatus == true && passCount > 8) {
+        if (name_pasStatus == true && passCount > 7) {
             return true;
         } else {
             return false;
@@ -121,7 +121,7 @@ $(document).ready(function() {
             $(".utime_name_text").html("Signup")
             $(".passionListContainer").load("model/passionList.php");
         } else {
-            alert("no no bro");
+            recoreAlert("Your Password is Too Short", 0);
         }
     });
 

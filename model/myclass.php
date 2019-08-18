@@ -14,7 +14,7 @@ if(isset($_POST['target'])){
         $getTeachers=mysqli_query($con,$getTeachersQuery);
         if(mysqli_num_rows($getTeachers)>0){
             while($teacher=mysqli_fetch_assoc($getTeachers)){
-                echo "<div class='classCardContainer'>
+                echo "<div data-target='utteachers' data-cardid='".$teacher['id']."' class='classCardContainer'>
                     <div class='classCardinnerContainer'>
                         <div class='classCardDetail'>
                             <div class='classCardInfo'>
@@ -37,7 +37,7 @@ if(isset($_POST['target'])){
         $getSubject=mysqli_query($con,$geSubjectQuery);
         if(mysqli_num_rows($getSubject)>0){
             while($subject=mysqli_fetch_assoc($getSubject)){
-                echo "<div class='classCardContainer'>
+                echo "<div data-target='utclasssubjects' data-cardid='".$subject['id']."' class='classCardContainer'>
                     <div class='classCardinnerContainer'>
                         <div class='classCardDetail'>
                             <div class='classCardInfo'>
@@ -54,7 +54,7 @@ if(isset($_POST['target'])){
         $getClassmate=mysqli_query($con,$getClassmateQuery);
         if(mysqli_num_rows($getClassmate)>0){
             while($classmate=mysqli_fetch_assoc($getClassmate)){
-                echo "<div class='classCardContainer'>
+                echo "<div data-target='utclassmate' data-cardid='".$classmate['id']."' class='classCardContainer'>
                     <div class='classCardinnerContainer'>
                         <div class='classCardDetail'>
                             <div class='classCardInfo'>

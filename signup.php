@@ -8,6 +8,7 @@
     <title>Sign Up</title>
     <link rel="stylesheet" href="assets/css/signup.css">
     <link rel="stylesheet" href="resources/css/recore.css">
+    <link rel="stylesheet" href="assets/css/recoreAlert.css">
 </head>
 
 <body>
@@ -50,8 +51,13 @@
     </div>
 
 
+    <div class="recoreAlert">
+        <img src="" class='recoreAlertIcon'>
+        <div class="recoreAlertMessage"></div>
+    </div>
 
     <script src="resources/js/jquery.js"></script>
+    <script src="assets/js/recoreAlert.js"></script>
     <script src="assets/js/app.js"></script>
     <script src="controller/signup.js"></script>
 </body>

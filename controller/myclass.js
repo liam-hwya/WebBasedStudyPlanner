@@ -87,7 +87,7 @@ $(document).ready(function() {
                 classmatePhone: classmatePhone,
                 classmateAddress: classmateAddress
             }, function(data, status) {
-                //dosomething
+                recoreAlert("Added Classmate", 1);
             });
             $(".addNewClassMatesForm").css("display", "none");
             $(".classmateNameInput").val("");
@@ -105,7 +105,21 @@ $(document).ready(function() {
 
 
     $(document).on("click", ".classCardinnerContainer", function() {
+        $(".classCardinnerContainer").removeClass("openClassCard");
         $(this).toggleClass("openClassCard");
     });
+
+    $(document).on("dblclick", ".classCardContainer", function() {
+        var target = $(this).attr("data-target");
+        var cardid = $(this).attr("data-cardid");
+        $.post("model/deleteClassCard.php", {
+            target: target,
+            cardid: cardid
+        });
+        $(this).css("display", "none");
+        recoreAlert("Removed", 1);
+    });
+
+
 
 });

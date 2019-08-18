@@ -14,3 +14,27 @@ function recoreAlert(message, type) {
         $(".recoreAlert").css("animation-name", "");
     }, 4000);
 }
+
+
+
+$(document).on("mousemove", function(e) {
+    x = e.pageX;
+    y = e.pageY;
+    $('.doubleClickToDel').css("top", y + "px");
+    $('.doubleClickToDel').css("left", x + "px");
+});
+
+$(document).on("mouseover", ".classCardContainer", function() {
+    $('.doubleClickToDel').css("display", "block");
+});
+$(document).on("mouseout", ".classCardContainer", function() {
+    $('.doubleClickToDel').css("display", "none");
+});
+
+
+$(document).on("mouseover", ".UTeachTaskContainer", function() {
+    $('.doubleClickToDel').css("display", "block");
+});
+$(document).on("mouseout", ".UTeachTaskContainer", function() {
+    $('.doubleClickToDel').css("display", "none");
+});

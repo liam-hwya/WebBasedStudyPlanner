@@ -1,0 +1,363 @@
+/*extra small*/
+
+@media only screen and (max-width: 600px) {
+    .notificationContainer {
+        width: 300px;
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 80px;
+        right: 20px;
+        z-index: 500;
+        display: none;
+        flex-direction: column;
+    }
+    .NotiTaskContainer {
+        height: 60px;
+        width: 90%;
+        margin: 10px 5%;
+        background: #eee;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .notiTaskText {
+        width: 100%;
+        height: 20px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        line-height: 20px;
+        color: #333;
+        font-size: 16px;
+    }
+    .notiTaskPriority {
+        width: 100%;
+        height: 20px;
+        font-size: 13px;
+        line-height: 20px;
+        color: #555;
+        padding: 0 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .notiTaskPriority span {
+        color: rgb(48, 187, 60);
+    }
+    .hasNoti::after {
+        content: '';
+        background: rgb(255, 104, 66);
+        display: block;
+        width: 10px;
+        height: 10px;
+        margin-right: -20px;
+        margin-top: -45px;
+        border-radius: 50%;
+    }
+}
+
+
+/*small================================================================================================================*/
+
+@media only screen and (min-width: 600px) and (max-width:767px) {
+    .notificationContainer {
+        width: 300px;
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 80px;
+        right: 100px;
+        z-index: 500;
+        display: none;
+        flex-direction: column;
+    }
+    .NotiTaskContainer {
+        height: 60px;
+        width: 90%;
+        margin: 10px 5%;
+        background: #eee;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .notiTaskText {
+        width: 100%;
+        height: 20px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        line-height: 20px;
+        color: #333;
+        font-size: 16px;
+    }
+    .notiTaskPriority {
+        width: 100%;
+        height: 20px;
+        font-size: 13px;
+        line-height: 20px;
+        color: #555;
+        padding: 0 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .notiTaskPriority span {
+        color: rgb(48, 187, 60);
+    }
+    .hasNoti::after {
+        content: '';
+        background: rgb(255, 104, 66);
+        display: block;
+        width: 10px;
+        height: 10px;
+        margin-right: -20px;
+        margin-top: -45px;
+        border-radius: 50%;
+    }
+}
+
+
+/*medium*/
+
+@media only screen and (min-width: 768px) and (max-width:991px) {
+    .notificationContainer {
+        width: 300px;
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 80px;
+        right: 100px;
+        z-index: 500;
+        display: none;
+        flex-direction: column;
+    }
+    .NotiTaskContainer {
+        height: 60px;
+        width: 90%;
+        margin: 10px 5%;
+        background: #eee;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .notiTaskText {
+        width: 100%;
+        height: 20px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        line-height: 20px;
+        color: #333;
+        font-size: 16px;
+    }
+    .notiTaskPriority {
+        width: 100%;
+        height: 20px;
+        font-size: 13px;
+        line-height: 20px;
+        color: #555;
+        padding: 0 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .notiTaskPriority span {
+        color: rgb(48, 187, 60);
+    }
+    .hasNoti::before {
+        content: '';
+        background: rgb(255, 104, 66);
+        display: block;
+        width: 10px;
+        height: 10px;
+        margin-right: -10px;
+        margin-bottom: -10px;
+        border-radius: 50%;
+    }
+}
+
+
+/*large=============================================================================================================*/
+
+@media only screen and (min-width: 992px) and (max-width:1199px) {
+    .notificationContainer {
+        width: 300px;
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 80px;
+        right: 100px;
+        z-index: 500;
+        display: none;
+        flex-direction: column;
+    }
+    .NotiTaskContainer {
+        height: 60px;
+        width: 90%;
+        margin: 10px 5%;
+        background: #eee;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .notiTaskText {
+        width: 100%;
+        height: 20px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        line-height: 20px;
+        color: #333;
+        font-size: 16px;
+    }
+    .notiTaskPriority {
+        width: 100%;
+        height: 20px;
+        font-size: 13px;
+        line-height: 20px;
+        color: #555;
+        padding: 0 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .notiTaskPriority span {
+        color: rgb(48, 187, 60);
+    }
+    .hasNoti::before {
+        content: '';
+        background: rgb(255, 104, 66);
+        display: block;
+        width: 10px;
+        height: 10px;
+        margin-right: -10px;
+        margin-bottom: -10px;
+        border-radius: 50%;
+    }
+}
+
+
+/*extra large======================================================================================================*/
+
+@media only screen and (min-width: 1200px) {
+    .notificationContainer {
+        width: 300px;
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 80px;
+        right: 100px;
+        z-index: 500;
+        display: none;
+        flex-direction: column;
+    }
+    .NotiTaskContainer {
+        height: 60px;
+        width: 90%;
+        margin: 10px 5%;
+        background: #eee;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .notiTaskText {
+        width: 100%;
+        height: 20px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        line-height: 20px;
+        color: #333;
+        font-size: 16px;
+    }
+    .notiTaskPriority {
+        width: 100%;
+        height: 20px;
+        font-size: 13px;
+        line-height: 20px;
+        color: #555;
+        padding: 0 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .notiTaskPriority span {
+        color: rgb(48, 187, 60);
+    }
+    .hasNoti::before {
+        content: '';
+        background: rgb(255, 104, 66);
+        display: block;
+        width: 10px;
+        height: 10px;
+        margin-right: -10px;
+        margin-bottom: -10px;
+        border-radius: 50%;
+    }
+}
+
+.utimeNotificationBox {
+    width: 300px;
+    height: 150px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 500;
+    display: none;
+    flex-direction: column;
+}
+
+.popupnotiHeader {
+    width: 100%;
+    height: 40px;
+    padding: 0 15px;
+    line-height: 40px;
+    font-size: 15px;
+    color: #444;
+    background: #eee;
+    box-sizing: border-box;
+}
+
+.popupnotiTask {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #444;
+    margin: 0;
+}
+
+.popupnotiControls {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.popupnotiControls div {
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 20px;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.accessPopupNoti {
+    background: #78c72e;
+}
+
+.declinePopupNoti {
+    background: rgb(221, 74, 74);
+}

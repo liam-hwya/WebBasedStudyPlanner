@@ -53,14 +53,15 @@
                 
             if($unDformat==$todayDate){
                 if($ehour==12){
-                    $ehour=0;
+                    $ehour=00;
                 }
 
                 if($shour==12){
-                    $shour=0;
+                    $shour=00;
                 }
+                
 
-                $nowhour = ampm(date('a')).date('H').date('i');
+                $nowhour = ampm(date('a')).date('h').date('i');
                 $taskshour= ampm($sampm).twoDigit($shour).twoDigit($sminute);
                 $taskehour= ampm($eampm).twoDigit($ehour).twoDigit($eminute);
 
