@@ -4,6 +4,7 @@ require_once("auth.php");
 require_once("db_con.php");
 $projectid=$_POST['projectid'];
 
+
 $getAllQuery="SELECT * FROM utpsubtask WHERE projectid='$projectid'";
 $getAll=mysqli_query($con,$getAllQuery);
 $subTaskcount=mysqli_num_rows($getAll);
@@ -45,20 +46,32 @@ if(mysqli_num_rows($getFinishTasks)>0){
 }
 
 if($taskcount>0 || $subTaskcount>0){
-    $totalTask=$subTaskcount+$taskcount;
-$totalFinish=$finishSubtaskCount+$finishTaskCount;
+        $totalTask=$subTaskcount+$taskcount;
+    $totalFinish=$finishSubtaskCount+$finishTaskCount;
+
+    $projectStatus=round(($totalFinish/$totalTask)*100,1);
 
 
-$projectStatus=round(($totalFinish/$totalTask)*100,1);
+        if($projectStatus==0){
+            $prograssinnerText= " 0% finished";
+        }else{
+            $prograssinnerText= $projectStatus."% finished";
+        }
 
-$updatePrograssQuery="UPDATE utproject SET projectPrograss='$projectStatus' WHERE id='$projectid'";
-$updatePrograss=mysqli_query($con,$updatePrograssQuery);
+    $updatePrograssQuery="UPDATE utproject SET projectPrograss='$projectStatus' WHERE id='$projectid'";
+    $updatePrograss=mysqli_query($con,$updatePrograssQuery);
+
+    echo "
+    <div class='projectPrograssBar'>
+    <div class='projectProjectBarData' data-projectPrograss='".$projectStatus."' style='width:".$projectStatus."%;'>
+        ".$prograssinnerText."
+    </div>
+    </div>
+    ";
+
 }
 
 ?>
 
-<div class="projectPrograssBar">
-    <div class="projectProjectBarData" data-projectPrograss="<?php echo $projectStatus; ?>" style="width:<?php echo $projectStatus; ?>%;">
-        <?php echo $projectStatus."%"; ?>
-    </div>
-</div>
+
+

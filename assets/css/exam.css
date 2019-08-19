@@ -10,11 +10,12 @@
     width: 100%;
     line-height: 50px;
     text-align: center;
-    margin: 10px;
-    border: solid 2px rgb(28, 153, 17);
-    background: #c4ffad;
-    color: rgb(28, 153, 17);
+    background: rgb(148, 248, 203);
+    font-weight: bold;
     font-size: 17px;
+    color: #333;
+    border: solid 2px #3AC485;
+    margin: -10px 0;
 }
 
 

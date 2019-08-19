@@ -1,3 +1,65 @@
+.projectCompleteAlert {
+    width: 300px;
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 300;
+}
+
+.projectCompleteAlertMessage {
+    width: 100%;
+    margin: 10px 15px;
+    font-size: 15px;
+    color: #444;
+    line-height: 20px;
+}
+
+.projectCompleteAlertHeader {
+    width: 100%;
+    padding: 15px;
+    font-weight: bold;
+    background: rgb(212, 255, 211);
+    color: #444;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.projectCompleteControls {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+}
+
+.projectCompleteControls div {
+    width: 50px;
+    height: 30px;
+    margin: 0 10px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.completeProjectYesBtn {
+    background: #1ba83a;
+}
+
+.completeProjectNoBtn {
+    background: #e24040;
+}
+
+
+/* projectfinishalertend */
+
 .delTaskBtnBox {
     width: 50px;
     height: 50px;
@@ -8,6 +70,10 @@
     transform: translate(-50%, -100%);
     display: none;
     cursor: pointer;
+}
+
+.projectPrograssBar {
+    margin: 15px 0;
 }
 
 .showDeleteTaskBox {
@@ -51,12 +117,13 @@
 
 .noWorkingProjectYet {
     width: 100%;
-    height: 50px;
     line-height: 50px;
     text-align: center;
-    font-size: 16px;
-    color: #777;
+    background: rgb(148, 248, 203);
     font-weight: bold;
+    font-size: 17px;
+    color: #333;
+    border: solid 2px #3AC485;
 }
 
 .addNewProjectDescription {
@@ -902,7 +969,6 @@
     }
     .projectPrograssBarContainer {
         width: 100%;
-        height: 50px;
         display: flex;
         align-items: center;
         justify-content: center;

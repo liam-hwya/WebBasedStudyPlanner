@@ -231,7 +231,11 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                                     $taskChecker="<span class='successTasktext uttaskid".$taskid."'>Success</span><img data-taskid='".$taskid."' class='uttaskchecker checked' src='assets/icons/afterCheck.png'>";
                                 }
                             }elseif($nowhour>$taskshour && $nowhour<$taskehour){
-                                $taskChecker="<span class='successTasktext uttaskid".$taskid."'>Now</span>";
+                                if($taskStatus==0){
+                                    $taskChecker="<span class='successTasktext uttaskid".$taskid."'>Now</span>";
+                                }else{
+                                    $taskChecker="<span class='successTasktext uttaskid".$taskid."'>Success</span><img data-taskid='".$taskid."' class='uttaskchecker checked' src='assets/icons/afterCheck.png'>";
+                                }
                             }elseif($nowhour<$taskshour){
                                 $taskChecker="<span class='successTasktext uttaskid".$taskid."'>Coming</span>";
                             }

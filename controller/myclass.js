@@ -4,6 +4,8 @@ $(document).ready(function() {
         $(".myClassDataContainer").load("model/myclass.php", {
             target: target
         });
+        $(".myClassMenu").removeClass("myclassActive");
+        $(this).addClass("myclassActive");
     });
 
     $(document).on("click", ".myclassAddBtn", function() {

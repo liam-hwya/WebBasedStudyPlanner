@@ -23,6 +23,7 @@
     <div class='addNewProjectForm'>
         <input type="text" placeholder="Project Name" class='addNewProjectName'>
         <textarea placeholder="Description" class='addNewProjectDescription'></textarea>
+        <label class='addNewProjectDateLabel'>Deadline</label>
         <input type="date" class='addNewProjectDate'>
         <div class="createProjectBtn">Create</div>
     </div>
@@ -35,6 +36,8 @@
             $getprojectDetail="$('.thisProjectContainer').load('model/getProjectDetail.php')";
         }
     ?>
+
+    
     <script>
         $(".projectListContainer").load("model/getProjectsList.php");
         <?php echo $getprojectDetail;  ?>

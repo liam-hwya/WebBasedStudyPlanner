@@ -1,40 +1,21 @@
 /*extra small*/
 
-@media only screen and (max-width: 600px) {}
-
-
-/*small================================================================================================================*/
-
-@media only screen and (min-width: 600px) and (max-width:767px) {}
-
-
-/*medium*/
-
-@media only screen and (min-width: 768px) and (max-width:991px) {}
-
-
-/*large=============================================================================================================*/
-
-@media only screen and (min-width: 992px) and (max-width:1199px) {}
-
-
-/*extra large======================================================================================================*/
-
-@media only screen and (min-width: 1200px) {
+@media only screen and (max-width: 600px) {
     .timeLineMainConntainer {
         width: 100%;
         height: 100%;
         display: flex;
         flex-direction: row;
+        justify-content: center;
     }
     .timeLineWorksAnalyserContainer {
-        width: 50%;
+        width: 100%;
         padding: 20px;
         box-sizing: border-box;
     }
     .timeLineWorksAnalyser {
         width: 100%;
-        height: 500px;
+        height: 350px;
         /* background: #fff; */
         /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
         /* border-radius: 10px; */
@@ -42,11 +23,11 @@
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: space-around;
-        border-left:solid 2px #333;
-        border-bottom:solid 2px #333;
+        border-left: solid 2px #333;
+        border-bottom: solid 2px #333;
     }
     .timeLineWorkAnalyserBars {
-        width:30px;
+        width: 20px;
         height: 100%;
         margin: 2px;
         display: flex;
@@ -54,29 +35,12 @@
         align-items: center;
         justify-content: flex-end;
     }
+    .anasiserInText {
+        font-size: 13px;
+    }
     .analiserInGui {
-        width: 30px;
+        width: 20px;
         margin: 2px 30px;
-    }
-    .gui1 {
-        background: rgb(228, 171, 47);
-        height: 30%;
-    }
-    .gui2 {
-        background: rgb(44, 185, 51);
-        height: 85%;
-    }
-    .gui3 {
-        background: rgb(191, 221, 57);
-        height: 50%;
-    }
-    .gui4 {
-        background: rgb(230, 117, 65);
-        height: 10%;
-    }
-    .gui5 {
-        background: rgb(164, 226, 63);
-        height: 65%;
     }
     .timeLineWorksAnalyserDays {
         width: 100%;
@@ -88,12 +52,265 @@
         flex-grow: 1;
         text-align: center;
         line-height: 50px;
+        font-size: 13px;
     }
-    .AnalyserTitle{
-        width:100%;
-        font-size:20px;
-        padding:20px;
+    .AnalyserTitle {
+        width: 100%;
+        font-size: 20px;
         box-sizing: border-box;
-        text-align:center;
+        text-align: center;
+        color: #444;
+    }
+}
+
+
+/*small================================================================================================================*/
+
+@media only screen and (min-width: 600px) and (max-width:767px) {
+    .timeLineMainConntainer {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .timeLineWorksAnalyserContainer {
+        width: 500px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .timeLineWorksAnalyser {
+        width: 100%;
+        height: 350px;
+        /* background: #fff; */
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+        /* border-radius: 10px; */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        border-left: solid 2px #333;
+        border-bottom: solid 2px #333;
+    }
+    .timeLineWorkAnalyserBars {
+        width: 30px;
+        height: 100%;
+        margin: 2px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .analiserInGui {
+        width: 30px;
+        margin: 2px 30px;
+    }
+    .timeLineWorksAnalyserDays {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    .timeLineDays {
+        flex-grow: 1;
+        text-align: center;
+        line-height: 50px;
+        font-size: 13px;
+    }
+    .AnalyserTitle {
+        width: 100%;
+        font-size: 20px;
+        box-sizing: border-box;
+        text-align: center;
+        color: #444;
+    }
+}
+
+
+/*medium*/
+
+@media only screen and (min-width: 768px) and (max-width:991px) {
+    .timeLineMainConntainer {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .timeLineWorksAnalyserContainer {
+        width: 500px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .timeLineWorksAnalyser {
+        width: 100%;
+        height: 400px;
+        /* background: #fff; */
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+        /* border-radius: 10px; */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        border-left: solid 2px #333;
+        border-bottom: solid 2px #333;
+    }
+    .timeLineWorkAnalyserBars {
+        width: 30px;
+        height: 100%;
+        margin: 2px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .analiserInGui {
+        width: 30px;
+        margin: 2px 30px;
+    }
+    .timeLineWorksAnalyserDays {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    .timeLineDays {
+        flex-grow: 1;
+        text-align: center;
+        line-height: 50px;
+        font-size: 13px;
+    }
+    .AnalyserTitle {
+        width: 100%;
+        font-size: 20px;
+        box-sizing: border-box;
+        text-align: center;
+        color: #444;
+    }
+}
+
+
+/*large=============================================================================================================*/
+
+@media only screen and (min-width: 992px) and (max-width:1199px) {
+    .timeLineMainConntainer {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .timeLineWorksAnalyserContainer {
+        width: 600px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .timeLineWorksAnalyser {
+        width: 100%;
+        height: 400px;
+        /* background: #fff; */
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+        /* border-radius: 10px; */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        border-left: solid 2px #333;
+        border-bottom: solid 2px #333;
+    }
+    .timeLineWorkAnalyserBars {
+        width: 30px;
+        height: 100%;
+        margin: 2px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .analiserInGui {
+        width: 30px;
+        margin: 2px 30px;
+    }
+    .timeLineWorksAnalyserDays {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    .timeLineDays {
+        flex-grow: 1;
+        text-align: center;
+        line-height: 50px;
+        font-size: 13px;
+    }
+    .AnalyserTitle {
+        width: 100%;
+        font-size: 20px;
+        box-sizing: border-box;
+        text-align: center;
+        color: #444;
+    }
+}
+
+
+/*extra large======================================================================================================*/
+
+@media only screen and (min-width: 1200px) {
+    .timeLineMainConntainer {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .timeLineWorksAnalyserContainer {
+        width: 600px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .timeLineWorksAnalyser {
+        width: 100%;
+        height: 400px;
+        /* background: #fff; */
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+        /* border-radius: 10px; */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        border-left: solid 2px #333;
+        border-bottom: solid 2px #333;
+    }
+    .timeLineWorkAnalyserBars {
+        width: 30px;
+        height: 100%;
+        margin: 2px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .analiserInGui {
+        width: 30px;
+        margin: 2px 30px;
+    }
+    .timeLineWorksAnalyserDays {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    .timeLineDays {
+        flex-grow: 1;
+        text-align: center;
+        line-height: 50px;
+        font-size: 13px;
+    }
+    .AnalyserTitle {
+        width: 100%;
+        font-size: 20px;
+        box-sizing: border-box;
+        text-align: center;
+        color: #444;
     }
 }

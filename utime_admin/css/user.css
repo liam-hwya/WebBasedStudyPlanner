@@ -1,0 +1,91 @@
+@font-face {
+    src: url(../../assets/fonts/MAIAN.TTF);
+    font-family: 'maian';
+}
+
+.eachUserContainer {
+    width: 500px;
+    height: 70px;
+    background: #444;
+    margin: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.userPP {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    margin: 10px;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+    flex-grow: 1;
+}
+
+.userName {
+    font-size: 16px;
+    color: #fff;
+    line-height: 20px;
+    font-family: 'maian';
+}
+
+.userEmail {
+    font-size: 13px;
+    color: #fff;
+    font-family: 'maian';
+}
+
+.deleteUser {
+    width: 40px;
+    height: 40px;
+    background: rgb(235, 54, 54);
+    margin: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.deleteUser img {
+    widows: 20px;
+    height: 20px;
+    margin: 10px;
+    filter: invert(1);
+}
+
+.eachFeedbackContainer {
+    width: 540px;
+    height: 200px;
+    background: #444;
+}
+
+.feedbackSubject {
+    width: 100%;
+    padding: 5px 25px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.feedbackMessage {
+    width: 100%;
+    padding: 5px 25px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.feedbackStar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.feedbackStar img {
+    width: 25px;
+    height: 25px;
+    margin: 15px 10px;
+}

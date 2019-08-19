@@ -107,6 +107,17 @@ $(document).ready(function() {
     });
 
     $(document).on("click", ".newTaskSaveBtn", function() {
+
+
+        function twoDigit(int) {
+            if (int < 10) {
+                int = "0" + int;
+            } else {
+                int = int;
+            }
+            return int;
+        }
+
         var taskSubject = $(".newTasksubject").val();
         var taskPriority = $(".priorityValueHolder").val();
         var taskDate = $(".TCDatePicker").val();
@@ -121,12 +132,49 @@ $(document).ready(function() {
         var Y = ymd[0];
         var M = ymd[1];
         var D = ymd[2];
+
+        //let check if the time is past
+
+        var taskDate = Y + "" + M + "" + D;
+
+        var d = new Date();
+        var ty = d.getFullYear();
+        var tm = twoDigit(d.getMonth() + 1);
+        var td = twoDigit(d.getDate());
+        var todayDate = ty + "" + tm + "" + td;
+
         var dformat = "d" + Y + M + D;
         var utColor = $(".utColorHolder").val();
         if (utColor == "") {
             var utColor = "#3AC485";
         }
         var uid = $(this).attr("data-uid");
+
+        // if (taskDate >= todayDate && taskSubject != "" && taskPriority != "") {
+        //     $.post("model/newTaskCreator.php", {
+        //         taskSubject: taskSubject,
+        //         taskDate: taskDate,
+        //         shour: shour,
+        //         sminute: sminute,
+        //         sampm: sampm,
+        //         ehour: ehour,
+        //         eminute: eminute,
+        //         eampm: eampm,
+        //         taskPriority: taskPriority,
+        //         taskEmotion: taskEmotion,
+        //         dformat: dformat,
+        //         utColor: utColor,
+        //         uid: uid
+        //     });
+        //     $(".newTaskCreatorContainer").toggle();
+        //     $(".goBackTodayBtn").click();
+        //     $(".utNotiPopupContainer").load("model/notipopup.php");
+        //     recoreAlert("Added", 1);
+        // } else if (taskDate < todayDate) {
+        //     recoreAlert("Task can't be in past", 0);
+        // } else if (taskSubject == "" || taskPriority == "") {
+        //     recoreAlert("Fill all fields", 0);
+        // }
 
         $.post("model/newTaskCreator.php", {
             taskSubject: taskSubject,
@@ -143,10 +191,11 @@ $(document).ready(function() {
             utColor: utColor,
             uid: uid
         });
-
         $(".newTaskCreatorContainer").toggle();
         $(".goBackTodayBtn").click();
         $(".utNotiPopupContainer").load("model/notipopup.php");
+
+
     });
 
     $(document).on("click", ".newTaskCancelBtn", function() {

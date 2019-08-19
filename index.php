@@ -52,7 +52,7 @@
             <div class="showHideMenu"><img src="assets/icons/menu.png"></div>
             <div id="dashboard"  class="menuAtTop"><img src="assets/icons/dashboard.png"></div><!--Timeline Menu-->
             <div class="theSpaceBetweenUnME"></div><!--The space between You and Me :( -->
-            <!-- <div id="analyse" class="menuAtTop"><img src="assets/icons/timeline.png"></div> -->
+            <div id="analyse" class="menuAtTop"><img src="assets/icons/timeline.png"></div>
             <div class="showHideNoti"><img src="assets/icons/noti.png"></div><!--View Notis-->
             <div class="showHideProfile"><img src="assets/icons/Pp.png"></div><!--Show Profile-->
             <div id="feedback" class="menuAtTop"><img src="assets/icons/feedback.png"></div>

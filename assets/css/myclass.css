@@ -720,12 +720,14 @@
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        background: #3ac485;
         margin: 10px;
         align-items: center;
         padding: 0 20px;
         border-radius: 25px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .myclassActive {
+        background: #3ac485;
     }
     .myClassMenu:hover {
         cursor: pointer;
@@ -733,10 +735,17 @@
     .myClassMenu img {
         width: 20px;
         height: 20px;
+        opacity: 0.5;
+    }
+    .myclassActive img {
         filter: invert(1);
+        opacity: 1;
     }
     .myClassMenu span {
         margin-left: 10px;
+        color: #3ac485;
+    }
+    .myclassActive span {
         color: #fff;
     }
     .activeMyClassMenu {

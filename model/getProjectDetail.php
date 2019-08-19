@@ -132,14 +132,12 @@ if(mysqli_num_rows($getProject)>0){
         echo "
         <div class='projectControlContainer'>
             <div data-projectid='".$projectid."' class='upDateProject'>Update Project</div>
-            <div data-projectid='".$projectid."' class='delProjectBtn'>Delete Project</div>
         </div>
         ";
     }elseif($projectStatus==2){
         echo "
         <div class='projectControlContainer'>
             <div data-projectid='".$projectid."' class='upDateProject'>Restore Project</div>
-            <div data-projectid='".$projectid."' class='delProjectBtn'>Delete Project</div>
         </div>
         ";
     }
@@ -153,6 +151,15 @@ if(mysqli_num_rows($getProject)>0){
 
 <div data-projectid="<?php echo $projectid; ?>" class='delTaskBtnBox'>
     <img src="assets/icons/delptask.png">
+</div>
+
+<div class="projectCompleteAlert">
+    <div class="projectCompleteAlertHeader">All Tasks Are Completed?</div>
+    <div class="projectCompleteAlertMessage">Do you want to finish the project?</div>
+    <div class="projectCompleteControls">
+        <div data-projectid="<?php echo $projectid; ?>" class="completeProjectYesBtn">Yes</div>
+        <div class="completeProjectNoBtn">No</div>
+    </div>
 </div>
 
 

@@ -20,7 +20,7 @@
             $examStatus=$examdata['examStatus'];
             if($examStatus==0){
                 $addbtn="<div data-examid='".$examid."' class='addMoreSubjectsBtn'><span>Add Subjects</span><img src='assets/icons/add.png'></div>";
-                echo "<div class='examDetailHeader'><span>".$examName."</span><img data-examid='".$examid."' class='delExamBtn' src='assets/icons/delete.png'></div>";
+                echo "<div class='examDetailHeader' data-examdate='".$examdata['examDate']."'><span>".$examName."</span><img data-examid='".$examid."' class='delExamBtn' src='assets/icons/delete.png'></div>";
                 echo "<div class='subListTaleContainer'><table data-examid='".$examid."' class='examDetailTable'>
                         <th>Subject</th>
                         <th>Date</th>

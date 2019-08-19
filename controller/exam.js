@@ -55,6 +55,13 @@ $(document).ready(function() {
         var subject = $(".addNewSubjectName").val();
         var date = $(".addNewSubjectDate").val();
 
+        var subDate = date.split("-");
+        var subjectDate = subDate[0] + subDate[1] + subDate[2];
+
+        var ed = $(".examDetailHeader").attr("data-examdate");
+        var exd = ed.split("-");
+        var examDate = exd[0] + exd[1] + exd[2];
+
         var ftimeH = $(".addNewSubftimeHour").val();
         var ftimeM = $(".addNewSubftimeMinute").val();
         var ftimeampm = $(".addNewSubftimeampm").val();
@@ -68,7 +75,9 @@ $(document).ready(function() {
         var roomno = $(".addNewSubjectRoomNo").val();
         var chairno = $(".addNewSubjectChairNo").val();
         var minmark = $(".addNewSubjectMinMark").val();
-        if (subject != "" && date != "" && ftime != "" && ttime != "" && roomno != "" && chairno != "" && minmark != "") {
+
+
+        if (subjectDate >= examDate && subject != "" && date != "" && ftime != "" && ttime != "" && roomno != "" && chairno != "" && minmark != "") {
             $.post("model/addNewSubject.php", {
                 subject: subject,
                 date: date,
@@ -86,8 +95,10 @@ $(document).ready(function() {
             $(".utExamDetailContainer").load("model/getExamDetail.php", {
                 examid: examid
             });
+        } else if (subjectDate < examDate) {
+            recoreAlert("Date Should be in the exam duration!", 0);
         } else {
-            alert("fill all fields");
+            recoreAlert("fill all fields", 0);
         }
     });
 

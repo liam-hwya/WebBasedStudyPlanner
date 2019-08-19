@@ -1,0 +1,70 @@
+@font-face {
+    src: url(../assets/fonts/Ubuntu-Regular.ttf );
+    font-family: 'ubuntu';
+}
+
+@font-face {
+    src: url(../../assets/fonts/MAIAN.TTF);
+    font-family: 'maian';
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'maian';
+}
+
+.plegma_logo {
+    width: 100px;
+    height: 100px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.loginInputBox {
+    width: 230px;
+    height: 40px;
+    border: none;
+    outline: none;
+    background: #ddd;
+    padding: 0 10px;
+    font-size: 15px;
+    font-family: 'maian';
+    border: solid 1px rgba(0, 0, 0, 0);
+    margin: 10px 0;
+    font-family: 'maian';
+}
+
+.loginBtn {
+    width: 250px;
+    height: 40px;
+    background: #3ac485;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    font-family: 'maian';
+    margin: 15px 0;
+    border: none;
+    outline: none;
+}
+
+.loginBtn:hover {
+    background: #3ac485;
+    cursor: pointer;
+}
+
+.loginerror {
+    padding: 10px 20px;
+    background: #ec7777;
+    border: solid 2px #c22e2e;
+    color: #fff;
+}

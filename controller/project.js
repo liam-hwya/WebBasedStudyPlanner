@@ -17,8 +17,6 @@ $(document).ready(function() {
             projectName: projectName,
             projectDate: projectDate,
             projectDescription: projectDescription
-        }, function(data, status) {
-            //dosomething
         });
         $(".projectListContainer").load("model/getProjectsList.php");
         $(".addNewProjectForm").toggle();
@@ -56,7 +54,19 @@ $(document).ready(function() {
         $('.projectPrograssBarContainer').load('model/projectPrograss.php', {
             projectid: projectid
         });
+        setTimeout(() => {
+            var prograss = $(".projectProjectBarData").attr("data-projectPrograss");
+            if (prograss == 100) {
+                $(".projectCompleteAlert").css("display", "flex");
+            }
+        }, 1000);
     }
+
+
+
+    $(document).on("click", ".completeProjectNoBtn", function() {
+        $(".projectCompleteAlert").css("display", "none");
+    });
 
     //check done tasks
     $(document).on("click", ".projectTaskControl", function() {
@@ -80,8 +90,6 @@ $(document).ready(function() {
                 $.post("model/checkptask.php", {
                     taskid: taskid,
                     todo: todo
-                }, function(data, status) {
-                    //do something
                 });
             }
             projectPrograss(projectid);
@@ -108,8 +116,6 @@ $(document).ready(function() {
             $.post("model/checksubtask.php", {
                 subTaskid: subTaskid,
                 todo: todo
-            }, function(data, status) {
-                //dosomething
             });
         } else {
             $(this).attr("src", "assets/icons/afterCheck.png");
@@ -118,8 +124,6 @@ $(document).ready(function() {
             $.post("model/checksubtask.php", {
                 subTaskid: subTaskid,
                 todo: todo
-            }, function(data, status) {
-                //dosomething
             });
         }
         getMainTask(taskid);
@@ -151,8 +155,6 @@ $(document).ready(function() {
                 ptaskid: ptaskid,
                 projectid: projectid,
                 newtaskText: newtaskText
-            }, function(data, status) {
-                //do some thing
             });
 
             //reloat the whole project detail
@@ -175,8 +177,6 @@ $(document).ready(function() {
             $.post("model/addNewPTask.php", {
                 projectid: projectid,
                 newTaskText: newTaskText
-            }, function(data, status) {
-                //do something
             });
 
             //reloat the whole project detail
@@ -227,8 +227,6 @@ $(document).ready(function() {
         $.post("model/delptask.php", {
             id: id,
             target: target
-        }, function(data, status) {
-            //do something
         });
         $(".thisProjectContainer").load("model/getProjectDetail.php", {
             projectid: projectid
@@ -261,11 +259,9 @@ $(document).ready(function() {
             $.post("model/updateProjectStatus.php", {
                 projectid: projectid,
                 status: status
-            }, function(data, status) {
-                //dosomething
             });
         } else {
-            alert("not finished yet");
+            recoreAlert("Project is Not Finish Yet!", 0);
         }
         $(".projectListContainer").load("model/getProjectsList.php");
         $(".projectControlContainer").css("display", "none");
@@ -311,11 +307,22 @@ $(document).ready(function() {
         var projectid = $(".addNewTaskBtn").attr("data-projectid");
         $.post("model/deleteProject.php", {
             projectid: projectid,
-        }, function(data, status) {
-            //dosomething
         });
         $(".projectListContainer").load("model/getProjectsList.php");
         $(".projectControlContainer").css("display", "none");
+        $(".thisProjectContainer").load("model/getProjectDetail.php", {
+            projectid: projectid
+        });
+    });
+
+    $(document).on("click", ".completeProjectYesBtn", function() {
+        var projectid = $(this).attr("data-projectid");
+        var status = 1;
+        $.post("model/updateProjectStatus.php", {
+            projectid: projectid,
+            status: status
+        });
+        $(".projectListContainer").load("model/getProjectsList.php");
         $(".thisProjectContainer").load("model/getProjectDetail.php", {
             projectid: projectid
         });
