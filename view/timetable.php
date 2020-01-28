@@ -353,7 +353,7 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                     :
                     <select class="startMinutePicker">
                         <?php
-                            $m=5;
+                            $m=0;
                             while($m<60){
                             echo "<option value='".$m."'>".$m."</option>"; 
                             $m+=5;
